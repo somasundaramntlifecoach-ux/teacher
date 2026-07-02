@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Combined Report | என் ஒருங்கிணைந்த அறிக்கை</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1F3864; --navy-dark:#152a4d; --gold:#B08D57; --gold-light:#e9dcc7;
+  --bg:#f7f5f1; --card:#ffffff; --text:#2b2b2b; --muted:#6b6b6b;
+  --success:#3a7d44; --warn:#c0392b; --border:#e2ddd3;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;line-height:1.55;}
+body.ta, .ta-text{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.wrap{max-width:920px;margin:0 auto;padding:24px 18px 60px;}
+header.top{
+  background:linear-gradient(135deg,var(--navy) 0%, var(--navy-dark) 100%);
+  color:#fff;border-radius:16px;padding:26px 24px;margin-bottom:22px;
+  box-shadow:0 8px 24px rgba(31,56,100,0.25);position:relative;overflow:hidden;
+}
+header.top::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;background:var(--gold);opacity:0.15;border-radius:50%;}
+header.top .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);font-weight:600;}
+header.top h1{margin:6px 0 2px;font-size:24px;font-weight:800;}
+header.top h2{margin:0;font-size:15px;font-weight:500;color:#d9e2f1;}
+header.top .motto{margin-top:10px;font-size:12px;color:#c9d4e6;font-style:italic;}
+.lang-toggle{position:sticky;top:10px;z-index:50;display:flex;justify-content:flex-end;margin-bottom:10px;gap:8px;}
+.lang-toggle button{border:2px solid var(--navy);background:#fff;color:var(--navy);padding:8px 18px;border-radius:30px;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;}
+.lang-toggle button.active{background:var(--navy);color:#fff;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,0.03);}
+.card h3{margin:0 0 4px;color:var(--navy);font-size:17px;font-weight:700;border-bottom:2px solid var(--gold-light);padding-bottom:8px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:640px){.grid2{grid-template-columns:1fr;}}
+label{font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:5px;}
+input[type=text], input[type=email], input[type=tel], input[type=date], select, textarea{
+  width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;
+  font-family:inherit;font-size:14px;background:#fcfbf9;
+}
+input:focus, select:focus, textarea:focus{outline:2px solid var(--gold);border-color:var(--gold);}
+.statement{border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px;background:#fdfcfa;}
+.statement .txt{font-weight:600;color:var(--text);font-size:14px;margin-bottom:8px;}
+.scale{display:flex;gap:8px;flex-wrap:wrap;}
+.scale label{display:flex;align-items:center;gap:5px;font-weight:500;font-size:13px;border:1px solid var(--border);padding:6px 11px;border-radius:20px;cursor:pointer;background:#fff;margin:0;transition:all .15s;}
+.scale input{accent-color:var(--gold);}
+.scale label:has(input:checked){background:var(--gold-light);border-color:var(--gold);}
+.scale-key{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;font-size:12px;text-align:center;}
+@media (max-width:640px){.scale-key{grid-template-columns:repeat(2,1fr);}}
+.scale-key div{background:#fdfcfa;border:1px solid var(--border);border-radius:8px;padding:8px;}
+.scale-key .n{display:block;font-weight:800;color:var(--gold);font-size:16px;}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;}
+button.primary{background:var(--navy);color:#fff;border:none;padding:14px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;flex:1;min-width:180px;transition:background .2s;}
+button.primary:hover{background:var(--navy-dark);}
+button.secondary{background:#fff;color:var(--navy);border:2px solid var(--navy);padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;flex:1;min-width:180px;}
+a.secondary{background:#fff;color:var(--navy);border:2px solid var(--navy);padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;flex:1;min-width:180px;text-decoration:none;text-align:center;display:inline-block;}
+button.wa,a.wa{background:#25D366;color:#fff;border:none;padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;flex:1;min-width:180px;text-decoration:none;text-align:center;display:inline-block;}
+#reportSection{display:none;}
+.score-banner{text-align:center;background:linear-gradient(135deg,var(--gold-light),#fff);border:2px solid var(--gold);border-radius:14px;padding:22px;margin-bottom:18px;}
+.score-banner .big{font-size:40px;font-weight:800;color:var(--navy);}
+.score-banner .lbl{font-size:14px;color:var(--muted);font-weight:600;}
+.score-banner .rating-tag{display:inline-block;margin-top:8px;background:var(--navy);color:#fff;padding:6px 18px;border-radius:20px;font-weight:700;font-size:13px;}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.bar-label{width:250px;font-size:13px;font-weight:600;flex-shrink:0;}
+.bar-track{flex:1;height:14px;background:#eee;border-radius:8px;overflow:hidden;}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--navy));border-radius:8px;}
+.bar-val{width:44px;text-align:right;font-size:13px;font-weight:700;color:var(--navy);}
+.note{background:#fff8ec;border:1px solid var(--gold-light);border-radius:10px;padding:12px 14px;font-size:13px;color:#6b5a35;margin-bottom:14px;}
+footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px;}
+footer .brand{color:var(--navy);font-weight:700;}
+.req{color:var(--warn);}
+.lang-en .lang-ta-only{display:none;}
+.lang-ta .lang-en-only{display:none;}
+.profile-chip{display:inline-block;background:var(--gold-light);color:var(--navy);font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;margin:3px 4px 3px 0;}
+.domain-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media (max-width:640px){.domain-grid{grid-template-columns:1fr;}}
+.domain-btn{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  border:1px solid var(--border);border-radius:12px;padding:14px 16px;background:#fdfcfa;
+  text-decoration:none;color:var(--text);transition:all .15s;
+}
+.domain-btn:hover{border-color:var(--gold);background:var(--gold-light);}
+.domain-btn .dnum{width:28px;height:28px;background:var(--navy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.domain-btn .dname{font-size:13px;font-weight:600;flex:1;}
+.domain-btn .status{font-size:11px;font-weight:700;padding:3px 9px;border-radius:12px;background:#eee;color:var(--muted);}
+.domain-btn .status.done{background:#e2f3e2;color:var(--success);}
+.progress-track{height:10px;background:#eee;border-radius:6px;overflow:hidden;margin:10px 0 4px;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--navy));}
+@media print{
+  .lang-toggle, .btn-row, form button{display:none !important;}
+  body{background:#fff;}
+  .card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid;}
+}
+</style>
+</head>
+<body class="lang-en">
+<div class="wrap">
+  <div class="lang-toggle">
+  <button id="btnEN" class="active" onclick="setLang('en')">English</button>
+  <button id="btnTA" onclick="setLang('ta')">தமிழ்</button>
+</div>
+
+  <header class="top">
+    <div class="tag">NT Somasundaram Life Skills Program</div>
+    <h1 class="lang-en-only">My Combined Assessment Report</h1>
+    <h1 class="lang-ta-only ta-text">என் ஒருங்கிணைந்த மதிப்பீட்டு அறிக்கை</h1>
+    <h2 class="lang-en-only">All Domains — Teaching Effectiveness</h2>
+    <h2 class="lang-ta-only ta-text">அனைத்து பகுதிகளும் — கற்பித்தல் திறன்</h2>
+    <div class="motto">"God is always with u"</div>
+  </header>
+
+  <div id="noProfileNote" class="note" style="display:none;">
+    <span class="lang-en-only">We couldn't find your details. Please go to the main page and fill them in first.</span>
+    <span class="lang-ta-only ta-text">உங்கள் விவரங்கள் கிடைக்கவில்லை. முதலில் முகப்புப் பக்கம் சென்று அவற்றை நிரப்பவும்.</span>
+    <div class="btn-row"><a class="secondary" href="landing.html"><span class="lang-en-only">Go to Main Page</span><span class="lang-ta-only ta-text">முகப்புப் பக்கம் செல்லவும்</span></a></div>
+  </div>
+
+  <div id="reportArea">
+    <div class="card" id="profileStrip">
+      <div id="profileChips"></div>
+    </div>
+
+    <div class="card">
+      <div id="progressNote" style="font-size:13px;color:var(--muted);margin-bottom:10px;"></div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    </div>
+
+    <div class="score-banner">
+      <div class="lbl lang-en-only">OVERALL SCORE</div>
+      <div class="lbl lang-ta-only ta-text">ஒட்டுமொத்த மதிப்பெண்</div>
+      <div class="big"><span id="totalScore">0</span> / <span id="maxScore">0</span></div>
+      <div class="rating-tag" id="overallRatingTag">-</div>
+    </div>
+
+    <div class="card">
+      <h3><span class="lang-en-only">Score by Domain</span><span class="lang-ta-only ta-text">பகுதி வாரியான மதிப்பெண்</span></h3>
+      <div id="barChart"></div>
+    </div>
+
+    <div class="card" id="insightCard">
+      <h3><span class="lang-en-only">Reflection Insights</span><span class="lang-ta-only ta-text">பிரதிபலிப்பு நுண்ணறிவுகள்</span></h3>
+      <div class="strength-box" style="background:#eef7ee;border:1px solid #bfe3bf;color:#2f5a32;border-radius:10px;padding:12px 14px;margin-bottom:10px;font-size:13px;">
+        <b class="lang-en-only">Your Strongest Domains: </b><b class="lang-ta-only ta-text">உங்கள் வலுவான பகுதிகள்: </b>
+        <span id="topAreas">-</span>
+      </div>
+      <div class="growth-box" style="background:#fdf2ee;border:1px solid #f0c6b6;color:#8a3f26;border-radius:10px;padding:12px 14px;font-size:13px;">
+        <b class="lang-en-only">Domains to Focus On: </b><b class="lang-ta-only ta-text">கவனம் செலுத்த வேண்டிய பகுதிகள்: </b>
+        <span id="lowAreas">-</span>
+      </div>
+    </div>
+
+    <div class="note">
+      <span class="lang-en-only">This report reflects the domains you've completed so far and updates automatically as you complete more.</span>
+      <span class="lang-ta-only ta-text">இந்த அறிக்கை நீங்கள் இதுவரை முடித்த பகுதிகளை பிரதிபலிக்கிறது, மேலும் முடிக்கும்போது தானாகவே புதுப்பிக்கப்படும்.</span>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="secondary" onclick="window.print()">
+        <span class="lang-en-only">Print / Save PDF</span><span class="lang-ta-only ta-text">அச்சிடு / PDF சேமி</span>
+      </button>
+      <a href="#" id="waLink" class="wa" target="_blank">
+        <span class="lang-en-only">Share on WhatsApp</span><span class="lang-ta-only ta-text">வாட்ஸ்அப்பில் பகிர்</span>
+      </a>
+      <a class="secondary" href="landing.html">
+        <span class="lang-en-only">Back to Domains</span><span class="lang-ta-only ta-text">பகுதிகளுக்கு திரும்பவும்</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+  <div class="brand">NT Somasundaram Life Skills Program</div>
+  <div>somasundaramnt.lifecoach@gmail.com &nbsp;|&nbsp; +91 98437 02244</div>
+  <div style="margin-top:4px;font-style:italic;">"God is always with u"</div>
+</footer>
+</div>
+
+<script>
+function setLang(lang){
+  document.body.className = 'lang-' + lang;
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  document.getElementById('btnTA').classList.toggle('active', lang==='ta');
+}
+
+const DOMAIN_IDS = ["subject","planning","methodology","classroom_mgmt","communication","engagement","assessment","teaching_aids","discipline","conduct","adaptability","emotional","development","collaboration","lifeskills"];
+
+function loadProfile(){
+  const raw = localStorage.getItem('teacherSA_profile');
+  return raw ? JSON.parse(raw) : null;
+}
+function loadResults(){
+  const raw = localStorage.getItem('teacherSA_results');
+  return raw ? JSON.parse(raw) : {};
+}
+
+function overallBand(avg){
+  if(avg>=4.5) return {en:"Excellent",ta:"சிறந்தது"};
+  if(avg>=3.5) return {en:"Good",ta:"நல்லது"};
+  if(avg>=2.5) return {en:"Satisfactory",ta:"திருப்திகரம்"};
+  if(avg>=1.5) return {en:"Needs Improvement",ta:"மேம்பாடு தேவை"};
+  return {en:"Unsatisfactory",ta:"திருப்தியற்றது"};
+}
+
+const profile = loadProfile();
+if(!profile || !profile.teacherName){
+  document.getElementById('noProfileNote').style.display = 'block';
+  document.getElementById('reportArea').style.display = 'none';
+} else {
+  const chips = document.getElementById('profileChips');
+  chips.innerHTML =
+    '<span class="profile-chip">' + profile.teacherName + '</span>' +
+    (profile.subjectGrade ? '<span class="profile-chip">' + profile.subjectGrade + '</span>' : '') +
+    (profile.schoolName ? '<span class="profile-chip">' + profile.schoolName + '</span>' : '');
+
+  const results = loadResults();
+  const completed = DOMAIN_IDS.filter(id => results[id]);
+  document.getElementById('progressNote').innerHTML =
+    completed.length + ' / ' + DOMAIN_IDS.length + ' <span class="lang-en-only">domains completed</span><span class="lang-ta-only ta-text">பகுதிகள் முடிந்தன</span>';
+  document.getElementById('progressFill').style.width = (completed.length/DOMAIN_IDS.length*100) + '%';
+
+  let total = 0, max = 0;
+  const barChart = document.getElementById('barChart');
+  barChart.innerHTML = '';
+  const scored = [];
+
+  DOMAIN_IDS.forEach(function(id){
+    const r = results[id];
+    if(!r) return;
+    total += r.score; max += r.max;
+    scored.push({id:id, en:r.en, ta:r.ta, score:r.score, max:r.max});
+    const pct = (r.score/r.max)*100;
+    const row = document.createElement('div');
+    row.className = 'bar-row';
+    row.innerHTML =
+      '<div class="bar-label"><span class="lang-en-only">'+r.en+'</span><span class="lang-ta-only ta-text">'+r.ta+'</span></div>' +
+      '<div class="bar-track"><div class="bar-fill" style="width:'+pct+'%"></div></div>' +
+      '<div class="bar-val">'+r.score+'/'+r.max+'</div>';
+    barChart.appendChild(row);
+  });
+
+  if(scored.length === 0){
+    barChart.innerHTML = '<p style="font-size:13px;color:var(--muted);">' +
+      '<span class="lang-en-only">No domains completed yet. Go back and complete at least one assessment.</span>' +
+      '<span class="lang-ta-only ta-text">இன்னும் எந்த பகுதியும் முடிக்கப்படவில்லை. திரும்பிச் சென்று குறைந்தது ஒரு மதிப்பீட்டையாவது முடிக்கவும்.</span></p>';
+  }
+
+  document.getElementById('totalScore').textContent = total;
+  document.getElementById('maxScore').textContent = max;
+  const avg5 = max > 0 ? (total/max)*5 : 0;
+  const band = overallBand(avg5);
+  document.getElementById('overallRatingTag').innerHTML =
+    '<span class="lang-en-only">'+band.en+'</span><span class="lang-ta-only ta-text">'+band.ta+'</span>';
+
+  const byPct = scored.map(s => ({...s, pct: s.score/s.max}));
+  const sortedDesc = [...byPct].sort((a,b)=>b.pct-a.pct);
+  const sortedAsc = [...byPct].sort((a,b)=>a.pct-a.pct === 0 ? 0 : a.pct-b.pct);
+  const top = sortedDesc.slice(0,3);
+  const low = [...byPct].sort((a,b)=>a.pct-b.pct).slice(0,3);
+
+  document.getElementById('topAreas').innerHTML = top.length ?
+    '<span class="lang-en-only">'+top.map(s=>s.en).join('; ')+'</span><span class="lang-ta-only ta-text">'+top.map(s=>s.ta).join('; ')+'</span>' : '-';
+  document.getElementById('lowAreas').innerHTML = low.length ?
+    '<span class="lang-en-only">'+low.map(s=>s.en).join('; ')+'</span><span class="lang-ta-only ta-text">'+low.map(s=>s.ta).join('; ')+'</span>' : '-';
+
+  const waNum = (profile.waNumber || '').replace(/\D/g,'');
+  const msg = encodeURIComponent(
+    'Teacher Self-Assessment — Combined Report\nName: ' + profile.teacherName +
+    '\nDomains completed: ' + completed.length + '/' + DOMAIN_IDS.length +
+    '\nTotal Score: ' + total + '/' + max +
+    '\nRating: ' + band.en + '\n\n- NT Somasundaram Life Skills Program'
+  );
+  document.getElementById('waLink').href = waNum ? 'https://wa.me/91'+waNum+'?text='+msg : 'https://wa.me/?text='+msg;
+}
+</script>
+</body>
+</html>

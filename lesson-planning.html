@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson Planning & Preparation | பாட திட்டமிடல் மற்றும் தயாரிப்பு</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1F3864; --navy-dark:#152a4d; --gold:#B08D57; --gold-light:#e9dcc7;
+  --bg:#f7f5f1; --card:#ffffff; --text:#2b2b2b; --muted:#6b6b6b;
+  --success:#3a7d44; --warn:#c0392b; --border:#e2ddd3;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;line-height:1.55;}
+body.ta, .ta-text{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.wrap{max-width:920px;margin:0 auto;padding:24px 18px 60px;}
+header.top{
+  background:linear-gradient(135deg,var(--navy) 0%, var(--navy-dark) 100%);
+  color:#fff;border-radius:16px;padding:26px 24px;margin-bottom:22px;
+  box-shadow:0 8px 24px rgba(31,56,100,0.25);position:relative;overflow:hidden;
+}
+header.top::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;background:var(--gold);opacity:0.15;border-radius:50%;}
+header.top .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);font-weight:600;}
+header.top h1{margin:6px 0 2px;font-size:24px;font-weight:800;}
+header.top h2{margin:0;font-size:15px;font-weight:500;color:#d9e2f1;}
+header.top .motto{margin-top:10px;font-size:12px;color:#c9d4e6;font-style:italic;}
+.lang-toggle{position:sticky;top:10px;z-index:50;display:flex;justify-content:flex-end;margin-bottom:10px;gap:8px;}
+.lang-toggle button{border:2px solid var(--navy);background:#fff;color:var(--navy);padding:8px 18px;border-radius:30px;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;}
+.lang-toggle button.active{background:var(--navy);color:#fff;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,0.03);}
+.card h3{margin:0 0 4px;color:var(--navy);font-size:17px;font-weight:700;border-bottom:2px solid var(--gold-light);padding-bottom:8px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:640px){.grid2{grid-template-columns:1fr;}}
+label{font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:5px;}
+input[type=text], input[type=email], input[type=tel], input[type=date], select, textarea{
+  width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;
+  font-family:inherit;font-size:14px;background:#fcfbf9;
+}
+input:focus, select:focus, textarea:focus{outline:2px solid var(--gold);border-color:var(--gold);}
+.statement{border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px;background:#fdfcfa;}
+.statement .txt{font-weight:600;color:var(--text);font-size:14px;margin-bottom:8px;}
+.scale{display:flex;gap:8px;flex-wrap:wrap;}
+.scale label{display:flex;align-items:center;gap:5px;font-weight:500;font-size:13px;border:1px solid var(--border);padding:6px 11px;border-radius:20px;cursor:pointer;background:#fff;margin:0;transition:all .15s;}
+.scale input{accent-color:var(--gold);}
+.scale label:has(input:checked){background:var(--gold-light);border-color:var(--gold);}
+.scale-key{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;font-size:12px;text-align:center;}
+@media (max-width:640px){.scale-key{grid-template-columns:repeat(2,1fr);}}
+.scale-key div{background:#fdfcfa;border:1px solid var(--border);border-radius:8px;padding:8px;}
+.scale-key .n{display:block;font-weight:800;color:var(--gold);font-size:16px;}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;}
+button.primary{background:var(--navy);color:#fff;border:none;padding:14px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;flex:1;min-width:180px;transition:background .2s;}
+button.primary:hover{background:var(--navy-dark);}
+button.secondary{background:#fff;color:var(--navy);border:2px solid var(--navy);padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;flex:1;min-width:180px;}
+a.secondary{background:#fff;color:var(--navy);border:2px solid var(--navy);padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;flex:1;min-width:180px;text-decoration:none;text-align:center;display:inline-block;}
+button.wa,a.wa{background:#25D366;color:#fff;border:none;padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;flex:1;min-width:180px;text-decoration:none;text-align:center;display:inline-block;}
+#reportSection{display:none;}
+.score-banner{text-align:center;background:linear-gradient(135deg,var(--gold-light),#fff);border:2px solid var(--gold);border-radius:14px;padding:22px;margin-bottom:18px;}
+.score-banner .big{font-size:40px;font-weight:800;color:var(--navy);}
+.score-banner .lbl{font-size:14px;color:var(--muted);font-weight:600;}
+.score-banner .rating-tag{display:inline-block;margin-top:8px;background:var(--navy);color:#fff;padding:6px 18px;border-radius:20px;font-weight:700;font-size:13px;}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.bar-label{width:250px;font-size:13px;font-weight:600;flex-shrink:0;}
+.bar-track{flex:1;height:14px;background:#eee;border-radius:8px;overflow:hidden;}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--navy));border-radius:8px;}
+.bar-val{width:44px;text-align:right;font-size:13px;font-weight:700;color:var(--navy);}
+.note{background:#fff8ec;border:1px solid var(--gold-light);border-radius:10px;padding:12px 14px;font-size:13px;color:#6b5a35;margin-bottom:14px;}
+footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px;}
+footer .brand{color:var(--navy);font-weight:700;}
+.req{color:var(--warn);}
+.lang-en .lang-ta-only{display:none;}
+.lang-ta .lang-en-only{display:none;}
+.profile-chip{display:inline-block;background:var(--gold-light);color:var(--navy);font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;margin:3px 4px 3px 0;}
+.domain-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media (max-width:640px){.domain-grid{grid-template-columns:1fr;}}
+.domain-btn{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  border:1px solid var(--border);border-radius:12px;padding:14px 16px;background:#fdfcfa;
+  text-decoration:none;color:var(--text);transition:all .15s;
+}
+.domain-btn:hover{border-color:var(--gold);background:var(--gold-light);}
+.domain-btn .dnum{width:28px;height:28px;background:var(--navy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.domain-btn .dname{font-size:13px;font-weight:600;flex:1;}
+.domain-btn .status{font-size:11px;font-weight:700;padding:3px 9px;border-radius:12px;background:#eee;color:var(--muted);}
+.domain-btn .status.done{background:#e2f3e2;color:var(--success);}
+.progress-track{height:10px;background:#eee;border-radius:6px;overflow:hidden;margin:10px 0 4px;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--navy));}
+@media print{
+  .lang-toggle, .btn-row, form button{display:none !important;}
+  body{background:#fff;}
+  .card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid;}
+}
+</style>
+</head>
+<body class="lang-en">
+<div class="wrap">
+  <div class="lang-toggle">
+  <button id="btnEN" class="active" onclick="setLang('en')">English</button>
+  <button id="btnTA" onclick="setLang('ta')">தமிழ்</button>
+</div>
+
+  <header class="top">
+    <div class="tag">NT Somasundaram Life Skills Program &nbsp;|&nbsp; Domain 2 / 15</div>
+    <h1 class="lang-en-only">Lesson Planning & Preparation</h1>
+    <h1 class="lang-ta-only ta-text">பாட திட்டமிடல் மற்றும் தயாரிப்பு</h1>
+    <h2 class="lang-en-only">Teacher Self-Assessment</h2>
+    <h2 class="lang-ta-only ta-text">ஆசிரியர் சுய மதிப்பீடு</h2>
+    <div class="motto">"God is always with u"</div>
+  </header>
+
+  <div id="noProfileNote" class="note" style="display:none;">
+    <span class="lang-en-only">We couldn't find your details. Please go back to the main page and fill them in first.</span>
+    <span class="lang-ta-only ta-text">உங்கள் விவரங்கள் கிடைக்கவில்லை. முதலில் முகப்புப் பக்கம் சென்று அவற்றை நிரப்பவும்.</span>
+    <div class="btn-row"><a class="secondary" href="landing.html"><span class="lang-en-only">Go to Main Page</span><span class="lang-ta-only ta-text">முகப்புப் பக்கம் செல்லவும்</span></a></div>
+  </div>
+
+  <div id="assessArea">
+    <div class="card" id="profileStrip">
+      <div id="profileChips"></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="lang-en-only">Rating Scale</span><span class="lang-ta-only ta-text">மதிப்பீட்டு அளவுகோல்</span></h3>
+      <div class="scale-key">
+        <div><span class="n">5</span><span class="lang-en-only">Always</span><span class="lang-ta-only ta-text">எப்போதும்</span></div>
+        <div><span class="n">4</span><span class="lang-en-only">Often</span><span class="lang-ta-only ta-text">அடிக்கடி</span></div>
+        <div><span class="n">3</span><span class="lang-en-only">Sometimes</span><span class="lang-ta-only ta-text">சில நேரங்களில்</span></div>
+        <div><span class="n">2</span><span class="lang-en-only">Rarely</span><span class="lang-ta-only ta-text">அரிதாக</span></div>
+        <div><span class="n">1</span><span class="lang-en-only">Never</span><span class="lang-ta-only ta-text">ஒருபோதும் இல்லை</span></div>
+      </div>
+    </div>
+
+    <form id="assessForm">
+      <div class="card">
+        <h3><span class="lang-en-only">Self-Reflection Statements</span><span class="lang-ta-only ta-text">சுய பிரதிபலிப்பு கூற்றுகள்</span></h3>
+        
+    <div class="statement">
+      <div class="txt"><span class="lang-en-only">1. I prepare clear lesson plans with defined objectives before class.</span><span class="lang-ta-only ta-text">1. வகுப்புக்கு முன் தெளிவான நோக்கங்களுடன் பாட திட்டங்களை தயாரிக்கிறேன்.</span></div>
+      <div class="scale">
+        <label><input type="radio" name="s0" value="1" required> 1</label><label><input type="radio" name="s0" value="2" required> 2</label><label><input type="radio" name="s0" value="3" required> 3</label><label><input type="radio" name="s0" value="4" required> 4</label><label><input type="radio" name="s0" value="5" required> 5</label>
+      </div>
+    </div>
+    <div class="statement">
+      <div class="txt"><span class="lang-en-only">2. I organize my teaching materials and resources in advance.</span><span class="lang-ta-only ta-text">2. என் கற்பித்தல் பொருட்கள் மற்றும் வளங்களை முன்கூட்டியே ஒழுங்கமைக்கிறேன்.</span></div>
+      <div class="scale">
+        <label><input type="radio" name="s1" value="1" required> 1</label><label><input type="radio" name="s1" value="2" required> 2</label><label><input type="radio" name="s1" value="3" required> 3</label><label><input type="radio" name="s1" value="4" required> 4</label><label><input type="radio" name="s1" value="5" required> 5</label>
+      </div>
+    </div>
+    <div class="statement">
+      <div class="txt"><span class="lang-en-only">3. I structure my lessons logically from introduction to conclusion.</span><span class="lang-ta-only ta-text">3. அறிமுகம் முதல் முடிவு வரை என் பாடங்களை தர்க்கரீதியாக அமைக்கிறேன்.</span></div>
+      <div class="scale">
+        <label><input type="radio" name="s2" value="1" required> 1</label><label><input type="radio" name="s2" value="2" required> 2</label><label><input type="radio" name="s2" value="3" required> 3</label><label><input type="radio" name="s2" value="4" required> 4</label><label><input type="radio" name="s2" value="5" required> 5</label>
+      </div>
+    </div>
+    <div class="statement">
+      <div class="txt"><span class="lang-en-only">4. I plan for different pacing needs of different students.</span><span class="lang-ta-only ta-text">4. வெவ்வேறு மாணவர்களின் வேக தேவைகளுக்கு ஏற்ப திட்டமிடுகிறேன்.</span></div>
+      <div class="scale">
+        <label><input type="radio" name="s3" value="1" required> 1</label><label><input type="radio" name="s3" value="2" required> 2</label><label><input type="radio" name="s3" value="3" required> 3</label><label><input type="radio" name="s3" value="4" required> 4</label><label><input type="radio" name="s3" value="5" required> 5</label>
+      </div>
+    </div>
+    <div class="statement">
+      <div class="txt"><span class="lang-en-only">5. I set clear learning outcomes for every lesson.</span><span class="lang-ta-only ta-text">5. ஒவ்வொரு பாடத்திற்கும் தெளிவான கற்றல் விளைவுகளை நிர்ணயிக்கிறேன்.</span></div>
+      <div class="scale">
+        <label><input type="radio" name="s4" value="1" required> 1</label><label><input type="radio" name="s4" value="2" required> 2</label><label><input type="radio" name="s4" value="3" required> 3</label><label><input type="radio" name="s4" value="4" required> 4</label><label><input type="radio" name="s4" value="5" required> 5</label>
+      </div>
+    </div>
+    <div class="statement">
+      <div class="txt"><span class="lang-en-only">6. I plan time allocation for each part of the lesson.</span><span class="lang-ta-only ta-text">6. பாடத்தின் ஒவ்வொரு பகுதிக்கும் நேர ஒதுக்கீட்டை திட்டமிடுகிறேன்.</span></div>
+      <div class="scale">
+        <label><input type="radio" name="s5" value="1" required> 1</label><label><input type="radio" name="s5" value="2" required> 2</label><label><input type="radio" name="s5" value="3" required> 3</label><label><input type="radio" name="s5" value="4" required> 4</label><label><input type="radio" name="s5" value="5" required> 5</label>
+      </div>
+    </div>
+    <div class="statement">
+      <div class="txt"><span class="lang-en-only">7. I anticipate likely student questions or difficulties in advance.</span><span class="lang-ta-only ta-text">7. மாணவர்களின் சாத்தியமான கேள்விகள் அல்லது சிரமங்களை முன்கூட்டியே எதிர்பார்க்கிறேன்.</span></div>
+      <div class="scale">
+        <label><input type="radio" name="s6" value="1" required> 1</label><label><input type="radio" name="s6" value="2" required> 2</label><label><input type="radio" name="s6" value="3" required> 3</label><label><input type="radio" name="s6" value="4" required> 4</label><label><input type="radio" name="s6" value="5" required> 5</label>
+      </div>
+    </div>
+    <div class="statement">
+      <div class="txt"><span class="lang-en-only">8. I align my lesson plans with the curriculum and syllabus timeline.</span><span class="lang-ta-only ta-text">8. என் பாட திட்டங்களை பாடத்திட்டம் மற்றும் கால அட்டவணையுடன் இணைக்கிறேன்.</span></div>
+      <div class="scale">
+        <label><input type="radio" name="s7" value="1" required> 1</label><label><input type="radio" name="s7" value="2" required> 2</label><label><input type="radio" name="s7" value="3" required> 3</label><label><input type="radio" name="s7" value="4" required> 4</label><label><input type="radio" name="s7" value="5" required> 5</label>
+      </div>
+    </div>
+    <div class="statement">
+      <div class="txt"><span class="lang-en-only">9. I keep backup activities ready in case a lesson finishes early.</span><span class="lang-ta-only ta-text">9. பாடம் விரைவில் முடிந்தால் பயன்படுத்த மாற்று செயல்பாடுகளை தயாராக வைத்திருக்கிறேன்.</span></div>
+      <div class="scale">
+        <label><input type="radio" name="s8" value="1" required> 1</label><label><input type="radio" name="s8" value="2" required> 2</label><label><input type="radio" name="s8" value="3" required> 3</label><label><input type="radio" name="s8" value="4" required> 4</label><label><input type="radio" name="s8" value="5" required> 5</label>
+      </div>
+    </div>
+    <div class="statement">
+      <div class="txt"><span class="lang-en-only">10. I review and revise my lesson plans based on past experience.</span><span class="lang-ta-only ta-text">10. கடந்த அனுபவத்தின் அடிப்படையில் என் பாட திட்டங்களை மறுஆய்வு செய்து திருத்துகிறேன்.</span></div>
+      <div class="scale">
+        <label><input type="radio" name="s9" value="1" required> 1</label><label><input type="radio" name="s9" value="2" required> 2</label><label><input type="radio" name="s9" value="3" required> 3</label><label><input type="radio" name="s9" value="4" required> 4</label><label><input type="radio" name="s9" value="5" required> 5</label>
+      </div>
+    </div>
+      </div>
+      <div class="btn-row">
+        <button type="button" class="primary" onclick="generateReport()">
+          <span class="lang-en-only">Submit This Domain</span><span class="lang-ta-only ta-text">இந்த பகுதியை சமர்ப்பிக்கவும்</span>
+        </button>
+      </div>
+    </form>
+
+    <div id="reportSection">
+      <div class="score-banner">
+        <div class="lbl lang-en-only">YOUR SCORE — LESSON PLANNING & PREPARATION</div>
+        <div class="lbl lang-ta-only ta-text">உங்கள் மதிப்பெண் — பாட திட்டமிடல் மற்றும் தயாரிப்பு</div>
+        <div class="big"><span id="totalScore">0</span> / 50</div>
+        <div class="rating-tag" id="overallRatingTag">-</div>
+      </div>
+      <div class="note">
+        <span class="lang-en-only">Saved. Go back to the main page to assess another domain, or view your combined report once you're done.</span>
+        <span class="lang-ta-only ta-text">சேமிக்கப்பட்டது. மற்றொரு பகுதியை மதிப்பிட முகப்புப் பக்கம் திரும்பவும், அல்லது முடிந்ததும் உங்கள் ஒருங்கிணைந்த அறிக்கையைப் பார்க்கவும்.</span>
+      </div>
+      <div class="btn-row">
+        <a class="secondary" href="landing.html">
+          <span class="lang-en-only">Back to All Domains</span><span class="lang-ta-only ta-text">அனைத்து பகுதிகளுக்கும் திரும்பவும்</span>
+        </a>
+        <a class="wa" href="reports.html">
+          <span class="lang-en-only">View Combined Report</span><span class="lang-ta-only ta-text">ஒருங்கிணைந்த அறிக்கையைப் பார்க்கவும்</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  <div class="brand">NT Somasundaram Life Skills Program</div>
+  <div>somasundaramnt.lifecoach@gmail.com &nbsp;|&nbsp; +91 98437 02244</div>
+  <div style="margin-top:4px;font-style:italic;">"God is always with u"</div>
+</footer>
+</div>
+
+<script>
+function setLang(lang){
+  document.body.className = 'lang-' + lang;
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  document.getElementById('btnTA').classList.toggle('active', lang==='ta');
+}
+
+const DOMAIN_ID = "planning";
+const DOMAIN_EN = "Lesson Planning & Preparation";
+const DOMAIN_TA = "பாட திட்டமிடல் மற்றும் தயாரிப்பு";
+const STATEMENT_COUNT = 10;
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyy2ew19pMvEM_lhuWmOa5bTDGm7WFUbF7iJ6mou7OEE2sChUNx0N_p9A_D4NguPhf2/exec";
+
+function loadProfile(){
+  const raw = localStorage.getItem('teacherSA_profile');
+  return raw ? JSON.parse(raw) : null;
+}
+
+const profile = loadProfile();
+if(!profile || !profile.teacherName){
+  document.getElementById('noProfileNote').style.display = 'block';
+  document.getElementById('assessArea').style.display = 'none';
+} else {
+  const chips = document.getElementById('profileChips');
+  chips.innerHTML =
+    '<span class="profile-chip">' + profile.teacherName + '</span>' +
+    (profile.subjectGrade ? '<span class="profile-chip">' + profile.subjectGrade + '</span>' : '') +
+    (profile.schoolName ? '<span class="profile-chip">' + profile.schoolName + '</span>' : '');
+}
+
+function overallBand(avg){
+  if(avg>=4.5) return {en:"Excellent",ta:"சிறந்தது"};
+  if(avg>=3.5) return {en:"Good",ta:"நல்லது"};
+  if(avg>=2.5) return {en:"Satisfactory",ta:"திருப்திகரம்"};
+  if(avg>=1.5) return {en:"Needs Improvement",ta:"மேம்பாடு தேவை"};
+  return {en:"Unsatisfactory",ta:"திருப்தியற்றது"};
+}
+
+function generateReport(){
+  const form = document.getElementById('assessForm');
+  if(!form.checkValidity()){ form.reportValidity(); return; }
+
+  let total = 0;
+  const scores = [];
+  for(let i=0;i<STATEMENT_COUNT;i++){
+    const sel = document.querySelector('input[name="s'+i+'"]:checked');
+    const val = sel ? parseInt(sel.value) : 0;
+    scores.push(val);
+    total += val;
+  }
+
+  const maxScore = STATEMENT_COUNT * 5;
+  document.getElementById('totalScore').textContent = total;
+  const avg = total / STATEMENT_COUNT;
+  const band = overallBand(avg);
+  document.getElementById('overallRatingTag').innerHTML =
+    '<span class="lang-en-only">'+band.en+'</span><span class="lang-ta-only ta-text">'+band.ta+'</span>';
+
+  // Save to combined results in localStorage
+  const raw = localStorage.getItem('teacherSA_results');
+  const results = raw ? JSON.parse(raw) : {};
+  results[DOMAIN_ID] = {
+    en: DOMAIN_EN, ta: DOMAIN_TA,
+    score: total, max: maxScore, band: band.en,
+    scores: scores, date: new Date().toISOString()
+  };
+  localStorage.setItem('teacherSA_results', JSON.stringify(results));
+
+  document.getElementById('assessForm').style.display = 'none';
+  document.getElementById('reportSection').style.display = 'block';
+  document.getElementById('reportSection').scrollIntoView({behavior:'smooth'});
+
+  // Submit to Google Sheets backend
+  try {
+    const params = new URLSearchParams({
+      domainId: DOMAIN_ID,
+      domainName: DOMAIN_EN,
+      teacherName: profile.teacherName || '',
+      subjectGrade: profile.subjectGrade || '',
+      schoolName: profile.schoolName || '',
+      assessDate: profile.assessDate || '',
+      experience: profile.experience || '',
+      teacherEmail: profile.teacherEmail || '',
+      totalScore: total,
+      maxScore: maxScore,
+      overallRating: band.en,
+      scores: scores.join('|')
+    });
+    const img = new Image();
+    img.src = WEBAPP_URL + "?" + params.toString();
+  } catch(e){ /* silent fail, local result still saved */ }
+}
+</script>
+</body>
+</html>
