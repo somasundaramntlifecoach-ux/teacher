@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why These 15 Domains? | இந்த 15 பகுதிகள் ஏன் முக்கியம்?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F3864; --navy-dark:#152a4d; --gold:#B08D57; --gold-light:#e9dcc7;
+    --bg:#f7f5f1; --card:#ffffff; --text:#2b2b2b; --muted:#6b6b6b; --border:#e2ddd3;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;line-height:1.6;}
+  body.ta, .ta-text{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:24px 18px 60px;}
+  header.top{
+    background:linear-gradient(135deg,var(--navy) 0%, var(--navy-dark) 100%);
+    color:#fff;border-radius:16px;padding:32px 26px;margin-bottom:22px;
+    box-shadow:0 8px 24px rgba(31,56,100,0.25);position:relative;overflow:hidden;
+  }
+  header.top::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;background:var(--gold);opacity:0.15;border-radius:50%;}
+  header.top .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);font-weight:600;}
+  header.top h1{margin:8px 0 4px;font-size:28px;font-weight:800;}
+  header.top h2{margin:0;font-size:16px;font-weight:500;color:#d9e2f1;}
+  header.top .motto{margin-top:12px;font-size:12px;color:#c9d4e6;font-style:italic;}
+
+  .lang-toggle{position:sticky;top:10px;z-index:50;display:flex;justify-content:flex-end;margin-bottom:10px;gap:8px;}
+  .lang-toggle button{border:2px solid var(--navy);background:#fff;color:var(--navy);padding:8px 18px;border-radius:30px;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;}
+  .lang-toggle button.active{background:var(--navy);color:#fff;}
+
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,0.03);}
+  .card h3{margin:0 0 10px;color:var(--navy);font-size:18px;font-weight:700;}
+  .card p{font-size:14px;color:var(--text);margin:0 0 8px;}
+  .intro p{font-size:15px;}
+
+  .domain-list{display:flex;flex-direction:column;gap:14px;}
+  .domain-item{
+    border:1px solid var(--border);border-radius:14px;padding:18px 20px;background:#fdfcfa;
+    display:flex;gap:16px;align-items:flex-start;
+  }
+  .domain-item .dnum{
+    flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;
+  }
+  .domain-item .dbody{flex:1;}
+  .domain-item .dtitle{font-weight:700;color:var(--navy);font-size:16px;margin-bottom:4px;}
+  .domain-item .dwhy{font-size:13.5px;color:var(--text);}
+
+  .closing{background:linear-gradient(135deg,var(--gold-light),#fff);border:2px solid var(--gold);border-radius:14px;padding:22px 24px;text-align:center;margin-top:10px;}
+  .closing p{font-size:15px;color:var(--navy);font-weight:600;margin:0;}
+
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;justify-content:center;}
+  a.btn{
+    background:var(--navy);color:#fff;text-decoration:none;padding:13px 28px;border-radius:10px;
+    font-weight:700;font-size:14.5px;display:inline-block;transition:background .2s;
+  }
+  a.btn:hover{background:var(--navy-dark);}
+  a.btn.secondary{background:#fff;color:var(--navy);border:2px solid var(--navy);}
+
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:34px;}
+  footer .brand{color:var(--navy);font-weight:700;}
+
+  .lang-en .lang-ta-only{display:none;}
+  .lang-ta .lang-en-only{display:none;}
+
+  @media print{
+    .lang-toggle, .btn-row{display:none !important;}
+    body{background:#fff;}
+    .card, .domain-item{box-shadow:none;border:1px solid #ccc;}
+  }
+</style>
+</head>
+<body class="lang-en">
+
+<div class="wrap">
+
+  <div class="lang-toggle">
+    <button id="btnEN" class="active" onclick="setLang('en')">English</button>
+    <button id="btnTA" onclick="setLang('ta')">தமிழ்</button>
+  </div>
+
+  <header class="top">
+    <div class="tag">NT Somasundaram Life Skills Program</div>
+    <h1 class="lang-en-only">Why These 15 Domains Matter</h1>
+    <h1 class="lang-ta-only ta-text">இந்த 15 பகுதிகள் ஏன் முக்கியம்</h1>
+    <h2 class="lang-en-only">Understanding the Foundations of Teaching Effectiveness</h2>
+    <h2 class="lang-ta-only ta-text">கற்பித்தல் திறனின் அடித்தளங்களைப் புரிந்துகொள்ளுதல்</h2>
+    <div class="motto">"God is always with u"</div>
+  </header>
+
+  <div class="card intro">
+    <h3><span class="lang-en-only">Why Self-Assessment?</span><span class="lang-ta-only ta-text">சுய மதிப்பீடு ஏன்?</span></h3>
+    <p class="lang-en-only">Teaching is one of the most complex professions — it blends subject expertise, emotional intelligence, communication, planning, and character, often all within a single 40-minute period. No single skill defines a good teacher; effectiveness comes from the interplay of many. This self-assessment breaks that complexity into 15 clear, manageable domains, so that reflection becomes practical rather than overwhelming.</p>
+    <p class="lang-en-only">Growth begins with honest awareness. A teacher who reflects regularly — not to judge themselves harshly, but to notice patterns — becomes better equipped to help students learn, feel safe, and grow. This page explains why each of the 15 domains was chosen and what it contributes to that bigger picture.</p>
+    <p class="lang-ta-only ta-text">கற்பித்தல் மிகவும் சிக்கலான தொழில்களில் ஒன்று — இது பாட அறிவு, உணர்ச்சி நுண்ணறிவு, தொடர்பாடல், திட்டமிடல், குணாதிசயம் ஆகியவற்றை ஒரு 40 நிமிட பாடத்திற்குள் இணைக்கிறது. ஒரு திறமை மட்டும் ஒரு நல்ல ஆசிரியரை வரையறுக்காது; திறன் பல திறமைகளின் ஒருங்கிணைப்பிலிருந்து வருகிறது. இந்த சுய மதிப்பீடு அந்த சிக்கலான தன்மையை 15 தெளிவான, கையாளக்கூடிய பகுதிகளாக பிரிக்கிறது, இதனால் பிரதிபலிப்பு அதிகமாக உணரப்படாமல் நடைமுறையானதாக மாறுகிறது.</p>
+    <p class="lang-ta-only ta-text">வளர்ச்சி நேர்மையான விழிப்புணர்வுடன் தொடங்குகிறது. தன்னைக் கடுமையாக மதிப்பிடாமல், தொடர்ந்து பிரதிபலிக்கும் ஒரு ஆசிரியர், மாணவர்கள் கற்க, பாதுகாப்பாக உணர, வளர உதவும் திறனை மேம்படுத்திக்கொள்கிறார். இந்த பக்கம் 15 பகுதிகளும் ஏன் தேர்ந்தெடுக்கப்பட்டன, ஒவ்வொன்றும் அந்த பெரிய சித்திரத்திற்கு என்ன பங்களிக்கிறது என்பதை விளக்குகிறது.</p>
+  </div>
+
+  <div class="domain-list" id="domainList"></div>
+
+  <div class="closing">
+    <p class="lang-en-only">Together, these 15 domains form a complete picture of what makes teaching effective — not to create pressure, but to give every teacher a clear mirror for honest, constructive growth.</p>
+    <p class="lang-ta-only ta-text">இந்த 15 பகுதிகளும் இணைந்து கற்பித்தலை திறம்படுத்துவது என்ன என்பதற்கான முழுமையான சித்திரத்தை உருவாக்குகின்றன — அழுத்தத்தை உருவாக்க அல்ல, ஒவ்வொரு ஆசிரியருக்கும் நேர்மையான, ஆக்கபூர்வமான வளர்ச்சிக்கான தெளிவான கண்ணாடியை வழங்குவதற்காக.</p>
+    <div class="btn-row">
+      <a class="btn" href="landing.html"><span class="lang-en-only">Start My Self-Assessment</span><span class="lang-ta-only ta-text">என் சுய மதிப்பீட்டைத் தொடங்கு</span></a>
+      <a class="btn secondary" href="reports.html"><span class="lang-en-only">View My Report</span><span class="lang-ta-only ta-text">என் அறிக்கையைப் பார்</span></a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="brand">NT Somasundaram Life Skills Program</div>
+    <div>somasundaramnt.lifecoach@gmail.com &nbsp;|&nbsp; +91 98437 02244</div>
+    <div style="margin-top:4px;font-style:italic;">"God is always with u"</div>
+  </footer>
+</div>
+
+<script>
+const domains = [
+  { en:"Subject Knowledge & Content Mastery", ta:"பாட அறிவு மற்றும் உள்ளடக்க தேர்ச்சி",
+    why_en:"Students trust teachers who know their subject deeply. Strong content mastery builds credibility, allows spontaneous, confident answers to unexpected questions, and lets a teacher go beyond rote textbook delivery to real understanding.",
+    why_ta:"பாடத்தை ஆழமாக அறிந்த ஆசிரியர்களை மாணவர்கள் நம்புகிறார்கள். வலுவான உள்ளடக்க தேர்ச்சி நம்பகத்தன்மையை உருவாக்குகிறது, எதிர்பாராத கேள்விகளுக்கு தன்னிச்சையான, நம்பிக்கையான பதில்களை அளிக்க அனுமதிக்கிறது, பாடப்புத்தக வழங்கலை தாண்டி உண்மையான புரிதலுக்கு அழைத்துச் செல்கிறது." },
+  { en:"Lesson Planning & Preparation", ta:"பாட திட்டமிடல் மற்றும் தயாரிப்பு",
+    why_en:"Preparation is invisible when done well, but its absence is obvious. A well-planned lesson respects students' time, ensures nothing important is missed, and gives the teacher confidence to handle the unexpected.",
+    why_ta:"தயாரிப்பு நன்றாக செய்யப்படும்போது கவனிக்கப்படாமல் இருக்கும், ஆனால் அது இல்லாதது தெளிவாகத் தெரியும். நன்கு திட்டமிடப்பட்ட பாடம் மாணவர்களின் நேரத்தை மதிக்கிறது, முக்கியமான எதுவும் தவறவிடப்படாமல் உறுதி செய்கிறது, எதிர்பாராததை கையாள ஆசிரியருக்கு நம்பிக்கை அளிக்கிறது." },
+  { en:"Teaching Methodology & Delivery", ta:"கற்பித்தல் முறை மற்றும் வழங்கல்",
+    why_en:"Knowledge alone doesn't transfer — delivery does. How a lesson is structured, paced, and made relatable determines whether students actually absorb and retain what's taught, not just hear it.",
+    why_ta:"அறிவு மட்டும் மாற்றப்படாது — வழங்கல்தான் மாற்றுகிறது. ஒரு பாடம் எவ்வாறு அமைக்கப்படுகிறது, வேகப்படுத்தப்படுகிறது, தொடர்புடையதாக்கப்படுகிறது என்பது மாணவர்கள் உண்மையில் கற்பதை உள்வாங்கி நினைவில் வைத்திருக்கிறார்களா என்பதை தீர்மானிக்கிறது, வெறுமனே கேட்பதை அல்ல." },
+  { en:"Classroom Management", ta:"வகுப்பறை மேலாண்மை",
+    why_en:"Without order, even the best lesson plan fails. Good classroom management protects instructional time, keeps learning fair for everyone, and creates the calm structure students — especially younger ones — need to feel secure.",
+    why_ta:"ஒழுங்கு இல்லாமல், சிறந்த பாட திட்டம் கூட தோல்வியடையும். நல்ல வகுப்பறை மேலாண்மை கற்பித்தல் நேரத்தைப் பாதுகாக்கிறது, அனைவருக்கும் கற்றலை நியாயமாக வைத்திருக்கிறது, மாணவர்கள் — குறிப்பாக இளையவர்கள் — பாதுகாப்பாக உணர தேவையான அமைதியான கட்டமைப்பை உருவாக்குகிறது." },
+  { en:"Communication Skills", ta:"தொடர்பாடல் திறன்கள்",
+    why_en:"Teaching is fundamentally an act of communication. Clarity, listening, and the ability to give feedback that lands well determine whether a message truly reaches a student, a parent, or a colleague.",
+    why_ta:"கற்பித்தல் அடிப்படையில் ஒரு தொடர்பாடல் செயல். தெளிவு, கேட்டல், நன்றாக எடுத்துச்செல்லும் கருத்து வழங்கும் திறன் ஆகியவை ஒரு செய்தி உண்மையிலேயே ஒரு மாணவரையோ, பெற்றோரையோ, சக ஊழியரையோ சென்றடைகிறதா என்பதை தீர்மானிக்கின்றன." },
+  { en:"Student Engagement & Motivation", ta:"மாணவர் ஈடுபாடு மற்றும் ஊக்கம்",
+    why_en:"A disengaged classroom learns very little, regardless of how good the content is. This domain focuses on the spark that turns passive listening into active curiosity and sustained effort.",
+    why_ta:"ஈடுபாடு இல்லாத வகுப்பறை, உள்ளடக்கம் எவ்வளவு நல்லதாக இருந்தாலும் மிகக் குறைவாகவே கற்கும். இந்த பகுதி செயலற்ற கேட்டலை தீவிர ஆர்வமாகவும், தொடர்ச்சியான முயற்சியாகவும் மாற்றும் தீப்பொறியை மையமாகக் கொண்டுள்ளது." },
+  { en:"Assessment & Feedback Practices", ta:"மதிப்பீடு மற்றும் கருத்து பழக்கங்கள்",
+    why_en:"What gets measured and fed back shapes what students focus on. Fair, timely, and specific assessment tells students exactly where they stand and how to improve — without it, growth is guesswork.",
+    why_ta:"எது அளவிடப்பட்டு கருத்து கூறப்படுகிறதோ அதுவே மாணவர்கள் கவனம் செலுத்துவதை வடிவமைக்கிறது. நியாயமான, சரியான நேரத்தில், குறிப்பிட்ட மதிப்பீடு மாணவர்கள் எங்கு நிற்கிறார்கள், எப்படி மேம்படுத்துவது என்பதை சரியாக தெரிவிக்கிறது — இது இல்லாமல், வளர்ச்சி ஊகமாகிவிடும்." },
+  { en:"Use of Teaching Aids & Technology", ta:"கற்பித்தல் உபகரணங்கள் மற்றும் தொழில்நுட்பப் பயன்பாடு",
+    why_en:"Visual, digital, and hands-on tools reach learners that words alone cannot. In a fast-changing world, comfort with technology also keeps teaching relevant to how today's students already engage with information.",
+    why_ta:"காட்சி, டிஜிட்டல், செயல்முறை கருவிகள் வார்த்தைகள் மட்டும் சென்றடையாத கற்பவர்களை சென்றடைகின்றன. வேகமாக மாறும் உலகில், தொழில்நுட்பத்துடன் வசதியாக இருப்பது இன்றைய மாணவர்கள் ஏற்கனவே தகவலுடன் எவ்வாறு ஈடுபடுகிறார்கள் என்பதற்கு கற்பித்தலை பொருத்தமானதாக வைத்திருக்கிறது." },
+  { en:"Classroom Environment & Discipline", ta:"வகுப்பறை சூழல் மற்றும் ஒழுக்கம்",
+    why_en:"Psychological safety comes before learning. A classroom built on positive discipline rather than fear allows students to ask questions, make mistakes, and participate without anxiety.",
+    why_ta:"கற்றலுக்கு முன் உளவியல் பாதுகாப்பு தேவை. பயத்தை விட நேர்மறை ஒழுக்கத்தின் அடிப்படையில் கட்டமைக்கப்பட்ட வகுப்பறை, மாணவர்கள் கவலையின்றி கேள்விகள் கேட்க, தவறு செய்ய, பங்கேற்க அனுமதிக்கிறது." },
+  { en:"Professional Conduct & Ethics", ta:"தொழில்முறை நடத்தை மற்றும் நெறிமுறைகள்",
+    why_en:"Teachers model integrity every day, often more powerfully through actions than words. Punctuality, honesty, and fairness set the ethical tone that students absorb long after lesson content is forgotten.",
+    why_ta:"ஆசிரியர்கள் ஒவ்வொரு நாளும் நேர்மையை முன்மாதிரியாகக் காட்டுகிறார்கள், பெரும்பாலும் வார்த்தைகளை விட செயல்கள் மூலம் அதிக சக்திவாய்ந்ததாக. நேரம் தவறாமை, நேர்மை, நியாயம் ஆகியவை மாணவர்கள் பாட உள்ளடக்கத்தை மறந்த பின்னரும் நீண்ட காலம் உள்வாங்கும் நெறிமுறை தொனியை அமைக்கின்றன." },
+  { en:"Adaptability & Differentiated Instruction", ta:"தகவமைப்புத்திறன் மற்றும் வேறுபடுத்தப்பட்ட கற்பித்தல்",
+    why_en:"No two classrooms — or students — are identical. The ability to adjust pace, method, and support for different learners is what separates teaching to the average from truly reaching every student.",
+    why_ta:"இரண்டு வகுப்பறைகளோ மாணவர்களோ ஒரே மாதிரியானவை அல்ல. வெவ்வேறு கற்பவர்களுக்கு வேகம், முறை, ஆதரவை சரிசெய்யும் திறன்தான் சராசரிக்கு கற்பிப்பதையும் ஒவ்வொரு மாணவரையும் உண்மையிலேயே சென்றடைவதையும் பிரிக்கிறது." },
+  { en:"Emotional Intelligence & Rapport Building", ta:"உணர்ச்சி நுண்ணறிவு மற்றும் நல்லுறவு உருவாக்கம்",
+    why_en:"Students learn better from teachers they trust emotionally. Self-awareness, patience, and empathy allow a teacher to stay steady under pressure and build the relationships that make discipline and motivation possible in the first place.",
+    why_ta:"மாணவர்கள் உணர்ச்சி ரீதியாக நம்பும் ஆசிரியர்களிடமிருந்து சிறப்பாக கற்கிறார்கள். சுய விழிப்புணர்வு, பொறுமை, பச்சாதாபம் ஆகியவை ஒரு ஆசிரியர் அழுத்தத்தின் கீழ் நிலைத்திருக்கவும், ஒழுக்கம் மற்றும் ஊக்கத்தை முதலில் சாத்தியமாக்கும் உறவுகளை உருவாக்கவும் அனுமதிக்கின்றன." },
+  { en:"Continuous Professional Development", ta:"தொடர்ச்சியான தொழில்முறை வளர்ச்சி",
+    why_en:"Teaching methods, technology, and student needs keep evolving. A teacher who keeps learning stays effective over decades, rather than relying on habits formed early and never revisited.",
+    why_ta:"கற்பித்தல் முறைகள், தொழில்நுட்பம், மாணவர் தேவைகள் தொடர்ந்து மாறிக்கொண்டே இருக்கின்றன. தொடர்ந்து கற்கும் ஆசிரியர் பல தசாப்தங்களாக திறமையாக இருப்பார், ஆரம்பத்தில் உருவான பழக்கங்களை மட்டும் நம்பாமல்." },
+  { en:"Parent & Peer Collaboration", ta:"பெற்றோர் மற்றும் சக ஊழியர் ஒத்துழைப்பு",
+    why_en:"A student's education is a shared responsibility. Teachers who communicate well with parents and collaborate with colleagues create a consistent support system around every child, rather than working in isolation.",
+    why_ta:"ஒரு மாணவரின் கல்வி ஒரு பகிரப்பட்ட பொறுப்பு. பெற்றோருடன் நன்றாக தொடர்பு கொள்ளும், சக ஊழியர்களுடன் ஒத்துழைக்கும் ஆசிரியர்கள் தனிமையில் வேலை செய்வதற்குப் பதிலாக ஒவ்வொரு குழந்தையையும் சுற்றி நிலையான ஆதரவு அமைப்பை உருவாக்குகிறார்கள்." },
+  { en:"Life Skills & Value Integration", ta:"வாழ்க்கை திறன்கள் மற்றும் மதிப்பு ஒருங்கிணைப்பு",
+    why_en:"Academic content fades, but character and life skills last a lifetime. Teachers who weave empathy, resilience, and critical thinking into everyday lessons shape not just what students know, but who they become.",
+    why_ta:"கல்வி உள்ளடக்கம் மங்கிவிடும், ஆனால் குணாதிசயமும் வாழ்க்கை திறன்களும் வாழ்நாள் முழுவதும் நீடிக்கும். பச்சாதாபம், மீள்திறன், விமர்சன சிந்தனையை அன்றாட பாடங்களில் இணைக்கும் ஆசிரியர்கள் மாணவர்கள் அறிவதை மட்டுமல்ல, அவர்கள் யாராக மாறுகிறார்கள் என்பதையும் வடிவமைக்கிறார்கள்." }
+];
+
+const list = document.getElementById('domainList');
+domains.forEach((d, i) => {
+  const item = document.createElement('div');
+  item.className = 'domain-item';
+  item.innerHTML = `
+    <div class="dnum">${i+1}</div>
+    <div class="dbody">
+      <div class="dtitle"><span class="lang-en-only">${d.en}</span><span class="lang-ta-only ta-text">${d.ta}</span></div>
+      <div class="dwhy"><span class="lang-en-only">${d.why_en}</span><span class="lang-ta-only ta-text">${d.why_ta}</span></div>
+    </div>
+  `;
+  list.appendChild(item);
+});
+
+function setLang(lang){
+  document.body.className = 'lang-' + lang;
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  document.getElementById('btnTA').classList.toggle('active', lang==='ta');
+}
+</script>
+
+</body>
+</html>
