@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 6: Empathy &amp; Relationships — Life Skills Mastery for Educators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16333F; --ink-soft:#2A4B58;
+    --marigold:#E5A337; --marigold-deep:#C77F1F;
+    --sage:#7C9A80; --sage-deep:#5E7C63;
+    --paper:#F6F2E9; --paper-dim:#EDE6D6;
+    --charcoal:#26251F; --white:#FFFEFB;
+    --line:rgba(22,51,63,0.14);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--charcoal);font-family:'Poppins',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .en{display:inline;} .ta{display:none;}
+  body.show-ta .en{display:none;} body.show-ta .ta{display:inline;}
+  body.show-ta h1,body.show-ta h2,body.show-ta h3,body.show-ta h4,body.show-ta p,body.show-ta li,body.show-ta span,body.show-ta a,body.show-ta button,body.show-ta label,body.show-ta textarea::placeholder{font-family:'Noto Sans Tamil',sans-serif;}
+  .display{font-family:'Fraunces',serif;}
+  body.show-ta .display{font-family:'Noto Sans Tamil',sans-serif;font-weight:700;}
+  a{color:inherit;} img,svg{display:block;max-width:100%;}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--white);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .topbar .brand{font-size:13.5px;opacity:.9;display:flex;align-items:center;gap:8px;}
+  .brand-dot{width:7px;height:7px;border-radius:50%;background:var(--marigold);flex:none;}
+  .lang-toggle{display:flex;background:rgba(255,255,255,0.1);border-radius:999px;padding:3px;gap:2px;}
+  .lang-toggle button{border:none;background:transparent;color:var(--white);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;}
+  .lang-toggle button.active{background:var(--marigold);color:var(--ink);}
+  .progress-track{height:4px;background:rgba(255,255,255,0.15);}
+  .progress-fill{height:100%;width:0%;background:var(--marigold);transition:width .15s linear;}
+  /* Learner info + save bar */
+  .learner-bar{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--paper-dim);border-bottom:1px solid var(--line);}
+  .learner-field{flex:1;min-width:160px;}
+  .learner-field label{display:block;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:4px;}
+  .learner-field input{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:'Poppins',sans-serif;font-size:13.5px;background:var(--white);color:var(--charcoal);box-sizing:border-box;}
+  body.show-ta .learner-field input{font-family:'Noto Sans Tamil',sans-serif;}
+  .save-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px;margin:30px 0;text-align:center;}
+  .save-block p{font-size:13.5px;color:var(--ink-soft);margin:0 0 14px;}
+  .save-status{margin-top:10px;font-size:13.5px;color:var(--sage-deep);font-weight:600;min-height:18px;}
+
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  section{padding:56px 0;}
+  .rule{border:none;border-top:1px solid var(--line);margin:0;}
+
+  .module-header{padding:56px 0 40px;}
+  .module-tag{display:inline-block;background:var(--marigold);color:var(--ink);font-size:12.5px;font-weight:700;letter-spacing:.05em;padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+  h1{font-size:clamp(28px,4.4vw,42px);font-weight:600;line-height:1.14;margin:0 0 16px;color:var(--ink);}
+  .module-header p.lede{font-size:16.5px;color:var(--ink-soft);max-width:56ch;margin:0 0 26px;}
+  .meta-row{display:flex;gap:22px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-soft);}
+  .meta-row span{display:flex;align-items:center;gap:6px;}
+  .meta-row .dot{width:5px;height:5px;border-radius:50%;background:var(--sage);}
+
+  .s-label{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .s-num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:14px;}
+  body.show-ta .s-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .s-label h2{margin:0;font-size:clamp(21px,3vw,27px);font-weight:600;color:var(--ink);}
+  section p{font-size:15.5px;color:var(--charcoal);}
+  section p.intro{color:var(--ink-soft);font-size:16px;}
+
+  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 8px;}
+  .skill-card{border:1px solid var(--line);background:var(--white);border-radius:var(--radius);padding:18px 18px;}
+  .skill-card .sk-num{font-family:'Fraunces',serif;font-size:12.5px;color:var(--marigold-deep);font-weight:700;letter-spacing:.03em;margin-bottom:8px;}
+  body.show-ta .skill-card .sk-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .skill-card h4{margin:0 0 6px;font-size:15.5px;color:var(--ink);}
+  .skill-card p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+
+  .callout{background:var(--ink);color:var(--paper);border-radius:18px;padding:34px 30px;margin:30px 0;}
+  .callout .display{font-size:20px;color:var(--white);margin:0 0 12px;}
+  .callout p{color:rgba(246,242,233,0.85);margin:0;font-size:15.5px;}
+
+  blockquote{margin:26px 0;padding:2px 0 2px 22px;border-left:3px solid var(--marigold);font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--ink);}
+  body.show-ta blockquote{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;font-weight:500;}
+
+  .reflect{background:var(--white);border:1.5px dashed var(--sage);border-radius:var(--radius);padding:24px 24px 20px;margin:26px 0;}
+  .reflect .r-tag{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .reflect .r-tag::before{content:'✎';font-size:14px;}
+  .reflect h4{margin:0 0 14px;font-size:16px;color:var(--ink);font-weight:600;}
+  .reflect textarea{width:100%;min-height:84px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:'Poppins',sans-serif;font-size:14.5px;color:var(--charcoal);background:var(--paper);resize:vertical;}
+  body.show-ta .reflect textarea{font-family:'Noto Sans Tamil',sans-serif;}
+  .reflect textarea:focus{outline:2px solid var(--sage);outline-offset:1px;}
+
+  .steps{counter-reset:step;margin:26px 0;padding:0;list-style:none;}
+  .steps li{counter-increment:step;position:relative;padding:16px 0 16px 46px;border-bottom:1px solid var(--line);}
+  .steps li:last-child{border-bottom:none;}
+  .steps li::before{content:counter(step);position:absolute;left:0;top:16px;width:30px;height:30px;border-radius:50%;background:var(--paper-dim);border:1px solid var(--line);color:var(--ink);font-family:'Fraunces',serif;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;}
+  body.show-ta .steps li::before{font-family:'Noto Sans Tamil',sans-serif;}
+  .steps h4{margin:0 0 5px;font-size:15.5px;color:var(--ink);}
+  .steps p{margin:0;font-size:14px;color:var(--ink-soft);}
+
+  .assess-card{background:var(--sage);color:var(--white);border-radius:20px;padding:36px 30px;margin:34px 0;text-align:center;}
+  .assess-card h3{margin:0 0 10px;font-size:22px;color:var(--white);}
+  .assess-card p{color:rgba(255,255,255,0.9);max-width:48ch;margin:0 auto 22px;font-size:15px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14.5px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease;}
+  .btn-primary{background:var(--ink);color:var(--white);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .assess-card .btn-primary{background:var(--white);color:var(--sage-deep);}
+
+  .takeaway-list{list-style:none;margin:22px 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .takeaway-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .takeaway-list li:last-child{border-bottom:none;}
+  .takeaway-list .mk{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(229,163,55,0.16);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:2px;}
+
+  .module-nav{display:flex;justify-content:space-between;align-items:center;padding:40px 0 70px;gap:16px;flex-wrap:wrap;}
+  .nav-link{display:flex;flex-direction:column;text-decoration:none;padding:16px 20px;border-radius:14px;border:1px solid var(--line);background:var(--white);min-width:220px;}
+  .nav-link .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:4px;}
+  .nav-link .ttl{font-size:15.5px;font-weight:600;color:var(--ink);}
+  .nav-link.next{text-align:right;}
+
+  /* Deep-dive expandable detail blocks */
+  .deepdive-intro{margin:34px 0 16px;font-size:13.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);}
+  .deep{border:1px solid var(--line);border-radius:var(--radius);background:var(--white);margin-bottom:12px;overflow:hidden;}
+  .deep summary{cursor:pointer;padding:16px 20px;font-weight:600;font-size:15.5px;color:var(--ink);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .deep summary::-webkit-details-marker{display:none;}
+  .deep summary .plus{flex:none;width:26px;height:26px;border-radius:50%;background:var(--paper-dim);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:17px;transition:transform .2s ease;}
+  .deep[open] summary .plus{transform:rotate(45deg);}
+  .deep-body{padding:2px 20px 22px;border-top:1px solid var(--line);}
+  .deep-body h5{margin:16px 0 6px;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--sage-deep);font-weight:700;}
+  .deep-body h5:first-child{margin-top:16px;}
+  .deep-body p{margin:0 0 4px;font-size:14.5px;color:var(--ink-soft);}
+
+  footer{padding:32px 24px 50px;text-align:center;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);}
+  footer .motto{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);margin-bottom:6px;font-size:14.5px;}
+  body.show-ta footer .motto{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;}
+  footer .contact a{text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media print{
+    .topbar,.progress-track,.module-nav,.lang-toggle{display:none !important;}
+    body{background:#fff;}
+    .deep{break-inside:avoid;}
+  }
+  @media (max-width:640px){
+    .skill-grid{grid-template-columns:1fr;}
+    .module-nav{flex-direction:column;align-items:stretch;}
+    .nav-link.next{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="brand-dot"></span>
+    <span class="en">Life Skills Mastery for Educators</span>
+    <span class="ta">ஆசிரியர்களுக்கான வாழ்க்கை திறன் தேர்ச்சி</span>
+  </div>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('en')">English</button>
+    <button onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="learner-bar">
+  <div class="learner-field">
+    <label><span class="en">Your Name</span><span class="ta">உங்கள் பெயர்</span></label>
+    <input type="text" id="learnerName" placeholder="e.g., Priya Kumar">
+  </div>
+  <div class="learner-field">
+    <label><span class="en">Your Email (optional)</span><span class="ta">உங்கள் மின்னஞ்சல் (விருப்பம்)</span></label>
+    <input type="text" id="learnerEmail" placeholder="you@example.com">
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="module-header">
+    <span class="module-tag"><span class="en">MODULE 6 OF 10</span><span class="ta">தொகுதி 6 / 10</span></span>
+    <h1 class="display"><span class="en">Empathy &amp; Relationships</span><span class="ta">பரிவு &amp; உறவுகள்</span></h1>
+    <p class="lede">
+      <span class="en">Empathy isn't a single skill — it has distinct parts, and knowing which one you're using changes how you respond. This module also gives you practical, professional ways to build the kind of rapport that makes every other module work better.</span>
+      <span class="ta">பரிவு ஒரு தனி திறன் அல்ல — இதற்கு தனித்தனி பகுதிகள் உள்ளன, எதை பயன்படுத்துகிறீர்கள் என்பது நீங்கள் எப்படி பதிலளிக்கிறீர்கள் என்பதை மாற்றுகிறது. இந்த தொகுதி மற்ற ஒவ்வொரு தொகுதியும் சிறப்பாக வேலை செய்ய வைக்கும் நல்லுறவை உருவாக்க நடைமுறை, தொழில்முறை வழிகளையும் தருகிறது.</span>
+    </p>
+    <div class="meta-row">
+      <span><span class="dot"></span><span class="en">Reading time: ~26 min</span><span class="ta">படிக்க: ~26 நிமிடம்</span></span>
+      <span><span class="dot"></span><span class="en">3 reflection exercises</span><span class="ta">3 சிந்தனை பயிற்சிகள்</span></span>
+      <span><span class="dot"></span><span class="en">1 rapport-building routine</span><span class="ta">1 நல்லுறவு உருவாக்கும் வழக்கம்</span></span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <div class="s-label"><div class="s-num">1</div><h2 class="display"><span class="en">The Three Parts of Empathy</span><span class="ta">பரிவின் மூன்று பகுதிகள்</span></h2></div>
+    <p class="intro">
+      <span class="en">Psychologists distinguish three distinct kinds of empathy. A teacher who only has one — however strong — will struggle in situations that call for another. Real empathy in a classroom draws on all three, in the right order.</span>
+      <span class="ta">உளவியலாளர்கள் மூன்று தனித்தனி வகையான பரிவை வேறுபடுத்துகிறார்கள். ஒரே ஒன்று மட்டும் — எவ்வளவு வலிமையானதாக இருந்தாலும் — உள்ள ஒரு ஆசிரியர் மற்றொன்று தேவைப்படும் சூழ்நிலைகளில் சிரமப்படுவார். வகுப்பறையில் உண்மையான பரிவு, சரியான வரிசையில், மூன்றையும் நம்பியிருக்கிறது.</span>
+    </p>
+
+    <div class="skill-grid">
+      <div class="skill-card"><div class="sk-num">01</div><h4><span class="en">Cognitive Empathy</span><span class="ta">அறிவாற்றல் பரிவு</span></h4><p><span class="en">Understanding intellectually what another person is thinking or experiencing, from their point of view.</span><span class="ta">மற்றவர் என்ன நினைக்கிறார் அல்லது அனுபவிக்கிறார் என்பதை அறிவுபூர்வமாக, அவரது பார்வையிலிருந்து புரிந்துகொள்ளுதல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">02</div><h4><span class="en">Emotional Empathy</span><span class="ta">உணர்ச்சி பரிவு</span></h4><p><span class="en">Actually feeling a resonance with what the other person feels, not just understanding it in theory.</span><span class="ta">அதை கோட்பாட்டில் புரிந்துகொள்வது மட்டுமல்ல, மற்றவர் உணர்வதுடன் உண்மையில் ஒரு எதிரொலியை உணருதல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">03</div><h4><span class="en">Compassionate Empathy</span><span class="ta">கருணை பரிவு</span></h4><p><span class="en">Being moved to helpful action by what you understand and feel, rather than stopping at understanding alone.</span><span class="ta">வெறும் புரிதலில் நிற்காமல், நீங்கள் புரிந்துகொள்வதாலும் உணர்வதாலும் உதவிகரமான செயலுக்கு தூண்டப்படுதல்.</span></p></div>
+    </div>
+
+    <blockquote><span class="en">Emotional empathy without compassionate empathy can leave a teacher feeling drained by every student's difficulty without ever actually helping — feeling isn't the same as helping.</span><span class="ta">கருணை பரிவு இல்லாத உணர்ச்சி பரிவு, உண்மையில் ஒருபோதும் உதவாமல், ஒவ்வொரு மாணவரின் சிரமத்தாலும் ஒரு ஆசிரியரை சோர்வடையச் செய்யலாம் — உணர்வது உதவுவதற்கு சமமல்ல.</span></blockquote>
+
+    <div class="deepdive-intro"><span class="en">Explore each type of empathy in depth</span><span class="ta">ஒவ்வொரு வகை பரிவையும் விரிவாக அறிக</span></div>
+
+    <details class="deep">
+      <summary><span><span class="en">1. Cognitive Empathy</span><span class="ta">1. அறிவாற்றல் பரிவு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it looks like</span><span class="ta">இது எப்படி இருக்கும்</span></h5>
+        <p><span class="en">Recognising that a student who acts out right before a test is likely anxious, not defiant — working out the "why" behind behaviour, even without feeling the anxiety yourself.</span><span class="ta">தேர்வுக்கு முன் நடத்தை மோசமாக இருக்கும் ஒரு மாணவர் பொதுவாக பதற்றமாக இருக்கிறார், மறுப்பு இல்லை என்பதை அடையாளம் காணுதல் — நீங்களே அந்த பதற்றத்தை உணராமலேயே நடத்தைக்குப் பின்னால் உள்ள "ஏன்" என்பதை கண்டறிதல்.</span></p>
+        <h5><span class="en">Where it's essential</span><span class="ta">இது எங்கு அத்தியாவசியமானது</span></h5>
+        <p><span class="en">It's the fastest of the three to apply in a busy classroom, since it doesn't require you to slow down and feel — just to reason clearly about perspective.</span><span class="ta">இது மூன்றிலும் ஒரு பரபரப்பான வகுப்பறையில் பயன்படுத்த மிக வேகமானது, ஏனெனில் இதற்கு நீங்கள் மெதுவாகி உணர வேண்டியதில்லை — பார்வையைப் பற்றி தெளிவாக காரணம் சொல்ல வேண்டும்.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">When behaviour puzzles you, ask "what would have to be true for this behaviour to make sense?" — it forces a perspective shift even under time pressure.</span><span class="ta">நடத்தை உங்களை குழப்பும்போது, "இந்த நடத்தை அர்த்தமுள்ளதாக இருக்க என்ன உண்மையாக இருக்க வேண்டும்?" என்று கேளுங்கள் — நேர அழுத்தத்தில் கூட இது ஒரு பார்வை மாற்றத்தை கட்டாயப்படுத்துகிறது.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">2. Emotional Empathy</span><span class="ta">2. உணர்ச்சி பரிவு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it looks like</span><span class="ta">இது எப்படி இருக்கும்</span></h5>
+        <p><span class="en">Genuinely feeling a pang of the disappointment a student feels after working hard and still not passing — not performing sympathy, but actually resonating with it briefly.</span><span class="ta">கடினமாக உழைத்தும் தேர்ச்சி பெறாத ஒரு மாணவர் உணரும் ஏமாற்றத்தின் ஒரு வலியை உண்மையிலேயே உணருதல் — அனுதாபத்தை நடிக்காமல், உண்மையில் சுருக்கமாக அதனுடன் எதிரொலிக்கிறது.</span></p>
+        <h5><span class="en">Where it's essential</span><span class="ta">இது எங்கு அத்தியாவசியமானது</span></h5>
+        <p><span class="en">Students can tell the difference between a teacher who genuinely resonates and one who is only going through the motions of care — this is what makes a student feel truly seen.</span><span class="ta">உண்மையிலேயே எதிரொலிக்கும் ஒரு ஆசிரியருக்கும் அக்கறையின் அசைவுகளை மட்டும் செய்யும் ஒருவருக்கும் இடையிலான வேறுபாட்டை மாணவர்களால் சொல்ல முடியும் — இதுவே ஒரு மாணவரை உண்மையிலேயே பார்க்கப்பட்டதாக உணர வைக்கிறது.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">Be careful not to let this become the whole response — feel it briefly, then move toward the third type, compassionate empathy, so feeling turns into help.</span><span class="ta">இது முழு பதிலாக மாறாமல் கவனமாக இருங்கள் — சுருக்கமாக அதை உணருங்கள், பிறகு மூன்றாவது வகையான கருணை பரிவை நோக்கி நகருங்கள், அதனால் உணர்வு உதவியாக மாறும்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">3. Compassionate Empathy</span><span class="ta">3. கருணை பரிவு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it looks like</span><span class="ta">இது எப்படி இருக்கும்</span></h5>
+        <p><span class="en">Understanding and feeling a struggling student's difficulty, and then actually adjusting your teaching, offering extra support, or connecting them with the right help — turning insight into action.</span><span class="ta">சிரமப்படும் ஒரு மாணவரின் சிரமத்தை புரிந்துகொண்டு உணர்ந்து, பிறகு உண்மையில் உங்கள் கற்பித்தலை சரிசெய்தல், கூடுதல் ஆதரவு வழங்குதல், அல்லது சரியான உதவியுடன் அவர்களை இணைத்தல் — நுண்ணறிவை செயலாக மாற்றுதல்.</span></p>
+        <h5><span class="en">Where it's essential</span><span class="ta">இது எங்கு அத்தியாவசியமானது</span></h5>
+        <p><span class="en">This is the type that actually changes a student's outcome — understanding and feeling alone, without this final step, can feel meaningful to the teacher but changes nothing for the student.</span><span class="ta">இது ஒரு மாணவரின் விளைவை உண்மையில் மாற்றும் வகை — இந்த இறுதி படி இல்லாமல் புரிதலும் உணர்வும் மட்டும், ஆசிரியருக்கு அர்த்தமுள்ளதாக உணரப்படலாம் ஆனால் மாணவருக்கு எதையும் மாற்றாது.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">After feeling empathy for a student, always ask yourself one closing question: "What is one small, concrete thing I can actually do about this?"</span><span class="ta">ஒரு மாணவருக்காக பரிவு உணர்ந்த பிறகு, எப்போதும் உங்களை ஒரு இறுதி கேள்வி கேளுங்கள்: "இதைப் பற்றி நான் உண்மையில் செய்யக்கூடிய ஒரு சிறிய, உறுதியான விஷயம் என்ன?"</span></p>
+      </div>
+    </details>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 1 of 3</span><span class="ta">சிந்தனை · 1/3</span></div>
+      <h4><span class="en">Which of the three types of empathy comes most naturally to you, and which do you tend to skip?</span><span class="ta">மூன்று வகையான பரிவில் எது உங்களுக்கு இயல்பாக வருகிறது, எதை நீங்கள் தவிர்க்க முனைகிறீர்கள்?</span></h4>
+      <textarea name="r1" placeholder="Write a few lines here — this stays on your screen only, for your own reference."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <div class="s-label"><div class="s-num">2</div><h2 class="display"><span class="en">Building Rapport, One Small Habit at a Time</span><span class="ta">ஒரு நேரத்தில் ஒரு சிறிய பழக்கத்துடன் நல்லுறவை உருவாக்குதல்</span></h2></div>
+    <p class="intro">
+      <span class="en">Rapport isn't built in one grand gesture — it's built in dozens of small, consistent, professional moments that accumulate into trust over a term. These four habits are deliberately small enough to sustain every single day.</span>
+      <span class="ta">நல்லுறவு ஒரு பெரிய சைகையில் உருவாகாது — இது ஒரு கால அளவில் நம்பிக்கையாக குவியும் டஜன் கணக்கான சிறிய, நிலையான, தொழில்முறை தருணங்களில் உருவாகிறது. இந்த நான்கு பழக்கங்கள், ஒவ்வொரு நாளும் தொடர வேண்டுமென்றே போதுமான அளவு சிறியவை.</span>
+    </p>
+
+    <ul class="steps">
+      <li><h4><span class="en">Greet every student by name at the door</span><span class="ta">ஒவ்வொரு மாணவரையும் வாசலில் பெயரால் வாழ்த்துங்கள்</span></h4><p><span class="en">Takes seconds, and signals that each student is noticed as an individual before the lesson even begins.</span><span class="ta">சில விநாடிகள் ஆகும், பாடம் தொடங்குவதற்கு முன்பே ஒவ்வொரு மாணவரும் ஒரு தனிநபராக கவனிக்கப்படுகிறார் என்பதை தெரிவிக்கிறது.</span></p></li>
+      <li><h4><span class="en">Remember one non-academic detail per student</span><span class="ta">ஒரு மாணவருக்கு ஒரு கல்வி சாராத விவரத்தை நினைவில் வையுங்கள்</span></h4><p><span class="en">A sport they play, a sibling's name, a hobby — asking about it occasionally shows you see them beyond their grades.</span><span class="ta">அவர்கள் விளையாடும் ஒரு விளையாட்டு, ஒரு உடன்பிறப்பின் பெயர், ஒரு பொழுதுபோக்கு — இடையிடையே அதைப் பற்றி கேட்பது அவர்களை மதிப்பெண்களுக்கு அப்பால் நீங்கள் பார்க்கிறீர்கள் என்பதை காட்டுகிறது.</span></p></li>
+      <li><h4><span class="en">Follow through on small promises</span><span class="ta">சிறிய வாக்குறுதிகளை நிறைவேற்றுங்கள்</span></h4><p><span class="en">If you say you'll check something and get back to a student tomorrow, do it — this single habit builds more trust than any single grand gesture.</span><span class="ta">நீங்கள் ஏதாவது சரிபார்த்து நாளை ஒரு மாணவரிடம் திரும்பி வருவேன் என்று சொன்னால், அதை செய்யுங்கள் — இந்த ஒரு பழக்கம் எந்த ஒரு பெரிய சைகையை விடவும் அதிக நம்பிக்கையை உருவாக்குகிறது.</span></p></li>
+      <li><h4><span class="en">Give specific, genuine praise — not generic praise</span><span class="ta">பொதுவான பாராட்டு அல்ல, குறிப்பிட்ட, உண்மையான பாராட்டு கொடுங்கள்</span></h4><p><span class="en">"Good job" fades quickly. "The way you explained that to your group was really clear" is specific enough to actually land and be remembered.</span><span class="ta">"நல்லது" விரைவாக மறைந்துவிடும். "நீங்கள் அதை உங்கள் குழுவிற்கு விளக்கிய விதம் மிகவும் தெளிவாக இருந்தது" என்பது உண்மையில் சேர்ந்து நினைவில் இருக்கும் அளவுக்கு குறிப்பிட்டது.</span></p></li>
+    </ul>
+
+    <div class="callout">
+      <div class="display"><span class="en">The professional boundary</span><span class="ta">தொழில்முறை எல்லை</span></div>
+      <p>
+        <span class="en">Warm rapport and professional distance aren't opposites — the strongest teacher-student relationships hold both at once. Rapport means a student trusts you and feels safe; it never means blurring the line between teacher and friend, or making a student feel singled out from their peers or their family. When in doubt, keep interactions visible, group-oriented, and school-policy compliant.</span>
+        <span class="ta">அன்பான நல்லுறவும் தொழில்முறை தூரமும் எதிரெதிரானவை அல்ல — வலிமையான ஆசிரியர்-மாணவர் உறவுகள் இரண்டையும் ஒரே நேரத்தில் வைத்திருக்கின்றன. நல்லுறவு என்பது ஒரு மாணவர் உங்களை நம்பி பாதுகாப்பாக உணர்வது; இது ஆசிரியருக்கும் நண்பருக்கும் இடையிலான கோட்டை மங்கச் செய்வது அல்லது ஒரு மாணவரை அவரது சகாக்கள் அல்லது குடும்பத்திலிருந்து தனித்து உணர வைப்பது அல்ல. சந்தேகம் இருந்தால், தொடர்புகளை தெரியக்கூடியதாகவும், குழு சார்ந்ததாகவும், பள்ளி கொள்கைக்கு இணங்கியதாகவும் வைத்திருங்கள்.</span>
+      </p>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 2 of 3</span><span class="ta">சிந்தனை · 2/3</span></div>
+      <h4><span class="en">Which of the four rapport habits do you already do consistently, and which one will you add this week?</span><span class="ta">நான்கு நல்லுறவு பழக்கங்களில் எதை நீங்கள் ஏற்கனவே தொடர்ந்து செய்கிறீர்கள், இந்த வாரம் எதை சேர்ப்பீர்கள்?</span></h4>
+      <textarea name="r2" placeholder="Write a few lines here — this stays on your screen only, for your own reference."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <div class="s-label"><div class="s-num">3</div><h2 class="display"><span class="en">How Different Students Feel Valued</span><span class="ta">வெவ்வேறு மாணவர்கள் எப்படி மதிக்கப்படுவதாக உணர்கிறார்கள்</span></h2></div>
+    <p class="intro">
+      <span class="en">Not every student registers care the same way. One notices verbal encouragement most; another notices when you make time for them; another notices practical help. Recognising which register matters most to a given student makes your existing effort land harder, without spending any more time.</span>
+      <span class="ta">ஒவ்வொரு மாணவரும் அக்கறையை ஒரே விதமாக பதிவு செய்வதில்லை. ஒருவர் வாய்மொழி ஊக்கத்தை அதிகம் கவனிக்கிறார்; மற்றொருவர் நீங்கள் அவர்களுக்காக நேரம் ஒதுக்கும்போது கவனிக்கிறார்; மற்றொருவர் நடைமுறை உதவியை கவனிக்கிறார். ஒரு குறிப்பிட்ட மாணவருக்கு எந்த பதிவு அதிகம் முக்கியம் என்பதை அடையாளம் காண்பது, அதிக நேரம் செலவிடாமல் உங்கள் ஏற்கனவே உள்ள முயற்சி அதிகம் சேரும்படி செய்கிறது.</span>
+    </p>
+
+    <div class="skill-grid">
+      <div class="skill-card"><div class="sk-num">01</div><h4><span class="en">Words of Affirmation</span><span class="ta">உறுதிப்படுத்தும் வார்த்தைகள்</span></h4><p><span class="en">Specific verbal praise and encouragement land especially deeply for this student.</span><span class="ta">குறிப்பிட்ட வாய்மொழி பாராட்டும் ஊக்கமும் இந்த மாணவருக்கு குறிப்பாக ஆழமாக சேரும்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">02</div><h4><span class="en">Quality Attention</span><span class="ta">தரமான கவனம்</span></h4><p><span class="en">A few minutes of undistracted, focused conversation means more to this student than any words.</span><span class="ta">சில நிமிடங்கள் கவனம் சிதறாத, கவனம் செலுத்தும் உரையாடல் இந்த மாணவருக்கு எந்த வார்த்தைகளையும் விட அதிகம் அர்த்தமுள்ளதாக இருக்கும்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">03</div><h4><span class="en">Acts of Support</span><span class="ta">ஆதரவு செயல்கள்</span></h4><p><span class="en">Practical help — extra explanation, staying back briefly, checking in on a hard day — speaks loudest to this student.</span><span class="ta">நடைமுறை உதவி — கூடுதல் விளக்கம், சுருக்கமாக பின்தங்குதல், ஒரு கடினமான நாளில் சரிபார்த்தல் — இந்த மாணவருக்கு மிக உரக்க பேசுகிறது.</span></p></div>
+      <div class="skill-card"><div class="sk-num">04</div><h4><span class="en">Recognition</span><span class="ta">அங்கீகாரம்</span></h4><p><span class="en">Being noticed publicly for effort — not just results — matters most to this student.</span><span class="ta">முடிவுகளுக்கு மட்டும் அல்ல, முயற்சிக்கும் பொதுவில் கவனிக்கப்படுவது இந்த மாணவருக்கு மிக முக்கியமானது.</span></p></div>
+    </div>
+
+    <div class="assess-card">
+      <h3><span class="en">Check Your Communication &amp; Relationship Scores</span><span class="ta">உங்கள் தொடர்பு &amp; உறவு மதிப்பெண்களை சரிபார்க்கவும்</span></h3>
+      <p><span class="en">Your self-assessment's relevant dimensions can help you see your own natural style of showing care — useful context before you start reading it in your students.</span><span class="ta">உங்கள் மாணவர்களில் அதை படிக்கத் தொடங்குவதற்கு முன், அக்கறையை காட்டும் உங்கள் சொந்த இயல்பான பாணியை பார்க்க உங்கள் சுய மதிப்பீட்டின் தொடர்புடைய பரிமாணங்கள் உதவும்.</span></p>
+      <a class="btn btn-primary" href="https://somasundaramntlifecoach-ux.github.io/teacher/landing.html" target="_blank" rel="noopener"><span class="en">Go to Self-Assessment →</span><span class="ta">சுய மதிப்பீட்டிற்கு செல்லுங்கள் →</span></a>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 3 of 3</span><span class="ta">சிந்தனை · 3/3</span></div>
+      <h4><span class="en">Pick one student. Which of the four ways above do you think matters most to them, and how could you show it this week?</span><span class="ta">ஒரு மாணவரை தேர்ந்தெடுங்கள். மேலே உள்ள நான்கு வழிகளில் எது அவர்களுக்கு மிக முக்கியமானது என்று நினைக்கிறீர்கள், இந்த வாரம் அதை எப்படி காட்டலாம்?</span></h4>
+      <textarea name="r3" placeholder="This becomes a small, specific action for this week."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- TAKEAWAYS -->
+  <section>
+    <div class="s-label"><div class="s-num">✓</div><h2 class="display"><span class="en">Module 6 Takeaways</span><span class="ta">தொகுதி 6 சுருக்கம்</span></h2></div>
+    <ul class="takeaway-list">
+      <li><span class="mk">1</span><span><span class="en">Empathy has three parts — cognitive, emotional, and compassionate — and only compassionate empathy turns understanding and feeling into actual help.</span><span class="ta">பரிவுக்கு மூன்று பகுதிகள் உள்ளன — அறிவாற்றல், உணர்ச்சி, கருணை — கருணை பரிவு மட்டுமே புரிதலையும் உணர்வையும் உண்மையான உதவியாக மாற்றுகிறது.</span></span></li>
+      <li><span class="mk">2</span><span><span class="en">Rapport is built from small, consistent, professional habits — not one grand gesture — and always alongside a clear professional boundary.</span><span class="ta">நல்லுறவு ஒரு பெரிய சைகையிலிருந்து அல்ல, சிறிய, நிலையான, தொழில்முறை பழக்கங்களிலிருந்து உருவாகிறது — எப்போதும் ஒரு தெளிவான தொழில்முறை எல்லையுடன்.</span></span></li>
+      <li><span class="mk">3</span><span><span class="en">Different students register care differently — words, attention, support, or recognition — and noticing which one matters most makes your existing effort go further.</span><span class="ta">வெவ்வேறு மாணவர்கள் அக்கறையை வெவ்வேறு விதமாக பதிவு செய்கிறார்கள் — வார்த்தைகள், கவனம், ஆதரவு, அல்லது அங்கீகாரம் — எது மிக முக்கியம் என்பதை கவனிப்பது உங்கள் ஏற்கனவே உள்ள முயற்சியை மேலும் தூரம் செல்ல வைக்கிறது.</span></span></li>
+    </ul>
+  </section>
+
+    <div class="save-block">
+    <p><span class="en">Save your reflections from this module to your learning record.</span><span class="ta">இந்த தொகுதியிலிருந்து உங்கள் சிந்தனைகளை உங்கள் கற்றல் பதிவில் சேமிக்கவும்.</span></p>
+    <button class="btn btn-primary" onclick="saveReflections()"><span class="en">Save My Reflections</span><span class="ta">என் சிந்தனைகளை சேமிக்கவும்</span></button>
+    <div class="save-status" id="saveStatus"></div>
+  </div>
+
+  <div class="module-nav">
+    <a class="nav-link" href="module5-content.html">
+      <span class="lbl"><span class="en">← Back to</span><span class="ta">← திரும்ப</span></span>
+      <span class="ttl"><span class="en">Module 5 · Decision-Making &amp; Problem-Solving</span><span class="ta">தொகுதி 5 · முடிவெடுத்தல் &amp; பிரச்சனை தீர்வு</span></span>
+    </a>
+    <a class="nav-link next" href="module7-content.html">
+      <span class="lbl"><span class="en">Up Next</span><span class="ta">அடுத்தது</span></span>
+      <span class="ttl"><span class="en">Module 7 · Positive Discipline in Practice →</span><span class="ta">தொகுதி 7 · நேர்மறை ஒழுக்கம் நடைமுறையில் →</span></span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="motto"><span class="en">"God is always with u"</span><span class="ta">"கடவுள் எப்போதும் உங்களுடன் இருக்கிறார்"</span></div>
+  <div><span class="en">NT Somasundaram · Certified Master Trainer, Career Consultant &amp; Life Skills Educator</span><span class="ta">என்.டி. சோமசுந்தரம் · சான்றளிக்கப்பட்ட முதன்மை பயிற்சியாளர் &amp; வாழ்க்கை திறன் கல்வியாளர்</span></div>
+  <div class="contact" style="margin-top:8px;">
+    <a href="mailto:somasundaramnt.lifecoach@gmail.com">somasundaramnt.lifecoach@gmail.com</a> &nbsp;·&nbsp;
+    <a href="tel:+919843702244">+91 98437 02244</a>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  document.body.classList.toggle('show-ta', lang==='ta');
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.documentElement.lang = lang;
+}
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progressFill').style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+});
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrZjQ8oDwiKegl3pI1qAG1PVtZ0pFAlb3GbVvK7sPbzjIprs1Q9isXPoisLDjQnfpgng/exec';
+const MODULE_ID = 'Module 6 - Empathy & Relationships';
+
+function loadLearnerInfo(){
+  const n = document.getElementById('learnerName');
+  const em = document.getElementById('learnerEmail');
+  if(n) n.value = localStorage.getItem('lsm_name') || '';
+  if(em) em.value = localStorage.getItem('lsm_email') || '';
+}
+loadLearnerInfo();
+
+function saveReflections(){
+  const nameEl = document.getElementById('learnerName');
+  const emailEl = document.getElementById('learnerEmail');
+  const name = nameEl ? nameEl.value.trim() : '';
+  const email = emailEl ? emailEl.value.trim() : '';
+  if(!name){ alert('Please enter your name before saving.'); return; }
+  localStorage.setItem('lsm_name', name);
+  localStorage.setItem('lsm_email', email);
+  const responses = {};
+  document.querySelectorAll('.reflect textarea[name], .reflect input[name]').forEach(function(el){
+    responses[el.name] = el.value;
+  });
+  const payload = encodeURIComponent(JSON.stringify(responses));
+  const url = APPS_SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&module=' + encodeURIComponent(MODULE_ID) + '&responses=' + payload;
+  const img = new Image();
+  img.src = url;
+  const status = document.getElementById('saveStatus');
+  if(status){
+    status.textContent = 'Saved \u2713';
+    setTimeout(function(){ status.textContent=''; }, 4000);
+  }
+}
+
+</script>
+
+</body>
+</html>

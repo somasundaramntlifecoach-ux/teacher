@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1: Foundations — Life Skills Mastery for Educators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16333F; --ink-soft:#2A4B58;
+    --marigold:#E5A337; --marigold-deep:#C77F1F;
+    --sage:#7C9A80; --sage-deep:#5E7C63;
+    --paper:#F6F2E9; --paper-dim:#EDE6D6;
+    --charcoal:#26251F; --white:#FFFEFB;
+    --line:rgba(22,51,63,0.14);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--charcoal);font-family:'Poppins',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .en{display:inline;} .ta{display:none;}
+  body.show-ta .en{display:none;} body.show-ta .ta{display:inline;}
+  body.show-ta h1,body.show-ta h2,body.show-ta h3,body.show-ta h4,body.show-ta p,body.show-ta li,body.show-ta span,body.show-ta a,body.show-ta button,body.show-ta label,body.show-ta textarea::placeholder{font-family:'Noto Sans Tamil',sans-serif;}
+  .display{font-family:'Fraunces',serif;}
+  body.show-ta .display{font-family:'Noto Sans Tamil',sans-serif;font-weight:700;}
+  a{color:inherit;} img,svg{display:block;max-width:100%;}
+
+  /* Top bar + progress */
+  .topbar{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--white);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .topbar .brand{font-size:13.5px;opacity:.9;display:flex;align-items:center;gap:8px;}
+  .brand-dot{width:7px;height:7px;border-radius:50%;background:var(--marigold);flex:none;}
+  .lang-toggle{display:flex;background:rgba(255,255,255,0.1);border-radius:999px;padding:3px;gap:2px;}
+  .lang-toggle button{border:none;background:transparent;color:var(--white);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;}
+  .lang-toggle button.active{background:var(--marigold);color:var(--ink);}
+  .progress-track{height:4px;background:rgba(255,255,255,0.15);}
+  .progress-fill{height:100%;width:0%;background:var(--marigold);transition:width .15s linear;}
+  /* Learner info + save bar */
+  .learner-bar{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--paper-dim);border-bottom:1px solid var(--line);}
+  .learner-field{flex:1;min-width:160px;}
+  .learner-field label{display:block;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:4px;}
+  .learner-field input{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:'Poppins',sans-serif;font-size:13.5px;background:var(--white);color:var(--charcoal);box-sizing:border-box;}
+  body.show-ta .learner-field input{font-family:'Noto Sans Tamil',sans-serif;}
+  .save-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px;margin:30px 0;text-align:center;}
+  .save-block p{font-size:13.5px;color:var(--ink-soft);margin:0 0 14px;}
+  .save-status{margin-top:10px;font-size:13.5px;color:var(--sage-deep);font-weight:600;min-height:18px;}
+
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  section{padding:56px 0;}
+  .rule{border:none;border-top:1px solid var(--line);margin:0;}
+
+  /* Header block */
+  .module-header{padding:56px 0 40px;}
+  .module-tag{display:inline-block;background:var(--marigold);color:var(--ink);font-size:12.5px;font-weight:700;letter-spacing:.05em;padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+  h1{font-size:clamp(28px,4.4vw,42px);font-weight:600;line-height:1.14;margin:0 0 16px;color:var(--ink);}
+  .module-header p.lede{font-size:16.5px;color:var(--ink-soft);max-width:56ch;margin:0 0 26px;}
+  .meta-row{display:flex;gap:22px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-soft);}
+  .meta-row span{display:flex;align-items:center;gap:6px;}
+  .meta-row .dot{width:5px;height:5px;border-radius:50%;background:var(--sage);}
+
+  /* Section labels */
+  .s-label{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .s-num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:14px;}
+  body.show-ta .s-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .s-label h2{margin:0;font-size:clamp(21px,3vw,27px);font-weight:600;color:var(--ink);}
+  section p{font-size:15.5px;color:var(--charcoal);}
+  section p.intro{color:var(--ink-soft);font-size:16px;}
+
+  /* Skill cards grid */
+  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 8px;}
+  .skill-card{border:1px solid var(--line);background:var(--white);border-radius:var(--radius);padding:18px 18px;}
+  .skill-card .sk-num{font-family:'Fraunces',serif;font-size:12.5px;color:var(--marigold-deep);font-weight:700;letter-spacing:.03em;margin-bottom:8px;}
+  body.show-ta .skill-card .sk-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .skill-card h4{margin:0 0 6px;font-size:15.5px;color:var(--ink);}
+  .skill-card p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+
+  .pair-head{display:flex;align-items:center;gap:10px;margin:36px 0 16px;}
+  .pair-head:first-of-type{margin-top:26px;}
+  .pair-head .pair-tag{flex:none;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white);background:var(--sage-deep);padding:5px 12px;border-radius:999px;}
+  .pair-head span.pair-title{font-size:13.5px;color:var(--ink-soft);font-style:italic;}
+  body.show-ta .pair-head span.pair-title{font-style:normal;}
+  .topic-block{margin-bottom:26px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+  .topic-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .topic-head{display:flex;align-items:baseline;gap:12px;margin-bottom:10px;}
+  .t-index{flex:none;font-family:'Fraunces',serif;color:var(--marigold-deep);font-weight:700;font-size:14px;}
+  body.show-ta .t-index{font-family:'Noto Sans Tamil',sans-serif;}
+  .topic-head h3{margin:0;font-size:17.5px;color:var(--ink);}
+  .topic-block > p{margin:0 0 4px;font-size:15px;color:var(--charcoal);}
+  .example{background:var(--paper-dim);border-radius:10px;padding:12px 16px;margin-top:12px;font-size:14px;color:var(--ink-soft);}
+  .example .ex-tag{font-weight:700;color:var(--sage-deep);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;margin-right:6px;}
+
+  /* Callout / mirror principle */
+  .callout{background:var(--ink);color:var(--paper);border-radius:18px;padding:34px 30px;margin:30px 0;}
+  .callout .display{font-size:20px;color:var(--white);margin:0 0 12px;}
+  .callout p{color:rgba(246,242,233,0.85);margin:0;font-size:15.5px;}
+  .callout.warm{background:var(--paper-dim);color:var(--charcoal);border:1px solid var(--line);}
+  .callout.warm .display{color:var(--ink);}
+  .callout.warm p{color:var(--ink-soft);}
+
+  blockquote{margin:26px 0;padding:2px 0 2px 22px;border-left:3px solid var(--marigold);font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--ink);}
+  body.show-ta blockquote{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;font-weight:500;}
+
+  /* Reflection box */
+  .reflect{background:var(--white);border:1.5px dashed var(--sage);border-radius:var(--radius);padding:24px 24px 20px;margin:26px 0;}
+  .reflect .r-tag{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .reflect .r-tag::before{content:'✎';font-size:14px;}
+  .reflect h4{margin:0 0 14px;font-size:16px;color:var(--ink);font-weight:600;}
+  .reflect textarea{width:100%;min-height:84px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:'Poppins',sans-serif;font-size:14.5px;color:var(--charcoal);background:var(--paper);resize:vertical;}
+  body.show-ta .reflect textarea{font-family:'Noto Sans Tamil',sans-serif;}
+  .reflect textarea:focus{outline:2px solid var(--sage);outline-offset:1px;}
+
+  /* Activity / assessment CTA */
+  .assess-card{background:var(--sage);color:var(--white);border-radius:20px;padding:36px 30px;margin:34px 0;text-align:center;}
+  .assess-card h3{margin:0 0 10px;font-size:22px;color:var(--white);}
+  .assess-card p{color:rgba(255,255,255,0.9);max-width:48ch;margin:0 auto 22px;font-size:15px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14.5px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease;}
+  .btn-primary{background:var(--ink);color:var(--white);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
+  .assess-card .btn-primary{background:var(--white);color:var(--sage-deep);}
+
+  /* Takeaways */
+  .takeaway-list{list-style:none;margin:22px 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .takeaway-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .takeaway-list li:last-child{border-bottom:none;}
+  .takeaway-list .mk{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(229,163,55,0.16);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:2px;}
+
+  /* Nav footer */
+  .module-nav{display:flex;justify-content:space-between;align-items:center;padding:40px 0 70px;gap:16px;flex-wrap:wrap;}
+  .nav-link{display:flex;flex-direction:column;text-decoration:none;padding:16px 20px;border-radius:14px;border:1px solid var(--line);background:var(--white);min-width:220px;}
+  .nav-link .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:4px;}
+  .nav-link .ttl{font-size:15.5px;font-weight:600;color:var(--ink);}
+  .nav-link.next{text-align:right;}
+
+  /* Deep-dive expandable detail blocks */
+  .deepdive-intro{margin:34px 0 16px;font-size:13.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);}
+  .deep{border:1px solid var(--line);border-radius:var(--radius);background:var(--white);margin-bottom:12px;overflow:hidden;}
+  .deep summary{cursor:pointer;padding:16px 20px;font-weight:600;font-size:15.5px;color:var(--ink);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .deep summary::-webkit-details-marker{display:none;}
+  .deep summary .plus{flex:none;width:26px;height:26px;border-radius:50%;background:var(--paper-dim);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:17px;transition:transform .2s ease;}
+  .deep[open] summary .plus{transform:rotate(45deg);}
+  .deep-body{padding:2px 20px 22px;border-top:1px solid var(--line);}
+  .deep-body h5{margin:16px 0 6px;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--sage-deep);font-weight:700;}
+  .deep-body h5:first-child{margin-top:16px;}
+  .deep-body p{margin:0 0 4px;font-size:14.5px;color:var(--ink-soft);}
+
+  footer{padding:32px 24px 50px;text-align:center;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);}
+  footer .motto{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);margin-bottom:6px;font-size:14.5px;}
+  body.show-ta footer .motto{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;}
+  footer .contact a{text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media print{
+    .topbar,.progress-track,.module-nav,.lang-toggle{display:none !important;}
+    body{background:#fff;}
+    .deep{break-inside:avoid;}
+  }
+  @media (max-width:640px){
+    .skill-grid{grid-template-columns:1fr;}
+    .module-nav{flex-direction:column;align-items:stretch;}
+    .nav-link.next{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="brand-dot"></span>
+    <span class="en">Life Skills Mastery for Educators</span>
+    <span class="ta">ஆசிரியர்களுக்கான வாழ்க்கை திறன் தேர்ச்சி</span>
+  </div>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('en')">English</button>
+    <button onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="learner-bar">
+  <div class="learner-field">
+    <label><span class="en">Your Name</span><span class="ta">உங்கள் பெயர்</span></label>
+    <input type="text" id="learnerName" placeholder="e.g., Priya Kumar">
+  </div>
+  <div class="learner-field">
+    <label><span class="en">Your Email (optional)</span><span class="ta">உங்கள் மின்னஞ்சல் (விருப்பம்)</span></label>
+    <input type="text" id="learnerEmail" placeholder="you@example.com">
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="module-header">
+    <span class="module-tag"><span class="en">MODULE 1 OF 10</span><span class="ta">தொகுதி 1 / 10</span></span>
+    <h1 class="display"><span class="en">Foundations</span><span class="ta">அடிப்படைகள்</span></h1>
+    <p class="lede">
+      <span class="en">Before you guide students through life skills, take an honest look at where you stand yourself. This module gives you the framework, the reasoning, and a starting point you can return to throughout the course.</span>
+      <span class="ta">மாணவர்களுக்கு வாழ்க்கை திறன்களை வழிநடத்தும் முன், நீங்கள் எங்கு நிற்கிறீர்கள் என்பதை நேர்மையாக பாருங்கள். இந்த தொகுதி உங்களுக்கு கட்டமைப்பு, காரணம் மற்றும் படிப்பு முழுவதும் நீங்கள் திரும்பிச் செல்லக்கூடிய ஒரு தொடக்கப் புள்ளியை தருகிறது.</span>
+    </p>
+    <div class="meta-row">
+      <span><span class="dot"></span><span class="en">Reading time: ~28 min</span><span class="ta">படிக்க: ~28 நிமிடம்</span></span>
+      <span><span class="dot"></span><span class="en">3 reflection exercises</span><span class="ta">3 சிந்தனை பயிற்சிகள்</span></span>
+      <span><span class="dot"></span><span class="en">1 self-assessment</span><span class="ta">1 சுய மதிப்பீடு</span></span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <div class="s-label"><div class="s-num">1</div><h2 class="display"><span class="en">What Are Life Skills?</span><span class="ta">வாழ்க்கை திறன்கள் என்றால் என்ன?</span></h2></div>
+    <p class="intro">
+      <span class="en">The World Health Organization defines life skills as the abilities for adaptive and positive behaviour that enable people to deal effectively with the demands and challenges of everyday life. They aren't academic subjects — they're the inner operating system a person uses in every classroom, home, and relationship.</span>
+      <span class="ta">உலக சுகாதார அமைப்பு (WHO) வாழ்க்கை திறன்களை, அன்றாட வாழ்க்கையின் தேவைகள் மற்றும் சவால்களை திறம்படச் சமாளிக்க மக்களுக்கு உதவும் தகவமைப்பு மற்றும் நேர்மறை நடத்தைக்கான திறன்கள் என வரையறுக்கிறது. இவை கல்வித் துறைகள் அல்ல — ஒவ்வொரு வகுப்பறையிலும், வீட்டிலும், உறவிலும் ஒருவர் பயன்படுத்தும் உள் இயங்குதளம்.</span>
+    </p>
+    <p>
+      <span class="en">WHO groups them into 10 core skills, organised as five complementary pairs. As a teacher, you already use several of these daily without naming them — this module gives you the vocabulary and the lens.</span>
+      <span class="ta">WHO இவற்றை 10 முக்கிய திறன்களாக, ஐந்து ஜோடி இணை திறன்களாக வகைப்படுத்துகிறது. ஆசிரியராக, நீங்கள் ஏற்கனவே இவற்றில் பலவற்றை பெயரிடாமல் தினமும் பயன்படுத்துகிறீர்கள் — இந்த தொகுதி உங்களுக்கு சொல்லடையையும் பார்வையையும் தருகிறது.</span>
+    </p>
+
+    <div class="skill-grid">
+      <div class="skill-card"><div class="sk-num">01 · 02</div><h4><span class="en">Self-Awareness &amp; Empathy</span><span class="ta">சுய-விழிப்பு &amp; பரிவு</span></h4><p><span class="en">Knowing your own character, needs and reactions; sensing what another person is feeling.</span><span class="ta">உங்கள் சுபாவம், தேவைகள், எதிர்வினைகளை அறிதல்; மற்றவரின் உணர்வை உணர்தல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">03 · 04</div><h4><span class="en">Critical &amp; Creative Thinking</span><span class="ta">விமர்சன &amp; படைப்பாற்றல் சிந்தனை</span></h4><p><span class="en">Analysing information objectively; responding to situations with flexibility and imagination.</span><span class="ta">தகவலை புறநிலையாக பகுப்பாய்வு செய்தல்; நெகிழ்வுத்தன்மையுடனும் கற்பனையுடனும் பதிலளித்தல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">05 · 06</div><h4><span class="en">Decision-Making &amp; Problem-Solving</span><span class="ta">முடிவெடுத்தல் &amp; பிரச்சனை தீர்வு</span></h4><p><span class="en">Choosing constructively among options; working through difficulties methodically.</span><span class="ta">தேர்வுகளிடையே ஆக்கபூர்வமாக தேர்ந்தெடுத்தல்; சிரமங்களை முறையாக தீர்த்தல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">07 · 08</div><h4><span class="en">Effective Communication &amp; Relationships</span><span class="ta">தொடர்பு &amp; உறவுகள்</span></h4><p><span class="en">Expressing yourself clearly; building and sustaining healthy connections with others.</span><span class="ta">உங்களை தெளிவாக வெளிப்படுத்துதல்; ஆரோக்கியமான உறவுகளை உருவாக்கி தொடர்தல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">09 · 10</div><h4><span class="en">Coping with Stress &amp; Emotions</span><span class="ta">மன அழுத்தம் &amp; உணர்ச்சிகளை சமாளித்தல்</span></h4><p><span class="en">Recognising pressure and regulating your response; managing emotions so they inform rather than control you.</span><span class="ta">அழுத்தத்தை அடையாளம் கண்டு உங்கள் பதிலை கட்டுப்படுத்துதல்; உணர்ச்சிகள் உங்களை கட்டுப்படுத்தாமல் வழிகாட்ட விடுதல்.</span></p></div>
+    </div>
+
+    <blockquote><span class="en">A teacher who names these ten skills in themselves can spot them — or their absence — in a classroom within minutes.</span><span class="ta">தன்னிடம் இந்த பத்து திறன்களையும் அடையாளம் காணும் ஆசிரியரால், வகுப்பறையில் அவற்றை — அல்லது அவற்றின் இல்லாமையை — நிமிடங்களில் கண்டறிய முடியும்.</span></blockquote>
+
+    <div class="deepdive-intro"><span class="en">Explore each skill in depth</span><span class="ta">ஒவ்வொரு திறனையும் விரிவாக அறிக</span></div>
+
+    <details class="deep">
+      <summary><span><span class="en">1. Self-Awareness</span><span class="ta">1. சுய-விழிப்பு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Definition</span><span class="ta">வரையறை</span></h5>
+        <p><span class="en">Recognising your own character, values, emotions and habitual reactions as they arise — not after the fact, once the damage is done.</span><span class="ta">உங்கள் சுபாவம், மதிப்புகள், உணர்ச்சிகள், வழக்கமான எதிர்வினைகளை அவை எழும்போதே அறிதல் — பாதிப்பு ஏற்பட்ட பிறகு அல்ல.</span></p>
+        <h5><span class="en">In the classroom</span><span class="ta">வகுப்பறையில்</span></h5>
+        <p><span class="en">A teacher notices irritation rising in their chest before it turns into a sharp comment aimed at a student who is quietly texting under the desk.</span><span class="ta">மேசைக்கு அடியில் அமைதியாக செய்தி அனுப்பும் மாணவரிடம் கடுமையான கருத்து சொல்வதற்கு முன், மார்பில் எரிச்சல் எழுவதை ஒரு ஆசிரியர் கவனிக்கிறார்.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">Each evening, note one line: the strongest emotion you felt at school today, and what triggered it. Patterns appear within two weeks.</span><span class="ta">ஒவ்வொரு மாலையும் ஒரு வரி குறிப்பிடுங்கள்: இன்று பள்ளியில் நீங்கள் உணர்ந்த மிக வலிமையான உணர்ச்சி, அதை தூண்டியது என்ன. இரண்டு வாரங்களில் ஒரு முறை தெரிய வரும்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">2. Empathy</span><span class="ta">2. பரிவு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Definition</span><span class="ta">வரையறை</span></h5>
+        <p><span class="en">Sensing and understanding what another person is feeling from their own perspective — without necessarily agreeing with their behaviour.</span><span class="ta">மற்றவர் உணர்வதை அவரது சொந்த பார்வையிலிருந்து உணர்ந்து புரிந்துகொள்வது — அவரது நடத்தையை ஏற்றுக்கொள்ள வேண்டிய அவசியமின்றி.</span></p>
+        <h5><span class="en">In the classroom</span><span class="ta">வகுப்பறையில்</span></h5>
+        <p><span class="en">A usually talkative student has gone quiet and withdrawn all week. Empathy asks what might be happening at home, rather than assuming simple defiance.</span><span class="ta">வழக்கமாக பேசக்கூடிய ஒரு மாணவர் இந்த வாரம் முழுவதும் அமைதியாகவும் விலகியும் இருக்கிறார். வெறும் மறுப்பு என்று கருதுவதற்குப் பதிலாக, வீட்டில் என்ன நடக்கிறது என்று பரிவு கேட்கிறது.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">Before reacting to disruptive behaviour, silently ask yourself: "What might this student be feeling right now?"</span><span class="ta">தொந்தரவு தரும் நடத்தைக்கு எதிர்வினையாற்றுவதற்கு முன், அமைதியாக உங்களை கேளுங்கள்: "இந்த மாணவர் இப்போது என்ன உணரக்கூடும்?"</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">3. Critical Thinking</span><span class="ta">3. விமர்சன சிந்தனை</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Definition</span><span class="ta">வரையறை</span></h5>
+        <p><span class="en">Analysing information, assumptions and evidence objectively before drawing conclusions or taking action.</span><span class="ta">முடிவுகளை எடுப்பதற்கு அல்லது செயல்படுவதற்கு முன், தகவல், அனுமானங்கள், சான்றுகளை புறநிலையாக பகுப்பாய்வு செய்தல்.</span></p>
+        <h5><span class="en">In the classroom</span><span class="ta">வகுப்பறையில்</span></h5>
+        <p><span class="en">Instead of assuming a low test score means laziness, a critically-thinking teacher checks whether the material itself was actually taught clearly and understood.</span><span class="ta">குறைந்த தேர்வு மதிப்பெண் சோம்பேறித்தனம் என்று கருதுவதற்குப் பதிலாக, விமர்சன சிந்தனை கொண்ட ஆசிரியர் பாடம் தெளிவாக கற்பிக்கப்பட்டு புரிந்துகொள்ளப்பட்டதா என்று சரிபார்க்கிறார்.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">Before labelling any student behaviour, list at least two other possible explanations before settling on one.</span><span class="ta">எந்த மாணவர் நடத்தைக்கும் பெயரிடுவதற்கு முன், ஒன்றை முடிவு செய்வதற்கு முன் குறைந்தது இரண்டு பிற சாத்தியமான விளக்கங்களை பட்டியலிடுங்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">4. Creative Thinking</span><span class="ta">4. படைப்பாற்றல் சிந்தனை</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Definition</span><span class="ta">வரையறை</span></h5>
+        <p><span class="en">Responding to situations with flexibility and imagination — generating a new approach rather than reaching only for the standard one.</span><span class="ta">நிலைமைகளுக்கு நெகிழ்வுத்தன்மையுடனும் கற்பனையுடனும் பதிலளித்தல் — வழக்கமான அணுகுமுறையை மட்டும் அல்லாமல் புதிய அணுகுமுறையை உருவாக்குதல்.</span></p>
+        <h5><span class="en">In the classroom</span><span class="ta">வகுப்பறையில்</span></h5>
+        <p><span class="en">A planned explanation clearly isn't landing with a group. A creative teacher switches to a story, a diagram, or a quick group activity on the spot.</span><span class="ta">திட்டமிடப்பட்ட விளக்கம் ஒரு குழுவிற்கு புரியவில்லை என்பது தெளிவாகிறது. படைப்பாற்றல் கொண்ட ஆசிரியர் உடனடியாக ஒரு கதை, வரைபடம் அல்லது விரைவான குழு செயல்பாட்டிற்கு மாறுகிறார்.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">For your hardest topic to teach, keep a running list of three alternate ways to explain it, so you're never stuck with only one.</span><span class="ta">கற்பிக்க மிகவும் கடினமான உங்கள் பாடத்திற்கு, விளக்குவதற்கு மூன்று மாற்று வழிகளின் பட்டியலை வைத்திருங்கள், அதனால் நீங்கள் ஒரே வழியில் மட்டும் சிக்கிக்கொள்ள மாட்டீர்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">5. Decision-Making</span><span class="ta">5. முடிவெடுத்தல்</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Definition</span><span class="ta">வரையறை</span></h5>
+        <p><span class="en">Choosing constructively among competing options by weighing both short-term and long-term consequences.</span><span class="ta">குறுகிய கால மற்றும் நீண்ட கால விளைவுகளை நிறுத்திப் பார்த்து, போட்டியிடும் தேர்வுகளிடையே ஆக்கபூர்வமாக தேர்ந்தெடுத்தல்.</span></p>
+        <h5><span class="en">In the classroom</span><span class="ta">வகுப்பறையில்</span></h5>
+        <p><span class="en">A student talks back. Should you address it immediately in front of the class, or quietly afterward? Each choice has different consequences for the student and the group.</span><span class="ta">ஒரு மாணவர் பதிலுக்கு பேசுகிறார். வகுப்பிற்கு முன்னால் உடனடியாக அதை கையாள வேண்டுமா, அல்லது பிறகு அமைதியாகவா? ஒவ்வொரு தேர்வும் மாணவருக்கும் குழுவிற்கும் வெவ்வேறு விளைவுகளை ஏற்படுத்தும்.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">For decisions that repeat often, decide your default approach in advance, so you're not deciding from scratch while under stress.</span><span class="ta">அடிக்கடி மீண்டும் வரும் முடிவுகளுக்கு, முன்கூட்டியே உங்கள் இயல்பான அணுகுமுறையை முடிவு செய்யுங்கள், அதனால் அழுத்தத்தில் இருக்கும்போது புதிதாக முடிவெடுக்க வேண்டியதில்லை.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">6. Problem-Solving</span><span class="ta">6. பிரச்சனை தீர்வு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Definition</span><span class="ta">வரையறை</span></h5>
+        <p><span class="en">Working through a difficulty methodically: defining it clearly, generating options, choosing one, and reviewing what happened afterward.</span><span class="ta">ஒரு சிரமத்தை முறையாக தீர்த்தல்: அதை தெளிவாக வரையறுத்தல், தேர்வுகளை உருவாக்குதல், ஒன்றை தேர்ந்தெடுத்தல், பிறகு என்ன நடந்தது என்று மறுபரிசீலனை செய்தல்.</span></p>
+        <h5><span class="en">In the classroom</span><span class="ta">வகுப்பறையில்</span></h5>
+        <p><span class="en">A student is persistently late. Instead of only punishing, a problem-solving teacher investigates the root cause — transport, a home routine — and adjusts accordingly.</span><span class="ta">ஒரு மாணவர் தொடர்ந்து தாமதமாக வருகிறார். வெறுமனே தண்டிப்பதற்குப் பதிலாக, பிரச்சனை தீர்க்கும் ஆசிரியர் மூல காரணத்தை — போக்குவரத்து, வீட்டு வழக்கம் — ஆராய்ந்து அதற்கேற்ப சரிசெய்கிறார்.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">Use a simple four-question method: What's actually happening? What have I tried? What haven't I tried? What's one small next step?</span><span class="ta">ஒரு எளிய நான்கு-கேள்வி முறையை பயன்படுத்துங்கள்: உண்மையில் என்ன நடக்கிறது? நான் என்ன முயற்சி செய்தேன்? நான் என்ன முயற்சி செய்யவில்லை? அடுத்த சிறிய படி என்ன?</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">7. Effective Communication</span><span class="ta">7. திறமையான தொடர்பு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Definition</span><span class="ta">வரையறை</span></h5>
+        <p><span class="en">Expressing yourself clearly and listening actively, so that the message sent is actually the message received.</span><span class="ta">உங்களை தெளிவாக வெளிப்படுத்துவது மற்றும் சுறுசுறுப்பாக கேட்பது, அதனால் அனுப்பப்பட்ட செய்தி உண்மையில் பெறப்பட்ட செய்தியாக இருக்கும்.</span></p>
+        <h5><span class="en">In the classroom</span><span class="ta">வகுப்பறையில்</span></h5>
+        <p><span class="en">Giving instructions in short, sequenced steps rather than one long paragraph, then briefly checking that they landed.</span><span class="ta">ஒரு நீண்ட பத்தியாக அல்லாமல் குறுகிய, வரிசையான படிகளாக அறிவுறுத்தல்களை கொடுத்தல், பிறகு அவை புரிந்ததா என்று சுருக்கமாக சரிபார்த்தல்.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">After giving instructions, ask one student to repeat them back in their own words — it instantly reveals what actually landed.</span><span class="ta">அறிவுறுத்தல்களை கொடுத்த பிறகு, ஒரு மாணவரிடம் அவற்றை அவரது சொந்த வார்த்தைகளில் மீண்டும் சொல்லச் சொல்லுங்கள் — உண்மையில் என்ன புரிந்தது என்பதை உடனடியாக வெளிப்படுத்தும்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">8. Interpersonal Relationships</span><span class="ta">8. தனிநபர் உறவுகள்</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Definition</span><span class="ta">வரையறை</span></h5>
+        <p><span class="en">Building and sustaining healthy, trusting connections with students, colleagues and parents over time — not just in a single interaction.</span><span class="ta">மாணவர்கள், சக ஊழியர்கள், பெற்றோருடன் காலப்போக்கில் ஆரோக்கியமான, நம்பிக்கையான உறவுகளை உருவாக்கி தொடர்தல் — ஒரு தனி உரையாடலில் மட்டும் அல்ல.</span></p>
+        <h5><span class="en">In the classroom</span><span class="ta">வகுப்பறையில்</span></h5>
+        <p><span class="en">Greeting each student by name at the door every day — a small, consistent gesture that quietly builds rapport across a term.</span><span class="ta">ஒவ்வொரு நாளும் வாசலில் ஒவ்வொரு மாணவரையும் பெயரால் வாழ்த்துதல் — ஒரு கால அளவில் அமைதியாக நல்லுறவை உருவாக்கும் சிறிய, நிலையான சைகை.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">Pick the one student you have the least connection with, and have a single two-minute, non-academic conversation with them this week.</span><span class="ta">உங்களுக்கு மிகக் குறைவான தொடர்பு உள்ள ஒரு மாணவரை தேர்ந்தெடுத்து, இந்த வாரம் அவருடன் இரண்டு நிமிட கல்வி சாராத உரையாடலை நடத்துங்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">9. Coping with Stress</span><span class="ta">9. மன அழுத்தத்தை சமாளித்தல்</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Definition</span><span class="ta">வரையறை</span></h5>
+        <p><span class="en">Recognising pressure as it builds, and having a repeatable way to release it before it becomes overwhelming. (Module 3 covers this in full depth.)</span><span class="ta">அழுத்தம் அதிகரிக்கும்போது அதை அடையாளம் கண்டு, அது தாங்க முடியாததாக மாறுவதற்கு முன் அதை வெளியிட ஒரு திரும்பத் திரும்ப செய்யக்கூடிய வழியை வைத்திருத்தல். (தொகுதி 3 இதை முழுமையாக உள்ளடக்குகிறது.)</span></p>
+        <h5><span class="en">In the classroom</span><span class="ta">வகுப்பறையில்</span></h5>
+        <p><span class="en">Recognising that exam season raises tension for everyone, and deliberately building in short breathing pauses between back-to-back classes.</span><span class="ta">தேர்வு காலம் அனைவருக்கும் பதற்றத்தை அதிகரிக்கிறது என்பதை அறிந்து, தொடர்ச்சியான வகுப்புகளுக்கு இடையே குறுகிய சுவாச இடைவேளைகளை வேண்டுமென்றே அமைத்தல்.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">Identify your top personal stress signal, and one two-minute reset you can run between classes — Module 3 gives you a full toolkit for this.</span><span class="ta">உங்கள் முதன்மை தனிப்பட்ட மன அழுத்த அறிகுறியையும், வகுப்புகளுக்கு இடையே இயக்கக்கூடிய ஒரு இரண்டு நிமிட மறுசீரமைப்பையும் அடையாளம் காணுங்கள் — தொகுதி 3 இதற்கான முழு கருவிகளை தருகிறது.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">10. Coping with Emotions</span><span class="ta">10. உணர்ச்சிகளை சமாளித்தல்</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Definition</span><span class="ta">வரையறை</span></h5>
+        <p><span class="en">Managing emotions so they inform your response rather than control it — including difficult ones like frustration, disappointment or sadness.</span><span class="ta">விரக்தி, ஏமாற்றம், சோகம் போன்ற கடினமான உணர்ச்சிகள் உட்பட, உணர்ச்சிகள் உங்கள் பதிலை கட்டுப்படுத்தாமல் அதற்கு தகவல் தர அனுமதிக்குமாறு நிர்வகித்தல்.</span></p>
+        <h5><span class="en">In the classroom</span><span class="ta">வகுப்பறையில்</span></h5>
+        <p><span class="en">Feeling genuinely disappointed by a class's poor behaviour one day, without carrying that disappointment into how you treat the same students the next morning.</span><span class="ta">ஒரு நாள் ஒரு வகுப்பின் மோசமான நடத்தையால் உண்மையிலேயே ஏமாற்றமடைந்தாலும், அந்த ஏமாற்றத்தை அடுத்த நாள் காலை அதே மாணவர்களுடன் நடந்துகொள்ளும் விதத்தில் எடுத்துச் செல்லாமல் இருத்தல்.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">When a strong emotion follows you home, name it in one honest sentence before deciding what, if anything, to do about it.</span><span class="ta">ஒரு வலிமையான உணர்ச்சி உங்களுடன் வீட்டிற்கு வந்தால், அதைப் பற்றி என்ன செய்வது என்று முடிவு செய்வதற்கு முன், அதை ஒரு நேர்மையான வாக்கியத்தில் பெயரிடுங்கள்.</span></p>
+      </div>
+    </details>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <div class="s-label"><div class="s-num">2</div><h2 class="display"><span class="en">The Mirror Principle</span><span class="ta">கண்ணாடி கொள்கை</span></h2></div>
+    <p class="intro">
+      <span class="en">Students don't learn life skills from a poster on the wall. They learn them by watching how the adult in front of the room handles a bad day, an unfair moment, or a mistake.</span>
+      <span class="ta">மாணவர்கள் சுவரில் உள்ள சுவரொட்டியிலிருந்து வாழ்க்கை திறன்களை கற்றுக்கொள்வதில்லை. வகுப்பறையின் முன் நிற்கும் பெரியவர் ஒரு மோசமான நாளை, நியாயமற்ற தருணத்தை, அல்லது தவறை எப்படி கையாள்கிறார் என்பதை பார்த்தே அவர்கள் கற்கிறார்கள்.</span>
+    </p>
+
+    <div class="callout">
+      <div class="display"><span class="en">Why this comes before every other module</span><span class="ta">இது ஏன் மற்ற எல்லா தொகுதிகளுக்கும் முன் வருகிறது</span></div>
+      <p>
+        <span class="en">You cannot hand a student a skill you haven't practised yourself. A teacher trying to teach calm while internally overwhelmed will transmit the overwhelm, not the calm — children read tone, posture and consistency far more than words. That is why Module 1 asks you to look inward before Module 2 asks you to teach outward.</span>
+        <span class="ta">நீங்களே பயிற்சி செய்யாத ஒரு திறனை மாணவருக்கு கொடுக்க முடியாது. உள்ளே அதிகமாக சிக்கலான நிலையில் இருக்கும் ஒரு ஆசிரியர் அமைதியை கற்பிக்க முயலும் போது, அமைதியை அல்ல, சிக்கலான நிலையையே கடத்துவார் — குழந்தைகள் வார்த்தைகளை விட தொனி, உடல்நிலை, நிலைத்தன்மையை அதிகமாக படிக்கின்றனர். அதனால்தான் தொகுதி 1 உள்நோக்கி பார்க்க கேட்கிறது, தொகுதி 2 வெளிநோக்கி கற்பிக்க கேட்பதற்கு முன்.</span>
+      </p>
+    </div>
+
+    <p>
+      <span class="en">This isn't about being a finished, flawless model. It's about knowing your own patterns well enough to catch yourself mid-reaction — and repair, out loud, in front of students when needed. That repair is itself one of the most powerful life-skills lessons a child can witness.</span>
+      <span class="ta">இது முழுமையான, குறையற்ற மாதிரியாக இருப்பது பற்றியது அல்ல. உங்கள் சொந்த மனநிலைகளை, எதிர்வினையின் நடுவே உங்களைப் பிடிக்கும் அளவுக்கு நன்கு அறிந்திருப்பது — தேவைப்படும்போது மாணவர்கள் முன் சத்தமாக சரி செய்வது. அந்த சரிசெய்தலே ஒரு குழந்தை காணக்கூடிய மிக சக்திவாய்ந்த வாழ்க்கை திறன் பாடங்களில் ஒன்று.</span>
+    </p>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 1 of 3</span><span class="ta">சிந்தனை · 1/3</span></div>
+      <h4><span class="en">Think of a recent classroom moment where you reacted before you thought. What life skill (from the 10 above) would have changed how it played out?</span><span class="ta">நீங்கள் சிந்திப்பதற்கு முன் எதிர்வினை காட்டிய சமீபத்திய வகுப்பறை தருணத்தை நினைத்துப் பாருங்கள். மேலே உள்ள 10 திறன்களில் எது அந்த தருணத்தை மாற்றியிருக்கும்?</span></h4>
+      <textarea name="r1" placeholder="Write a few lines here — this stays on your screen only, for your own reference."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <div class="s-label"><div class="s-num">3</div><h2 class="display"><span class="en">Your Starting Point</span><span class="ta">உங்கள் தொடக்கப் புள்ளி</span></h2></div>
+    <p class="intro">
+      <span class="en">You can't build a development plan on guesswork. Before Module 2, complete the 15-domain Teacher Self-Assessment — it gives you an honest, dimension-wise picture of where you're strong and where this course will help you most.</span>
+      <span class="ta">யூகத்தின் அடிப்படையில் வளர்ச்சி திட்டத்தை உருவாக்க முடியாது. தொகுதி 2-க்கு முன், 15-துறை ஆசிரியர் சுய மதிப்பீட்டை முடியுங்கள் — இது உங்கள் பலம் எங்கே, இந்த படிப்பு உங்களுக்கு எங்கே அதிகம் உதவும் என்பதன் நேர்மையான, துறை வாரியான படத்தை தருகிறது.</span>
+    </p>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 2 of 3</span><span class="ta">சிந்தனை · 2/3</span></div>
+      <h4><span class="en">Before you take the assessment, guess: which 2–3 of the 10 skills do you expect to score lowest on, and why?</span><span class="ta">மதிப்பீட்டை எடுப்பதற்கு முன், யூகியுங்கள்: 10 திறன்களில் எந்த 2–3 திறன்களில் நீங்கள் குறைவாக மதிப்பெண் பெறுவீர்கள் என எதிர்பார்க்கிறீர்கள், ஏன்?</span></h4>
+      <textarea name="r2" placeholder="Note your prediction — you'll compare it to your actual results after the assessment."></textarea>
+    </div>
+
+    <div class="assess-card">
+      <h3><span class="en">Take the 15-Domain Self-Assessment</span><span class="ta">15-துறை சுய மதிப்பீட்டை எடுங்கள்</span></h3>
+      <p><span class="en">Takes about 20 minutes. You'll receive a dimension-wise report to carry through the rest of this course.</span><span class="ta">சுமார் 20 நிமிடங்கள் ஆகும். இந்த படிப்பு முழுவதும் நீங்கள் எடுத்துச் செல்லும் ஒரு துறை வாரியான அறிக்கையை பெறுவீர்கள்.</span></p>
+      <a class="btn btn-primary" href="https://somasundaramntlifecoach-ux.github.io/teacher/landing.html" target="_blank" rel="noopener"><span class="en">Start Self-Assessment →</span><span class="ta">சுய மதிப்பீட்டை தொடங்குங்கள் →</span></a>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 3 of 3</span><span class="ta">சிந்தனை · 3/3</span></div>
+      <h4><span class="en">After your results arrive, write one sentence: "My foundation, right now, is ___." Keep it honest, not harsh.</span><span class="ta">உங்கள் முடிவுகள் வந்த பிறகு, ஒரு வாக்கியம் எழுதுங்கள்: "இப்போது, என் அடித்தளம் ___." நேர்மையாக இருங்கள், கடுமையாக அல்ல.</span></h4>
+      <textarea name="r3" placeholder="This becomes your personal foundation statement for the course."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- TAKEAWAYS -->
+  <section>
+    <div class="s-label"><div class="s-num">✓</div><h2 class="display"><span class="en">Module 1 Takeaways</span><span class="ta">தொகுதி 1 சுருக்கம்</span></h2></div>
+    <ul class="takeaway-list">
+      <li><span class="mk">1</span><span><span class="en">Life skills are WHO's 10 core abilities, in five pairs — not academic content, but an inner operating system.</span><span class="ta">வாழ்க்கை திறன்கள் என்பது WHO-வின் 10 முக்கிய திறன்கள், ஐந்து ஜோடிகளாக — கல்வித் தகவல் அல்ல, ஒரு உள் இயங்குதளம்.</span></span></li>
+      <li><span class="mk">2</span><span><span class="en">Students absorb life skills by watching teachers live them, not by hearing them explained — this is the mirror principle.</span><span class="ta">மாணவர்கள் ஆசிரியர்கள் அவற்றை வாழும்போது பார்த்தே வாழ்க்கை திறன்களை உள்வாங்குகிறார்கள் — இதுவே கண்ணாடி கொள்கை.</span></span></li>
+      <li><span class="mk">3</span><span><span class="en">Your 15-domain self-assessment result is your honest starting point — return to it as each later module builds on it.</span><span class="ta">உங்கள் 15-துறை சுய மதிப்பீட்டு முடிவே உங்கள் நேர்மையான தொடக்கப் புள்ளி — பிற்கால ஒவ்வொரு தொகுதியும் இதன் அடிப்படையில் கட்டமைக்கும்போது இதற்கு திரும்புங்கள்.</span></span></li>
+    </ul>
+  </section>
+
+    <div class="save-block">
+    <p><span class="en">Save your reflections from this module to your learning record.</span><span class="ta">இந்த தொகுதியிலிருந்து உங்கள் சிந்தனைகளை உங்கள் கற்றல் பதிவில் சேமிக்கவும்.</span></p>
+    <button class="btn btn-primary" onclick="saveReflections()"><span class="en">Save My Reflections</span><span class="ta">என் சிந்தனைகளை சேமிக்கவும்</span></button>
+    <div class="save-status" id="saveStatus"></div>
+  </div>
+
+  <div class="module-nav">
+    <a class="nav-link" href="module1-life-skills-teachers.html">
+      <span class="lbl"><span class="en">← Back to</span><span class="ta">← திரும்ப</span></span>
+      <span class="ttl"><span class="en">Course Overview</span><span class="ta">படிப்பு கண்ணோட்டம்</span></span>
+    </a>
+    <a class="nav-link next" href="module2-content.html">
+      <span class="lbl"><span class="en">Up Next</span><span class="ta">அடுத்தது</span></span>
+      <span class="ttl"><span class="en">Module 2 · Self-Awareness &amp; EQ →</span><span class="ta">தொகுதி 2 · சுய-விழிப்பு &amp; EQ →</span></span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="motto"><span class="en">"God is always with u"</span><span class="ta">"கடவுள் எப்போதும் உங்களுடன் இருக்கிறார்"</span></div>
+  <div><span class="en">NT Somasundaram · Certified Master Trainer, Career Consultant &amp; Life Skills Educator</span><span class="ta">என்.டி. சோமசுந்தரம் · சான்றளிக்கப்பட்ட முதன்மை பயிற்சியாளர் &amp; வாழ்க்கை திறன் கல்வியாளர்</span></div>
+  <div class="contact" style="margin-top:8px;">
+    <a href="mailto:somasundaramnt.lifecoach@gmail.com">somasundaramnt.lifecoach@gmail.com</a> &nbsp;·&nbsp;
+    <a href="tel:+919843702244">+91 98437 02244</a>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  document.body.classList.toggle('show-ta', lang==='ta');
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.documentElement.lang = lang;
+}
+// simple reading-progress bar based on scroll position
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progressFill').style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+});
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrZjQ8oDwiKegl3pI1qAG1PVtZ0pFAlb3GbVvK7sPbzjIprs1Q9isXPoisLDjQnfpgng/exec';
+const MODULE_ID = 'Module 1 - Foundations';
+
+function loadLearnerInfo(){
+  const n = document.getElementById('learnerName');
+  const em = document.getElementById('learnerEmail');
+  if(n) n.value = localStorage.getItem('lsm_name') || '';
+  if(em) em.value = localStorage.getItem('lsm_email') || '';
+}
+loadLearnerInfo();
+
+function saveReflections(){
+  const nameEl = document.getElementById('learnerName');
+  const emailEl = document.getElementById('learnerEmail');
+  const name = nameEl ? nameEl.value.trim() : '';
+  const email = emailEl ? emailEl.value.trim() : '';
+  if(!name){ alert('Please enter your name before saving.'); return; }
+  localStorage.setItem('lsm_name', name);
+  localStorage.setItem('lsm_email', email);
+  const responses = {};
+  document.querySelectorAll('.reflect textarea[name], .reflect input[name]').forEach(function(el){
+    responses[el.name] = el.value;
+  });
+  const payload = encodeURIComponent(JSON.stringify(responses));
+  const url = APPS_SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&module=' + encodeURIComponent(MODULE_ID) + '&responses=' + payload;
+  const img = new Image();
+  img.src = url;
+  const status = document.getElementById('saveStatus');
+  if(status){
+    status.textContent = 'Saved \u2713';
+    setTimeout(function(){ status.textContent=''; }, 4000);
+  }
+}
+
+</script>
+
+</body>
+</html>

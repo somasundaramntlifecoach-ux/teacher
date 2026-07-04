@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 2: Self-Awareness &amp; EQ — Life Skills Mastery for Educators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16333F; --ink-soft:#2A4B58;
+    --marigold:#E5A337; --marigold-deep:#C77F1F;
+    --sage:#7C9A80; --sage-deep:#5E7C63;
+    --paper:#F6F2E9; --paper-dim:#EDE6D6;
+    --charcoal:#26251F; --white:#FFFEFB;
+    --line:rgba(22,51,63,0.14);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--charcoal);font-family:'Poppins',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .en{display:inline;} .ta{display:none;}
+  body.show-ta .en{display:none;} body.show-ta .ta{display:inline;}
+  body.show-ta h1,body.show-ta h2,body.show-ta h3,body.show-ta h4,body.show-ta p,body.show-ta li,body.show-ta span,body.show-ta a,body.show-ta button,body.show-ta label,body.show-ta textarea::placeholder{font-family:'Noto Sans Tamil',sans-serif;}
+  .display{font-family:'Fraunces',serif;}
+  body.show-ta .display{font-family:'Noto Sans Tamil',sans-serif;font-weight:700;}
+  a{color:inherit;} img,svg{display:block;max-width:100%;}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--white);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .topbar .brand{font-size:13.5px;opacity:.9;display:flex;align-items:center;gap:8px;}
+  .brand-dot{width:7px;height:7px;border-radius:50%;background:var(--marigold);flex:none;}
+  .lang-toggle{display:flex;background:rgba(255,255,255,0.1);border-radius:999px;padding:3px;gap:2px;}
+  .lang-toggle button{border:none;background:transparent;color:var(--white);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;}
+  .lang-toggle button.active{background:var(--marigold);color:var(--ink);}
+  .progress-track{height:4px;background:rgba(255,255,255,0.15);}
+  .progress-fill{height:100%;width:0%;background:var(--marigold);transition:width .15s linear;}
+  /* Learner info + save bar */
+  .learner-bar{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--paper-dim);border-bottom:1px solid var(--line);}
+  .learner-field{flex:1;min-width:160px;}
+  .learner-field label{display:block;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:4px;}
+  .learner-field input{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:'Poppins',sans-serif;font-size:13.5px;background:var(--white);color:var(--charcoal);box-sizing:border-box;}
+  body.show-ta .learner-field input{font-family:'Noto Sans Tamil',sans-serif;}
+  .save-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px;margin:30px 0;text-align:center;}
+  .save-block p{font-size:13.5px;color:var(--ink-soft);margin:0 0 14px;}
+  .save-status{margin-top:10px;font-size:13.5px;color:var(--sage-deep);font-weight:600;min-height:18px;}
+
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  section{padding:56px 0;}
+  .rule{border:none;border-top:1px solid var(--line);margin:0;}
+
+  .module-header{padding:56px 0 40px;}
+  .module-tag{display:inline-block;background:var(--marigold);color:var(--ink);font-size:12.5px;font-weight:700;letter-spacing:.05em;padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+  h1{font-size:clamp(28px,4.4vw,42px);font-weight:600;line-height:1.14;margin:0 0 16px;color:var(--ink);}
+  .module-header p.lede{font-size:16.5px;color:var(--ink-soft);max-width:56ch;margin:0 0 26px;}
+  .meta-row{display:flex;gap:22px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-soft);}
+  .meta-row span{display:flex;align-items:center;gap:6px;}
+  .meta-row .dot{width:5px;height:5px;border-radius:50%;background:var(--sage);}
+
+  .s-label{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .s-num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:14px;}
+  body.show-ta .s-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .s-label h2{margin:0;font-size:clamp(21px,3vw,27px);font-weight:600;color:var(--ink);}
+  section p{font-size:15.5px;color:var(--charcoal);}
+  section p.intro{color:var(--ink-soft);font-size:16px;}
+
+  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 8px;}
+  .skill-card{border:1px solid var(--line);background:var(--white);border-radius:var(--radius);padding:18px 18px;}
+  .skill-card .sk-num{font-family:'Fraunces',serif;font-size:12.5px;color:var(--marigold-deep);font-weight:700;letter-spacing:.03em;margin-bottom:8px;}
+  body.show-ta .skill-card .sk-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .skill-card h4{margin:0 0 6px;font-size:15.5px;color:var(--ink);}
+  .skill-card p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+
+  .callout{background:var(--ink);color:var(--paper);border-radius:18px;padding:34px 30px;margin:30px 0;}
+  .callout .display{font-size:20px;color:var(--white);margin:0 0 12px;}
+  .callout p{color:rgba(246,242,233,0.85);margin:0;font-size:15.5px;}
+
+  blockquote{margin:26px 0;padding:2px 0 2px 22px;border-left:3px solid var(--marigold);font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--ink);}
+  body.show-ta blockquote{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;font-weight:500;}
+
+  .reflect{background:var(--white);border:1.5px dashed var(--sage);border-radius:var(--radius);padding:24px 24px 20px;margin:26px 0;}
+  .reflect .r-tag{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .reflect .r-tag::before{content:'✎';font-size:14px;}
+  .reflect h4{margin:0 0 14px;font-size:16px;color:var(--ink);font-weight:600;}
+  .reflect textarea{width:100%;min-height:84px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:'Poppins',sans-serif;font-size:14.5px;color:var(--charcoal);background:var(--paper);resize:vertical;}
+  body.show-ta .reflect textarea{font-family:'Noto Sans Tamil',sans-serif;}
+  .reflect textarea:focus{outline:2px solid var(--sage);outline-offset:1px;}
+
+  /* Practice steps */
+  .steps{counter-reset:step;margin:26px 0;padding:0;list-style:none;}
+  .steps li{counter-increment:step;position:relative;padding:16px 0 16px 46px;border-bottom:1px solid var(--line);}
+  .steps li:last-child{border-bottom:none;}
+  .steps li::before{content:counter(step);position:absolute;left:0;top:16px;width:30px;height:30px;border-radius:50%;background:var(--paper-dim);border:1px solid var(--line);color:var(--ink);font-family:'Fraunces',serif;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;}
+  body.show-ta .steps li::before{font-family:'Noto Sans Tamil',sans-serif;}
+  .steps h4{margin:0 0 5px;font-size:15.5px;color:var(--ink);}
+  .steps p{margin:0;font-size:14px;color:var(--ink-soft);}
+
+  .assess-card{background:var(--sage);color:var(--white);border-radius:20px;padding:36px 30px;margin:34px 0;text-align:center;}
+  .assess-card h3{margin:0 0 10px;font-size:22px;color:var(--white);}
+  .assess-card p{color:rgba(255,255,255,0.9);max-width:48ch;margin:0 auto 22px;font-size:15px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14.5px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease;}
+  .btn-primary{background:var(--ink);color:var(--white);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .assess-card .btn-primary{background:var(--white);color:var(--sage-deep);}
+
+  .takeaway-list{list-style:none;margin:22px 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .takeaway-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .takeaway-list li:last-child{border-bottom:none;}
+  .takeaway-list .mk{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(229,163,55,0.16);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:2px;}
+
+  .module-nav{display:flex;justify-content:space-between;align-items:center;padding:40px 0 70px;gap:16px;flex-wrap:wrap;}
+  .nav-link{display:flex;flex-direction:column;text-decoration:none;padding:16px 20px;border-radius:14px;border:1px solid var(--line);background:var(--white);min-width:220px;}
+  .nav-link .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:4px;}
+  .nav-link .ttl{font-size:15.5px;font-weight:600;color:var(--ink);}
+  .nav-link.next{text-align:right;}
+
+  /* Deep-dive expandable detail blocks */
+  .deepdive-intro{margin:34px 0 16px;font-size:13.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);}
+  .deep{border:1px solid var(--line);border-radius:var(--radius);background:var(--white);margin-bottom:12px;overflow:hidden;}
+  .deep summary{cursor:pointer;padding:16px 20px;font-weight:600;font-size:15.5px;color:var(--ink);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .deep summary::-webkit-details-marker{display:none;}
+  .deep summary .plus{flex:none;width:26px;height:26px;border-radius:50%;background:var(--paper-dim);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:17px;transition:transform .2s ease;}
+  .deep[open] summary .plus{transform:rotate(45deg);}
+  .deep-body{padding:2px 20px 22px;border-top:1px solid var(--line);}
+  .deep-body h5{margin:16px 0 6px;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--sage-deep);font-weight:700;}
+  .deep-body h5:first-child{margin-top:16px;}
+  .deep-body p{margin:0 0 4px;font-size:14.5px;color:var(--ink-soft);}
+
+  footer{padding:32px 24px 50px;text-align:center;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);}
+  footer .motto{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);margin-bottom:6px;font-size:14.5px;}
+  body.show-ta footer .motto{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;}
+  footer .contact a{text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media print{
+    .topbar,.progress-track,.module-nav,.lang-toggle{display:none !important;}
+    body{background:#fff;}
+    .deep{break-inside:avoid;}
+  }
+  @media (max-width:640px){
+    .skill-grid{grid-template-columns:1fr;}
+    .module-nav{flex-direction:column;align-items:stretch;}
+    .nav-link.next{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="brand-dot"></span>
+    <span class="en">Life Skills Mastery for Educators</span>
+    <span class="ta">ஆசிரியர்களுக்கான வாழ்க்கை திறன் தேர்ச்சி</span>
+  </div>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('en')">English</button>
+    <button onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="learner-bar">
+  <div class="learner-field">
+    <label><span class="en">Your Name</span><span class="ta">உங்கள் பெயர்</span></label>
+    <input type="text" id="learnerName" placeholder="e.g., Priya Kumar">
+  </div>
+  <div class="learner-field">
+    <label><span class="en">Your Email (optional)</span><span class="ta">உங்கள் மின்னஞ்சல் (விருப்பம்)</span></label>
+    <input type="text" id="learnerEmail" placeholder="you@example.com">
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="module-header">
+    <span class="module-tag"><span class="en">MODULE 2 OF 10</span><span class="ta">தொகுதி 2 / 10</span></span>
+    <h1 class="display"><span class="en">Self-Awareness &amp; EQ</span><span class="ta">சுய-விழிப்பு &amp; EQ</span></h1>
+    <p class="lede">
+      <span class="en">In Module 1 you looked at where you stand. Here, you'll learn the specific inner mechanics of emotional intelligence — and a simple, repeatable way to regulate yourself in the middle of a hard classroom moment, not just after it.</span>
+      <span class="ta">தொகுதி 1-இல் நீங்கள் எங்கு நிற்கிறீர்கள் என்று பார்த்தீர்கள். இங்கே, உணர்ச்சி நுண்ணறிவின் குறிப்பிட்ட உள் இயக்கத்தை கற்றுக்கொள்வீர்கள் — ஒரு கடினமான வகுப்பறை தருணத்தின் நடுவே, அதற்குப் பிறகு மட்டுமல்ல, உங்களை கட்டுப்படுத்த ஒரு எளிய, திரும்பத் திரும்ப செய்யக்கூடிய வழி.</span>
+    </p>
+    <div class="meta-row">
+      <span><span class="dot"></span><span class="en">Reading time: ~30 min</span><span class="ta">படிக்க: ~30 நிமிடம்</span></span>
+      <span><span class="dot"></span><span class="en">3 reflection exercises</span><span class="ta">3 சிந்தனை பயிற்சிகள்</span></span>
+      <span><span class="dot"></span><span class="en">1 practice technique</span><span class="ta">1 நடைமுறை நுட்பம்</span></span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <div class="s-label"><div class="s-num">1</div><h2 class="display"><span class="en">The Five Parts of EQ</span><span class="ta">EQ-வின் ஐந்து பகுதிகள்</span></h2></div>
+    <p class="intro">
+      <span class="en">Emotional Intelligence (EQ) isn't "being nice" or "staying calm." Psychologist Daniel Goleman's framework breaks it into five distinct, learnable abilities. Together, they form the difference between a teacher who is at the mercy of the classroom's mood, and one who shapes it.</span>
+      <span class="ta">உணர்ச்சி நுண்ணறிவு (EQ) என்பது "நல்லவராக இருப்பது" அல்லது "அமைதியாக இருப்பது" அல்ல. உளவியலாளர் Daniel Goleman-இன் கட்டமைப்பு இதை ஐந்து தனித்தனி, கற்கக்கூடிய திறன்களாக பிரிக்கிறது. இவை அனைத்தும் சேர்ந்து, வகுப்பறையின் மனநிலைக்கு அடிபணியும் ஆசிரியருக்கும், அதை வடிவமைக்கும் ஆசிரியருக்கும் இடையிலான வேறுபாட்டை உருவாக்குகின்றன.</span>
+    </p>
+
+    <div class="skill-grid">
+      <div class="skill-card"><div class="sk-num">01</div><h4><span class="en">Self-Awareness</span><span class="ta">சுய-விழிப்பு</span></h4><p><span class="en">Noticing your own emotion as it rises, before it drives your behaviour.</span><span class="ta">உங்கள் உணர்ச்சி எழும்போதே அதை கவனித்தல், அது உங்கள் நடத்தையை இயக்குவதற்கு முன்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">02</div><h4><span class="en">Self-Regulation</span><span class="ta">சுய-கட்டுப்பாடு</span></h4><p><span class="en">Choosing your response instead of reacting on autopilot.</span><span class="ta">தானாக எதிர்வினையாற்றுவதற்குப் பதிலாக உங்கள் பதிலை தேர்ந்தெடுத்தல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">03</div><h4><span class="en">Motivation</span><span class="ta">உந்துதல்</span></h4><p><span class="en">Staying driven by purpose even on the days the classroom doesn't cooperate.</span><span class="ta">வகுப்பறை ஒத்துழைக்காத நாட்களிலும் நோக்கத்தால் உந்தப்பட்டு இருத்தல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">04</div><h4><span class="en">Empathy</span><span class="ta">பரிவு</span></h4><p><span class="en">Reading what a student's behaviour is really communicating, beneath the surface.</span><span class="ta">மாணவரின் நடத்தை மேற்பரப்பிற்கு அடியில் உண்மையில் என்ன சொல்கிறது என்பதை படித்தல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">05</div><h4><span class="en">Social Skill</span><span class="ta">சமூக திறன்</span></h4><p><span class="en">Using all four above to build trust and manage a group, not just an individual.</span><span class="ta">தனிநபரை மட்டுமல்ல, குழுவை நம்பிக்கையுடன் வழிநடத்த மேற்கண்ட நான்கையும் பயன்படுத்துதல்.</span></p></div>
+    </div>
+
+    <blockquote><span class="en">Self-awareness is listed first because none of the other four are possible without it — you cannot regulate, motivate, or empathise your way through an emotion you haven't noticed yet.</span><span class="ta">சுய-விழிப்பு முதலில் பட்டியலிடப்பட்டுள்ளது, ஏனெனில் அது இல்லாமல் மற்ற நான்கும் சாத்தியமில்லை — நீங்கள் இன்னும் கவனிக்காத ஒரு உணர்ச்சியை கட்டுப்படுத்தவோ, உந்தவோ, பரிவு காட்டவோ முடியாது.</span></blockquote>
+
+    <div class="deepdive-intro"><span class="en">Explore each part of EQ in depth</span><span class="ta">EQ-வின் ஒவ்வொரு பகுதியையும் விரிவாக அறிக</span></div>
+
+    <details class="deep">
+      <summary><span><span class="en">1. Self-Awareness</span><span class="ta">1. சுய-விழிப்பு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it really means</span><span class="ta">இதன் உண்மையான அர்த்தம்</span></h5>
+        <p><span class="en">The ability to notice your own emotional state in real time — not fifteen minutes later while replaying the moment, but while it's still happening.</span><span class="ta">பதினைந்து நிமிடங்களுக்குப் பிறகு அந்த தருணத்தை மீண்டும் நினைத்துப் பார்க்கும்போது அல்ல, அது நடக்கும்போதே உங்கள் சொந்த உணர்ச்சி நிலையை கவனிக்கும் திறன்.</span></p>
+        <h5><span class="en">How it shows up in class</span><span class="ta">வகுப்பில் இது எப்படி தெரிகிறது</span></h5>
+        <p><span class="en">A teacher with strong self-awareness catches the thought "I'm getting frustrated" while marking a stack of poor test papers, instead of only realising it once they've snapped at the next student who asks a question.</span><span class="ta">மோசமான தேர்வு தாள்கள் குவியலை மதிப்பிடும்போது, "எனக்கு எரிச்சல் வருகிறது" என்ற எண்ணத்தை வலுவான சுய-விழிப்பு கொண்ட ஆசிரியர் பிடித்துக்கொள்கிறார், அடுத்த கேள்வி கேட்கும் மாணவரிடம் கடுமையாக பேசிய பிறகு மட்டும் உணராமல்.</span></p>
+        <h5><span class="en">One way to build it</span><span class="ta">இதை உருவாக்க ஒரு வழி</span></h5>
+        <p><span class="en">Set three random phone alarms during the school day labelled only "check in." When it rings, silently name your current emotion in one word.</span><span class="ta">பள்ளி நேரத்தில் "check in" என்று மட்டும் பெயரிடப்பட்ட மூன்று சீரற்ற மொபைல் அலாரங்களை அமைக்கவும். அது ஒலிக்கும்போது, உங்கள் தற்போதைய உணர்ச்சியை ஒரு வார்த்தையில் அமைதியாக பெயரிடுங்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">2. Self-Regulation</span><span class="ta">2. சுய-கட்டுப்பாடு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it really means</span><span class="ta">இதன் உண்மையான அர்த்தம்</span></h5>
+        <p><span class="en">The gap between noticing an emotion and choosing how to act on it. Regulation doesn't mean suppressing feeling — it means not letting the feeling drive the steering wheel.</span><span class="ta">ஒரு உணர்ச்சியை கவனிப்பதற்கும் அதற்கு எப்படி செயல்படுவது என்று தேர்ந்தெடுப்பதற்கும் இடையிலான இடைவெளி. கட்டுப்பாடு என்பது உணர்வை அடக்குவது அல்ல — உணர்வு ஸ்டீயரிங் சக்கரத்தை இயக்க அனுமதிக்காமல் இருப்பது.</span></p>
+        <h5><span class="en">How it shows up in class</span><span class="ta">வகுப்பில் இது எப்படி தெரிகிறது</span></h5>
+        <p><span class="en">Two students start arguing loudly mid-lesson. A regulated teacher takes one breath and lowers their own voice before intervening, rather than matching the rising volume in the room.</span><span class="ta">பாடத்தின் நடுவே இரண்டு மாணவர்கள் சத்தமாக வாக்குவாதம் செய்யத் தொடங்குகிறார்கள். கட்டுப்பாடு கொண்ட ஆசிரியர் தலையிடுவதற்கு முன் ஒரு மூச்சு எடுத்து தன் குரலை தாழ்த்துகிறார், அறையில் உயரும் சத்தத்தை பொருத்தாமல்.</span></p>
+        <h5><span class="en">One way to build it</span><span class="ta">இதை உருவாக்க ஒரு வழி</span></h5>
+        <p><span class="en">Practise the full pause-name-ask-respond sequence from Section 2 below with a low-stakes irritation first (a slow queue, spilled tea) before you need it in a high-stakes classroom moment.</span><span class="ta">அதிக ஆபத்தான வகுப்பறை தருணத்தில் இது தேவைப்படுவதற்கு முன், கீழே உள்ள பிரிவு 2-இல் உள்ள முழு நிறுத்து-பெயரிடு-கேள்-பதிலளி வரிசையை குறைந்த ஆபத்துள்ள எரிச்சலில் (மெதுவான வரிசை, சிந்திய தேநீர்) முதலில் பயிற்சி செய்யுங்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">3. Motivation</span><span class="ta">3. உந்துதல்</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it really means</span><span class="ta">இதன் உண்மையான அர்த்தம்</span></h5>
+        <p><span class="en">An inner drive connected to purpose and standards, not just to external reward or approval — what keeps you going on the days no one is watching or thanking you.</span><span class="ta">வெளிப்புற வெகுமதி அல்லது அங்கீகாரத்துடன் மட்டுமல்லாமல், நோக்கம் மற்றும் தரங்களுடன் இணைந்த ஒரு உள் உந்துதல் — யாரும் பார்க்காத அல்லது நன்றி சொல்லாத நாட்களில் உங்களை தொடர வைப்பது.</span></p>
+        <h5><span class="en">How it shows up in class</span><span class="ta">வகுப்பில் இது எப்படி தெரிகிறது</span></h5>
+        <p><span class="en">Preparing a genuinely engaging lesson for a small, quiet group that will never applaud it, purely because the subject deserves to be taught well.</span><span class="ta">ஒரு சிறிய, அமைதியான குழுவிற்காக, அவர்கள் ஒருபோதும் பாராட்டாத ஒரு உண்மையிலேயே ஈடுபாடுள்ள பாடத்தை தயார் செய்தல், அந்த பாடம் நன்றாக கற்பிக்கப்பட வேண்டும் என்பதற்காக மட்டும்.</span></p>
+        <h5><span class="en">One way to build it</span><span class="ta">இதை உருவாக்க ஒரு வழி</span></h5>
+        <p><span class="en">Write down, in one sentence, why you originally chose teaching. Keep it somewhere you'll see it on the hard weeks, not just the good ones.</span><span class="ta">நீங்கள் ஆரம்பத்தில் கற்பித்தலை ஏன் தேர்ந்தெடுத்தீர்கள் என்பதை ஒரு வாக்கியத்தில் எழுதுங்கள். நல்ல வாரங்களில் மட்டுமல்ல, கடினமான வாரங்களிலும் அதை பார்க்கக்கூடிய இடத்தில் வையுங்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">4. Empathy</span><span class="ta">4. பரிவு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it really means</span><span class="ta">இதன் உண்மையான அர்த்தம்</span></h5>
+        <p><span class="en">Reading what a student's behaviour is actually communicating, beneath its surface — the difference between hearing "I don't care about this subject" and hearing "I'm scared I can't do this."</span><span class="ta">ஒரு மாணவரின் நடத்தை மேற்பரப்பிற்கு அடியில் உண்மையில் என்ன தெரிவிக்கிறது என்பதை படித்தல் — "எனக்கு இந்த பாடத்தில் அக்கறை இல்லை" என்று கேட்பதற்கும் "எனக்கு இதை செய்ய முடியாது என்று பயமாக இருக்கிறது" என்று கேட்பதற்கும் இடையிலான வேறுபாடு.</span></p>
+        <h5><span class="en">How it shows up in class</span><span class="ta">வகுப்பில் இது எப்படி தெரிகிறது</span></h5>
+        <p><span class="en">A student who refuses to attempt a task is offered a smaller first step rather than a lecture about effort — because the teacher senses fear of failure, not laziness.</span><span class="ta">ஒரு பணியை முயற்சிக்க மறுக்கும் மாணவருக்கு, முயற்சி பற்றிய சொற்பொழிவுக்குப் பதிலாக ஒரு சிறிய முதல் படி தரப்படுகிறது — ஏனெனில் ஆசிரியர் சோம்பேறித்தனத்தை அல்ல, தோல்வி பயத்தை உணர்கிறார்.</span></p>
+        <h5><span class="en">One way to build it</span><span class="ta">இதை உருவாக்க ஒரு வழி</span></h5>
+        <p><span class="en">The next time a student's behaviour irritates you, silently finish this sentence twice with two different answers: "Maybe they're feeling ___."</span><span class="ta">அடுத்த முறை ஒரு மாணவரின் நடத்தை உங்களுக்கு எரிச்சலை ஏற்படுத்தும்போது, "ஒருவேளை அவர்கள் உணர்வது ___" என்ற வாக்கியத்தை இரண்டு வெவ்வேறு பதில்களுடன் அமைதியாக இரண்டு முறை முடிக்கவும்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">5. Social Skill</span><span class="ta">5. சமூக திறன்</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it really means</span><span class="ta">இதன் உண்மையான அர்த்தம்</span></h5>
+        <p><span class="en">Applying the four abilities above to a whole group at once — reading a room's mood, building trust across many relationships, and steering collective energy, not just one conversation.</span><span class="ta">மேலே உள்ள நான்கு திறன்களையும் ஒரே நேரத்தில் ஒரு முழு குழுவிற்கும் பயன்படுத்துதல் — ஒரு அறையின் மனநிலையை படித்தல், பல உறவுகளில் நம்பிக்கையை உருவாக்குதல், ஒரு உரையாடலை மட்டுமல்ல கூட்டு ஆற்றலை வழிநடத்துதல்.</span></p>
+        <h5><span class="en">How it shows up in class</span><span class="ta">வகுப்பில் இது எப்படி தெரிகிறது</span></h5>
+        <p><span class="en">Sensing that an entire class is restless after a long exam and adjusting the day's pace and tone accordingly, rather than pushing through the original plan regardless.</span><span class="ta">ஒரு நீண்ட தேர்வுக்குப் பிறகு முழு வகுப்பும் அமைதியின்றி இருப்பதை உணர்ந்து, அசல் திட்டத்தை பொருட்படுத்தாமல் தொடர்வதற்குப் பதிலாக, அன்றைய வேகத்தையும் தொனியையும் அதற்கேற்ப சரிசெய்தல்.</span></p>
+        <h5><span class="en">One way to build it</span><span class="ta">இதை உருவாக்க ஒரு வழி</span></h5>
+        <p><span class="en">At the start of each class, take five silent seconds to simply read the room's energy before you begin speaking — treat it as data, not an interruption.</span><span class="ta">ஒவ்வொரு வகுப்பின் தொடக்கத்திலும், நீங்கள் பேசத் தொடங்குவதற்கு முன் அறையின் ஆற்றலை படிக்க ஐந்து அமைதியான விநாடிகள் எடுத்துக் கொள்ளுங்கள் — அதை ஒரு தடையாக அல்ல, தரவாக கருதுங்கள்.</span></p>
+      </div>
+    </details>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 1 of 3</span><span class="ta">சிந்தனை · 1/3</span></div>
+      <h4><span class="en">Of the five parts of EQ above, which comes most naturally to you, and which do you have to work hardest at?</span><span class="ta">மேலே உள்ள EQ-வின் ஐந்து பகுதிகளில், எது உங்களுக்கு இயல்பாக வருகிறது, எதில் நீங்கள் அதிகம் உழைக்க வேண்டும்?</span></h4>
+      <textarea name="r1" placeholder="Write a few lines here — this stays on your screen only, for your own reference."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <div class="s-label"><div class="s-num">2</div><h2 class="display"><span class="en">Regulation in the Moment</span><span class="ta">தருணத்தில் கட்டுப்பாடு</span></h2></div>
+    <p class="intro">
+      <span class="en">Knowing the theory doesn't help at 11am when a student talks back in front of the whole class. What helps is a short, physical sequence you can run in under ten seconds — before you speak, not after.</span>
+      <span class="ta">காலை 11 மணிக்கு ஒரு மாணவர் முழு வகுப்பிற்கும் முன்னால் பதிலுக்கு பேசும்போது கோட்பாடு தெரிந்திருப்பது உதவாது. உதவுவது பத்து விநாடிகளுக்குள் நீங்கள் இயக்கக்கூடிய ஒரு குறுகிய, உடல் ரீதியான வரிசை — நீங்கள் பேசுவதற்கு முன், பிறகு அல்ல.</span>
+    </p>
+
+    <ul class="steps">
+      <li><h4><span class="en">Pause and breathe out longer than you breathe in</span><span class="ta">நிறுத்தி, உள்ளிழுப்பதை விட நீளமாக வெளியேற்றுங்கள்</span></h4><p><span class="en">A slow exhale signals your nervous system to stand down before you say a word.</span><span class="ta">மெதுவான வெளியேற்றம் ஒரு வார்த்தை சொல்வதற்கு முன்பே உங்கள் நரம்பு மண்டலத்தை அமைதிப்படுத்த சமிக்ஞை செய்கிறது.</span></p></li>
+      <li><h4><span class="en">Name the emotion silently, to yourself</span><span class="ta">உணர்ச்சியை அமைதியாக, உங்களுக்குள் பெயரிடுங்கள்</span></h4><p><span class="en">"This is embarrassment" or "this is anger" — naming it takes it out of the driver's seat.</span><span class="ta">"இது வெட்கம்" அல்லது "இது கோபம்" — பெயரிடுவது அதை ஓட்டுநர் இருக்கையிலிருந்து அகற்றுகிறது.</span></p></li>
+      <li><h4><span class="en">Ask one internal question before responding</span><span class="ta">பதிலளிக்கும் முன் ஒரு உள் கேள்வியை கேளுங்கள்</span></h4><p><span class="en">"What does this student need right now — correction, or connection?" Most reactive mistakes come from skipping this question.</span><span class="ta">"இந்த மாணவருக்கு இப்போது என்ன தேவை — திருத்தமா, அல்லது தொடர்பா?" பெரும்பாலான எதிர்வினை தவறுகள் இந்த கேள்வியை தவிர்ப்பதிலிருந்து வருகின்றன.</span></p></li>
+      <li><h4><span class="en">Respond at half your normal volume and speed</span><span class="ta">உங்கள் வழக்கமான சத்தம் மற்றும் வேகத்தில் பாதி அளவில் பதிலளியுங்கள்</span></h4><p><span class="en">Slowing your own pace is often the fastest way to slow the room down with you.</span><span class="ta">உங்கள் சொந்த வேகத்தை குறைப்பது, உங்களுடன் அறையையும் மெதுவாக்கும் வேகமான வழியாக இருக்கும்.</span></p></li>
+    </ul>
+
+    <div class="callout">
+      <div class="display"><span class="en">A note on repair</span><span class="ta">சரிசெய்தல் பற்றிய குறிப்பு</span></div>
+      <p>
+        <span class="en">Some days the sequence above won't run in time and you'll react sharper than you meant to. That's not a failure of this module — it's an opportunity. A short, honest repair the next day ("I was short with you yesterday, that wasn't fair, let's start fresh") teaches self-regulation and accountability more vividly than a perfect reaction ever could.</span>
+        <span class="ta">சில நாட்களில் மேலே உள்ள வரிசை நேரத்தில் இயங்காது, நீங்கள் நினைத்ததை விட கடுமையாக எதிர்வினையாற்றுவீர்கள். இது இந்த தொகுதியின் தோல்வி அல்ல — இது ஒரு வாய்ப்பு. அடுத்த நாள் ஒரு குறுகிய, நேர்மையான சரிசெய்தல் ("நேற்று நான் உங்களிடம் கடுமையாக இருந்தேன், அது நியாயமில்லை, மீண்டும் புதிதாக தொடங்குவோம்") ஒரு சரியான எதிர்வினையை விட சுய-கட்டுப்பாடு மற்றும் பொறுப்புணர்வை மிக தெளிவாக கற்பிக்கிறது.</span>
+      </p>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 2 of 3</span><span class="ta">சிந்தனை · 2/3</span></div>
+      <h4><span class="en">Which of the four steps above do you already do naturally, and which one will you deliberately practise this week?</span><span class="ta">மேலே உள்ள நான்கு படிகளில் எதை நீங்கள் ஏற்கனவே இயல்பாக செய்கிறீர்கள், இந்த வாரம் எதை வேண்டுமென்றே பயிற்சி செய்வீர்கள்?</span></h4>
+      <textarea name="r2" placeholder="Write a few lines here — this stays on your screen only, for your own reference."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <div class="s-label"><div class="s-num">3</div><h2 class="display"><span class="en">Connecting Back to Your Assessment</span><span class="ta">உங்கள் மதிப்பீட்டுடன் இணைத்தல்</span></h2></div>
+    <p class="intro">
+      <span class="en">If you completed your 15-domain self-assessment in Module 1, revisit your EQ and Self-Awareness dimension scores now. They tell you exactly which of the five EQ parts to prioritise this week, rather than working on all five at once.</span>
+      <span class="ta">தொகுதி 1-இல் உங்கள் 15-துறை சுய மதிப்பீட்டை முடித்திருந்தால், இப்போது உங்கள் EQ மற்றும் சுய-விழிப்பு துறை மதிப்பெண்களை மீண்டும் பாருங்கள். ஐந்தையும் ஒரே நேரத்தில் வேலை செய்வதற்கு பதிலாக, இந்த வாரம் எந்த EQ பகுதிக்கு முன்னுரிமை கொடுக்க வேண்டும் என்பதை அவை சரியாக சொல்கின்றன.</span>
+    </p>
+
+    <div class="assess-card">
+      <h3><span class="en">Haven't taken it yet?</span><span class="ta">இன்னும் எடுக்கவில்லையா?</span></h3>
+      <p><span class="en">Go back and complete the self-assessment from Module 1 before continuing — it's the reference point every later module builds on.</span><span class="ta">தொடர்வதற்கு முன் தொகுதி 1-இலிருந்து சுய மதிப்பீட்டை முடித்துவிட்டு திரும்பி வாருங்கள் — இது ஒவ்வொரு பிற்கால தொகுதியும் கட்டமைக்கும் குறிப்பு புள்ளி.</span></p>
+      <a class="btn btn-primary" href="https://somasundaramntlifecoach-ux.github.io/teacher/landing.html" target="_blank" rel="noopener"><span class="en">Go to Self-Assessment →</span><span class="ta">சுய மதிப்பீட்டிற்கு செல்லுங்கள் →</span></a>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 3 of 3</span><span class="ta">சிந்தனை · 3/3</span></div>
+      <h4><span class="en">Name one specific student or class where better emotional regulation this week would make the most visible difference.</span><span class="ta">இந்த வாரம் சிறந்த உணர்ச்சி கட்டுப்பாடு மிகவும் தெரியும் வித்தியாசத்தை ஏற்படுத்தும் ஒரு குறிப்பிட்ட மாணவர் அல்லது வகுப்பை பெயரிடுங்கள்.</span></h4>
+      <textarea name="r3" placeholder="This becomes your practice focus for the week."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- TAKEAWAYS -->
+  <section>
+    <div class="s-label"><div class="s-num">✓</div><h2 class="display"><span class="en">Module 2 Takeaways</span><span class="ta">தொகுதி 2 சுருக்கம்</span></h2></div>
+    <ul class="takeaway-list">
+      <li><span class="mk">1</span><span><span class="en">EQ has five learnable parts — self-awareness, self-regulation, motivation, empathy, and social skill — starting with self-awareness.</span><span class="ta">EQ-வில் ஐந்து கற்கக்கூடிய பகுதிகள் உள்ளன — சுய-விழிப்பு, சுய-கட்டுப்பாடு, உந்துதல், பரிவு, சமூக திறன் — சுய-விழிப்பிலிருந்து தொடங்கி.</span></span></li>
+      <li><span class="mk">2</span><span><span class="en">A four-step pause-name-ask-respond sequence can regulate a reaction in under ten seconds, before you speak.</span><span class="ta">ஒரு நான்கு-படி நிறுத்து-பெயரிடு-கேள்-பதிலளி வரிசை, நீங்கள் பேசுவதற்கு முன், பத்து விநாடிகளுக்குள் ஒரு எதிர்வினையை கட்டுப்படுத்த முடியும்.</span></span></li>
+      <li><span class="mk">3</span><span><span class="en">When regulation fails, honest repair the next day teaches students more than a perfect reaction would.</span><span class="ta">கட்டுப்பாடு தோல்வியடையும் போது, அடுத்த நாள் நேர்மையான சரிசெய்தல் ஒரு சரியான எதிர்வினையை விட மாணவர்களுக்கு அதிகம் கற்பிக்கும்.</span></span></li>
+    </ul>
+  </section>
+
+    <div class="save-block">
+    <p><span class="en">Save your reflections from this module to your learning record.</span><span class="ta">இந்த தொகுதியிலிருந்து உங்கள் சிந்தனைகளை உங்கள் கற்றல் பதிவில் சேமிக்கவும்.</span></p>
+    <button class="btn btn-primary" onclick="saveReflections()"><span class="en">Save My Reflections</span><span class="ta">என் சிந்தனைகளை சேமிக்கவும்</span></button>
+    <div class="save-status" id="saveStatus"></div>
+  </div>
+
+  <div class="module-nav">
+    <a class="nav-link" href="module1-content.html">
+      <span class="lbl"><span class="en">← Back to</span><span class="ta">← திரும்ப</span></span>
+      <span class="ttl"><span class="en">Module 1 · Foundations</span><span class="ta">தொகுதி 1 · அடிப்படைகள்</span></span>
+    </a>
+    <a class="nav-link next" href="module3-content.html">
+      <span class="lbl"><span class="en">Up Next</span><span class="ta">அடுத்தது</span></span>
+      <span class="ttl"><span class="en">Module 3 · Stress &amp; Anger Management →</span><span class="ta">தொகுதி 3 · மன அழுத்தம் &amp; கோப மேலாண்மை →</span></span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="motto"><span class="en">"God is always with u"</span><span class="ta">"கடவுள் எப்போதும் உங்களுடன் இருக்கிறார்"</span></div>
+  <div><span class="en">NT Somasundaram · Certified Master Trainer, Career Consultant &amp; Life Skills Educator</span><span class="ta">என்.டி. சோமசுந்தரம் · சான்றளிக்கப்பட்ட முதன்மை பயிற்சியாளர் &amp; வாழ்க்கை திறன் கல்வியாளர்</span></div>
+  <div class="contact" style="margin-top:8px;">
+    <a href="mailto:somasundaramnt.lifecoach@gmail.com">somasundaramnt.lifecoach@gmail.com</a> &nbsp;·&nbsp;
+    <a href="tel:+919843702244">+91 98437 02244</a>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  document.body.classList.toggle('show-ta', lang==='ta');
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.documentElement.lang = lang;
+}
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progressFill').style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+});
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrZjQ8oDwiKegl3pI1qAG1PVtZ0pFAlb3GbVvK7sPbzjIprs1Q9isXPoisLDjQnfpgng/exec';
+const MODULE_ID = 'Module 2 - Self-Awareness & EQ';
+
+function loadLearnerInfo(){
+  const n = document.getElementById('learnerName');
+  const em = document.getElementById('learnerEmail');
+  if(n) n.value = localStorage.getItem('lsm_name') || '';
+  if(em) em.value = localStorage.getItem('lsm_email') || '';
+}
+loadLearnerInfo();
+
+function saveReflections(){
+  const nameEl = document.getElementById('learnerName');
+  const emailEl = document.getElementById('learnerEmail');
+  const name = nameEl ? nameEl.value.trim() : '';
+  const email = emailEl ? emailEl.value.trim() : '';
+  if(!name){ alert('Please enter your name before saving.'); return; }
+  localStorage.setItem('lsm_name', name);
+  localStorage.setItem('lsm_email', email);
+  const responses = {};
+  document.querySelectorAll('.reflect textarea[name], .reflect input[name]').forEach(function(el){
+    responses[el.name] = el.value;
+  });
+  const payload = encodeURIComponent(JSON.stringify(responses));
+  const url = APPS_SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&module=' + encodeURIComponent(MODULE_ID) + '&responses=' + payload;
+  const img = new Image();
+  img.src = url;
+  const status = document.getElementById('saveStatus');
+  if(status){
+    status.textContent = 'Saved \u2713';
+    setTimeout(function(){ status.textContent=''; }, 4000);
+  }
+}
+
+</script>
+
+</body>
+</html>

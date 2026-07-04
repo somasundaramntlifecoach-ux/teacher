@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 3: Stress &amp; Anger Management — Life Skills Mastery for Educators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16333F; --ink-soft:#2A4B58;
+    --marigold:#E5A337; --marigold-deep:#C77F1F;
+    --sage:#7C9A80; --sage-deep:#5E7C63;
+    --paper:#F6F2E9; --paper-dim:#EDE6D6;
+    --charcoal:#26251F; --white:#FFFEFB;
+    --line:rgba(22,51,63,0.14);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--charcoal);font-family:'Poppins',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .en{display:inline;} .ta{display:none;}
+  body.show-ta .en{display:none;} body.show-ta .ta{display:inline;}
+  body.show-ta h1,body.show-ta h2,body.show-ta h3,body.show-ta h4,body.show-ta p,body.show-ta li,body.show-ta span,body.show-ta a,body.show-ta button,body.show-ta label,body.show-ta textarea::placeholder{font-family:'Noto Sans Tamil',sans-serif;}
+  .display{font-family:'Fraunces',serif;}
+  body.show-ta .display{font-family:'Noto Sans Tamil',sans-serif;font-weight:700;}
+  a{color:inherit;} img,svg{display:block;max-width:100%;}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--white);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .topbar .brand{font-size:13.5px;opacity:.9;display:flex;align-items:center;gap:8px;}
+  .brand-dot{width:7px;height:7px;border-radius:50%;background:var(--marigold);flex:none;}
+  .lang-toggle{display:flex;background:rgba(255,255,255,0.1);border-radius:999px;padding:3px;gap:2px;}
+  .lang-toggle button{border:none;background:transparent;color:var(--white);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;}
+  .lang-toggle button.active{background:var(--marigold);color:var(--ink);}
+  .progress-track{height:4px;background:rgba(255,255,255,0.15);}
+  .progress-fill{height:100%;width:0%;background:var(--marigold);transition:width .15s linear;}
+  /* Learner info + save bar */
+  .learner-bar{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--paper-dim);border-bottom:1px solid var(--line);}
+  .learner-field{flex:1;min-width:160px;}
+  .learner-field label{display:block;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:4px;}
+  .learner-field input{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:'Poppins',sans-serif;font-size:13.5px;background:var(--white);color:var(--charcoal);box-sizing:border-box;}
+  body.show-ta .learner-field input{font-family:'Noto Sans Tamil',sans-serif;}
+  .save-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px;margin:30px 0;text-align:center;}
+  .save-block p{font-size:13.5px;color:var(--ink-soft);margin:0 0 14px;}
+  .save-status{margin-top:10px;font-size:13.5px;color:var(--sage-deep);font-weight:600;min-height:18px;}
+
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  section{padding:56px 0;}
+  .rule{border:none;border-top:1px solid var(--line);margin:0;}
+
+  .module-header{padding:56px 0 40px;}
+  .module-tag{display:inline-block;background:var(--marigold);color:var(--ink);font-size:12.5px;font-weight:700;letter-spacing:.05em;padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+  h1{font-size:clamp(28px,4.4vw,42px);font-weight:600;line-height:1.14;margin:0 0 16px;color:var(--ink);}
+  .module-header p.lede{font-size:16.5px;color:var(--ink-soft);max-width:56ch;margin:0 0 26px;}
+  .meta-row{display:flex;gap:22px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-soft);}
+  .meta-row span{display:flex;align-items:center;gap:6px;}
+  .meta-row .dot{width:5px;height:5px;border-radius:50%;background:var(--sage);}
+
+  .s-label{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .s-num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:14px;}
+  body.show-ta .s-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .s-label h2{margin:0;font-size:clamp(21px,3vw,27px);font-weight:600;color:var(--ink);}
+  section p{font-size:15.5px;color:var(--charcoal);}
+  section p.intro{color:var(--ink-soft);font-size:16px;}
+
+  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 8px;}
+  .skill-card{border:1px solid var(--line);background:var(--white);border-radius:var(--radius);padding:18px 18px;}
+  .skill-card .sk-num{font-family:'Fraunces',serif;font-size:12.5px;color:var(--marigold-deep);font-weight:700;letter-spacing:.03em;margin-bottom:8px;}
+  body.show-ta .skill-card .sk-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .skill-card h4{margin:0 0 6px;font-size:15.5px;color:var(--ink);}
+  .skill-card p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+
+  .callout{background:var(--ink);color:var(--paper);border-radius:18px;padding:34px 30px;margin:30px 0;}
+  .callout .display{font-size:20px;color:var(--white);margin:0 0 12px;}
+  .callout p{color:rgba(246,242,233,0.85);margin:0;font-size:15.5px;}
+
+  blockquote{margin:26px 0;padding:2px 0 2px 22px;border-left:3px solid var(--marigold);font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--ink);}
+  body.show-ta blockquote{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;font-weight:500;}
+
+  .reflect{background:var(--white);border:1.5px dashed var(--sage);border-radius:var(--radius);padding:24px 24px 20px;margin:26px 0;}
+  .reflect .r-tag{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .reflect .r-tag::before{content:'✎';font-size:14px;}
+  .reflect h4{margin:0 0 14px;font-size:16px;color:var(--ink);font-weight:600;}
+  .reflect textarea{width:100%;min-height:84px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:'Poppins',sans-serif;font-size:14.5px;color:var(--charcoal);background:var(--paper);resize:vertical;}
+  body.show-ta .reflect textarea{font-family:'Noto Sans Tamil',sans-serif;}
+  .reflect textarea:focus{outline:2px solid var(--sage);outline-offset:1px;}
+
+  .steps{counter-reset:step;margin:26px 0;padding:0;list-style:none;}
+  .steps li{counter-increment:step;position:relative;padding:16px 0 16px 46px;border-bottom:1px solid var(--line);}
+  .steps li:last-child{border-bottom:none;}
+  .steps li::before{content:counter(step);position:absolute;left:0;top:16px;width:30px;height:30px;border-radius:50%;background:var(--paper-dim);border:1px solid var(--line);color:var(--ink);font-family:'Fraunces',serif;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;}
+  body.show-ta .steps li::before{font-family:'Noto Sans Tamil',sans-serif;}
+  .steps h4{margin:0 0 5px;font-size:15.5px;color:var(--ink);}
+  .steps p{margin:0;font-size:14px;color:var(--ink-soft);}
+
+  .warn-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0;}
+  .warn-card{border-radius:var(--radius);padding:20px;background:var(--white);border:1px solid var(--line);}
+  .warn-card.red{border-left:4px solid #C4573F;}
+  .warn-card.green{border-left:4px solid var(--sage-deep);}
+  .warn-card h4{margin:0 0 10px;font-size:14.5px;color:var(--ink);}
+  .warn-card ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink-soft);}
+  .warn-card li{margin-bottom:6px;}
+
+  .assess-card{background:var(--sage);color:var(--white);border-radius:20px;padding:36px 30px;margin:34px 0;text-align:center;}
+  .assess-card h3{margin:0 0 10px;font-size:22px;color:var(--white);}
+  .assess-card p{color:rgba(255,255,255,0.9);max-width:48ch;margin:0 auto 22px;font-size:15px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14.5px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease;}
+  .btn-primary{background:var(--ink);color:var(--white);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .assess-card .btn-primary{background:var(--white);color:var(--sage-deep);}
+
+  .takeaway-list{list-style:none;margin:22px 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .takeaway-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .takeaway-list li:last-child{border-bottom:none;}
+  .takeaway-list .mk{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(229,163,55,0.16);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:2px;}
+
+  .module-nav{display:flex;justify-content:space-between;align-items:center;padding:40px 0 70px;gap:16px;flex-wrap:wrap;}
+  .nav-link{display:flex;flex-direction:column;text-decoration:none;padding:16px 20px;border-radius:14px;border:1px solid var(--line);background:var(--white);min-width:220px;}
+  .nav-link .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:4px;}
+  .nav-link .ttl{font-size:15.5px;font-weight:600;color:var(--ink);}
+  .nav-link.next{text-align:right;}
+
+  /* Deep-dive expandable detail blocks */
+  .deepdive-intro{margin:34px 0 16px;font-size:13.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);}
+  .deep{border:1px solid var(--line);border-radius:var(--radius);background:var(--white);margin-bottom:12px;overflow:hidden;}
+  .deep summary{cursor:pointer;padding:16px 20px;font-weight:600;font-size:15.5px;color:var(--ink);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .deep summary::-webkit-details-marker{display:none;}
+  .deep summary .plus{flex:none;width:26px;height:26px;border-radius:50%;background:var(--paper-dim);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:17px;transition:transform .2s ease;}
+  .deep[open] summary .plus{transform:rotate(45deg);}
+  .deep-body{padding:2px 20px 22px;border-top:1px solid var(--line);}
+  .deep-body h5{margin:16px 0 6px;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--sage-deep);font-weight:700;}
+  .deep-body h5:first-child{margin-top:16px;}
+  .deep-body p{margin:0 0 4px;font-size:14.5px;color:var(--ink-soft);}
+
+  footer{padding:32px 24px 50px;text-align:center;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);}
+  footer .motto{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);margin-bottom:6px;font-size:14.5px;}
+  body.show-ta footer .motto{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;}
+  footer .contact a{text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media print{
+    .topbar,.progress-track,.module-nav,.lang-toggle{display:none !important;}
+    body{background:#fff;}
+    .deep{break-inside:avoid;}
+  }
+  @media (max-width:640px){
+    .skill-grid,.warn-grid{grid-template-columns:1fr;}
+    .module-nav{flex-direction:column;align-items:stretch;}
+    .nav-link.next{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="brand-dot"></span>
+    <span class="en">Life Skills Mastery for Educators</span>
+    <span class="ta">ஆசிரியர்களுக்கான வாழ்க்கை திறன் தேர்ச்சி</span>
+  </div>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('en')">English</button>
+    <button onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="learner-bar">
+  <div class="learner-field">
+    <label><span class="en">Your Name</span><span class="ta">உங்கள் பெயர்</span></label>
+    <input type="text" id="learnerName" placeholder="e.g., Priya Kumar">
+  </div>
+  <div class="learner-field">
+    <label><span class="en">Your Email (optional)</span><span class="ta">உங்கள் மின்னஞ்சல் (விருப்பம்)</span></label>
+    <input type="text" id="learnerEmail" placeholder="you@example.com">
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="module-header">
+    <span class="module-tag"><span class="en">MODULE 3 OF 10</span><span class="ta">தொகுதி 3 / 10</span></span>
+    <h1 class="display"><span class="en">Stress &amp; Anger Management</span><span class="ta">மன அழுத்தம் &amp; கோப மேலாண்மை</span></h1>
+    <p class="lede">
+      <span class="en">Teaching is one of the most emotionally demanding professions there is. This module names the specific pressures unique to a classroom, gives you an early-warning system for burnout, and a practical way to de-escalate anger before it speaks.</span>
+      <span class="ta">கற்பித்தல் என்பது உணர்ச்சி ரீதியாக மிகவும் கோரப்படும் தொழில்களில் ஒன்று. இந்த தொகுதி வகுப்பறைக்கே உரிய குறிப்பிட்ட அழுத்தங்களை பெயரிட்டு, burnout-க்கான முன்கூட்டிய எச்சரிக்கை அமைப்பையும், கோபம் பேசுவதற்கு முன் அதை தணிக்க ஒரு நடைமுறை வழியையும் தருகிறது.</span>
+    </p>
+    <div class="meta-row">
+      <span><span class="dot"></span><span class="en">Reading time: ~28 min</span><span class="ta">படிக்க: ~28 நிமிடம்</span></span>
+      <span><span class="dot"></span><span class="en">3 reflection exercises</span><span class="ta">3 சிந்தனை பயிற்சிகள்</span></span>
+      <span><span class="dot"></span><span class="en">1 burnout self-check</span><span class="ta">1 burnout சுய-சோதனை</span></span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <div class="s-label"><div class="s-num">1</div><h2 class="display"><span class="en">Where Teacher Stress Actually Comes From</span><span class="ta">ஆசிரியர் மன அழுத்தம் உண்மையில் எங்கிருந்து வருகிறது</span></h2></div>
+    <p class="intro">
+      <span class="en">Generic stress advice rarely fits a classroom. Teacher stress has its own specific sources — recognising them by name is the first step to managing them, instead of just absorbing them.</span>
+      <span class="ta">பொதுவான மன அழுத்த ஆலோசனை பெரும்பாலும் வகுப்பறைக்கு பொருந்தாது. ஆசிரியர் மன அழுத்தத்திற்கு அதன் சொந்த குறிப்பிட்ட ஆதாரங்கள் உள்ளன — அவற்றை பெயரால் அடையாளம் காண்பதே அவற்றை உள்வாங்குவதற்குப் பதிலாக நிர்வகிப்பதற்கான முதல் படி.</span>
+    </p>
+
+    <div class="skill-grid">
+      <div class="skill-card"><div class="sk-num">01</div><h4><span class="en">Emotional Labour</span><span class="ta">உணர்ச்சி உழைப்பு</span></h4><p><span class="en">Performing patience and warmth on days you don't feel either — repeatedly, for hours, without a break.</span><span class="ta">பொறுமையையும் அன்பையும் நீங்கள் உணராத நாட்களிலும் — மணிநேரங்களுக்கு, இடைவேளையின்றி — திரும்பத் திரும்ப நடிப்பது.</span></p></div>
+      <div class="skill-card"><div class="sk-num">02</div><h4><span class="en">Role Overload</span><span class="ta">பங்கு சுமை</span></h4><p><span class="en">Being teacher, counsellor, administrator and parent-liaison within the same working hour.</span><span class="ta">ஒரே வேலை நேரத்தில் ஆசிரியராகவும், ஆலோசகராகவும், நிர்வாகியாகவும், பெற்றோர்-தொடர்பாளராகவும் இருப்பது.</span></p></div>
+      <div class="skill-card"><div class="sk-num">03</div><h4><span class="en">Low Control, High Accountability</span><span class="ta">குறைந்த கட்டுப்பாடு, அதிக பொறுப்பு</span></h4><p><span class="en">Being judged on outcomes — exam results, behaviour — you often can't fully control.</span><span class="ta">நீங்கள் முழுமையாக கட்டுப்படுத்த முடியாத முடிவுகள் — தேர்வு முடிவுகள், நடத்தை — அடிப்படையில் மதிப்பிடப்படுவது.</span></p></div>
+      <div class="skill-card"><div class="sk-num">04</div><h4><span class="en">Compassion Fatigue</span><span class="ta">பரிவு சோர்வு</span></h4><p><span class="en">The slow depletion that comes from caring deeply about many students' wellbeing, year after year.</span><span class="ta">பல மாணவர்களின் நல்வாழ்வைப் பற்றி ஆண்டுதோறும் ஆழமாக அக்கறை கொள்வதால் ஏற்படும் மெதுவான சோர்வு.</span></p></div>
+    </div>
+
+    <blockquote><span class="en">Most burnout in teaching isn't caused by one bad day. It's the slow accumulation of small, unrecovered stresses over months.</span><span class="ta">கற்பித்தலில் பெரும்பாலான burnout ஒரு மோசமான நாளால் ஏற்படுவதில்லை. இது மாதங்களாக மீளாத சிறிய அழுத்தங்களின் மெதுவான குவிப்பே.</span></blockquote>
+
+    <div class="deepdive-intro"><span class="en">Explore each stress source in depth</span><span class="ta">ஒவ்வொரு மன அழுத்த ஆதாரத்தையும் விரிவாக அறிக</span></div>
+
+    <details class="deep">
+      <summary><span><span class="en">1. Emotional Labour</span><span class="ta">1. உணர்ச்சி உழைப்பு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it really means</span><span class="ta">இதன் உண்மையான அர்த்தம்</span></h5>
+        <p><span class="en">The effort of managing your outward expression to match what the job requires, regardless of what you privately feel — smiling, staying patient, sounding encouraging, hour after hour.</span><span class="ta">நீங்கள் தனிப்பட்ட முறையில் உணர்வதைப் பொருட்படுத்தாமல், வேலைக்கு தேவையானதற்கு ஏற்ப உங்கள் வெளிப்புற வெளிப்பாட்டை நிர்வகிக்கும் முயற்சி — மணிநேரத்திற்கு மணிநேரம், சிரித்து, பொறுமையாக இருந்து, ஊக்கமளிக்கும்படி ஒலிக்க வேண்டும்.</span></p>
+        <h5><span class="en">How it builds up unnoticed</span><span class="ta">இது கவனிக்காமல் எப்படி குவிகிறது</span></h5>
+        <p><span class="en">Unlike physical tiredness, emotional labour doesn't announce itself with sore muscles. It shows up instead as a flat feeling by Friday, or irritation at small things that wouldn't normally bother you.</span><span class="ta">உடல் சோர்வைப் போலல்லாமல், உணர்ச்சி உழைப்பு வலிக்கும் தசைகளுடன் தன்னை அறிவிக்காது. இது வெள்ளிக்கிழமையில் ஒரு சமமான உணர்வாக, அல்லது வழக்கமாக உங்களை தொந்தரவு செய்யாத சிறிய விஷயங்களில் எரிச்சலாக தோன்றுகிறது.</span></p>
+        <h5><span class="en">One way to offset it</span><span class="ta">இதை ஈடுசெய்ய ஒரு வழி</span></h5>
+        <p><span class="en">Build in at least one interaction a day where you don't have to perform — a colleague you can be flatly honest with for two minutes, no managing required.</span><span class="ta">நீங்கள் நடிக்க வேண்டியதில்லாத ஒரு தொடர்பையாவது தினமும் உருவாக்குங்கள் — இரண்டு நிமிடங்களுக்கு நீங்கள் நேர்மையாக இருக்கக்கூடிய ஒரு சக ஊழியர், நிர்வகிக்க தேவையில்லை.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">2. Role Overload</span><span class="ta">2. பங்கு சுமை</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it really means</span><span class="ta">இதன் உண்மையான அர்த்தம்</span></h5>
+        <p><span class="en">Holding several distinct roles — instructor, counsellor, administrator, parent-liaison, sometimes disciplinarian — within the same hour, each requiring a different mindset.</span><span class="ta">ஒரே மணிநேரத்தில் பல தனித்தனி பங்குகளை — போதகர், ஆலோசகர், நிர்வாகி, பெற்றோர்-தொடர்பாளர், சில நேரங்களில் ஒழுக்க அதிகாரி — ஒவ்வொன்றுக்கும் வெவ்வேறு மனநிலை தேவைப்படும்.</span></p>
+        <h5><span class="en">How it builds up unnoticed</span><span class="ta">இது கவனிக்காமல் எப்படி குவிகிறது</span></h5>
+        <p><span class="en">Switching mental "hats" rapidly, all day, is itself tiring even when each individual task is manageable — the fatigue comes from the switching, not just the tasks.</span><span class="ta">ஒவ்வொரு தனிப்பட்ட பணியும் நிர்வகிக்கக்கூடியதாக இருந்தாலும், முழு நாளும் விரைவாக மனநிலை "தொப்பிகளை" மாற்றுவது தன்னளவில் சோர்வளிக்கிறது — சோர்வு மாற்றத்திலிருந்தே வருகிறது, பணிகளிலிருந்து மட்டும் அல்ல.</span></p>
+        <h5><span class="en">One way to offset it</span><span class="ta">இதை ஈடுசெய்ய ஒரு வழி</span></h5>
+        <p><span class="en">Where possible, batch similar-role tasks together — all parent messages in one block, all marking in another — rather than switching roles every few minutes.</span><span class="ta">முடிந்தவரை, ஒரே மாதிரியான பங்கு பணிகளை ஒன்றாக தொகுக்கவும் — அனைத்து பெற்றோர் செய்திகளும் ஒரு தொகுதியில், அனைத்து மதிப்பீடும் மற்றொன்றில் — ஒவ்வொரு சில நிமிடங்களுக்கும் பங்குகளை மாற்றுவதற்குப் பதிலாக.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">3. Low Control, High Accountability</span><span class="ta">3. குறைந்த கட்டுப்பாடு, அதிக பொறுப்பு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it really means</span><span class="ta">இதன் உண்மையான அர்த்தம்</span></h5>
+        <p><span class="en">Being judged on outcomes — exam results, classroom behaviour, attendance — that are shaped by many factors well outside your control, such as home environment or resourcing.</span><span class="ta">உங்கள் கட்டுப்பாட்டிற்கு அப்பாற்பட்ட பல காரணிகளால் — வீட்டு சூழல் அல்லது வளங்கள் போன்றவை — வடிவமைக்கப்படும் முடிவுகள் — தேர்வு முடிவுகள், வகுப்பறை நடத்தை, வருகை — அடிப்படையில் மதிப்பிடப்படுவது.</span></p>
+        <h5><span class="en">How it builds up unnoticed</span><span class="ta">இது கவனிக்காமல் எப்படி குவிகிறது</span></h5>
+        <p><span class="en">The gap between what you're held responsible for and what you can actually influence creates a quiet, chronic frustration that's easy to mistake for personal failure.</span><span class="ta">நீங்கள் பொறுப்பாக்கப்படுவதற்கும் நீங்கள் உண்மையில் பாதிக்க முடிந்ததற்கும் இடையிலான இடைவெளி, தனிப்பட்ட தோல்வியாக தவறாக கருதப்படக்கூடிய அமைதியான, நாள்பட்ட விரக்தியை உருவாக்குகிறது.</span></p>
+        <h5><span class="en">One way to offset it</span><span class="ta">இதை ஈடுசெய்ய ஒரு வழி</span></h5>
+        <p><span class="en">At the end of a difficult result, separate what was within your control from what wasn't, in writing. Judge yourself only on the first list.</span><span class="ta">ஒரு கடினமான முடிவின் முடிவில், உங்கள் கட்டுப்பாட்டில் இருந்ததையும் இல்லாததையும் எழுத்தில் பிரிக்கவும். முதல் பட்டியலின் அடிப்படையில் மட்டும் உங்களை மதிப்பிடுங்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">4. Compassion Fatigue</span><span class="ta">4. பரிவு சோர்வு</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it really means</span><span class="ta">இதன் உண்மையான அர்த்தம்</span></h5>
+        <p><span class="en">The slow depletion that comes from caring deeply, year after year, about the wellbeing of many students — some of whom are dealing with real hardship at home.</span><span class="ta">ஆண்டுதோறும், பல மாணவர்களின் — சிலர் வீட்டில் உண்மையான கஷ்டங்களை எதிர்கொள்பவர்கள் — நல்வாழ்வைப் பற்றி ஆழமாக அக்கறை கொள்வதால் ஏற்படும் மெதுவான சோர்வு.</span></p>
+        <h5><span class="en">How it builds up unnoticed</span><span class="ta">இது கவனிக்காமல் எப்படி குவிகிறது</span></h5>
+        <p><span class="en">Unlike a single traumatic event, this fatigue accumulates from many small acts of caring that never fully "close" — you carry a little of each student's story without realising the combined weight.</span><span class="ta">ஒரு தனி துன்பகரமான நிகழ்விலிருந்து வேறுபட்டு, இந்த சோர்வு ஒருபோதும் முழுமையாக "மூடப்படாத" பல சிறிய அக்கறை செயல்களிலிருந்து குவிகிறது — ஒவ்வொரு மாணவரின் கதையின் ஒரு பகுதியை நீங்கள் கூட்டு எடையை உணராமல் சுமக்கிறீர்கள்.</span></p>
+        <h5><span class="en">One way to offset it</span><span class="ta">இதை ஈடுசெய்ய ஒரு வழி</span></h5>
+        <p><span class="en">At the end of each week, consciously "set down" one student's difficult story you've been carrying — acknowledge it, note any action needed, then let your mind rest from it until Monday.</span><span class="ta">ஒவ்வொரு வார இறுதியிலும், நீங்கள் சுமந்து வந்த ஒரு மாணவரின் கடினமான கதையை உணர்வுபூர்வமாக "கீழே வையுங்கள்" — அதை ஒப்புக்கொள்ளுங்கள், தேவையான எந்த நடவடிக்கையையும் குறிப்பிடுங்கள், பிறகு திங்கள்கிழமை வரை உங்கள் மனதை அதிலிருந்து ஓய்வெடுக்க விடுங்கள்.</span></p>
+      </div>
+    </details>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 1 of 3</span><span class="ta">சிந்தனை · 1/3</span></div>
+      <h4><span class="en">Which one of the four stress sources above shows up most in your week right now?</span><span class="ta">மேலே உள்ள நான்கு மன அழுத்த ஆதாரங்களில் எது உங்கள் தற்போதைய வாரத்தில் அதிகம் தென்படுகிறது?</span></h4>
+      <textarea name="r1" placeholder="Write a few lines here — this stays on your screen only, for your own reference."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <div class="s-label"><div class="s-num">2</div><h2 class="display"><span class="en">De-escalating Anger — Yours and Theirs</span><span class="ta">கோபத்தை தணித்தல் — உங்களுடையது மற்றும் அவர்களுடையது</span></h2></div>
+    <p class="intro">
+      <span class="en">Anger in a classroom is rarely really about the triggering incident. It's usually the last straw on a stack you didn't notice building. The goal isn't to suppress anger — it's to catch it early and choose what to do with it.</span>
+      <span class="ta">வகுப்பறையில் கோபம் அரிதாகவே தூண்டும் சம்பவத்தைப் பற்றியது. இது பொதுவாக நீங்கள் கட்டியெழுப்புவதை கவனிக்காத ஒரு குவியலின் கடைசி வைக்கோல். நோக்கம் கோபத்தை அடக்குவது அல்ல — அதை முன்கூட்டியே பிடித்து, அதனுடன் என்ன செய்வது என்பதை தேர்ந்தெடுப்பது.</span>
+    </p>
+
+    <div class="warn-grid">
+      <div class="warn-card red">
+        <h4><span class="en">Early Warning Signs (Yours)</span><span class="ta">முன்கூட்டிய எச்சரிக்கை அறிகுறிகள் (உங்களுடையது)</span></h4>
+        <ul>
+          <li><span class="en">Jaw or shoulders tightening</span><span class="ta">தாடை அல்லது தோள்கள் இறுகுதல்</span></li>
+          <li><span class="en">Voice rising before you notice it</span><span class="ta">நீங்கள் கவனிப்பதற்கு முன் குரல் உயருதல்</span></li>
+          <li><span class="en">Replaying the same complaint mentally</span><span class="ta">அதே புகாரை மனதளவில் மீண்டும் நினைத்தல்</span></li>
+          <li><span class="en">Wanting to "win" rather than resolve</span><span class="ta">தீர்ப்பதை விட "வெல்ல" விரும்புதல்</span></li>
+        </ul>
+      </div>
+      <div class="warn-card green">
+        <h4><span class="en">In-the-Moment Resets</span><span class="ta">தருணத்தில் மறுசீரமைப்புகள்</span></h4>
+        <ul>
+          <li><span class="en">Step back half a metre before speaking</span><span class="ta">பேசுவதற்கு முன் அரை மீட்டர் பின்வாங்குங்கள்</span></li>
+          <li><span class="en">Lower your voice instead of raising it</span><span class="ta">உயர்த்துவதற்குப் பதிலாக உங்கள் குரலை தாழ்த்துங்கள்</span></li>
+          <li><span class="en">Say "let's talk about this in five minutes"</span><span class="ta">"இதைப் பற்றி ஐந்து நிமிடத்தில் பேசுவோம்" என்று சொல்லுங்கள்</span></li>
+          <li><span class="en">Unclench hands and jaw deliberately</span><span class="ta">கைகளையும் தாடையையும் வேண்டுமென்றே தளர்த்துங்கள்</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="display"><span class="en">The Burnout Self-Check</span><span class="ta">Burnout சுய-சோதனை</span></div>
+      <p>
+        <span class="en">Ask yourself honestly, once a month: Am I more irritable with students than I was a year ago? Do I dread specific classes I used to enjoy? Am I skipping meals, sleep, or rest to keep up? If two or more answers are yes, that's not a personal weakness — it's data. It means this module's practices need to move from "nice to know" to "non-negotiable" this term.</span>
+        <span class="ta">மாதத்திற்கு ஒருமுறை உங்களை நேர்மையாக கேளுங்கள்: ஒரு வருடத்திற்கு முன் இருந்ததை விட மாணவர்களிடம் நான் அதிக எரிச்சலடைகிறேனா? நான் முன்பு அனுபவித்த குறிப்பிட்ட வகுப்புகளை நான் அஞ்சுகிறேனா? சமாளிக்க உணவு, தூக்கம், ஓய்வை தவிர்க்கிறேனா? இரண்டு அல்லது அதற்கு மேற்பட்ட பதில்கள் ஆம் எனில், அது தனிப்பட்ட பலவீனம் அல்ல — அது தரவு. இந்த கால தொகுதியின் நடைமுறைகள் "தெரிந்தால் நல்லது" என்பதிலிருந்து "பேரம் பேசமுடியாதது" என்பதற்கு மாற வேண்டும் என்று அர்த்தம்.</span>
+      </p>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 2 of 3</span><span class="ta">சிந்தனை · 2/3</span></div>
+      <h4><span class="en">Which early warning sign (jaw, voice, replaying, wanting to "win") do you notice in yourself most often?</span><span class="ta">எந்த முன்கூட்டிய எச்சரிக்கை அறிகுறியை (தாடை, குரல், மீண்டும் நினைத்தல், "வெல்ல" விரும்புதல்) நீங்கள் அதிகம் கவனிக்கிறீர்கள்?</span></h4>
+      <textarea name="r2" placeholder="Write a few lines here — this stays on your screen only, for your own reference."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <div class="s-label"><div class="s-num">3</div><h2 class="display"><span class="en">Building Recovery Into Your Week</span><span class="ta">உங்கள் வாரத்தில் மீட்சியை உருவாக்குதல்</span></h2></div>
+    <p class="intro">
+      <span class="en">Recovery isn't a holiday — it's small, repeated pauses that stop stress from stacking up. Look at your self-assessment's Stress Management domain score, and pick one recovery habit from below to try this week, not all of them at once.</span>
+      <span class="ta">மீட்சி என்பது விடுமுறை அல்ல — இது மன அழுத்தம் குவிவதை நிறுத்தும் சிறிய, திரும்பத் திரும்ப வரும் இடைவேளைகள். உங்கள் சுய மதிப்பீட்டின் மன அழுத்த மேலாண்மை துறை மதிப்பெண்ணைப் பாருங்கள், கீழே இருந்து ஒரே நேரத்தில் அனைத்தும் அல்ல, இந்த வாரம் முயற்சி செய்ய ஒரு மீட்சி பழக்கத்தை தேர்ந்தெடுங்கள்.</span>
+    </p>
+
+    <ul class="steps">
+      <li><h4><span class="en">A two-minute pause between classes</span><span class="ta">வகுப்புகளுக்கு இடையே இரண்டு நிமிட இடைவேளை</span></h4><p><span class="en">Even sitting silently before the next group walks in resets your nervous system slightly.</span><span class="ta">அடுத்த குழு நுழையும் முன் அமைதியாக அமர்ந்திருப்பது கூட உங்கள் நரம்பு மண்டலத்தை சற்று மீட்டமைக்கிறது.</span></p></li>
+      <li><h4><span class="en">One "no work" boundary each evening</span><span class="ta">ஒவ்வொரு மாலையும் ஒரு "வேலை இல்லை" எல்லை</span></h4><p><span class="en">Pick a fixed hour after which correction and planning wait until morning.</span><span class="ta">திருத்தமும் திட்டமிடலும் காலை வரை காத்திருக்கும் ஒரு நிலையான நேரத்தை தேர்ந்தெடுங்கள்.</span></p></li>
+      <li><h4><span class="en">Name one colleague you can be honest with</span><span class="ta">நீங்கள் நேர்மையாக இருக்கக்கூடிய ஒரு சக ஊழியரை பெயரிடுங்கள்</span></h4><p><span class="en">Stress shared out loud, even briefly, is lighter than stress carried silently.</span><span class="ta">சத்தமாக பகிரப்பட்ட மன அழுத்தம், சுருக்கமாக இருந்தாலும், அமைதியாக சுமக்கப்பட்ட மன அழுத்தத்தை விட இலகுவானது.</span></p></li>
+    </ul>
+
+    <div class="assess-card">
+      <h3><span class="en">Check Your Stress Management Score</span><span class="ta">உங்கள் மன அழுத்த மேலாண்மை மதிப்பெண்ணை சரிபார்க்கவும்</span></h3>
+      <p><span class="en">Your 15-domain self-assessment includes a dedicated Stress Management dimension — revisit it to see exactly where to focus this week.</span><span class="ta">உங்கள் 15-துறை சுய மதிப்பீட்டில் ஒரு தனி மன அழுத்த மேலாண்மை பரிமாணம் உள்ளது — இந்த வாரம் எங்கு கவனம் செலுத்த வேண்டும் என்பதை சரியாக பார்க்க அதை மீண்டும் பாருங்கள்.</span></p>
+      <a class="btn btn-primary" href="https://somasundaramntlifecoach-ux.github.io/teacher/landing.html" target="_blank" rel="noopener"><span class="en">Go to Self-Assessment →</span><span class="ta">சுய மதிப்பீட்டிற்கு செல்லுங்கள் →</span></a>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 3 of 3</span><span class="ta">சிந்தனை · 3/3</span></div>
+      <h4><span class="en">Pick one recovery habit from above. What specifically will stop you from doing it, and how will you work around that?</span><span class="ta">மேலே இருந்து ஒரு மீட்சி பழக்கத்தை தேர்ந்தெடுங்கள். குறிப்பாக அதை செய்யவிடாமல் என்ன தடுக்கும், அதை எப்படி சமாளிப்பீர்கள்?</span></h4>
+      <textarea name="r3" placeholder="This becomes your practice focus for the week."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- TAKEAWAYS -->
+  <section>
+    <div class="s-label"><div class="s-num">✓</div><h2 class="display"><span class="en">Module 3 Takeaways</span><span class="ta">தொகுதி 3 சுருக்கம்</span></h2></div>
+    <ul class="takeaway-list">
+      <li><span class="mk">1</span><span><span class="en">Teacher stress has four specific sources — emotional labour, role overload, low control with high accountability, and compassion fatigue.</span><span class="ta">ஆசிரியர் மன அழுத்தத்திற்கு நான்கு குறிப்பிட்ட ஆதாரங்கள் உள்ளன — உணர்ச்சி உழைப்பு, பங்கு சுமை, அதிக பொறுப்புடன் குறைந்த கட்டுப்பாடு, பரிவு சோர்வு.</span></span></li>
+      <li><span class="mk">2</span><span><span class="en">Anger has early physical warning signs you can catch before it speaks — and simple in-the-moment resets to use when you notice them.</span><span class="ta">கோபத்திற்கு அது பேசுவதற்கு முன் நீங்கள் பிடிக்கக்கூடிய முன்கூட்டிய உடல் எச்சரிக்கை அறிகுறிகள் உள்ளன — அவற்றை கவனிக்கும்போது பயன்படுத்த எளிய தருண மறுசீரமைப்புகள்.</span></span></li>
+      <li><span class="mk">3</span><span><span class="en">Burnout builds from small, unrecovered stresses over months — a monthly honest self-check and one small daily recovery habit prevent it.</span><span class="ta">Burnout மாதங்களாக சிறிய, மீளாத அழுத்தங்களிலிருந்து உருவாகிறது — ஒரு மாதாந்திர நேர்மையான சுய-சோதனையும் ஒரு சிறிய தினசரி மீட்சி பழக்கமும் அதைத் தடுக்கும்.</span></span></li>
+    </ul>
+  </section>
+
+    <div class="save-block">
+    <p><span class="en">Save your reflections from this module to your learning record.</span><span class="ta">இந்த தொகுதியிலிருந்து உங்கள் சிந்தனைகளை உங்கள் கற்றல் பதிவில் சேமிக்கவும்.</span></p>
+    <button class="btn btn-primary" onclick="saveReflections()"><span class="en">Save My Reflections</span><span class="ta">என் சிந்தனைகளை சேமிக்கவும்</span></button>
+    <div class="save-status" id="saveStatus"></div>
+  </div>
+
+  <div class="module-nav">
+    <a class="nav-link" href="module2-content.html">
+      <span class="lbl"><span class="en">← Back to</span><span class="ta">← திரும்ப</span></span>
+      <span class="ttl"><span class="en">Module 2 · Self-Awareness &amp; EQ</span><span class="ta">தொகுதி 2 · சுய-விழிப்பு &amp; EQ</span></span>
+    </a>
+    <a class="nav-link next" href="module4-content.html">
+      <span class="lbl"><span class="en">Up Next</span><span class="ta">அடுத்தது</span></span>
+      <span class="ttl"><span class="en">Module 4 · Communication Skills →</span><span class="ta">தொகுதி 4 · தொடர்பு திறன்கள் →</span></span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="motto"><span class="en">"God is always with u"</span><span class="ta">"கடவுள் எப்போதும் உங்களுடன் இருக்கிறார்"</span></div>
+  <div><span class="en">NT Somasundaram · Certified Master Trainer, Career Consultant &amp; Life Skills Educator</span><span class="ta">என்.டி. சோமசுந்தரம் · சான்றளிக்கப்பட்ட முதன்மை பயிற்சியாளர் &amp; வாழ்க்கை திறன் கல்வியாளர்</span></div>
+  <div class="contact" style="margin-top:8px;">
+    <a href="mailto:somasundaramnt.lifecoach@gmail.com">somasundaramnt.lifecoach@gmail.com</a> &nbsp;·&nbsp;
+    <a href="tel:+919843702244">+91 98437 02244</a>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  document.body.classList.toggle('show-ta', lang==='ta');
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.documentElement.lang = lang;
+}
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progressFill').style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+});
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrZjQ8oDwiKegl3pI1qAG1PVtZ0pFAlb3GbVvK7sPbzjIprs1Q9isXPoisLDjQnfpgng/exec';
+const MODULE_ID = 'Module 3 - Stress & Anger Management';
+
+function loadLearnerInfo(){
+  const n = document.getElementById('learnerName');
+  const em = document.getElementById('learnerEmail');
+  if(n) n.value = localStorage.getItem('lsm_name') || '';
+  if(em) em.value = localStorage.getItem('lsm_email') || '';
+}
+loadLearnerInfo();
+
+function saveReflections(){
+  const nameEl = document.getElementById('learnerName');
+  const emailEl = document.getElementById('learnerEmail');
+  const name = nameEl ? nameEl.value.trim() : '';
+  const email = emailEl ? emailEl.value.trim() : '';
+  if(!name){ alert('Please enter your name before saving.'); return; }
+  localStorage.setItem('lsm_name', name);
+  localStorage.setItem('lsm_email', email);
+  const responses = {};
+  document.querySelectorAll('.reflect textarea[name], .reflect input[name]').forEach(function(el){
+    responses[el.name] = el.value;
+  });
+  const payload = encodeURIComponent(JSON.stringify(responses));
+  const url = APPS_SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&module=' + encodeURIComponent(MODULE_ID) + '&responses=' + payload;
+  const img = new Image();
+  img.src = url;
+  const status = document.getElementById('saveStatus');
+  if(status){
+    status.textContent = 'Saved \u2713';
+    setTimeout(function(){ status.textContent=''; }, 4000);
+  }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 10: Capstone — Your Action Plan — Life Skills Mastery for Educators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16333F; --ink-soft:#2A4B58;
+    --marigold:#E5A337; --marigold-deep:#C77F1F;
+    --sage:#7C9A80; --sage-deep:#5E7C63;
+    --paper:#F6F2E9; --paper-dim:#EDE6D6;
+    --charcoal:#26251F; --white:#FFFEFB;
+    --line:rgba(22,51,63,0.14);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--charcoal);font-family:'Poppins',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .en{display:inline;} .ta{display:none;}
+  body.show-ta .en{display:none;} body.show-ta .ta{display:inline;}
+  body.show-ta h1,body.show-ta h2,body.show-ta h3,body.show-ta h4,body.show-ta p,body.show-ta li,body.show-ta span,body.show-ta a,body.show-ta button,body.show-ta label,body.show-ta textarea::placeholder,body.show-ta input::placeholder{font-family:'Noto Sans Tamil',sans-serif;}
+  .display{font-family:'Fraunces',serif;}
+  body.show-ta .display{font-family:'Noto Sans Tamil',sans-serif;font-weight:700;}
+  a{color:inherit;} img,svg{display:block;max-width:100%;}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--white);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .topbar .brand{font-size:13.5px;opacity:.9;display:flex;align-items:center;gap:8px;}
+  .brand-dot{width:7px;height:7px;border-radius:50%;background:var(--marigold);flex:none;}
+  .lang-toggle{display:flex;background:rgba(255,255,255,0.1);border-radius:999px;padding:3px;gap:2px;}
+  .lang-toggle button{border:none;background:transparent;color:var(--white);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;}
+  .lang-toggle button.active{background:var(--marigold);color:var(--ink);}
+  .progress-track{height:4px;background:rgba(255,255,255,0.15);}
+  .progress-fill{height:100%;width:0%;background:var(--marigold);transition:width .15s linear;}
+  /* Learner info + save bar */
+  .learner-bar{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--paper-dim);border-bottom:1px solid var(--line);}
+  .learner-field{flex:1;min-width:160px;}
+  .learner-field label{display:block;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:4px;}
+  .learner-field input{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:'Poppins',sans-serif;font-size:13.5px;background:var(--white);color:var(--charcoal);box-sizing:border-box;}
+  body.show-ta .learner-field input{font-family:'Noto Sans Tamil',sans-serif;}
+  .save-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px;margin:30px 0;text-align:center;}
+  .save-block p{font-size:13.5px;color:var(--ink-soft);margin:0 0 14px;}
+  .save-status{margin-top:10px;font-size:13.5px;color:var(--sage-deep);font-weight:600;min-height:18px;}
+
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  section{padding:56px 0;}
+  .rule{border:none;border-top:1px solid var(--line);margin:0;}
+
+  .module-header{padding:56px 0 40px;}
+  .module-tag{display:inline-block;background:var(--marigold);color:var(--ink);font-size:12.5px;font-weight:700;letter-spacing:.05em;padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+  h1{font-size:clamp(28px,4.4vw,42px);font-weight:600;line-height:1.14;margin:0 0 16px;color:var(--ink);}
+  .module-header p.lede{font-size:16.5px;color:var(--ink-soft);max-width:56ch;margin:0 0 26px;}
+  .meta-row{display:flex;gap:22px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-soft);}
+  .meta-row span{display:flex;align-items:center;gap:6px;}
+  .meta-row .dot{width:5px;height:5px;border-radius:50%;background:var(--sage);}
+
+  .s-label{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .s-num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:14px;}
+  body.show-ta .s-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .s-label h2{margin:0;font-size:clamp(21px,3vw,27px);font-weight:600;color:var(--ink);}
+  section p{font-size:15.5px;color:var(--charcoal);}
+  section p.intro{color:var(--ink-soft);font-size:16px;}
+
+  .callout{background:var(--ink);color:var(--paper);border-radius:18px;padding:34px 30px;margin:30px 0;}
+  .callout .display{font-size:20px;color:var(--white);margin:0 0 12px;}
+  .callout p{color:rgba(246,242,233,0.85);margin:0;font-size:15.5px;}
+
+  blockquote{margin:26px 0;padding:2px 0 2px 22px;border-left:3px solid var(--marigold);font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--ink);}
+  body.show-ta blockquote{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;font-weight:500;}
+
+  .reflect{background:var(--white);border:1.5px dashed var(--sage);border-radius:var(--radius);padding:24px 24px 20px;margin:26px 0;}
+  .reflect .r-tag{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .reflect .r-tag::before{content:'✎';font-size:14px;}
+  .reflect h4{margin:0 0 14px;font-size:16px;color:var(--ink);font-weight:600;}
+  .reflect textarea{width:100%;min-height:84px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:'Poppins',sans-serif;font-size:14.5px;color:var(--charcoal);background:var(--paper);resize:vertical;}
+  .reflect input[type="text"]{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:'Poppins',sans-serif;font-size:14.5px;color:var(--charcoal);background:var(--paper);}
+  body.show-ta .reflect textarea, body.show-ta .reflect input[type="text"]{font-family:'Noto Sans Tamil',sans-serif;}
+  .reflect textarea:focus, .reflect input:focus{outline:2px solid var(--sage);outline-offset:1px;}
+
+  .plan-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
+  .plan-field label{display:block;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:6px;}
+
+  .assess-card{background:var(--sage);color:var(--white);border-radius:20px;padding:36px 30px;margin:34px 0;text-align:center;}
+  .assess-card h3{margin:0 0 10px;font-size:22px;color:var(--white);}
+  .assess-card p{color:rgba(255,255,255,0.9);max-width:48ch;margin:0 auto 22px;font-size:15px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14.5px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease;}
+  .btn-primary{background:var(--ink);color:var(--white);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.5);}
+  .assess-card .btn-primary{background:var(--white);color:var(--sage-deep);}
+
+  .takeaway-list{list-style:none;margin:22px 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .takeaway-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .takeaway-list li:last-child{border-bottom:none;}
+  .takeaway-list .mk{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(229,163,55,0.16);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:2px;}
+
+  .module-nav{display:flex;justify-content:space-between;align-items:center;padding:40px 0 70px;gap:16px;flex-wrap:wrap;}
+  .nav-link{display:flex;flex-direction:column;text-decoration:none;padding:16px 20px;border-radius:14px;border:1px solid var(--line);background:var(--white);min-width:220px;}
+  .nav-link .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:4px;}
+  .nav-link .ttl{font-size:15.5px;font-weight:600;color:var(--ink);}
+  .nav-link.next{text-align:right;}
+
+  /* Deep-dive expandable detail blocks (used here as module recap cards) */
+  .deepdive-intro{margin:34px 0 16px;font-size:13.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);}
+  .deep{border:1px solid var(--line);border-radius:var(--radius);background:var(--white);margin-bottom:12px;overflow:hidden;}
+  .deep summary{cursor:pointer;padding:16px 20px;font-weight:600;font-size:15.5px;color:var(--ink);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .deep summary::-webkit-details-marker{display:none;}
+  .deep summary .plus{flex:none;width:26px;height:26px;border-radius:50%;background:var(--paper-dim);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:17px;transition:transform .2s ease;}
+  .deep[open] summary .plus{transform:rotate(45deg);}
+  .deep-body{padding:2px 20px 22px;border-top:1px solid var(--line);}
+  .deep-body h5{margin:16px 0 6px;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--sage-deep);font-weight:700;}
+  .deep-body h5:first-child{margin-top:16px;}
+  .deep-body p{margin:0 0 4px;font-size:14.5px;color:var(--ink-soft);}
+  .deep summary .mod-badge{flex:none;width:26px;height:26px;border-radius:50%;background:var(--paper-dim);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:12px;font-family:'Fraunces',serif;font-weight:700;}
+  body.show-ta .deep summary .mod-badge{font-family:'Noto Sans Tamil',sans-serif;}
+  .deep summary .mod-title{display:flex;align-items:center;gap:12px;}
+
+  .certificate{border:2px dashed var(--marigold-deep);border-radius:20px;padding:40px 30px;text-align:center;margin:34px 0;background:var(--white);}
+  .certificate .display{font-size:24px;color:var(--ink);margin:0 0 8px;}
+  .certificate p{color:var(--ink-soft);margin:0 0 4px;}
+  .certificate .name-line{margin:20px 0;font-family:'Fraunces',serif;font-size:20px;color:var(--marigold-deep);border-bottom:1px solid var(--line);padding-bottom:8px;}
+  body.show-ta .certificate .name-line{font-family:'Noto Sans Tamil',sans-serif;}
+
+  footer{padding:32px 24px 50px;text-align:center;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);}
+  footer .motto{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);margin-bottom:6px;font-size:14.5px;}
+  body.show-ta footer .motto{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;}
+  footer .contact a{text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media print{
+    .topbar,.progress-track,.module-nav,.lang-toggle{display:none !important;}
+    body{background:#fff;}
+    .deep{break-inside:avoid;}
+  }
+  @media (max-width:640px){
+    .plan-row{grid-template-columns:1fr;}
+    .module-nav{flex-direction:column;align-items:stretch;}
+    .nav-link.next{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="brand-dot"></span>
+    <span class="en">Life Skills Mastery for Educators</span>
+    <span class="ta">ஆசிரியர்களுக்கான வாழ்க்கை திறன் தேர்ச்சி</span>
+  </div>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('en')">English</button>
+    <button onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="learner-bar">
+  <div class="learner-field">
+    <label><span class="en">Your Name</span><span class="ta">உங்கள் பெயர்</span></label>
+    <input type="text" id="learnerName" placeholder="e.g., Priya Kumar">
+  </div>
+  <div class="learner-field">
+    <label><span class="en">Your Email (optional)</span><span class="ta">உங்கள் மின்னஞ்சல் (விருப்பம்)</span></label>
+    <input type="text" id="learnerEmail" placeholder="you@example.com">
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="module-header">
+    <span class="module-tag"><span class="en">MODULE 10 OF 10 · CAPSTONE</span><span class="ta">தொகுதி 10 / 10 · இறுதி</span></span>
+    <h1 class="display"><span class="en">Your Action Plan</span><span class="ta">உங்கள் செயல் திட்டம்</span></h1>
+    <p class="lede">
+      <span class="en">Nine modules of ideas mean little without one page that turns them into practice. This final module walks back through what you've built, and helps you distill it into a plan small enough to actually follow.</span>
+      <span class="ta">ஒன்பது தொகுதிகள் எண்ணங்கள், அவற்றை நடைமுறையாக மாற்றும் ஒரு பக்கம் இல்லாமல் சிறிதே அர்த்தமுள்ளவை. இந்த இறுதி தொகுதி நீங்கள் உருவாக்கியதை மீண்டும் பார்த்து, உண்மையில் பின்பற்ற போதுமான சிறிய திட்டமாக அதை வடிகட்ட உதவுகிறது.</span>
+    </p>
+    <div class="meta-row">
+      <span><span class="dot"></span><span class="en">Reading time: ~20 min</span><span class="ta">படிக்க: ~20 நிமிடம்</span></span>
+      <span><span class="dot"></span><span class="en">A 9-module recap</span><span class="ta">9-தொகுதி சுருக்கம்</span></span>
+      <span><span class="dot"></span><span class="en">1 personal action plan</span><span class="ta">1 தனிப்பட்ட செயல் திட்டம்</span></span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <div class="s-label"><div class="s-num">1</div><h2 class="display"><span class="en">Your Journey So Far</span><span class="ta">இதுவரையிலான உங்கள் பயணம்</span></h2></div>
+    <p class="intro">
+      <span class="en">Before building your plan, revisit the single most important idea from each module. Tap any one open to refresh it before deciding what belongs in your final plan.</span>
+      <span class="ta">உங்கள் திட்டத்தை உருவாக்குவதற்கு முன், ஒவ்வொரு தொகுதியிலிருந்தும் மிக முக்கியமான ஒரே எண்ணத்தை மீண்டும் பாருங்கள். உங்கள் இறுதி திட்டத்தில் எது சேர வேண்டும் என்பதை முடிவு செய்வதற்கு முன் ஒன்றை திறந்து புதுப்பியுங்கள்.</span>
+    </p>
+
+    <div class="deepdive-intro"><span class="en">Tap each module to recall its core idea</span><span class="ta">அதன் முக்கிய எண்ணத்தை நினைவுகூர ஒவ்வொரு தொகுதியையும் தட்டவும்</span></div>
+
+    <details class="deep">
+      <summary><span class="mod-title"><span class="mod-badge">1</span><span><span class="en">Foundations</span><span class="ta">அடிப்படைகள்</span></span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <p><span class="en">Life skills are WHO's 10 core abilities — an inner operating system, not academic content — and students absorb them by watching you live them, not by hearing them explained.</span><span class="ta">வாழ்க்கை திறன்கள் WHO-வின் 10 முக்கிய திறன்கள் — ஒரு உள் இயங்குதளம், கல்வித் தகவல் அல்ல — மாணவர்கள் நீங்கள் அவற்றை வாழும்போது பார்த்தே அவற்றை உள்வாங்குகிறார்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span class="mod-title"><span class="mod-badge">2</span><span><span class="en">Self-Awareness &amp; EQ</span><span class="ta">சுய-விழிப்பு &amp; EQ</span></span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <p><span class="en">A four-step pause–name–ask–respond sequence can regulate a reaction in under ten seconds — and when it fails, honest repair the next day teaches more than a perfect reaction would.</span><span class="ta">ஒரு நான்கு-படி நிறுத்து–பெயரிடு–கேள்–பதிலளி வரிசை பத்து விநாடிகளுக்குள் ஒரு எதிர்வினையை கட்டுப்படுத்த முடியும் — அது தோல்வியடையும்போது, அடுத்த நாள் நேர்மையான சரிசெய்தல் அதிகம் கற்பிக்கும்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span class="mod-title"><span class="mod-badge">3</span><span><span class="en">Stress &amp; Anger Management</span><span class="ta">மன அழுத்தம் &amp; கோப மேலாண்மை</span></span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <p><span class="en">Burnout builds from small, unrecovered stresses over months, not one bad day — a monthly honest self-check and one small daily recovery habit prevent it.</span><span class="ta">Burnout மாதங்களாக சிறிய, மீளாத அழுத்தங்களிலிருந்து உருவாகிறது, ஒரு மோசமான நாளால் அல்ல — ஒரு மாதாந்திர நேர்மையான சுய-சோதனையும் ஒரு சிறிய தினசரி மீட்சி பழக்கமும் அதைத் தடுக்கும்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span class="mod-title"><span class="mod-badge">4</span><span><span class="en">Communication Skills</span><span class="ta">தொடர்பு திறன்கள்</span></span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <p><span class="en">Only assertive communication respects both people's needs at once — and a four-part script (fact, concern, their perspective, shared next step) removes most of the anxiety from difficult conversations.</span><span class="ta">உறுதியான தொடர்பு மட்டுமே ஒரே நேரத்தில் இரு நபர்களின் தேவைகளையும் மதிக்கிறது — ஒரு நான்கு-பகுதி ஸ்கிரிப்ட் கடினமான உரையாடல்களிலிருந்து பெரும்பாலான கவலையை நீக்குகிறது.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span class="mod-title"><span class="mod-badge">5</span><span><span class="en">Decision-Making &amp; Problem-Solving</span><span class="ta">முடிவெடுத்தல் &amp; பிரச்சனை தீர்வு</span></span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <p><span class="en">Deliberate decisions are chosen on purpose, not defaulted into — and a define–generate–trial–review framework turns recurring problems into a repeatable process.</span><span class="ta">வேண்டுமென்றே எடுக்கப்படும் முடிவுகள் நோக்கத்துடன் தேர்ந்தெடுக்கப்படுகின்றன, இயல்பாக அல்ல — வரையறு–உருவாக்கு–சோதி–மறுபரிசீலனை கட்டமைப்பு மீண்டும் வரும் பிரச்சனைகளை திரும்பத் திரும்ப செய்யக்கூடிய செயல்முறையாக மாற்றுகிறது.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span class="mod-title"><span class="mod-badge">6</span><span><span class="en">Empathy &amp; Relationships</span><span class="ta">பரிவு &amp; உறவுகள்</span></span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <p><span class="en">Only compassionate empathy turns understanding and feeling into actual help — and rapport is built from small, consistent habits alongside a clear professional boundary.</span><span class="ta">கருணை பரிவு மட்டுமே புரிதலையும் உணர்வையும் உண்மையான உதவியாக மாற்றுகிறது — நல்லுறவு ஒரு தெளிவான தொழில்முறை எல்லையுடன் சிறிய, நிலையான பழக்கங்களிலிருந்து உருவாகிறது.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span class="mod-title"><span class="mod-badge">7</span><span><span class="en">Positive Discipline in Practice</span><span class="ta">நேர்மறை ஒழுக்கம் நடைமுறையில்</span></span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <p><span class="en">Positive discipline aims for judgement that holds even when no one is enforcing a rule — and NVC's observation–feeling–need–request structure turns correction into an honest sentence instead of blame.</span><span class="ta">நேர்மறை ஒழுக்கம் யாரும் ஒரு விதியை அமல்படுத்தாதபோதும் நிலைத்திருக்கும் தீர்ப்பை நோக்கமாகக் கொண்டுள்ளது — NVC-வின் கட்டமைப்பு திருத்தத்தை குற்றச்சாட்டிற்குப் பதிலாக ஒரு நேர்மையான வாக்கியமாக மாற்றுகிறது.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span class="mod-title"><span class="mod-badge">8</span><span><span class="en">Time Management &amp; Goal Setting</span><span class="ta">நேர மேலாண்மை &amp; இலக்கு அமைத்தல்</span></span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <p><span class="en">Long-term wellbeing depends on protecting time for important-but-not-urgent work — and specific, trackable goals attached to an existing habit are far more likely to stick.</span><span class="ta">நீண்ட கால நல்வாழ்வு முக்கியமான-ஆனால்-அவசரமற்ற வேலைக்கு நேரத்தை பாதுகாப்பதைப் பொறுத்தது — இருக்கும் ஒரு பழக்கத்துடன் இணைக்கப்பட்ட குறிப்பிட்ட இலக்குகள் நிலைத்திருக்க அதிக வாய்ப்புள்ளவை.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span class="mod-title"><span class="mod-badge">9</span><span><span class="en">Resilience &amp; Coping with Change</span><span class="ta">தன்னிச்சை &amp; மாற்றத்தை சமாளித்தல்</span></span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <p><span class="en">Resilience rests on four buildable pillars — reframing, connection, purpose, flexibility — and working well with different temperaments is itself a resilience skill.</span><span class="ta">தன்னிச்சை நான்கு உருவாக்கக்கூடிய தூண்களை அடிப்படையாகக் கொண்டுள்ளது — மறுவடிவமைப்பு, தொடர்பு, நோக்கம், நெகிழ்வுத்தன்மை — வெவ்வேறு மனோபாவங்களுடன் நன்றாக பணியாற்றுவது தானே ஒரு தன்னிச்சை திறன்.</span></p>
+      </div>
+    </details>
+
+    <blockquote><span class="en">Read together, these nine ideas point at one thing: the classroom reflects what the teacher already practises — nothing here works by explanation alone.</span><span class="ta">ஒன்றாக படித்தால், இந்த ஒன்பது எண்ணங்களும் ஒன்றை சுட்டிக்காட்டுகின்றன: வகுப்பறை ஆசிரியர் ஏற்கனவே பயிற்சி செய்வதை பிரதிபலிக்கிறது — இங்கே எதுவும் விளக்கத்தால் மட்டும் வேலை செய்யாது.</span></blockquote>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <div class="s-label"><div class="s-num">2</div><h2 class="display"><span class="en">Build Your One-Page Action Plan</span><span class="ta">உங்கள் ஒரு-பக்க செயல் திட்டத்தை உருவாக்குங்கள்</span></h2></div>
+    <p class="intro">
+      <span class="en">Nine modules is too much to act on all at once. Choose your top three priorities — informed by your self-assessment and by which reflections throughout this course felt most urgent — and commit to one small action per priority.</span>
+      <span class="ta">ஒன்பது தொகுதிகள் ஒரே நேரத்தில் செயல்பட அதிகம். உங்கள் முதல் மூன்று முன்னுரிமைகளை தேர்ந்தெடுங்கள் — உங்கள் சுய மதிப்பீட்டாலும், இந்த படிப்பு முழுவதும் எந்த சிந்தனைகள் மிகவும் அவசரமாக உணரப்பட்டன என்பதாலும் தெரிவிக்கப்பட்டது — ஒரு முன்னுரிமைக்கு ஒரு சிறிய செயலுக்கு உறுதிபூணுங்கள்.</span>
+    </p>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Priority Area 1</span><span class="ta">முன்னுரிமை பகுதி 1</span></div>
+      <div class="plan-row">
+        <div class="plan-field">
+          <label><span class="en">Which module or domain</span><span class="ta">எந்த தொகுதி அல்லது துறை</span></label>
+          <input type="text" name="p1_module" placeholder="e.g., Module 3 · Stress Management">
+        </div>
+        <div class="plan-field">
+          <label><span class="en">Review date</span><span class="ta">மறுஆய்வு தேதி</span></label>
+          <input type="text" name="p1_review" placeholder="e.g., Two weeks from today">
+        </div>
+      </div>
+      <h4><span class="en">One small, specific commitment</span><span class="ta">ஒரு சிறிய, குறிப்பிட்ட உறுதிமொழி</span></h4>
+      <textarea name="p1_commit" placeholder="Write the single action you'll actually take — small enough that skipping it would feel like a real choice, not an accident."></textarea>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Priority Area 2</span><span class="ta">முன்னுரிமை பகுதி 2</span></div>
+      <div class="plan-row">
+        <div class="plan-field">
+          <label><span class="en">Which module or domain</span><span class="ta">எந்த தொகுதி அல்லது துறை</span></label>
+          <input type="text" name="p2_module" placeholder="e.g., Module 4 · Communication">
+        </div>
+        <div class="plan-field">
+          <label><span class="en">Review date</span><span class="ta">மறுஆய்வு தேதி</span></label>
+          <input type="text" name="p2_review" placeholder="e.g., Two weeks from today">
+        </div>
+      </div>
+      <h4><span class="en">One small, specific commitment</span><span class="ta">ஒரு சிறிய, குறிப்பிட்ட உறுதிமொழி</span></h4>
+      <textarea name="p2_commit" placeholder="Write the single action you'll actually take."></textarea>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Priority Area 3</span><span class="ta">முன்னுரிமை பகுதி 3</span></div>
+      <div class="plan-row">
+        <div class="plan-field">
+          <label><span class="en">Which module or domain</span><span class="ta">எந்த தொகுதி அல்லது துறை</span></label>
+          <input type="text" name="p3_module" placeholder="e.g., Module 8 · Time Management">
+        </div>
+        <div class="plan-field">
+          <label><span class="en">Review date</span><span class="ta">மறுஆய்வு தேதி</span></label>
+          <input type="text" name="p3_review" placeholder="e.g., Two weeks from today">
+        </div>
+      </div>
+      <h4><span class="en">One small, specific commitment</span><span class="ta">ஒரு சிறிய, குறிப்பிட்ட உறுதிமொழி</span></h4>
+      <textarea name="p3_commit" placeholder="Write the single action you'll actually take."></textarea>
+    </div>
+
+    <div class="callout">
+      <div class="display"><span class="en">Your accountability partner</span><span class="ta">உங்கள் பொறுப்புணர்வு பங்குதாரர்</span></div>
+      <p>
+        <span class="en">A plan that lives only in your own head is easy to quietly abandon. Name one colleague, mentor, or friend you'll share this plan with this week — someone who can genuinely ask "how's it going?" on your review date.</span>
+        <span class="ta">உங்கள் சொந்த மனதில் மட்டும் வாழும் ஒரு திட்டத்தை அமைதியாக கைவிடுவது எளிது. இந்த வாரம் இந்த திட்டத்தை நீங்கள் பகிர்ந்துகொள்ளும் ஒரு சக ஊழியர், வழிகாட்டி அல்லது நண்பரை பெயரிடுங்கள் — உங்கள் மறுஆய்வு தேதியில் உண்மையிலேயே "எப்படி போகிறது?" என்று கேட்கக்கூடிய ஒருவர்.</span>
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <div class="s-label"><div class="s-num">3</div><h2 class="display"><span class="en">Completing the Program</span><span class="ta">திட்டத்தை முடித்தல்</span></h2></div>
+    <p class="intro">
+      <span class="en">You've worked through all ten modules — the foundations, the inner skills, and now a real plan to carry forward. What you do with the next thirty days matters more than how thoroughly you read any single module.</span>
+      <span class="ta">நீங்கள் பத்து தொகுதிகள் வழியாகவும் வேலை செய்துவிட்டீர்கள் — அடிப்படைகள், உள் திறன்கள், இப்போது முன்னெடுத்துச் செல்ல ஒரு உண்மையான திட்டம். அடுத்த முப்பது நாட்களில் நீங்கள் என்ன செய்கிறீர்கள் என்பது, எந்த ஒரு தொகுதியையும் எவ்வளவு முழுமையாக படித்தீர்கள் என்பதை விட முக்கியம்.</span>
+    </p>
+
+    <div class="certificate">
+      <div class="display"><span class="en">Certificate of Completion</span><span class="ta">பூர்த்தி சான்றிதழ்</span></div>
+      <p><span class="en">Life Skills Mastery for Educators</span><span class="ta">ஆசிரியர்களுக்கான வாழ்க்கை திறன் தேர்ச்சி</span></p>
+      <div class="name-line"><span class="en">[ Your Name Here ]</span><span class="ta">[ உங்கள் பெயர் இங்கே ]</span></div>
+      <p><span class="en">has completed all 10 modules of the program</span><span class="ta">திட்டத்தின் அனைத்து 10 தொகுதிகளையும் முடித்துள்ளார்</span></p>
+      <p style="margin-top:16px;font-size:13px;"><span class="en">To request your signed certificate, message NT Somasundaram directly with your completed action plan.</span><span class="ta">உங்கள் கையொப்பமிடப்பட்ட சான்றிதழை கோர, உங்கள் முடிக்கப்பட்ட செயல் திட்டத்துடன் நேரடியாக என்.டி. சோமசுந்தரத்திற்கு செய்தி அனுப்புங்கள்.</span></p>
+    </div>
+
+    <div class="assess-card">
+      <h3><span class="en">Share Your Completed Plan</span><span class="ta">உங்கள் முடிக்கப்பட்ட திட்டத்தை பகிருங்கள்</span></h3>
+      <p><span class="en">Send a photo or summary of your action plan on WhatsApp to receive your certificate and a personal note on your priority areas.</span><span class="ta">உங்கள் சான்றிதழையும் உங்கள் முன்னுரிமை பகுதிகள் பற்றிய தனிப்பட்ட குறிப்பையும் பெற, உங்கள் செயல் திட்டத்தின் புகைப்படம் அல்லது சுருக்கத்தை WhatsApp-இல் அனுப்புங்கள்.</span></p>
+      <a class="btn btn-primary" href="https://wa.me/919843702244?text=Hi%2C%20I%27ve%20completed%20the%20Life%20Skills%20Mastery%20for%20Educators%20course%20and%20would%20like%20my%20certificate" target="_blank" rel="noopener"><span class="en">Send on WhatsApp →</span><span class="ta">WhatsApp-இல் அனுப்புங்கள் →</span></a>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- TAKEAWAYS -->
+  <section>
+    <div class="s-label"><div class="s-num">✓</div><h2 class="display"><span class="en">A Closing Thought</span><span class="ta">ஒரு இறுதி எண்ணம்</span></h2></div>
+    <ul class="takeaway-list">
+      <li><span class="mk">1</span><span><span class="en">Life skills mastery isn't a finish line — it's a practice you'll keep refining, the same way you refine your teaching itself, year after year.</span><span class="ta">வாழ்க்கை திறன் தேர்ச்சி ஒரு முடிவுக் கோடு அல்ல — உங்கள் கற்பித்தலையே நீங்கள் மேம்படுத்துவது போலவே, ஆண்டுதோறும் நீங்கள் மேம்படுத்திக்கொண்டே இருக்கும் ஒரு நடைமுறை.</span></span></li>
+      <li><span class="mk">2</span><span><span class="en">Return to any module whenever a specific situation calls for it — this course is built to be revisited, not read once and shelved.</span><span class="ta">ஒரு குறிப்பிட்ட சூழ்நிலை அதற்கு அழைப்பு விடும்போதெல்லாம் எந்த தொகுதிக்கும் திரும்பி வாருங்கள் — இந்த படிப்பு ஒரு முறை படித்து அடுக்கி வைக்கப்பட வேண்டியதற்கு அல்ல, மீண்டும் பார்வையிடப்பட வேண்டியதற்காக கட்டமைக்கப்பட்டுள்ளது.</span></span></li>
+      <li><span class="mk">3</span><span><span class="en">Every skill in this program is one you're already modelling for your students, for better or worse — the work here is simply making that modelling deliberate.</span><span class="ta">இந்த திட்டத்தில் உள்ள ஒவ்வொரு திறனும் நீங்கள் ஏற்கனவே உங்கள் மாணவர்களுக்காக வடிவமைத்துக்கொண்டிருக்கும் ஒன்று, நல்லதாகவோ கெட்டதாகவோ — இங்குள்ள வேலை என்பது வெறுமனே அந்த வடிவமைப்பை வேண்டுமென்றே செய்வது.</span></span></li>
+    </ul>
+  </section>
+
+    <div class="save-block">
+    <p><span class="en">Save your reflections from this module to your learning record.</span><span class="ta">இந்த தொகுதியிலிருந்து உங்கள் சிந்தனைகளை உங்கள் கற்றல் பதிவில் சேமிக்கவும்.</span></p>
+    <button class="btn btn-primary" onclick="saveReflections()"><span class="en">Save My Reflections</span><span class="ta">என் சிந்தனைகளை சேமிக்கவும்</span></button>
+    <div class="save-status" id="saveStatus"></div>
+  </div>
+
+  <div class="module-nav">
+    <a class="nav-link" href="module9-content.html">
+      <span class="lbl"><span class="en">← Back to</span><span class="ta">← திரும்ப</span></span>
+      <span class="ttl"><span class="en">Module 9 · Resilience &amp; Coping with Change</span><span class="ta">தொகுதி 9 · தன்னிச்சை &amp; மாற்றத்தை சமாளித்தல்</span></span>
+    </a>
+    <a class="nav-link next" href="module1-content.html">
+      <span class="lbl"><span class="en">Revisit</span><span class="ta">மீண்டும் பார்வையிடுங்கள்</span></span>
+      <span class="ttl"><span class="en">Module 1 · Foundations →</span><span class="ta">தொகுதி 1 · அடிப்படைகள் →</span></span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="motto"><span class="en">"God is always with u"</span><span class="ta">"கடவுள் எப்போதும் உங்களுடன் இருக்கிறார்"</span></div>
+  <div><span class="en">NT Somasundaram · Certified Master Trainer, Career Consultant &amp; Life Skills Educator</span><span class="ta">என்.டி. சோமசுந்தரம் · சான்றளிக்கப்பட்ட முதன்மை பயிற்சியாளர் &amp; வாழ்க்கை திறன் கல்வியாளர்</span></div>
+  <div class="contact" style="margin-top:8px;">
+    <a href="mailto:somasundaramnt.lifecoach@gmail.com">somasundaramnt.lifecoach@gmail.com</a> &nbsp;·&nbsp;
+    <a href="tel:+919843702244">+91 98437 02244</a>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  document.body.classList.toggle('show-ta', lang==='ta');
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.documentElement.lang = lang;
+}
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progressFill').style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+});
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrZjQ8oDwiKegl3pI1qAG1PVtZ0pFAlb3GbVvK7sPbzjIprs1Q9isXPoisLDjQnfpgng/exec';
+const MODULE_ID = 'Module 10 - Capstone Action Plan';
+
+function loadLearnerInfo(){
+  const n = document.getElementById('learnerName');
+  const em = document.getElementById('learnerEmail');
+  if(n) n.value = localStorage.getItem('lsm_name') || '';
+  if(em) em.value = localStorage.getItem('lsm_email') || '';
+}
+loadLearnerInfo();
+
+function saveReflections(){
+  const nameEl = document.getElementById('learnerName');
+  const emailEl = document.getElementById('learnerEmail');
+  const name = nameEl ? nameEl.value.trim() : '';
+  const email = emailEl ? emailEl.value.trim() : '';
+  if(!name){ alert('Please enter your name before saving.'); return; }
+  localStorage.setItem('lsm_name', name);
+  localStorage.setItem('lsm_email', email);
+  const responses = {};
+  document.querySelectorAll('.reflect textarea[name], .reflect input[name]').forEach(function(el){
+    responses[el.name] = el.value;
+  });
+  const payload = encodeURIComponent(JSON.stringify(responses));
+  const url = APPS_SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&module=' + encodeURIComponent(MODULE_ID) + '&responses=' + payload;
+  const img = new Image();
+  img.src = url;
+  const status = document.getElementById('saveStatus');
+  if(status){
+    status.textContent = 'Saved \u2713';
+    setTimeout(function(){ status.textContent=''; }, 4000);
+  }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 8: Time Management &amp; Goal Setting — Life Skills Mastery for Educators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16333F; --ink-soft:#2A4B58;
+    --marigold:#E5A337; --marigold-deep:#C77F1F;
+    --sage:#7C9A80; --sage-deep:#5E7C63;
+    --paper:#F6F2E9; --paper-dim:#EDE6D6;
+    --charcoal:#26251F; --white:#FFFEFB;
+    --line:rgba(22,51,63,0.14);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--charcoal);font-family:'Poppins',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .en{display:inline;} .ta{display:none;}
+  body.show-ta .en{display:none;} body.show-ta .ta{display:inline;}
+  body.show-ta h1,body.show-ta h2,body.show-ta h3,body.show-ta h4,body.show-ta p,body.show-ta li,body.show-ta span,body.show-ta a,body.show-ta button,body.show-ta label,body.show-ta textarea::placeholder{font-family:'Noto Sans Tamil',sans-serif;}
+  .display{font-family:'Fraunces',serif;}
+  body.show-ta .display{font-family:'Noto Sans Tamil',sans-serif;font-weight:700;}
+  a{color:inherit;} img,svg{display:block;max-width:100%;}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--white);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .topbar .brand{font-size:13.5px;opacity:.9;display:flex;align-items:center;gap:8px;}
+  .brand-dot{width:7px;height:7px;border-radius:50%;background:var(--marigold);flex:none;}
+  .lang-toggle{display:flex;background:rgba(255,255,255,0.1);border-radius:999px;padding:3px;gap:2px;}
+  .lang-toggle button{border:none;background:transparent;color:var(--white);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;}
+  .lang-toggle button.active{background:var(--marigold);color:var(--ink);}
+  .progress-track{height:4px;background:rgba(255,255,255,0.15);}
+  .progress-fill{height:100%;width:0%;background:var(--marigold);transition:width .15s linear;}
+  /* Learner info + save bar */
+  .learner-bar{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--paper-dim);border-bottom:1px solid var(--line);}
+  .learner-field{flex:1;min-width:160px;}
+  .learner-field label{display:block;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:4px;}
+  .learner-field input{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:'Poppins',sans-serif;font-size:13.5px;background:var(--white);color:var(--charcoal);box-sizing:border-box;}
+  body.show-ta .learner-field input{font-family:'Noto Sans Tamil',sans-serif;}
+  .save-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px;margin:30px 0;text-align:center;}
+  .save-block p{font-size:13.5px;color:var(--ink-soft);margin:0 0 14px;}
+  .save-status{margin-top:10px;font-size:13.5px;color:var(--sage-deep);font-weight:600;min-height:18px;}
+
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  section{padding:56px 0;}
+  .rule{border:none;border-top:1px solid var(--line);margin:0;}
+
+  .module-header{padding:56px 0 40px;}
+  .module-tag{display:inline-block;background:var(--marigold);color:var(--ink);font-size:12.5px;font-weight:700;letter-spacing:.05em;padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+  h1{font-size:clamp(28px,4.4vw,42px);font-weight:600;line-height:1.14;margin:0 0 16px;color:var(--ink);}
+  .module-header p.lede{font-size:16.5px;color:var(--ink-soft);max-width:56ch;margin:0 0 26px;}
+  .meta-row{display:flex;gap:22px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-soft);}
+  .meta-row span{display:flex;align-items:center;gap:6px;}
+  .meta-row .dot{width:5px;height:5px;border-radius:50%;background:var(--sage);}
+
+  .s-label{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .s-num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:14px;}
+  body.show-ta .s-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .s-label h2{margin:0;font-size:clamp(21px,3vw,27px);font-weight:600;color:var(--ink);}
+  section p{font-size:15.5px;color:var(--charcoal);}
+  section p.intro{color:var(--ink-soft);font-size:16px;}
+
+  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 8px;}
+  .skill-card{border:1px solid var(--line);background:var(--white);border-radius:var(--radius);padding:18px 18px;}
+  .skill-card .sk-num{font-family:'Fraunces',serif;font-size:12.5px;color:var(--marigold-deep);font-weight:700;letter-spacing:.03em;margin-bottom:8px;}
+  body.show-ta .skill-card .sk-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .skill-card h4{margin:0 0 6px;font-size:15.5px;color:var(--ink);}
+  .skill-card p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+
+  .callout{background:var(--ink);color:var(--paper);border-radius:18px;padding:34px 30px;margin:30px 0;}
+  .callout .display{font-size:20px;color:var(--white);margin:0 0 12px;}
+  .callout p{color:rgba(246,242,233,0.85);margin:0;font-size:15.5px;}
+
+  blockquote{margin:26px 0;padding:2px 0 2px 22px;border-left:3px solid var(--marigold);font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--ink);}
+  body.show-ta blockquote{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;font-weight:500;}
+
+  .reflect{background:var(--white);border:1.5px dashed var(--sage);border-radius:var(--radius);padding:24px 24px 20px;margin:26px 0;}
+  .reflect .r-tag{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .reflect .r-tag::before{content:'✎';font-size:14px;}
+  .reflect h4{margin:0 0 14px;font-size:16px;color:var(--ink);font-weight:600;}
+  .reflect textarea{width:100%;min-height:84px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:'Poppins',sans-serif;font-size:14.5px;color:var(--charcoal);background:var(--paper);resize:vertical;}
+  body.show-ta .reflect textarea{font-family:'Noto Sans Tamil',sans-serif;}
+  .reflect textarea:focus{outline:2px solid var(--sage);outline-offset:1px;}
+
+  .steps{counter-reset:step;margin:26px 0;padding:0;list-style:none;}
+  .steps li{counter-increment:step;position:relative;padding:16px 0 16px 46px;border-bottom:1px solid var(--line);}
+  .steps li:last-child{border-bottom:none;}
+  .steps li::before{content:counter(step);position:absolute;left:0;top:16px;width:30px;height:30px;border-radius:50%;background:var(--paper-dim);border:1px solid var(--line);color:var(--ink);font-family:'Fraunces',serif;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;}
+  body.show-ta .steps li::before{font-family:'Noto Sans Tamil',sans-serif;}
+  .steps h4{margin:0 0 5px;font-size:15.5px;color:var(--ink);}
+  .steps p{margin:0;font-size:14px;color:var(--ink-soft);}
+
+  .assess-card{background:var(--sage);color:var(--white);border-radius:20px;padding:36px 30px;margin:34px 0;text-align:center;}
+  .assess-card h3{margin:0 0 10px;font-size:22px;color:var(--white);}
+  .assess-card p{color:rgba(255,255,255,0.9);max-width:48ch;margin:0 auto 22px;font-size:15px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14.5px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease;}
+  .btn-primary{background:var(--ink);color:var(--white);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .assess-card .btn-primary{background:var(--white);color:var(--sage-deep);}
+
+  .takeaway-list{list-style:none;margin:22px 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .takeaway-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .takeaway-list li:last-child{border-bottom:none;}
+  .takeaway-list .mk{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(229,163,55,0.16);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:2px;}
+
+  .module-nav{display:flex;justify-content:space-between;align-items:center;padding:40px 0 70px;gap:16px;flex-wrap:wrap;}
+  .nav-link{display:flex;flex-direction:column;text-decoration:none;padding:16px 20px;border-radius:14px;border:1px solid var(--line);background:var(--white);min-width:220px;}
+  .nav-link .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:4px;}
+  .nav-link .ttl{font-size:15.5px;font-weight:600;color:var(--ink);}
+  .nav-link.next{text-align:right;}
+
+  /* Deep-dive expandable detail blocks */
+  .deepdive-intro{margin:34px 0 16px;font-size:13.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);}
+  .deep{border:1px solid var(--line);border-radius:var(--radius);background:var(--white);margin-bottom:12px;overflow:hidden;}
+  .deep summary{cursor:pointer;padding:16px 20px;font-weight:600;font-size:15.5px;color:var(--ink);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .deep summary::-webkit-details-marker{display:none;}
+  .deep summary .plus{flex:none;width:26px;height:26px;border-radius:50%;background:var(--paper-dim);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:17px;transition:transform .2s ease;}
+  .deep[open] summary .plus{transform:rotate(45deg);}
+  .deep-body{padding:2px 20px 22px;border-top:1px solid var(--line);}
+  .deep-body h5{margin:16px 0 6px;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--sage-deep);font-weight:700;}
+  .deep-body h5:first-child{margin-top:16px;}
+  .deep-body p{margin:0 0 4px;font-size:14.5px;color:var(--ink-soft);}
+
+  footer{padding:32px 24px 50px;text-align:center;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);}
+  footer .motto{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);margin-bottom:6px;font-size:14.5px;}
+  body.show-ta footer .motto{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;}
+  footer .contact a{text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media print{
+    .topbar,.progress-track,.module-nav,.lang-toggle{display:none !important;}
+    body{background:#fff;}
+    .deep{break-inside:avoid;}
+  }
+  @media (max-width:640px){
+    .skill-grid{grid-template-columns:1fr;}
+    .module-nav{flex-direction:column;align-items:stretch;}
+    .nav-link.next{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="brand-dot"></span>
+    <span class="en">Life Skills Mastery for Educators</span>
+    <span class="ta">ஆசிரியர்களுக்கான வாழ்க்கை திறன் தேர்ச்சி</span>
+  </div>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('en')">English</button>
+    <button onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="learner-bar">
+  <div class="learner-field">
+    <label><span class="en">Your Name</span><span class="ta">உங்கள் பெயர்</span></label>
+    <input type="text" id="learnerName" placeholder="e.g., Priya Kumar">
+  </div>
+  <div class="learner-field">
+    <label><span class="en">Your Email (optional)</span><span class="ta">உங்கள் மின்னஞ்சல் (விருப்பம்)</span></label>
+    <input type="text" id="learnerEmail" placeholder="you@example.com">
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="module-header">
+    <span class="module-tag"><span class="en">MODULE 8 OF 10</span><span class="ta">தொகுதி 8 / 10</span></span>
+    <h1 class="display"><span class="en">Time Management &amp; Goal Setting</span><span class="ta">நேர மேலாண்மை &amp; இலக்கு அமைத்தல்</span></h1>
+    <p class="lede">
+      <span class="en">A teacher's to-do list never actually ends — it only pauses at the end of the day. This module gives you a way to sort what deserves your time, and a way to set goals specific enough to actually reach.</span>
+      <span class="ta">ஒரு ஆசிரியரின் செய்ய வேண்டியவை பட்டியல் உண்மையில் ஒருபோதும் முடிவடையாது — அது நாளின் முடிவில் மட்டும் இடைநிறுத்தப்படுகிறது. இந்த தொகுதி உங்கள் நேரத்திற்கு தகுதியானதை வரிசைப்படுத்த ஒரு வழியையும், உண்மையில் அடைய போதுமான குறிப்பிட்ட இலக்குகளை அமைக்க ஒரு வழியையும் தருகிறது.</span>
+    </p>
+    <div class="meta-row">
+      <span><span class="dot"></span><span class="en">Reading time: ~26 min</span><span class="ta">படிக்க: ~26 நிமிடம்</span></span>
+      <span><span class="dot"></span><span class="en">3 reflection exercises</span><span class="ta">3 சிந்தனை பயிற்சிகள்</span></span>
+      <span><span class="dot"></span><span class="en">1 goal-setting framework</span><span class="ta">1 இலக்கு அமைக்கும் கட்டமைப்பு</span></span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <div class="s-label"><div class="s-num">1</div><h2 class="display"><span class="en">The Eisenhower Matrix</span><span class="ta">Eisenhower Matrix</span></h2></div>
+    <p class="intro">
+      <span class="en">Every task on your list falls into one of four boxes, sorted by urgency and importance. Most burnout comes from spending too much time in one particular box without realising it.</span>
+      <span class="ta">உங்கள் பட்டியலில் உள்ள ஒவ்வொரு பணியும், அவசரம் மற்றும் முக்கியத்துவத்தால் வரிசைப்படுத்தப்பட்ட நான்கு பெட்டிகளில் ஒன்றில் விழுகிறது. பெரும்பாலான burnout ஒரு குறிப்பிட்ட பெட்டியில் அதை உணராமல் அதிக நேரம் செலவிடுவதிலிருந்து வருகிறது.</span>
+    </p>
+
+    <div class="skill-grid">
+      <div class="skill-card"><div class="sk-num">Q1</div><h4><span class="en">Urgent &amp; Important — Do</span><span class="ta">அவசரம் &amp; முக்கியம் — செய்</span></h4><p><span class="en">A grading deadline tomorrow, a student in visible distress right now.</span><span class="ta">நாளை தேர்வு மதிப்பீட்டு காலக்கெடு, இப்போது தெரியும் துன்பத்தில் இருக்கும் ஒரு மாணவர்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">Q2</div><h4><span class="en">Important, Not Urgent — Plan</span><span class="ta">முக்கியம், அவசரமில்லை — திட்டமிடு</span></h4><p><span class="en">Lesson planning ahead of time, building a relationship with a struggling student.</span><span class="ta">முன்கூட்டியே பாட திட்டமிடல், சிரமப்படும் மாணவருடன் உறவை உருவாக்குதல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">Q3</div><h4><span class="en">Urgent, Not Important — Delegate</span><span class="ta">அவசரம், முக்கியமில்லை — ஒப்படை</span></h4><p><span class="en">A form that needs filling that anyone could do, an interruption that isn't yours to solve.</span><span class="ta">யாராலும் செய்யக்கூடிய நிரப்ப வேண்டிய படிவம், உங்களால் தீர்க்க வேண்டியதில்லாத ஒரு தடை.</span></p></div>
+      <div class="skill-card"><div class="sk-num">Q4</div><h4><span class="en">Neither — Drop</span><span class="ta">எதுவும் இல்லை — கைவிடு</span></h4><p><span class="en">Scrolling through messages that don't need a response, re-checking something already finished.</span><span class="ta">பதில் தேவைப்படாத செய்திகளை உலாவுதல், ஏற்கனவே முடிந்த ஒன்றை மீண்டும் சரிபார்த்தல்.</span></p></div>
+    </div>
+
+    <blockquote><span class="en">The quadrant that determines your long-term wellbeing isn't the urgent one you're always fighting fires in — it's whether you ever get to the important-but-not-urgent work at all.</span><span class="ta">உங்கள் நீண்ட கால நல்வாழ்வை தீர்மானிக்கும் காலாண்டு, நீங்கள் எப்போதும் தீ அணைத்துக்கொண்டிருக்கும் அவசர காலாண்டு அல்ல — முக்கியமான-ஆனால்-அவசரமற்ற வேலைக்கு நீங்கள் ஒருபோதும் செல்கிறீர்களா என்பதே.</span></blockquote>
+
+    <div class="deepdive-intro"><span class="en">Explore each quadrant in depth</span><span class="ta">ஒவ்வொரு காலாண்டையும் விரிவாக அறிக</span></div>
+
+    <details class="deep">
+      <summary><span><span class="en">Q1 — Urgent &amp; Important</span><span class="ta">Q1 — அவசரம் &amp; முக்கியம்</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Why it's tricky</span><span class="ta">இது ஏன் சிக்கலானது</span></h5>
+        <p><span class="en">This box has to be done, but living here permanently is what burns teachers out — every day feels like an emergency because nothing was handled before it became one.</span><span class="ta">இந்த பெட்டியை செய்தே ஆக வேண்டும், ஆனால் நிரந்தரமாக இங்கே வாழ்வதே ஆசிரியர்களை burnout ஆக்குகிறது — ஒன்று அவசரமாக மாறுவதற்கு முன் எதுவும் கையாளப்படாததால் ஒவ்வொரு நாளும் ஒரு அவசர நிலையாக உணரப்படுகிறது.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">After clearing a Q1 fire, ask: "What Q2 action, done earlier, would have prevented this from becoming urgent?" — then actually schedule that action.</span><span class="ta">ஒரு Q1 தீயை அணைத்த பிறகு, கேளுங்கள்: "முன்பே செய்யப்பட்ட எந்த Q2 செயல் இது அவசரமாவதை தடுத்திருக்கும்?" — பிறகு உண்மையில் அந்த செயலை திட்டமிடுங்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">Q2 — Important, Not Urgent</span><span class="ta">Q2 — முக்கியம், அவசரமில்லை</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Why it's tricky</span><span class="ta">இது ஏன் சிக்கலானது</span></h5>
+        <p><span class="en">Nothing forces this box to happen today, so it's the easiest to postpone — and yet it's exactly where lesson quality, relationships, and long-term prevention actually live.</span><span class="ta">இந்த பெட்டி இன்று நடக்க வேண்டும் என்று எதுவும் கட்டாயப்படுத்தாது, எனவே தள்ளிப்போட எளிதானது — இருந்தும் பாட தரம், உறவுகள், நீண்ட கால தடுப்பு உண்மையில் இருப்பது இங்கே தான்.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">Block a fixed slot each week that's protected for Q2 work only — treat it with the same non-negotiable status as a class you're teaching.</span><span class="ta">ஒவ்வொரு வாரமும் Q2 வேலைக்கு மட்டும் பாதுகாக்கப்பட்ட ஒரு நிலையான நேரத்தை ஒதுக்குங்கள் — நீங்கள் கற்பிக்கும் ஒரு வகுப்பைப் போலவே அதை பேரம் பேசமுடியாததாக நடத்துங்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">Q3 — Urgent, Not Important</span><span class="ta">Q3 — அவசரம், முக்கியமில்லை</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Why it's tricky</span><span class="ta">இது ஏன் சிக்கலானது</span></h5>
+        <p><span class="en">This box feels urgent because someone else is pressing on it, which tricks you into thinking it deserves your best hours — but it usually doesn't require your specific judgement at all.</span><span class="ta">வேறு யாரோ அதன் மீது அழுத்தம் கொடுப்பதால் இந்த பெட்டி அவசரமாக உணரப்படுகிறது, இது உங்கள் சிறந்த நேரங்களை தகுதியானது என்று உங்களை ஏமாற்றுகிறது — ஆனால் இதற்கு பொதுவாக உங்கள் குறிப்பிட்ட தீர்ப்பு தேவையில்லை.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">Before doing a Q3 task yourself, ask: "Does this genuinely need me, or just someone?" If it's the latter, look for who else could handle it.</span><span class="ta">ஒரு Q3 பணியை நீங்களே செய்வதற்கு முன், கேளுங்கள்: "இதற்கு உண்மையிலேயே நான் தேவையா, அல்லது யாராவது தேவையா?" பிந்தையது என்றால், வேறு யார் அதை கையாள முடியும் என்று பாருங்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">Q4 — Neither Urgent Nor Important</span><span class="ta">Q4 — அவசரமும் இல்லை, முக்கியமும் இல்லை</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">Why it's tricky</span><span class="ta">இது ஏன் சிக்கலானது</span></h5>
+        <p><span class="en">These tasks feel low-effort and safe, which is exactly why they quietly absorb minutes that could have gone toward Q2 recovery or planning without you noticing the drain.</span><span class="ta">இந்த பணிகள் குறைந்த முயற்சி மற்றும் பாதுகாப்பானதாக உணரப்படுகின்றன, இதுவே அவை நீங்கள் சோர்வை கவனிக்காமல் Q2 மீட்சி அல்லது திட்டமிடலுக்கு போயிருக்கக்கூடிய நிமிடங்களை அமைதியாக உறிஞ்சுவதற்கான காரணம்.</span></p>
+        <h5><span class="en">Growth tip</span><span class="ta">வளர்ச்சி குறிப்பு</span></h5>
+        <p><span class="en">Track honestly for two days how much time actually goes here — most people are surprised by the total, and awareness alone often shrinks it.</span><span class="ta">இங்கே உண்மையில் எவ்வளவு நேரம் செல்கிறது என்று இரண்டு நாட்கள் நேர்மையாக கண்காணியுங்கள் — பெரும்பாலான மக்கள் மொத்த அளவால் ஆச்சரியப்படுகிறார்கள், விழிப்புணர்வு மட்டுமே பொதுவாக அதை குறைக்கும்.</span></p>
+      </div>
+    </details>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 1 of 3</span><span class="ta">சிந்தனை · 1/3</span></div>
+      <h4><span class="en">Roughly what share of your typical week goes to each of the four quadrants? Which one is smaller than it should be?</span><span class="ta">உங்கள் வழக்கமான வாரத்தில் தோராயமாக நான்கு காலாண்டுகளிலும் எவ்வளவு பங்கு செல்கிறது? எது இருக்க வேண்டியதை விட சிறியதாக உள்ளது?</span></h4>
+      <textarea name="r1" placeholder="Write a few lines here — this stays on your screen only, for your own reference."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <div class="s-label"><div class="s-num">2</div><h2 class="display"><span class="en">Setting Goals That Actually Stick</span><span class="ta">உண்மையில் நிலைத்திருக்கும் இலக்குகளை அமைத்தல்</span></h2></div>
+    <p class="intro">
+      <span class="en">Vague goals like "be a better teacher this year" rarely survive week three. Specific, small, trackable goals are far more likely to actually happen — and they compound over a term into real change.</span>
+      <span class="ta">"இந்த ஆண்டு சிறந்த ஆசிரியராக இரு" போன்ற தெளிவற்ற இலக்குகள் அரிதாகவே மூன்றாவது வாரத்தை தாண்டி நீடிக்கின்றன. குறிப்பிட்ட, சிறிய, கண்காணிக்கக்கூடிய இலக்குகள் உண்மையில் நடக்க அதிக வாய்ப்புள்ளவை — ஒரு காலத்தில் அவை உண்மையான மாற்றமாக குவிகின்றன.</span>
+    </p>
+
+    <ul class="steps">
+      <li><h4><span class="en">Make it specific enough to picture</span><span class="ta">கற்பனை செய்யும் அளவுக்கு குறிப்பிட்டதாக இருக்கட்டும்</span></h4><p><span class="en">"Improve classroom management" becomes "Use the pause-name-ask-respond sequence at least once every lesson this month."</span><span class="ta">"வகுப்பறை மேலாண்மையை மேம்படுத்து" "இந்த மாதம் ஒவ்வொரு பாடத்திலும் நிறுத்து-பெயரிடு-கேள்-பதிலளி வரிசையை குறைந்தது ஒரு முறை பயன்படுத்து" என மாறுகிறது.</span></p></li>
+      <li><h4><span class="en">Attach it to a number you can track</span><span class="ta">நீங்கள் கண்காணிக்கக்கூடிய ஒரு எண்ணுடன் அதை இணைக்கவும்</span></h4><p><span class="en">A tally mark, a weekly percentage, a simple yes/no log — anything that turns "am I improving?" into a visible answer.</span><span class="ta">ஒரு எண்ணிக்கை குறி, ஒரு வாராந்திர சதவீதம், ஒரு எளிய ஆம்/இல்லை பதிவு — "நான் மேம்படுகிறேனா?" என்பதை ஒரு காணக்கூடிய பதிலாக மாற்றும் எதுவும்.</span></p></li>
+      <li><h4><span class="en">Set a review date, not just an end date</span><span class="ta">முடிவு தேதி மட்டும் அல்ல, ஒரு மறுஆய்வு தேதியை அமைக்கவும்</span></h4><p><span class="en">Check in after two weeks — early enough to adjust the goal itself if it turns out to be unrealistic.</span><span class="ta">இரண்டு வாரங்களுக்குப் பிறகு சரிபார்க்கவும் — அது நடைமுறைக்கு பொருந்தாதது என்று தெரிந்தால் இலக்கையே சரிசெய்ய போதுமான ஆரம்பத்தில்.</span></p></li>
+    </ul>
+
+    <div class="callout">
+      <div class="display"><span class="en">Attach the goal to an existing habit</span><span class="ta">இருக்கும் ஒரு பழக்கத்துடன் இலக்கை இணைக்கவும்</span></div>
+      <p>
+        <span class="en">A new goal is far more likely to stick when it's anchored to something you already do without thinking — "after I take attendance, I'll note one student who needs a check-in today" rides on an existing habit instead of requiring a brand new one.</span>
+        <span class="ta">நீங்கள் ஏற்கனவே சிந்திக்காமல் செய்யும் ஒன்றுடன் இணைக்கப்படும் போது ஒரு புதிய இலக்கு நிலைத்திருக்க அதிக வாய்ப்புள்ளது — "நான் வருகைப் பதிவு எடுத்த பிறகு, இன்று சரிபார்க்க வேண்டிய ஒரு மாணவரை குறிப்பிடுவேன்" ஒரு புதிய பழக்கம் தேவைப்படுவதற்குப் பதிலாக இருக்கும் ஒரு பழக்கத்தில் சவாரி செய்கிறது.</span>
+      </p>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 2 of 3</span><span class="ta">சிந்தனை · 2/3</span></div>
+      <h4><span class="en">Take one vague goal you've been holding and rewrite it as specific, trackable, and attached to an existing habit.</span><span class="ta">நீங்கள் வைத்திருந்த ஒரு தெளிவற்ற இலக்கை எடுத்து, குறிப்பிட்டதாகவும், கண்காணிக்கக்கூடியதாகவும், இருக்கும் ஒரு பழக்கத்துடன் இணைக்கப்பட்டதாகவும் மீண்டும் எழுதுங்கள்.</span></h4>
+      <textarea name="r2" placeholder="Write a few lines here — this stays on your screen only, for your own reference."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <div class="s-label"><div class="s-num">3</div><h2 class="display"><span class="en">Applying Both to Your Actual Week</span><span class="ta">இரண்டையும் உங்கள் உண்மையான வாரத்திற்கு பயன்படுத்துதல்</span></h2></div>
+    <p class="intro">
+      <span class="en">The matrix and your goals work together: use the matrix to protect time for Q2 work, and use that protected time specifically for the goal you set in Section 2 — otherwise the goal quietly gets crowded out by whatever feels urgent that day.</span>
+      <span class="ta">Matrix-உம் உங்கள் இலக்குகளும் ஒன்றாக வேலை செய்கின்றன: Q2 வேலைக்கு நேரத்தை பாதுகாக்க Matrix-ஐ பயன்படுத்துங்கள், பிரிவு 2-இல் நீங்கள் அமைத்த இலக்கிற்கு அந்த பாதுகாக்கப்பட்ட நேரத்தை குறிப்பாக பயன்படுத்துங்கள் — இல்லையெனில் அன்று அவசரமாக உணரப்படும் எதுவாலும் இலக்கு அமைதியாக நெரிசலாக்கப்படும்.</span>
+    </p>
+
+    <div class="assess-card">
+      <h3><span class="en">Check Your Time Management Score</span><span class="ta">உங்கள் நேர மேலாண்மை மதிப்பெண்ணை சரிபார்க்கவும்</span></h3>
+      <p><span class="en">Your 15-domain self-assessment includes a Time Management dimension — revisit it to see whether Q1 firefighting or Q4 drift is your bigger pattern.</span><span class="ta">உங்கள் 15-துறை சுய மதிப்பீட்டில் ஒரு நேர மேலாண்மை பரிமாணம் உள்ளது — Q1 தீ அணைத்தல் அல்லது Q4 சறுக்கல் உங்கள் பெரிய வடிவமா என்பதை பார்க்க அதை மீண்டும் பாருங்கள்.</span></p>
+      <a class="btn btn-primary" href="https://somasundaramntlifecoach-ux.github.io/teacher/landing.html" target="_blank" rel="noopener"><span class="en">Go to Self-Assessment →</span><span class="ta">சுய மதிப்பீட்டிற்கு செல்லுங்கள் →</span></a>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 3 of 3</span><span class="ta">சிந்தனை · 3/3</span></div>
+      <h4><span class="en">Pick one fixed day and time this week that you'll protect purely for the Q2 goal work from Section 2.</span><span class="ta">பிரிவு 2-இலிருந்து Q2 இலக்கு வேலைக்காக மட்டும் நீங்கள் பாதுகாக்கும் இந்த வாரத்தின் ஒரு நிலையான நாள் மற்றும் நேரத்தை தேர்ந்தெடுங்கள்.</span></h4>
+      <textarea name="r3" placeholder="This becomes a fixed appointment with yourself this week."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- TAKEAWAYS -->
+  <section>
+    <div class="s-label"><div class="s-num">✓</div><h2 class="display"><span class="en">Module 8 Takeaways</span><span class="ta">தொகுதி 8 சுருக்கம்</span></h2></div>
+    <ul class="takeaway-list">
+      <li><span class="mk">1</span><span><span class="en">The Eisenhower Matrix sorts tasks by urgency and importance — and long-term wellbeing depends on protecting time for important-but-not-urgent (Q2) work.</span><span class="ta">Eisenhower Matrix பணிகளை அவசரம் மற்றும் முக்கியத்துவத்தால் வரிசைப்படுத்துகிறது — நீண்ட கால நல்வாழ்வு முக்கியமான-ஆனால்-அவசரமற்ற (Q2) வேலைக்கு நேரத்தை பாதுகாப்பதைப் பொறுத்தது.</span></span></li>
+      <li><span class="mk">2</span><span><span class="en">Specific, trackable goals attached to an existing habit are far more likely to stick than vague, standalone intentions.</span><span class="ta">இருக்கும் ஒரு பழக்கத்துடன் இணைக்கப்பட்ட குறிப்பிட்ட, கண்காணிக்கக்கூடிய இலக்குகள், தெளிவற்ற, தனித்த எண்ணங்களை விட நிலைத்திருக்க அதிக வாய்ப்புள்ளவை.</span></span></li>
+      <li><span class="mk">3</span><span><span class="en">Protecting a fixed slot for Q2 work is what actually connects your time management to your goals — without it, goals quietly lose out to whatever feels urgent each day.</span><span class="ta">Q2 வேலைக்கு ஒரு நிலையான இடத்தை பாதுகாப்பதே உங்கள் நேர மேலாண்மையை உங்கள் இலக்குகளுடன் உண்மையில் இணைக்கிறது — இது இல்லாமல், ஒவ்வொரு நாளும் அவசரமாக உணரப்படும் எதற்கும் இலக்குகள் அமைதியாக தோற்கின்றன.</span></span></li>
+    </ul>
+  </section>
+
+    <div class="save-block">
+    <p><span class="en">Save your reflections from this module to your learning record.</span><span class="ta">இந்த தொகுதியிலிருந்து உங்கள் சிந்தனைகளை உங்கள் கற்றல் பதிவில் சேமிக்கவும்.</span></p>
+    <button class="btn btn-primary" onclick="saveReflections()"><span class="en">Save My Reflections</span><span class="ta">என் சிந்தனைகளை சேமிக்கவும்</span></button>
+    <div class="save-status" id="saveStatus"></div>
+  </div>
+
+  <div class="module-nav">
+    <a class="nav-link" href="module7-content.html">
+      <span class="lbl"><span class="en">← Back to</span><span class="ta">← திரும்ப</span></span>
+      <span class="ttl"><span class="en">Module 7 · Positive Discipline in Practice</span><span class="ta">தொகுதி 7 · நேர்மறை ஒழுக்கம் நடைமுறையில்</span></span>
+    </a>
+    <a class="nav-link next" href="module9-content.html">
+      <span class="lbl"><span class="en">Up Next</span><span class="ta">அடுத்தது</span></span>
+      <span class="ttl"><span class="en">Module 9 · Resilience &amp; Coping with Change →</span><span class="ta">தொகுதி 9 · தன்னிச்சை &amp; மாற்றத்தை சமாளித்தல் →</span></span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="motto"><span class="en">"God is always with u"</span><span class="ta">"கடவுள் எப்போதும் உங்களுடன் இருக்கிறார்"</span></div>
+  <div><span class="en">NT Somasundaram · Certified Master Trainer, Career Consultant &amp; Life Skills Educator</span><span class="ta">என்.டி. சோமசுந்தரம் · சான்றளிக்கப்பட்ட முதன்மை பயிற்சியாளர் &amp; வாழ்க்கை திறன் கல்வியாளர்</span></div>
+  <div class="contact" style="margin-top:8px;">
+    <a href="mailto:somasundaramnt.lifecoach@gmail.com">somasundaramnt.lifecoach@gmail.com</a> &nbsp;·&nbsp;
+    <a href="tel:+919843702244">+91 98437 02244</a>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  document.body.classList.toggle('show-ta', lang==='ta');
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.documentElement.lang = lang;
+}
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progressFill').style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+});
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrZjQ8oDwiKegl3pI1qAG1PVtZ0pFAlb3GbVvK7sPbzjIprs1Q9isXPoisLDjQnfpgng/exec';
+const MODULE_ID = 'Module 8 - Time Management & Goal Setting';
+
+function loadLearnerInfo(){
+  const n = document.getElementById('learnerName');
+  const em = document.getElementById('learnerEmail');
+  if(n) n.value = localStorage.getItem('lsm_name') || '';
+  if(em) em.value = localStorage.getItem('lsm_email') || '';
+}
+loadLearnerInfo();
+
+function saveReflections(){
+  const nameEl = document.getElementById('learnerName');
+  const emailEl = document.getElementById('learnerEmail');
+  const name = nameEl ? nameEl.value.trim() : '';
+  const email = emailEl ? emailEl.value.trim() : '';
+  if(!name){ alert('Please enter your name before saving.'); return; }
+  localStorage.setItem('lsm_name', name);
+  localStorage.setItem('lsm_email', email);
+  const responses = {};
+  document.querySelectorAll('.reflect textarea[name], .reflect input[name]').forEach(function(el){
+    responses[el.name] = el.value;
+  });
+  const payload = encodeURIComponent(JSON.stringify(responses));
+  const url = APPS_SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&module=' + encodeURIComponent(MODULE_ID) + '&responses=' + payload;
+  const img = new Image();
+  img.src = url;
+  const status = document.getElementById('saveStatus');
+  if(status){
+    status.textContent = 'Saved \u2713';
+    setTimeout(function(){ status.textContent=''; }, 4000);
+  }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 4: Communication Skills — Life Skills Mastery for Educators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16333F; --ink-soft:#2A4B58;
+    --marigold:#E5A337; --marigold-deep:#C77F1F;
+    --sage:#7C9A80; --sage-deep:#5E7C63;
+    --paper:#F6F2E9; --paper-dim:#EDE6D6;
+    --charcoal:#26251F; --white:#FFFEFB;
+    --line:rgba(22,51,63,0.14);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--charcoal);font-family:'Poppins',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .en{display:inline;} .ta{display:none;}
+  body.show-ta .en{display:none;} body.show-ta .ta{display:inline;}
+  body.show-ta h1,body.show-ta h2,body.show-ta h3,body.show-ta h4,body.show-ta p,body.show-ta li,body.show-ta span,body.show-ta a,body.show-ta button,body.show-ta label,body.show-ta textarea::placeholder{font-family:'Noto Sans Tamil',sans-serif;}
+  .display{font-family:'Fraunces',serif;}
+  body.show-ta .display{font-family:'Noto Sans Tamil',sans-serif;font-weight:700;}
+  a{color:inherit;} img,svg{display:block;max-width:100%;}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--white);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .topbar .brand{font-size:13.5px;opacity:.9;display:flex;align-items:center;gap:8px;}
+  .brand-dot{width:7px;height:7px;border-radius:50%;background:var(--marigold);flex:none;}
+  .lang-toggle{display:flex;background:rgba(255,255,255,0.1);border-radius:999px;padding:3px;gap:2px;}
+  .lang-toggle button{border:none;background:transparent;color:var(--white);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;}
+  .lang-toggle button.active{background:var(--marigold);color:var(--ink);}
+  .progress-track{height:4px;background:rgba(255,255,255,0.15);}
+  .progress-fill{height:100%;width:0%;background:var(--marigold);transition:width .15s linear;}
+  /* Learner info + save bar */
+  .learner-bar{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--paper-dim);border-bottom:1px solid var(--line);}
+  .learner-field{flex:1;min-width:160px;}
+  .learner-field label{display:block;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:4px;}
+  .learner-field input{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:'Poppins',sans-serif;font-size:13.5px;background:var(--white);color:var(--charcoal);box-sizing:border-box;}
+  body.show-ta .learner-field input{font-family:'Noto Sans Tamil',sans-serif;}
+  .save-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px;margin:30px 0;text-align:center;}
+  .save-block p{font-size:13.5px;color:var(--ink-soft);margin:0 0 14px;}
+  .save-status{margin-top:10px;font-size:13.5px;color:var(--sage-deep);font-weight:600;min-height:18px;}
+
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  section{padding:56px 0;}
+  .rule{border:none;border-top:1px solid var(--line);margin:0;}
+
+  .module-header{padding:56px 0 40px;}
+  .module-tag{display:inline-block;background:var(--marigold);color:var(--ink);font-size:12.5px;font-weight:700;letter-spacing:.05em;padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+  h1{font-size:clamp(28px,4.4vw,42px);font-weight:600;line-height:1.14;margin:0 0 16px;color:var(--ink);}
+  .module-header p.lede{font-size:16.5px;color:var(--ink-soft);max-width:56ch;margin:0 0 26px;}
+  .meta-row{display:flex;gap:22px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-soft);}
+  .meta-row span{display:flex;align-items:center;gap:6px;}
+  .meta-row .dot{width:5px;height:5px;border-radius:50%;background:var(--sage);}
+
+  .s-label{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .s-num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:14px;}
+  body.show-ta .s-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .s-label h2{margin:0;font-size:clamp(21px,3vw,27px);font-weight:600;color:var(--ink);}
+  section p{font-size:15.5px;color:var(--charcoal);}
+  section p.intro{color:var(--ink-soft);font-size:16px;}
+
+  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 8px;}
+  .skill-card{border:1px solid var(--line);background:var(--white);border-radius:var(--radius);padding:18px 18px;}
+  .skill-card .sk-num{font-family:'Fraunces',serif;font-size:12.5px;color:var(--marigold-deep);font-weight:700;letter-spacing:.03em;margin-bottom:8px;}
+  body.show-ta .skill-card .sk-num{font-family:'Noto Sans Tamil',sans-serif;}
+  .skill-card h4{margin:0 0 6px;font-size:15.5px;color:var(--ink);}
+  .skill-card p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+
+  .callout{background:var(--ink);color:var(--paper);border-radius:18px;padding:34px 30px;margin:30px 0;}
+  .callout .display{font-size:20px;color:var(--white);margin:0 0 12px;}
+  .callout p{color:rgba(246,242,233,0.85);margin:0;font-size:15.5px;}
+
+  blockquote{margin:26px 0;padding:2px 0 2px 22px;border-left:3px solid var(--marigold);font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--ink);}
+  body.show-ta blockquote{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;font-weight:500;}
+
+  .reflect{background:var(--white);border:1.5px dashed var(--sage);border-radius:var(--radius);padding:24px 24px 20px;margin:26px 0;}
+  .reflect .r-tag{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .reflect .r-tag::before{content:'✎';font-size:14px;}
+  .reflect h4{margin:0 0 14px;font-size:16px;color:var(--ink);font-weight:600;}
+  .reflect textarea{width:100%;min-height:84px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:'Poppins',sans-serif;font-size:14.5px;color:var(--charcoal);background:var(--paper);resize:vertical;}
+  body.show-ta .reflect textarea{font-family:'Noto Sans Tamil',sans-serif;}
+  .reflect textarea:focus{outline:2px solid var(--sage);outline-offset:1px;}
+
+  .steps{counter-reset:step;margin:26px 0;padding:0;list-style:none;}
+  .steps li{counter-increment:step;position:relative;padding:16px 0 16px 46px;border-bottom:1px solid var(--line);}
+  .steps li:last-child{border-bottom:none;}
+  .steps li::before{content:counter(step);position:absolute;left:0;top:16px;width:30px;height:30px;border-radius:50%;background:var(--paper-dim);border:1px solid var(--line);color:var(--ink);font-family:'Fraunces',serif;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;}
+  body.show-ta .steps li::before{font-family:'Noto Sans Tamil',sans-serif;}
+  .steps h4{margin:0 0 5px;font-size:15.5px;color:var(--ink);}
+  .steps p{margin:0;font-size:14px;color:var(--ink-soft);}
+
+  .assess-card{background:var(--sage);color:var(--white);border-radius:20px;padding:36px 30px;margin:34px 0;text-align:center;}
+  .assess-card h3{margin:0 0 10px;font-size:22px;color:var(--white);}
+  .assess-card p{color:rgba(255,255,255,0.9);max-width:48ch;margin:0 auto 22px;font-size:15px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14.5px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease;}
+  .btn-primary{background:var(--ink);color:var(--white);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .assess-card .btn-primary{background:var(--white);color:var(--sage-deep);}
+
+  .takeaway-list{list-style:none;margin:22px 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .takeaway-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .takeaway-list li:last-child{border-bottom:none;}
+  .takeaway-list .mk{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(229,163,55,0.16);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:2px;}
+
+  .module-nav{display:flex;justify-content:space-between;align-items:center;padding:40px 0 70px;gap:16px;flex-wrap:wrap;}
+  .nav-link{display:flex;flex-direction:column;text-decoration:none;padding:16px 20px;border-radius:14px;border:1px solid var(--line);background:var(--white);min-width:220px;}
+  .nav-link .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:4px;}
+  .nav-link .ttl{font-size:15.5px;font-weight:600;color:var(--ink);}
+  .nav-link.next{text-align:right;}
+
+  /* Deep-dive expandable detail blocks */
+  .deepdive-intro{margin:34px 0 16px;font-size:13.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-deep);}
+  .deep{border:1px solid var(--line);border-radius:var(--radius);background:var(--white);margin-bottom:12px;overflow:hidden;}
+  .deep summary{cursor:pointer;padding:16px 20px;font-weight:600;font-size:15.5px;color:var(--ink);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .deep summary::-webkit-details-marker{display:none;}
+  .deep summary .plus{flex:none;width:26px;height:26px;border-radius:50%;background:var(--paper-dim);color:var(--marigold-deep);display:flex;align-items:center;justify-content:center;font-size:17px;transition:transform .2s ease;}
+  .deep[open] summary .plus{transform:rotate(45deg);}
+  .deep-body{padding:2px 20px 22px;border-top:1px solid var(--line);}
+  .deep-body h5{margin:16px 0 6px;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--sage-deep);font-weight:700;}
+  .deep-body h5:first-child{margin-top:16px;}
+  .deep-body p{margin:0 0 4px;font-size:14.5px;color:var(--ink-soft);}
+
+  footer{padding:32px 24px 50px;text-align:center;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);}
+  footer .motto{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);margin-bottom:6px;font-size:14.5px;}
+  body.show-ta footer .motto{font-family:'Noto Sans Tamil',sans-serif;font-style:normal;}
+  footer .contact a{text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media print{
+    .topbar,.progress-track,.module-nav,.lang-toggle{display:none !important;}
+    body{background:#fff;}
+    .deep{break-inside:avoid;}
+  }
+  @media (max-width:640px){
+    .skill-grid{grid-template-columns:1fr;}
+    .module-nav{flex-direction:column;align-items:stretch;}
+    .nav-link.next{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="brand-dot"></span>
+    <span class="en">Life Skills Mastery for Educators</span>
+    <span class="ta">ஆசிரியர்களுக்கான வாழ்க்கை திறன் தேர்ச்சி</span>
+  </div>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('en')">English</button>
+    <button onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="learner-bar">
+  <div class="learner-field">
+    <label><span class="en">Your Name</span><span class="ta">உங்கள் பெயர்</span></label>
+    <input type="text" id="learnerName" placeholder="e.g., Priya Kumar">
+  </div>
+  <div class="learner-field">
+    <label><span class="en">Your Email (optional)</span><span class="ta">உங்கள் மின்னஞ்சல் (விருப்பம்)</span></label>
+    <input type="text" id="learnerEmail" placeholder="you@example.com">
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="module-header">
+    <span class="module-tag"><span class="en">MODULE 4 OF 10</span><span class="ta">தொகுதி 4 / 10</span></span>
+    <h1 class="display"><span class="en">Communication Skills</span><span class="ta">தொடர்பு திறன்கள்</span></h1>
+    <p class="lede">
+      <span class="en">You've built the inner foundation. This module turns it outward — how you say things, how you listen, and how you navigate the conversations with students and parents that you'd rather avoid.</span>
+      <span class="ta">நீங்கள் உள் அடித்தளத்தை உருவாக்கிவிட்டீர்கள். இந்த தொகுதி அதை வெளிநோக்கி திருப்புகிறது — நீங்கள் விஷயங்களை எப்படி சொல்கிறீர்கள், எப்படி கேட்கிறீர்கள், நீங்கள் தவிர்க்க விரும்பும் மாணவர்கள் மற்றும் பெற்றோருடனான உரையாடல்களை எப்படி வழிநடத்துகிறீர்கள்.</span>
+    </p>
+    <div class="meta-row">
+      <span><span class="dot"></span><span class="en">Reading time: ~27 min</span><span class="ta">படிக்க: ~27 நிமிடம்</span></span>
+      <span><span class="dot"></span><span class="en">3 reflection exercises</span><span class="ta">3 சிந்தனை பயிற்சிகள்</span></span>
+      <span><span class="dot"></span><span class="en">1 conversation script</span><span class="ta">1 உரையாடல் ஸ்கிரிப்ட்</span></span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <div class="s-label"><div class="s-num">1</div><h2 class="display"><span class="en">The Four Communication Styles</span><span class="ta">நான்கு தொடர்பு பாணிகள்</span></h2></div>
+    <p class="intro">
+      <span class="en">Every message you send in a classroom carries a style, whether you intend it or not. Recognising the four styles — and which one you default to under pressure — is the first step to choosing assertive communication on purpose.</span>
+      <span class="ta">வகுப்பறையில் நீங்கள் அனுப்பும் ஒவ்வொரு செய்தியும், நீங்கள் நினைத்தாலும் இல்லாவிட்டாலும், ஒரு பாணியை சுமக்கிறது. நான்கு பாணிகளையும் — அழுத்தத்தில் நீங்கள் இயல்பாக எதற்கு செல்கிறீர்கள் என்பதையும் — அடையாளம் காண்பதே வேண்டுமென்றே உறுதியான தொடர்பை தேர்ந்தெடுப்பதற்கான முதல் படி.</span>
+    </p>
+
+    <div class="skill-grid">
+      <div class="skill-card"><div class="sk-num">01</div><h4><span class="en">Passive</span><span class="ta">செயலற்ற</span></h4><p><span class="en">Avoiding stating your own need or boundary to keep the peace, even at your own cost.</span><span class="ta">உங்கள் சொந்த செலவில் ஆனாலும் அமைதியை பராமரிக்க உங்கள் தேவை அல்லது எல்லையை சொல்வதை தவிர்த்தல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">02</div><h4><span class="en">Aggressive</span><span class="ta">ஆக்ரோஷமான</span></h4><p><span class="en">Stating your need at the expense of the other person's dignity or feelings.</span><span class="ta">மற்றவரின் மரியாதை அல்லது உணர்வுகளை பாதிக்கும் விதத்தில் உங்கள் தேவையை சொல்லுதல்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">03</div><h4><span class="en">Passive-Aggressive</span><span class="ta">செயலற்ற-ஆக்ரோஷமான</span></h4><p><span class="en">Expressing frustration indirectly — sarcasm, silence, or subtle digs — instead of stating it plainly.</span><span class="ta">தெளிவாக சொல்வதற்குப் பதிலாக, மறைமுகமாக விரக்தியை வெளிப்படுத்துதல் — நையாண்டி, மௌனம், அல்லது நுட்பமான குத்தல்கள்.</span></p></div>
+      <div class="skill-card"><div class="sk-num">04</div><h4><span class="en">Assertive</span><span class="ta">உறுதியான</span></h4><p><span class="en">Stating your need clearly and respectfully, while still honouring the other person's dignity.</span><span class="ta">மற்றவரின் மரியாதையை மதித்தபடி, உங்கள் தேவையை தெளிவாகவும் மரியாதையாகவும் சொல்லுதல்.</span></p></div>
+    </div>
+
+    <blockquote><span class="en">Assertive communication isn't a fifth, gentler style bolted onto the other three — it's what's left when you remove both the fear behind passivity and the disrespect behind aggression.</span><span class="ta">உறுதியான தொடர்பு மற்ற மூன்றுடன் இணைக்கப்பட்ட ஐந்தாவது, மென்மையான பாணி அல்ல — செயலற்ற தன்மைக்குப் பின்னால் உள்ள பயத்தையும் ஆக்ரோஷத்திற்குப் பின்னால் உள்ள அவமரியாதையையும் அகற்றும்போது மீதமிருப்பது இதுவே.</span></blockquote>
+
+    <div class="deepdive-intro"><span class="en">Explore each style in depth</span><span class="ta">ஒவ்வொரு பாணியையும் விரிவாக அறிக</span></div>
+
+    <details class="deep">
+      <summary><span><span class="en">1. Passive</span><span class="ta">1. செயலற்ற</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it sounds like</span><span class="ta">இது எப்படி கேட்கும்</span></h5>
+        <p><span class="en">"It's fine, don't worry about it" — said repeatedly to a student who keeps missing deadlines, while privately growing more resentful each time.</span><span class="ta">"பரவாயில்லை, கவலைப்படாதே" — காலக்கெடுவை தவறவிடும் ஒரு மாணவரிடம் திரும்பத் திரும்ப சொல்லப்படுகிறது, தனிப்பட்ட முறையில் ஒவ்வொரு முறையும் அதிக வெறுப்படைந்தபடி.</span></p>
+        <h5><span class="en">The hidden cost</span><span class="ta">மறைமுக விலை</span></h5>
+        <p><span class="en">Students learn that your stated boundaries don't actually hold, and the unspoken resentment eventually leaks out anyway — usually at the worst possible moment.</span><span class="ta">உங்கள் கூறப்பட்ட எல்லைகள் உண்மையில் நிலைக்காது என்பதை மாணவர்கள் கற்றுக்கொள்கிறார்கள், சொல்லப்படாத வெறுப்பு இறுதியில் எப்படியும் வெளியேறுகிறது — பொதுவாக மிக மோசமான தருணத்தில்.</span></p>
+        <h5><span class="en">Shift to try</span><span class="ta">முயற்சிக்க வேண்டிய மாற்றம்</span></h5>
+        <p><span class="en">State the boundary the first time it's crossed, calmly and briefly, instead of waiting until frustration forces the issue out.</span><span class="ta">விரக்தி பிரச்சினையை வெளியே கொண்டு வரும் வரை காத்திருப்பதற்குப் பதிலாக, முதல் முறை மீறப்படும்போதே அமைதியாகவும் சுருக்கமாகவும் எல்லையை சொல்லுங்கள்.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">2. Aggressive</span><span class="ta">2. ஆக்ரோஷமான</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it sounds like</span><span class="ta">இது எப்படி கேட்கும்</span></h5>
+        <p><span class="en">"How many times do I have to tell you? Are you even listening?" — raised voice, in front of the whole class.</span><span class="ta">"நான் எத்தனை முறை சொல்ல வேண்டும்? நீ கேட்கிறாயா கூட?" — முழு வகுப்பிற்கும் முன்னால் உயர்ந்த குரலில்.</span></p>
+        <h5><span class="en">The hidden cost</span><span class="ta">மறைமுக விலை</span></h5>
+        <p><span class="en">The message may land in the moment, but it teaches students that volume, not reasoning, is how conflict gets resolved — and it damages trust that takes far longer to rebuild than the incident took to happen.</span><span class="ta">செய்தி அந்த தருணத்தில் சேரலாம், ஆனால் மோதல் தீர்க்கப்படுவது சத்தத்தால் தான், காரணத்தால் அல்ல என்று மாணவர்களுக்கு கற்பிக்கிறது — சம்பவம் நடப்பதை விட மீண்டும் கட்டியெழுப்ப மிக அதிக நேரம் எடுக்கும் நம்பிக்கையை சேதப்படுத்துகிறது.</span></p>
+        <h5><span class="en">Shift to try</span><span class="ta">முயற்சிக்க வேண்டிய மாற்றம்</span></h5>
+        <p><span class="en">Lower your volume as your frustration rises, not the reverse — it's counter-intuitive but reliably de-escalates faster than matching the room's energy.</span><span class="ta">உங்கள் விரக்தி அதிகரிக்கும் போது உங்கள் சத்தத்தை குறையுங்கள், நேர்மாறாக அல்ல — இது எதிர்மறையாகத் தோன்றினாலும் அறையின் ஆற்றலை பொருத்துவதை விட நம்பகமாக வேகமாக தணிக்கிறது.</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">3. Passive-Aggressive</span><span class="ta">3. செயலற்ற-ஆக்ரோஷமான</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it sounds like</span><span class="ta">இது எப்படி கேட்கும்</span></h5>
+        <p><span class="en">"Oh, I'm sure you'll get to it eventually," said with a pointed sigh, to a student who hasn't submitted homework again.</span><span class="ta">மீண்டும் வீட்டு பாடத்தை சமர்ப்பிக்காத ஒரு மாணவரிடம், குறிப்பிட்ட பெருமூச்சுடன் "ஓ, நீ எப்போதாவது செய்வாய் என்று நம்புகிறேன்" என்று சொல்லப்படுகிறது.</span></p>
+        <h5><span class="en">The hidden cost</span><span class="ta">மறைமுக விலை</span></h5>
+        <p><span class="en">It confuses students — they sense frustration but were never told plainly what the issue is, so they can't actually correct it, only feel vaguely blamed.</span><span class="ta">இது மாணவர்களை குழப்புகிறது — அவர்கள் விரக்தியை உணர்கிறார்கள் ஆனால் பிரச்சினை என்ன என்று ஒருபோதும் தெளிவாக சொல்லப்படவில்லை, எனவே அவர்களால் அதை உண்மையில் சரிசெய்ய முடியாது, தெளிவற்ற முறையில் குற்றம் சாட்டப்பட்டதாக மட்டும் உணர முடியும்.</span></p>
+        <h5><span class="en">Shift to try</span><span class="ta">முயற்சிக்க வேண்டிய மாற்றம்</span></h5>
+        <p><span class="en">Notice the sarcasm forming, and replace it with the plain, direct sentence underneath it — "This is the third time this has happened. Let's talk about what's getting in the way."</span><span class="ta">உருவாகும் நையாண்டியை கவனித்து, அதற்கு அடியில் உள்ள தெளிவான, நேரடி வாக்கியத்துடன் அதை மாற்றுங்கள் — "இது மூன்றாவது முறை நடந்திருக்கிறது. என்ன தடையாக இருக்கிறது என்று பேசுவோம்."</span></p>
+      </div>
+    </details>
+
+    <details class="deep">
+      <summary><span><span class="en">4. Assertive</span><span class="ta">4. உறுதியான</span></span><span class="plus">+</span></summary>
+      <div class="deep-body">
+        <h5><span class="en">What it sounds like</span><span class="ta">இது எப்படி கேட்கும்</span></h5>
+        <p><span class="en">"This is the third missed deadline this month. I need the assignment by Friday — what's making it hard to finish on time?"</span><span class="ta">"இது இந்த மாதம் மூன்றாவது தவறவிடப்பட்ட காலக்கெடு. எனக்கு வெள்ளிக்கிழமைக்குள் பணி வேண்டும் — சரியான நேரத்தில் முடிக்க என்ன கடினமாக்குகிறது?"</span></p>
+        <h5><span class="en">Why it works</span><span class="ta">இது ஏன் வேலை செய்கிறது</span></h5>
+        <p><span class="en">It names the issue factually, states the need directly, and opens the door to a real conversation — all without attacking the student's character.</span><span class="ta">இது பிரச்சினையை உண்மையான முறையில் பெயரிடுகிறது, தேவையை நேரடியாக சொல்கிறது, மாணவரின் குணத்தை தாக்காமல் ஒரு உண்மையான உரையாடலுக்கு வழி திறக்கிறது.</span></p>
+        <h5><span class="en">Shift to try</span><span class="ta">முயற்சிக்க வேண்டிய மாற்றம்</span></h5>
+        <p><span class="en">Before a known difficult conversation, script your assertive opening line in advance — in the moment, having the words ready removes half the anxiety.</span><span class="ta">அறியப்பட்ட ஒரு கடினமான உரையாடலுக்கு முன், உங்கள் உறுதியான தொடக்க வரியை முன்கூட்டியே ஸ்கிரிப்ட் செய்யுங்கள் — தருணத்தில், வார்த்தைகள் தயாராக இருப்பது பாதி கவலையை நீக்குகிறது.</span></p>
+      </div>
+    </details>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 1 of 3</span><span class="ta">சிந்தனை · 1/3</span></div>
+      <h4><span class="en">Which of the four styles do you default to when you're tired or under pressure? What does it usually sound like?</span><span class="ta">நீங்கள் சோர்வாகவோ அழுத்தத்திலோ இருக்கும்போது நான்கு பாணிகளில் எதற்கு நீங்கள் இயல்பாக செல்கிறீர்கள்? இது பொதுவாக எப்படி கேட்கும்?</span></h4>
+      <textarea name="r1" placeholder="Write a few lines here — this stays on your screen only, for your own reference."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <div class="s-label"><div class="s-num">2</div><h2 class="display"><span class="en">Active Listening in Practice</span><span class="ta">நடைமுறையில் சுறுசுறுப்பான கேட்டல்</span></h2></div>
+    <p class="intro">
+      <span class="en">Most of us listen to reply, not to understand. Active listening reverses that order — and it's the single fastest way to make a student or parent feel actually heard, which defuses far more conflict than any argument you could win.</span>
+      <span class="ta">நம்மில் பெரும்பாலோர் புரிந்துகொள்ள அல்ல, பதிலளிக்க கேட்கிறோம். சுறுசுறுப்பான கேட்டல் அந்த வரிசையை மாற்றுகிறது — ஒரு மாணவரோ பெற்றோரோ உண்மையில் கேட்கப்பட்டதாக உணர வைக்கும் மிக வேகமான வழி இது, நீங்கள் வெல்லக்கூடிய எந்த வாதத்தையும் விட அதிக மோதலை தணிக்கிறது.</span>
+    </p>
+
+    <ul class="steps">
+      <li><h4><span class="en">Stop preparing your response while they're still talking</span><span class="ta">அவர்கள் இன்னும் பேசிக்கொண்டிருக்கும்போது உங்கள் பதிலை தயார் செய்வதை நிறுத்துங்கள்</span></h4><p><span class="en">This single habit change does more for listening quality than any technique below.</span><span class="ta">இந்த ஒரு பழக்க மாற்றம் கீழே உள்ள எந்த நுட்பத்தையும் விட கேட்டலின் தரத்திற்கு அதிகம் செய்கிறது.</span></p></li>
+      <li><h4><span class="en">Reflect back what you heard, in your own words</span><span class="ta">நீங்கள் கேட்டதை, உங்கள் சொந்த வார்த்தைகளில் பிரதிபலிக்கவும்</span></h4><p><span class="en">"So what I'm hearing is..." confirms understanding and gives the other person a chance to correct you.</span><span class="ta">"நான் கேட்பது..." புரிதலை உறுதிப்படுத்துகிறது மற்றும் மற்றவருக்கு உங்களை திருத்த ஒரு வாய்ப்பை தருகிறது.</span></p></li>
+      <li><h4><span class="en">Name the feeling, not just the facts</span><span class="ta">உண்மைகளை மட்டும் அல்ல, உணர்வை பெயரிடுங்கள்</span></h4><p><span class="en">"That sounds really frustrating" acknowledges the emotional layer that facts alone skip over.</span><span class="ta">"அது மிகவும் விரக்தியாக தெரிகிறது" என்பது உண்மைகள் மட்டும் தவிர்க்கும் உணர்ச்சி அடுக்கை ஒப்புக்கொள்கிறது.</span></p></li>
+      <li><h4><span class="en">Ask one open question before offering a solution</span><span class="ta">தீர்வை வழங்குவதற்கு முன் ஒரு திறந்த கேள்வியை கேளுங்கள்</span></h4><p><span class="en">"What would help most right now?" often surfaces a need very different from what you assumed.</span><span class="ta">"இப்போது எது அதிகம் உதவும்?" பெரும்பாலும் நீங்கள் நினைத்ததை விட மிக வேறுபட்ட தேவையை வெளிக்கொணரும்.</span></p></li>
+    </ul>
+
+    <div class="callout">
+      <div class="display"><span class="en">A common trap</span><span class="ta">ஒரு பொதுவான பொறி</span></div>
+      <p>
+        <span class="en">Nodding while mentally drafting your rebuttal isn't active listening — it's polite waiting. Students and parents can usually tell the difference, even when they can't name why a conversation felt unsatisfying.</span>
+        <span class="ta">உங்கள் மறுப்பை மனதளவில் தயார் செய்தபடி தலையாட்டுவது சுறுசுறுப்பான கேட்டல் அல்ல — இது மரியாதையான காத்திருப்பு. ஒரு உரையாடல் ஏன் திருப்தியற்றதாக உணரப்பட்டது என்று பெயரிட முடியாவிட்டாலும், மாணவர்களும் பெற்றோரும் பொதுவாக வித்தியாசத்தை உணர்கிறார்கள்.</span>
+      </p>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 2 of 3</span><span class="ta">சிந்தனை · 2/3</span></div>
+      <h4><span class="en">Recall a recent conversation where you were really listening to reply. What would reflecting back have changed?</span><span class="ta">நீங்கள் உண்மையில் பதிலளிக்க கேட்டுக்கொண்டிருந்த ஒரு சமீபத்திய உரையாடலை நினைவுகூருங்கள். பிரதிபலிப்பது என்ன மாற்றியிருக்கும்?</span></h4>
+      <textarea name="r2" placeholder="Write a few lines here — this stays on your screen only, for your own reference."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <div class="s-label"><div class="s-num">3</div><h2 class="display"><span class="en">Difficult Conversations With Parents &amp; Students</span><span class="ta">பெற்றோர் &amp; மாணவர்களுடன் கடினமான உரையாடல்கள்</span></h2></div>
+    <p class="intro">
+      <span class="en">Every teacher has one type of conversation they dread — the underperforming student's parent, the defensive teenager, the colleague who took offence. A simple structure removes most of the anxiety because you're no longer improvising under stress.</span>
+      <span class="ta">ஒவ்வொரு ஆசிரியருக்கும் அவர்கள் அஞ்சும் ஒரு வகை உரையாடல் உள்ளது — குறைந்த செயல்திறன் கொண்ட மாணவரின் பெற்றோர், தற்காப்பு இளம் பருவத்தினர், புண்பட்ட சக ஊழியர். ஒரு எளிய கட்டமைப்பு பெரும்பாலான கவலையை நீக்குகிறது, ஏனெனில் நீங்கள் இனி அழுத்தத்தில் தற்காலிகமாக செய்யவில்லை.</span>
+    </p>
+
+    <div class="callout">
+      <div class="display"><span class="en">A simple four-part script</span><span class="ta">ஒரு எளிய நான்கு-பகுதி ஸ்கிரிப்ட்</span></div>
+      <p>
+        <span class="en"><b>Open with the fact, not the judgement</b> ("Meera has missed three assignments this month") · <b>State your genuine concern</b> ("I'm concerned this will affect her confidence going into exams") · <b>Invite their perspective</b> ("What's your sense of what's going on?") · <b>Agree one small next step together</b> ("Let's check in again in two weeks"). This order keeps the other person from feeling attacked, which is what usually derails these conversations before they start.</span>
+        <span class="ta"><b>தீர்ப்பை அல்ல, உண்மையை கொண்டு தொடங்குங்கள்</b> ("மீரா இந்த மாதம் மூன்று பணிகளை தவறவிட்டார்") · <b>உங்கள் உண்மையான கவலையை சொல்லுங்கள்</b> ("இது தேர்வுகளுக்குள் நுழையும்போது அவரது நம்பிக்கையை பாதிக்கும் என்று கவலைப்படுகிறேன்") · <b>அவர்களின் பார்வையை அழைக்கவும்</b> ("என்ன நடக்கிறது என்று உங்கள் எண்ணம் என்ன?") · <b>ஒன்றாக ஒரு சிறிய அடுத்த படியை ஒப்புக்கொள்ளுங்கள்</b> ("இரண்டு வாரங்களில் மீண்டும் சரிபார்ப்போம்"). இந்த வரிசை மற்றவர் தாக்கப்பட்டதாக உணராமல் வைத்திருக்கிறது, இது பொதுவாக இந்த உரையாடல்கள் தொடங்குவதற்கு முன் அவற்றை தடம் புரள வைக்கிறது.</span>
+      </p>
+    </div>
+
+    <div class="assess-card">
+      <h3><span class="en">Check Your Communication Style Score</span><span class="ta">உங்கள் தொடர்பு பாணி மதிப்பெண்ணை சரிபார்க்கவும்</span></h3>
+      <p><span class="en">Your 15-domain self-assessment includes a Communication Style dimension — revisit it to see which of the four styles you lean toward under stress.</span><span class="ta">உங்கள் 15-துறை சுய மதிப்பீட்டில் ஒரு தொடர்பு பாணி பரிமாணம் உள்ளது — அழுத்தத்தில் நீங்கள் நான்கு பாணிகளில் எதற்கு சாய்கிறீர்கள் என்பதை பார்க்க அதை மீண்டும் பாருங்கள்.</span></p>
+      <a class="btn btn-primary" href="https://somasundaramntlifecoach-ux.github.io/teacher/landing.html" target="_blank" rel="noopener"><span class="en">Go to Self-Assessment →</span><span class="ta">சுய மதிப்பீட்டிற்கு செல்லுங்கள் →</span></a>
+    </div>
+
+    <div class="reflect">
+      <div class="r-tag"><span class="en">Reflection · 3 of 3</span><span class="ta">சிந்தனை · 3/3</span></div>
+      <h4><span class="en">Think of one difficult conversation you've been postponing. Draft your opening fact-based sentence for it here.</span><span class="ta">நீங்கள் தள்ளிப்போட்டுக்கொண்டிருக்கும் ஒரு கடினமான உரையாடலை நினைத்துப் பாருங்கள். அதற்கான உங்கள் தொடக்க உண்மை அடிப்படையிலான வாக்கியத்தை இங்கே வரையுங்கள்.</span></h4>
+      <textarea name="r3" placeholder="This becomes your opening line for the actual conversation."></textarea>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- TAKEAWAYS -->
+  <section>
+    <div class="s-label"><div class="s-num">✓</div><h2 class="display"><span class="en">Module 4 Takeaways</span><span class="ta">தொகுதி 4 சுருக்கம்</span></h2></div>
+    <ul class="takeaway-list">
+      <li><span class="mk">1</span><span><span class="en">There are four communication styles — passive, aggressive, passive-aggressive, and assertive — and only one, assertive, respects both people's needs at once.</span><span class="ta">நான்கு தொடர்பு பாணிகள் உள்ளன — செயலற்ற, ஆக்ரோஷமான, செயலற்ற-ஆக்ரோஷமான, உறுதியான — ஒரே நேரத்தில் இரு நபர்களின் தேவைகளையும் மதிக்கும் ஒரே பாணி உறுதியானது மட்டுமே.</span></span></li>
+      <li><span class="mk">2</span><span><span class="en">Active listening means reflecting back what you heard and naming the feeling beneath it, not preparing your reply while the other person talks.</span><span class="ta">சுறுசுறுப்பான கேட்டல் என்பது மற்றவர் பேசும்போது உங்கள் பதிலை தயார் செய்வது அல்ல, நீங்கள் கேட்டதை பிரதிபலித்து அதற்கு அடியில் உள்ள உணர்வை பெயரிடுவது.</span></span></li>
+      <li><span class="mk">3</span><span><span class="en">A four-part script — fact, concern, their perspective, shared next step — removes most of the anxiety from difficult conversations.</span><span class="ta">ஒரு நான்கு-பகுதி ஸ்கிரிப்ட் — உண்மை, கவலை, அவர்களின் பார்வை, பகிரப்பட்ட அடுத்த படி — கடினமான உரையாடல்களிலிருந்து பெரும்பாலான கவலையை நீக்குகிறது.</span></span></li>
+    </ul>
+  </section>
+
+    <div class="save-block">
+    <p><span class="en">Save your reflections from this module to your learning record.</span><span class="ta">இந்த தொகுதியிலிருந்து உங்கள் சிந்தனைகளை உங்கள் கற்றல் பதிவில் சேமிக்கவும்.</span></p>
+    <button class="btn btn-primary" onclick="saveReflections()"><span class="en">Save My Reflections</span><span class="ta">என் சிந்தனைகளை சேமிக்கவும்</span></button>
+    <div class="save-status" id="saveStatus"></div>
+  </div>
+
+  <div class="module-nav">
+    <a class="nav-link" href="module3-content.html">
+      <span class="lbl"><span class="en">← Back to</span><span class="ta">← திரும்ப</span></span>
+      <span class="ttl"><span class="en">Module 3 · Stress &amp; Anger Management</span><span class="ta">தொகுதி 3 · மன அழுத்தம் &amp; கோப மேலாண்மை</span></span>
+    </a>
+    <a class="nav-link next" href="module5-content.html">
+      <span class="lbl"><span class="en">Up Next</span><span class="ta">அடுத்தது</span></span>
+      <span class="ttl"><span class="en">Module 5 · Decision-Making &amp; Problem-Solving →</span><span class="ta">தொகுதி 5 · முடிவெடுத்தல் &amp; பிரச்சனை தீர்வு →</span></span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="motto"><span class="en">"God is always with u"</span><span class="ta">"கடவுள் எப்போதும் உங்களுடன் இருக்கிறார்"</span></div>
+  <div><span class="en">NT Somasundaram · Certified Master Trainer, Career Consultant &amp; Life Skills Educator</span><span class="ta">என்.டி. சோமசுந்தரம் · சான்றளிக்கப்பட்ட முதன்மை பயிற்சியாளர் &amp; வாழ்க்கை திறன் கல்வியாளர்</span></div>
+  <div class="contact" style="margin-top:8px;">
+    <a href="mailto:somasundaramnt.lifecoach@gmail.com">somasundaramnt.lifecoach@gmail.com</a> &nbsp;·&nbsp;
+    <a href="tel:+919843702244">+91 98437 02244</a>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  document.body.classList.toggle('show-ta', lang==='ta');
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.documentElement.lang = lang;
+}
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progressFill').style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+});
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrZjQ8oDwiKegl3pI1qAG1PVtZ0pFAlb3GbVvK7sPbzjIprs1Q9isXPoisLDjQnfpgng/exec';
+const MODULE_ID = 'Module 4 - Communication Skills';
+
+function loadLearnerInfo(){
+  const n = document.getElementById('learnerName');
+  const em = document.getElementById('learnerEmail');
+  if(n) n.value = localStorage.getItem('lsm_name') || '';
+  if(em) em.value = localStorage.getItem('lsm_email') || '';
+}
+loadLearnerInfo();
+
+function saveReflections(){
+  const nameEl = document.getElementById('learnerName');
+  const emailEl = document.getElementById('learnerEmail');
+  const name = nameEl ? nameEl.value.trim() : '';
+  const email = emailEl ? emailEl.value.trim() : '';
+  if(!name){ alert('Please enter your name before saving.'); return; }
+  localStorage.setItem('lsm_name', name);
+  localStorage.setItem('lsm_email', email);
+  const responses = {};
+  document.querySelectorAll('.reflect textarea[name], .reflect input[name]').forEach(function(el){
+    responses[el.name] = el.value;
+  });
+  const payload = encodeURIComponent(JSON.stringify(responses));
+  const url = APPS_SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&module=' + encodeURIComponent(MODULE_ID) + '&responses=' + payload;
+  const img = new Image();
+  img.src = url;
+  const status = document.getElementById('saveStatus');
+  if(status){
+    status.textContent = 'Saved \u2713';
+    setTimeout(function(){ status.textContent=''; }, 4000);
+  }
+}
+
+</script>
+
+</body>
+</html>
