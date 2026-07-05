@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8. Career Awareness & Future Planning | Life Skills Mastery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF8F0; --panel:#FFFFFF; --ink:#2B2118; --sub:#6B5D4F;
+  --clay:#C1602A; --clay-dark:#9C4A1E; --gold:#D9A441; --sage:#6B8F71;
+  --border:#EADFD0; --shadow:0 4px 20px rgba(43,33,24,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;}
+.tamil,[lang="ta"]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.topbar{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--border);
+  padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--clay),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;}
+.brand-text b{display:block;font-size:14px;}
+.brand-text span{font-size:11.5px;color:var(--sub);}
+.controls{display:flex;gap:8px;align-items:center;}
+.lang-toggle{display:flex;background:var(--cream);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.lang-toggle button{border:none;background:transparent;padding:8px 16px;font-family:inherit;font-weight:600;
+  font-size:13px;color:var(--sub);cursor:pointer;}
+.lang-toggle button.active{background:var(--clay);color:#fff;}
+.back-link{font-size:12.5px;color:var(--sub);text-decoration:none;font-weight:600;}
+.wrap{max-width:760px;margin:0 auto;padding:36px 20px 60px;}
+.eyebrow{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:10px;}
+h1{font-size:clamp(24px,4.5vw,34px);font-weight:800;margin:0 0 6px;line-height:1.2;}
+.sub-tagline{color:var(--sub);font-size:15px;margin-bottom:28px;}
+.nav-pill-row{display:flex;justify-content:space-between;margin-bottom:24px;gap:10px;flex-wrap:wrap;}
+.nav-pill{font-size:12.5px;font-weight:600;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);border-radius:20px;padding:8px 16px;}
+.nav-pill:hover{border-color:var(--clay);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin-bottom:22px;box-shadow:var(--shadow);}
+.section-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--clay);margin:0 0 12px;
+  display:flex;align-items:center;gap:8px;}
+p.body-text{font-size:15px;margin:0 0 12px;}
+p.body-text:last-child{margin-bottom:0;}
+.example-box{background:#FBF3E8;border-left:4px solid var(--gold);border-radius:8px;padding:14px 16px;font-size:14.5px;margin-bottom:10px;}
+.example-box:last-child{margin-bottom:0;}
+ul.tip-list{margin:0;padding-left:20px;}
+ul.tip-list li{font-size:14.5px;margin-bottom:9px;}
+ul.tip-list li:last-child{margin-bottom:0;}
+.improve-card{background:#EEF4EE;border:1px solid #D6E5D8;}
+.improve-card .section-label{color:var(--sage);}
+.assess-q{margin-bottom:16px;}
+.assess-q:last-child{margin-bottom:8px;}
+.assess-q p{font-size:14.5px;font-weight:600;margin:0 0 8px;}
+.scale{display:flex;gap:6px;flex-wrap:wrap;}
+.scale button{flex:1;min-width:56px;border:1px solid var(--border);background:var(--cream);border-radius:8px;
+  padding:9px 4px;font-family:inherit;font-size:12px;font-weight:600;color:var(--sub);cursor:pointer;}
+.scale button.selected{background:var(--sage);color:#fff;border-color:var(--sage);}
+.scale-labels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--sub);margin-top:4px;}
+.assess-footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap;gap:10px;}
+.btn{border:none;border-radius:10px;padding:12px 22px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;}
+.btn-primary{background:var(--clay);color:#fff;}
+.btn-primary:hover{background:var(--clay-dark);}
+.btn-primary[disabled]{background:#D9C3B3;cursor:not-allowed;}
+.result-box{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;background:#EEF4EE;border:1px solid #D6E5D8;font-size:13.5px;}
+.result-box.show{display:block;}
+.footer-nav{display:flex;justify-content:space-between;margin-top:30px;gap:10px;flex-wrap:wrap;}
+.footer-nav a{font-size:13px;font-weight:700;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);padding:10px 18px;border-radius:10px;}
+.footer-nav a:hover{border-color:var(--clay);}
+.footer-motto{text-align:center;font-style:italic;color:var(--sub);font-size:12.5px;margin-top:34px;}
+.footer-contact{text-align:center;font-size:11.5px;color:var(--sub);margin-top:6px;}
+[lang-block]{display:none;}
+[lang-block].lang-active{display:block;}
+span[lang-block].lang-active{display:inline;}
+li[lang-block].lang-active{display:list-item;}
+@media(max-width:600px){.nav-pill-row{flex-direction:column;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-mark">8</div>
+    <div class="brand-text">
+      <b lang-block="en" class="lang-active">Career Awareness & Future Planning</b>
+      <b lang-block="ta">தொழில் விழிப்புணர்வு & எதிர்கால திட்டமிடல்</b>
+      <span lang-block="en" class="lang-active">Life Skills Mastery Course</span>
+      <span lang-block="ta">வாழ்க்கை திறன் தேர்ச்சி பாடநெறி</span>
+    </div>
+  </a>
+  <div class="controls">
+    <a class="back-link" href="index.html">&larr; <span lang-block="en" class="lang-active">All Modules</span><span lang-block="ta">அனைத்து பாடங்கள்</span></a>
+    <a class="back-link" href="dashboard.html"><span lang-block="en" class="lang-active">My Progress</span><span lang-block="ta">என் முன்னேற்றம்</span></a>
+    <div class="lang-toggle">
+      <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+      <button id="btnTA" onclick="setLang('ta')">தமிழ்</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="eyebrow" lang-block="en" class="lang-active">Module 8 of 10</div>
+  <div class="eyebrow" lang-block="ta">பாடம் 8 / 10</div>
+  <h1 lang-block="en" class="lang-active">Career Awareness & Future Planning</h1>
+  <h1 lang-block="ta">தொழில் விழிப்புணர்வு & எதிர்கால திட்டமிடல்</h1>
+  <p class="sub-tagline" lang-block="en" class="lang-active">Introduction to RIASEC interest types</p>
+  <p class="sub-tagline" lang-block="ta">RIASEC ஆர்வ வகைகளுக்கான அறிமுகம்</p>
+
+  <div class="nav-pill-row">
+    <a class="nav-pill" href="social-skills.html">&larr; 7. Social Skills & Peer Relationships</a>
+    <a class="nav-pill" href="digital-literacy.html">9. Digital Literacy & Responsible Online Behavior &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📖 Detailed Explanation</span><span lang-block="ta">📖 விரிவான விளக்கம்</span></div>
+    <p class="body-text" lang-block="en">The RIASEC framework (developed by psychologist John Holland) groups career interests into six types: Realistic (hands-on, practical work), Investigative (analysis, research), Artistic (creativity, self-expression), Social (helping, teaching, caring for others), Enterprising (leading, persuading, business), and Conventional (organizing, detail, structure).</p><p class="body-text" lang-block="ta">RIASEC கட்டமைப்பு (உளவியலாளர் ஜான் ஹாலண்ட் உருவாக்கியது) தொழில் ஆர்வங்களை ஆறு வகைகளாக பிரிக்கிறது: நடைமுறை (கை வேலை), ஆய்வு (பகுப்பாய்வு, ஆராய்ச்சி), கலை (படைப்பாற்றல்), சமூக (உதவுதல், கற்பித்தல்), தொழில்முனைவு (வழிநடத்துதல், வணிகம்), மற்றும் வழக்கமான (ஒழுங்கமைத்தல், அமைப்பு).</p><p class="body-text" lang-block="en">Most people are a blend of two or three dominant types, not just one. Understanding your dominant types helps you explore career paths and subject streams that genuinely fit your natural interests, rather than choosing a path just because it's popular, high-paying, or expected by family.</p><p class="body-text" lang-block="ta">பெரும்பாலான மக்கள் இரண்டு அல்லது மூன்று முதன்மையான வகைகளின் கலவையாக உள்ளனர். உங்கள் முதன்மையான வகைகளை புரிந்துகொள்வது உண்மையிலேயே உங்கள் இயற்கையான ஆர்வங்களுக்கு பொருந்தும் தொழில் பாதைகளை ஆராய உதவுகிறது.</p><p class="body-text" lang-block="en">Career awareness at this age isn't about locking in one final decision — it's about exploring broadly, noticing what energizes you versus drains you, and gathering information (through internships, talking to professionals, or trying related subjects) before narrowing down.</p><p class="body-text" lang-block="ta">இந்த வயதில் தொழில் விழிப்புணர்வு ஒரு இறுதி முடிவை பூட்டுவதைப் பற்றியது அல்ல — இது பரவலாக ஆராய்வது, என்ன உங்களை ஆற்றல்படுத்துகிறது என்பதை கவனிப்பது பற்றியது.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">💡 Examples</span><span lang-block="ta">💡 உதாரணங்கள்</span></div>
+    <div class="example-box" lang-block="en">A student who enjoys organizing events and talking to people scores high on Enterprising and Social. This points toward fields like business management, event planning, or law — rather than a purely technical path that may not suit their natural strengths.</div><div class="example-box" lang-block="ta">நிகழ்வுகளை ஒழுங்கமைத்து மக்களுடன் பேச விரும்பும் ஒரு மாணவர் தொழில்முனைவு மற்றும் சமூக வகைகளில் அதிக மதிப்பெண் பெறுகிறார். இது வணிக மேலாண்மை, நிகழ்வு திட்டமிடல் அல்லது சட்டம் போன்ற துறைகளை சுட்டிக்காட்டுகிறது.</div><div class="example-box" lang-block="en">A student who loves taking things apart to understand how they work, and prefers hands-on projects over theory, likely leans Realistic and Investigative — pointing toward engineering, or technical/vocational fields.</div><div class="example-box" lang-block="ta">விஷயங்களை புரிந்துகொள்ள பிரித்து பார்க்க விரும்பும் ஒரு மாணவர் நடைமுறை மற்றும் ஆய்வு வகைகளை நோக்கி சாய்ந்திருப்பார் — பொறியியல் அல்லது தொழில்நுட்ப துறைகளை சுட்டிக்காட்டுகிறது.</div><div class="example-box" lang-block="en">A student unsure about their path shadows a working professional for a day or talks to alumni in different fields, gaining real information instead of relying only on assumptions about what a career 'looks like.'</div><div class="example-box" lang-block="ta">தங்கள் பாதையைப் பற்றி உறுதியற்ற ஒரு மாணவர் ஒரு நாள் பணிபுரியும் நிபுணரை பின்தொடர்கிறார் அல்லது வெவ்வேறு துறைகளில் உள்ள முன்னாள் மாணவர்களுடன் பேசுகிறார்.</div>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">✅ Practical Tips</span><span lang-block="ta">✅ நடைமுறை குறிப்புகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">Take a simple RIASEC-style interest inventory (many free versions exist online) as a starting point for discussion, not a final answer.</li><li lang-block="ta">ஒரு எளிய RIASEC-பாணி ஆர்வ பட்டியலை (பல இலவச பதிப்புகள் ஆன்லைனில் உள்ளன) விவாதத்திற்கான தொடக்கப் புள்ளியாக எடுத்துக் கொள்ளுங்கள்.</li><li lang-block="en">Notice which school subjects or activities you look forward to versus dread — that's real data about your interests.</li><li lang-block="ta">நீங்கள் எதிர்பார்க்கும் vs பயப்படும் பள்ளி பாடங்கள் அல்லது செயல்பாடுகளை கவனியுங்கள்.</li><li lang-block="en">Talk to people already working in fields you're curious about; their day-to-day reality often differs from assumptions.</li><li lang-block="ta">நீங்கள் ஆர்வமாக இருக்கும் துறைகளில் ஏற்கனவே பணிபுரியும் மக்களுடன் பேசுங்கள்.</li><li lang-block="en">It's normal not to have a fixed career choice in high school — focus on building broad skills and self-knowledge instead.</li><li lang-block="ta">உயர்நிலைப் பள்ளியில் நிலையான தொழில் தேர்வு இல்லாதது இயல்பானது — பரந்த திறன்களை உருவாக்குவதில் கவனம் செலுத்துங்கள்.</li><li lang-block="en">Avoid choosing a stream purely based on peer or family pressure; revisit your own RIASEC blend before deciding.</li><li lang-block="ta">தோழர் அல்லது குடும்ப அழுத்தத்தின் அடிப்படையில் மட்டும் ஒரு பிரிவை தேர்ந்தெடுப்பதை தவிர்க்கவும்.</li></ul>
+  </div>
+
+  <div class="card improve-card">
+    <div class="section-label"><span lang-block="en" class="lang-active">🌱 Suggestions for Improvement</span><span lang-block="ta">🌱 மேம்பாட்டிற்கான பரிந்துரைகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">If you feel pressure to choose a stream you're not genuinely interested in, write down your top 2 RIASEC types and compare them honestly against that choice.</li><li lang-block="ta">நீங்கள் உண்மையிலேயே ஆர்வம் இல்லாத ஒரு பிரிவை தேர்ந்தெடுக்க அழுத்தம் உணர்ந்தால், உங்கள் முதல் 2 RIASEC வகைகளை எழுதி அந்த தேர்வுடன் நேர்மையாக ஒப்பிடுங்கள்.</li><li lang-block="en">If you have no idea what you're interested in, commit to trying 3 new activities or subjects this term purely to gather information.</li><li lang-block="ta">உங்களுக்கு எதில் ஆர்வம் என்று தெரியாவிட்டால், தகவல் சேகரிக்க இந்த காலாண்டில் 3 புதிய செயல்பாடுகள் அல்லது பாடங்களை முயற்சிக்க உறுதிபூணுங்கள்.</li><li lang-block="en">Talk to a career counselor or trusted teacher about how your interests might map to real career paths, not just stream names.</li><li lang-block="ta">உங்கள் ஆர்வங்கள் உண்மையான தொழில் பாதைகளுக்கு எப்படி இணைகின்றன என்பதைப் பற்றி தொழில் ஆலோசகர் அல்லது நம்பகமான ஆசிரியருடன் பேசுங்கள்.</li><li lang-block="en">Keep a simple log of activities that energized you this month — patterns often reveal your true interests better than guessing.</li><li lang-block="ta">இந்த மாதம் உங்களை ஆற்றல்படுத்திய செயல்பாடுகளின் ஒரு எளிய பதிவேட்டை வைத்திருங்கள்.</li></ul>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📝 Self-Assessment (rate yourself 1–5)</span><span lang-block="ta">📝 சுய மதிப்பீடு (1–5 மதிப்பிடவும்)</span></div>
+    
+        <div class="assess-q">
+          <p lang-block="en">1. I have a reasonable sense of what type of work energizes me versus drains me.</p>
+          <p lang-block="ta">1. என்ன வகையான வேலை என்னை ஆற்றல்படுத்துகிறது vs சோர்வடையச் செய்கிறது என்பதைப் பற்றி எனக்கு நியாயமான உணர்வு உள்ளது.</p>
+          <div class="scale" data-q="0">
+            <button onclick="selectScale(0,1,this)">1</button><button onclick="selectScale(0,2,this)">2</button><button onclick="selectScale(0,3,this)">3</button><button onclick="selectScale(0,4,this)">4</button><button onclick="selectScale(0,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">2. I have talked to at least one adult working in a field I'm curious about.</p>
+          <p lang-block="ta">2. நான் ஆர்வமாக இருக்கும் ஒரு துறையில் பணிபுரியும் குறைந்தது ஒரு பெரியவரிடம் பேசியுள்ளேன்.</p>
+          <div class="scale" data-q="1">
+            <button onclick="selectScale(1,1,this)">1</button><button onclick="selectScale(1,2,this)">2</button><button onclick="selectScale(1,3,this)">3</button><button onclick="selectScale(1,4,this)">4</button><button onclick="selectScale(1,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">3. I am exploring my options rather than choosing a stream only due to pressure.</p>
+          <p lang-block="ta">3. அழுத்தத்தால் மட்டும் ஒரு பிரிவை தேர்ந்தெடுப்பதற்குப் பதிலாக என் தேர்வுகளை ஆராய்கிறேன்.</p>
+          <div class="scale" data-q="2">
+            <button onclick="selectScale(2,1,this)">1</button><button onclick="selectScale(2,2,this)">2</button><button onclick="selectScale(2,3,this)">3</button><button onclick="selectScale(2,4,this)">4</button><button onclick="selectScale(2,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">4. I know roughly which RIASEC types (Realistic, Investigative, Artistic, Social, Enterprising, Conventional) describe me best.</p>
+          <p lang-block="ta">4. எந்த RIASEC வகைகள் (நடைமுறை, ஆய்வு, கலை, சமூக, தொழில்முனைவு, வழக்கமான) என்னை சிறப்பாக விவரிக்கின்றன என்பது தோராயமாக எனக்குத் தெரியும்.</p>
+          <div class="scale" data-q="3">
+            <button onclick="selectScale(3,1,this)">1</button><button onclick="selectScale(3,2,this)">2</button><button onclick="selectScale(3,3,this)">3</button><button onclick="selectScale(3,4,this)">4</button><button onclick="selectScale(3,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">5. I feel it's okay not to have my whole future decided yet.</p>
+          <p lang-block="ta">5. என் முழு எதிர்காலமும் இன்னும் முடிவு செய்யப்படாதது பரவாயில்லை என்று நான் உணர்கிறேன்.</p>
+          <div class="scale" data-q="4">
+            <button onclick="selectScale(4,1,this)">1</button><button onclick="selectScale(4,2,this)">2</button><button onclick="selectScale(4,3,this)">3</button><button onclick="selectScale(4,4,this)">4</button><button onclick="selectScale(4,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+    <div class="assess-footer">
+      <button class="btn btn-primary" id="submitBtn" onclick="submitAssessment()">
+        <span lang-block="en" class="lang-active">Submit Self-Assessment</span><span lang-block="ta">சுய மதிப்பீட்டை சமர்ப்பிக்கவும்</span>
+      </button>
+    </div>
+    <div class="result-box" id="resultBox"></div>
+  </div>
+
+  <div class="footer-nav">
+    <a href="social-skills.html">&larr; 7. Social Skills & Peer Relationships</a>
+    <a href="digital-literacy.html">9. Digital Literacy & Responsible Online Behavior &rarr;</a>
+  </div>
+
+  <p class="footer-motto">"God is always with u" — NT Somasundaram Life Skills Program</p>
+  <p class="footer-contact">somasundaramnt.lifecoach@gmail.com &nbsp;|&nbsp; +91 98437 02244</p>
+</div>
+
+<script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzIS5xTAPUvpRL4yYh-NJ0aV1002sJUcSvFvGXaieZE4T4ZfvXJ8Xe5cWNLt5dXFKEn/exec";
+const MODULE_TITLE_EN = "Career Awareness & Future Planning";
+const MODULE_TITLE_TA = "தொழில் விழிப்புணர்வு & எதிர்கால திட்டமிடல்";
+let currentLang = 'en';
+let scaleAnswers = {};
+
+function setLang(lang){
+  currentLang = lang;
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  document.getElementById('btnTA').classList.toggle('active', lang==='ta');
+  document.querySelectorAll('[lang-block]').forEach(el=>{
+    el.classList.toggle('lang-active', el.getAttribute('lang-block')===lang);
+  });
+}
+
+function selectScale(qIdx, val, btnEl){
+  scaleAnswers[qIdx] = val;
+  const row = btnEl.parentElement;
+  row.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));
+  btnEl.classList.add('selected');
+}
+
+function submitAssessment(){
+  const totalQ = 5;
+  const answered = Object.keys(scaleAnswers).length;
+  if(answered < totalQ){
+    alert(currentLang==='en' ? 'Please rate every statement before submitting.' : 'சமர்ப்பிக்கும் முன் ஒவ்வொரு கூற்றையும் மதிப்பிடவும்.');
+    return;
+  }
+  const total = Object.values(scaleAnswers).reduce((a,b)=>a+b,0);
+  const maxScore = totalQ*5;
+  const pct = Math.round((total/maxScore)*100);
+
+  const student = JSON.parse(localStorage.getItem('lifeskills_student') || '{}');
+  const params = new URLSearchParams({
+    name: student.name || '',
+    grade: student.grade || '',
+    school: student.school || '',
+    phone: student.phone || '',
+    module: "8. " + MODULE_TITLE_EN,
+    reflection: 'Self-assessment score: ' + total + '/' + maxScore,
+    score: pct + '%',
+    lang: currentLang.toUpperCase()
+  });
+  const img = new Image();
+  img.src = GAS_URL + '?' + params.toString();
+
+  const box = document.getElementById('resultBox');
+  box.classList.add('show');
+  let msg;
+  const tipsEN = ["Take a simple RIASEC-style interest inventory (many free versions exist online) as a starting point for discussion, not a final answer.", "Notice which school subjects or activities you look forward to versus dread — that's real data about your interests.", "Talk to people already working in fields you're curious about; their day-to-day reality often differs from assumptions.", "It's normal not to have a fixed career choice in high school — focus on building broad skills and self-knowledge instead.", "Avoid choosing a stream purely based on peer or family pressure; revisit your own RIASEC blend before deciding."];
+  const tipsTA = ["ஒரு எளிய RIASEC-பாணி ஆர்வ பட்டியலை (பல இலவச பதிப்புகள் ஆன்லைனில் உள்ளன) விவாதத்திற்கான தொடக்கப் புள்ளியாக எடுத்துக் கொள்ளுங்கள்.", "நீங்கள் எதிர்பார்க்கும் vs பயப்படும் பள்ளி பாடங்கள் அல்லது செயல்பாடுகளை கவனியுங்கள்.", "நீங்கள் ஆர்வமாக இருக்கும் துறைகளில் ஏற்கனவே பணிபுரியும் மக்களுடன் பேசுங்கள்.", "உயர்நிலைப் பள்ளியில் நிலையான தொழில் தேர்வு இல்லாதது இயல்பானது — பரந்த திறன்களை உருவாக்குவதில் கவனம் செலுத்துங்கள்.", "தோழர் அல்லது குடும்ப அழுத்தத்தின் அடிப்படையில் மட்டும் ஒரு பிரிவை தேர்ந்தெடுப்பதை தவிர்க்கவும்."];
+  const improveEN = ["If you feel pressure to choose a stream you're not genuinely interested in, write down your top 2 RIASEC types and compare them honestly against that choice.", "If you have no idea what you're interested in, commit to trying 3 new activities or subjects this term purely to gather information.", "Talk to a career counselor or trusted teacher about how your interests might map to real career paths, not just stream names.", "Keep a simple log of activities that energized you this month — patterns often reveal your true interests better than guessing."];
+  const improveTA = ["நீங்கள் உண்மையிலேயே ஆர்வம் இல்லாத ஒரு பிரிவை தேர்ந்தெடுக்க அழுத்தம் உணர்ந்தால், உங்கள் முதல் 2 RIASEC வகைகளை எழுதி அந்த தேர்வுடன் நேர்மையாக ஒப்பிடுங்கள்.", "உங்களுக்கு எதில் ஆர்வம் என்று தெரியாவிட்டால், தகவல் சேகரிக்க இந்த காலாண்டில் 3 புதிய செயல்பாடுகள் அல்லது பாடங்களை முயற்சிக்க உறுதிபூணுங்கள்.", "உங்கள் ஆர்வங்கள் உண்மையான தொழில் பாதைகளுக்கு எப்படி இணைகின்றன என்பதைப் பற்றி தொழில் ஆலோசகர் அல்லது நம்பகமான ஆசிரியருடன் பேசுங்கள்.", "இந்த மாதம் உங்களை ஆற்றல்படுத்திய செயல்பாடுகளின் ஒரு எளிய பதிவேட்டை வைத்திருங்கள்."];
+
+  if(currentLang==='en'){
+    msg = 'Your score: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'Great — this is clearly a strength for you.' : (pct>=50 ? 'Good foundation — here is guidance to strengthen it further:' : 'This is a great area to focus on — here is guidance to help:');
+  } else {
+    msg = 'உங்கள் மதிப்பெண்: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'சிறப்பு — இது உங்களுக்கு தெளிவான வலிமை.' : (pct>=50 ? 'நல்ல அடித்தளம் — இதை மேலும் வலுப்படுத்த வழிகாட்டுதல் இங்கே:' : 'இது கவனம் செலுத்த வேண்டிய ஒரு நல்ல பகுதி — உதவ வழிகாட்டுதல் இங்கே:');
+  }
+
+  let guidanceHtml = '<p style="margin:0 0 8px;font-weight:600;">' + msg + '</p>';
+  if(pct < 80){
+    const tips = currentLang==='en' ? tipsEN : tipsTA;
+    const improve = currentLang==='en' ? improveEN : improveTA;
+    const tipsLabel = currentLang==='en' ? '💡 Key Tips' : '💡 முக்கிய குறிப்புகள்';
+    const improveLabel = currentLang==='en' ? '🌱 Suggestions for Improvement' : '🌱 மேம்பாட்டிற்கான பரிந்துரைகள்';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--clay);">' + tipsLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 12px;padding-left:18px;">' + tips.slice(0,3).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--sage);">' + improveLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 0;padding-left:18px;">' + improve.slice(0,2).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+  }
+  box.innerHTML = guidanceHtml;
+
+  let done = JSON.parse(localStorage.getItem('lifeskills_completed') || '{}');
+  done[7] = true;
+  localStorage.setItem('lifeskills_completed', JSON.stringify(done));
+
+  let scores = JSON.parse(localStorage.getItem('lifeskills_scores') || '{}');
+  scores[7] = {
+    titleEN: MODULE_TITLE_EN,
+    titleTA: MODULE_TITLE_TA,
+    score: total,
+    max: maxScore,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  localStorage.setItem('lifeskills_scores', JSON.stringify(scores));
+
+  document.getElementById('submitBtn').disabled = true;
+}
+
+setLang('en');
+</script>
+</body>
+</html>

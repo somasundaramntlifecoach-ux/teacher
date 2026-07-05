@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7. Social Skills & Peer Relationships | Life Skills Mastery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF8F0; --panel:#FFFFFF; --ink:#2B2118; --sub:#6B5D4F;
+  --clay:#C1602A; --clay-dark:#9C4A1E; --gold:#D9A441; --sage:#6B8F71;
+  --border:#EADFD0; --shadow:0 4px 20px rgba(43,33,24,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;}
+.tamil,[lang="ta"]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.topbar{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--border);
+  padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--clay),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;}
+.brand-text b{display:block;font-size:14px;}
+.brand-text span{font-size:11.5px;color:var(--sub);}
+.controls{display:flex;gap:8px;align-items:center;}
+.lang-toggle{display:flex;background:var(--cream);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.lang-toggle button{border:none;background:transparent;padding:8px 16px;font-family:inherit;font-weight:600;
+  font-size:13px;color:var(--sub);cursor:pointer;}
+.lang-toggle button.active{background:var(--clay);color:#fff;}
+.back-link{font-size:12.5px;color:var(--sub);text-decoration:none;font-weight:600;}
+.wrap{max-width:760px;margin:0 auto;padding:36px 20px 60px;}
+.eyebrow{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:10px;}
+h1{font-size:clamp(24px,4.5vw,34px);font-weight:800;margin:0 0 6px;line-height:1.2;}
+.sub-tagline{color:var(--sub);font-size:15px;margin-bottom:28px;}
+.nav-pill-row{display:flex;justify-content:space-between;margin-bottom:24px;gap:10px;flex-wrap:wrap;}
+.nav-pill{font-size:12.5px;font-weight:600;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);border-radius:20px;padding:8px 16px;}
+.nav-pill:hover{border-color:var(--clay);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin-bottom:22px;box-shadow:var(--shadow);}
+.section-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--clay);margin:0 0 12px;
+  display:flex;align-items:center;gap:8px;}
+p.body-text{font-size:15px;margin:0 0 12px;}
+p.body-text:last-child{margin-bottom:0;}
+.example-box{background:#FBF3E8;border-left:4px solid var(--gold);border-radius:8px;padding:14px 16px;font-size:14.5px;margin-bottom:10px;}
+.example-box:last-child{margin-bottom:0;}
+ul.tip-list{margin:0;padding-left:20px;}
+ul.tip-list li{font-size:14.5px;margin-bottom:9px;}
+ul.tip-list li:last-child{margin-bottom:0;}
+.improve-card{background:#EEF4EE;border:1px solid #D6E5D8;}
+.improve-card .section-label{color:var(--sage);}
+.assess-q{margin-bottom:16px;}
+.assess-q:last-child{margin-bottom:8px;}
+.assess-q p{font-size:14.5px;font-weight:600;margin:0 0 8px;}
+.scale{display:flex;gap:6px;flex-wrap:wrap;}
+.scale button{flex:1;min-width:56px;border:1px solid var(--border);background:var(--cream);border-radius:8px;
+  padding:9px 4px;font-family:inherit;font-size:12px;font-weight:600;color:var(--sub);cursor:pointer;}
+.scale button.selected{background:var(--sage);color:#fff;border-color:var(--sage);}
+.scale-labels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--sub);margin-top:4px;}
+.assess-footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap;gap:10px;}
+.btn{border:none;border-radius:10px;padding:12px 22px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;}
+.btn-primary{background:var(--clay);color:#fff;}
+.btn-primary:hover{background:var(--clay-dark);}
+.btn-primary[disabled]{background:#D9C3B3;cursor:not-allowed;}
+.result-box{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;background:#EEF4EE;border:1px solid #D6E5D8;font-size:13.5px;}
+.result-box.show{display:block;}
+.footer-nav{display:flex;justify-content:space-between;margin-top:30px;gap:10px;flex-wrap:wrap;}
+.footer-nav a{font-size:13px;font-weight:700;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);padding:10px 18px;border-radius:10px;}
+.footer-nav a:hover{border-color:var(--clay);}
+.footer-motto{text-align:center;font-style:italic;color:var(--sub);font-size:12.5px;margin-top:34px;}
+.footer-contact{text-align:center;font-size:11.5px;color:var(--sub);margin-top:6px;}
+[lang-block]{display:none;}
+[lang-block].lang-active{display:block;}
+span[lang-block].lang-active{display:inline;}
+li[lang-block].lang-active{display:list-item;}
+@media(max-width:600px){.nav-pill-row{flex-direction:column;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-mark">7</div>
+    <div class="brand-text">
+      <b lang-block="en" class="lang-active">Social Skills & Peer Relationships</b>
+      <b lang-block="ta">சமூக திறன்கள் & சக மாணவர் உறவுகள்</b>
+      <span lang-block="en" class="lang-active">Life Skills Mastery Course</span>
+      <span lang-block="ta">வாழ்க்கை திறன் தேர்ச்சி பாடநெறி</span>
+    </div>
+  </a>
+  <div class="controls">
+    <a class="back-link" href="index.html">&larr; <span lang-block="en" class="lang-active">All Modules</span><span lang-block="ta">அனைத்து பாடங்கள்</span></a>
+    <a class="back-link" href="dashboard.html"><span lang-block="en" class="lang-active">My Progress</span><span lang-block="ta">என் முன்னேற்றம்</span></a>
+    <div class="lang-toggle">
+      <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+      <button id="btnTA" onclick="setLang('ta')">தமிழ்</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="eyebrow" lang-block="en" class="lang-active">Module 7 of 10</div>
+  <div class="eyebrow" lang-block="ta">பாடம் 7 / 10</div>
+  <h1 lang-block="en" class="lang-active">Social Skills & Peer Relationships</h1>
+  <h1 lang-block="ta">சமூக திறன்கள் & சக மாணவர் உறவுகள்</h1>
+  <p class="sub-tagline" lang-block="en" class="lang-active">Navigating friendships and peer pressure</p>
+  <p class="sub-tagline" lang-block="ta">நட்பு மற்றும் சக அழுத்தத்தை கையாளுதல்</p>
+
+  <div class="nav-pill-row">
+    <a class="nav-pill" href="stress-management.html">&larr; 6. Stress & Anxiety Management</a>
+    <a class="nav-pill" href="career-awareness.html">8. Career Awareness & Future Planning &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📖 Detailed Explanation</span><span lang-block="ta">📖 விரிவான விளக்கம்</span></div>
+    <p class="body-text" lang-block="en">Healthy friendships are built on mutual respect, trust, and honesty — not constant agreement or approval. A true friend can disagree with you and still care about you; a friendship that only survives on agreement is fragile.</p><p class="body-text" lang-block="ta">ஆரோக்கியமான நட்புகள் பரஸ்பர மரியாதை, நம்பிக்கை மற்றும் நேர்மையின் அடிப்படையில் கட்டப்படுகின்றன — தொடர்ந்த ஒப்புதல் அல்ல. ஒரு உண்மையான நண்பர் உங்களுடன் உடன்படாமல் இருந்தும் உங்களை கவனித்துக்கொள்ளலாம்.</p><p class="body-text" lang-block="en">Peer pressure often works by making you feel like an outsider for saying no, or by framing a bad idea as normal ('everyone does it'). Having a simple, practiced response ready — rather than trying to think of one in the moment — makes it much easier to hold your ground without damaging the friendship.</p><p class="body-text" lang-block="ta">சக அழுத்தம் பெரும்பாலும் 'இல்லை' என்று சொல்வதற்காக உங்களை வெளியாளாக உணர வைப்பதன் மூலம் அல்லது ஒரு மோசமான யோசனையை இயல்பானது என்று சட்டகப்படுத்துவதன் மூலம் ('எல்லோரும் செய்கிறார்கள்') வேலை செய்கிறது. ஒரு எளிய, பயிற்சி பெற்ற பதிலை தயார் நிலையில் வைத்திருப்பது நட்பை சேதப்படுத்தாமல் உங்கள் நிலைப்பாட்டை பராமரிக்க எளிதாக்குகிறது.</p><p class="body-text" lang-block="en">It's also important to recognize the difference between healthy disagreement and toxic patterns — constant put-downs, control, or isolation from other friends are signs of an unhealthy relationship worth stepping back from, regardless of how long the friendship has lasted.</p><p class="body-text" lang-block="ta">ஆரோக்கியமான கருத்து வேறுபாட்டிற்கும் நச்சு வடிவங்களுக்கும் இடையிலான வேறுபாட்டை அடையாளம் காண்பதும் முக்கியம் — தொடர்ச்சியான குறை கூறல், கட்டுப்பாடு, அல்லது மற்ற நண்பர்களிடமிருந்து தனிமைப்படுத்துதல் ஆரோக்கியமற்ற உறவின் அறிகுறிகள்.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">💡 Examples</span><span lang-block="ta">💡 உதாரணங்கள்</span></div>
+    <div class="example-box" lang-block="en">A student is pressured to cheat on a test because 'everyone does it.' They use a calm, practiced line: 'Not worth it for me, but no judgment on you.' This sets a boundary without attacking the friend.</div><div class="example-box" lang-block="ta">'எல்லோரும் செய்கிறார்கள்' என்பதால் ஒரு மாணவர் தேர்வில் மோசடி செய்ய அழுத்தப்படுகிறார். அவர்கள் அமைதியான, பயிற்சி பெற்ற வரியை பயன்படுத்துகிறார்கள்: 'எனக்கு அது மதிப்புள்ளதல்ல, ஆனால் உன்னை குறை சொல்லவில்லை.'</div><div class="example-box" lang-block="en">A friend regularly mocks a student in front of others and calls it 'just joking.' Recognizing this as a pattern rather than a one-time joke, the student calmly addresses it directly instead of laughing along to avoid conflict.</div><div class="example-box" lang-block="ta">ஒரு நண்பர் தொடர்ந்து மற்றவர்கள் முன் ஒரு மாணவரை கேலி செய்து அதை 'வெறும் நகைச்சுவை' என்று அழைக்கிறார். இதை ஒரு முறை நகைச்சுவையாக அல்ல ஒரு வடிவமாக அடையாளம் கண்டு, மாணவர் அமைதியாக நேரடியாக அதை எதிர்கொள்கிறார்.</div><div class="example-box" lang-block="en">Two friends have a genuine disagreement about a shared project. Instead of one giving in entirely to keep the peace, they talk it through and find a version both are comfortable with — strengthening rather than straining the friendship.</div><div class="example-box" lang-block="ta">ஒரு பகிரப்பட்ட திட்டத்தில் இரண்டு நண்பர்களுக்கு இடையே உண்மையான கருத்து வேறுபாடு உள்ளது. அமைதியை பராமரிக்க ஒருவர் முழுவதுமாக ஒப்புக்கொள்வதற்குப் பதிலாக, அவர்கள் அதை பேசி இருவரும் வசதியாக இருக்கும் ஒரு பதிப்பை காண்கிறார்கள்.</div>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">✅ Practical Tips</span><span lang-block="ta">✅ நடைமுறை குறிப்புகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">Prepare a short, calm 'no' script in advance for situations you know might come up (e.g., being asked to skip class, cheat, or try something risky).</li><li lang-block="ta">எழக்கூடும் சூழ்நிலைகளுக்கு முன்கூட்டியே ஒரு சிறு, அமைதியான 'இல்லை' வரியை தயார் செய்யுங்கள்.</li><li lang-block="en">A true friend respects a firm 'no' — repeated pressure after a clear no is itself a warning sign.</li><li lang-block="ta">ஒரு உண்மையான நண்பர் உறுதியான 'இல்லை' யை மதிக்கிறார் — தெளிவான இல்லைக்குப் பிறகு மீண்டும் மீண்டும் அழுத்தம் கொடுப்பது எச்சரிக்கை அறிகுறியே.</li><li lang-block="en">Notice how you feel after spending time with someone — energized and respected, or drained and small — as an honest gauge of the friendship's health.</li><li lang-block="ta">யாருடனாவது நேரம் செலவிட்ட பிறகு நீங்கள் எப்படி உணருகிறீர்கள் என்பதை கவனியுங்கள் — ஆற்றல் மற்றும் மரியாதை உணர்வது, அல்லது சோர்வு உணர்வது.</li><li lang-block="en">It's okay to have different friend groups for different interests; not every friendship needs to be your 'everything.'</li><li lang-block="ta">வெவ்வேறு ஆர்வங்களுக்கு வெவ்வேறு நண்பர் குழுக்கள் இருப்பது சரியே.</li><li lang-block="en">If a peer relationship feels controlling or consistently makes you feel bad about yourself, talk to a trusted adult about it.</li><li lang-block="ta">ஒரு சக உறவு கட்டுப்படுத்துவதாகவோ அல்லது தொடர்ந்து உங்களைப் பற்றி மோசமாக உணர வைப்பதாகவோ இருந்தால், நம்பகமான பெரியவரிடம் பேசுங்கள்.</li></ul>
+  </div>
+
+  <div class="card improve-card">
+    <div class="section-label"><span lang-block="en" class="lang-active">🌱 Suggestions for Improvement</span><span lang-block="ta">🌱 மேம்பாட்டிற்கான பரிந்துரைகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">If you tend to go along with the group to avoid conflict, practice voicing a small differing opinion in a low-stakes group situation this week.</li><li lang-block="ta">மோதலை தவிர்க்க நீங்கள் குழுவுடன் ஒத்துப்போகும் போக்கு இருந்தால், இந்த வாரம் குறைந்த அபாயமான குழு சூழ்நிலையில் ஒரு சிறு வேறுபட்ட கருத்தை வெளிப்படுத்த பயிற்சி செய்யுங்கள்.</li><li lang-block="en">If you struggle to say no, write down and rehearse one specific phrase you can use next time you're pressured.</li><li lang-block="ta">இல்லை என்று சொல்ல சிரமப்பட்டால், அடுத்த முறை அழுத்தப்படும்போது நீங்கள் பயன்படுத்தக்கூடிய ஒரு குறிப்பிட்ட சொற்றொடரை எழுதி பயிற்சி செய்யுங்கள்.</li><li lang-block="en">If a friendship consistently leaves you feeling worse about yourself, discuss the pattern with a parent, teacher, or counselor rather than assuming it will fix itself.</li><li lang-block="ta">ஒரு நட்பு தொடர்ந்து உங்களை மோசமாக உணர வைத்தால், அது தானாகவே சரியாகிவிடும் என்று கருதாமல் இந்த வடிவத்தை பெற்றோர், ஆசிரியர் அல்லது ஆலோசகருடன் விவாதிக்கவும்.</li><li lang-block="en">Invest deliberate time in friendships that feel mutually respectful, rather than spreading energy equally across all relationships.</li><li lang-block="ta">எல்லா உறவுகளிலும் சமமாக ஆற்றலை பரப்புவதற்குப் பதிலாக, பரஸ்பர மரியாதையாக உணரப்படும் நட்புகளில் வேண்டுமென்றே நேரத்தை முதலீடு செய்யுங்கள்.</li></ul>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📝 Self-Assessment (rate yourself 1–5)</span><span lang-block="ta">📝 சுய மதிப்பீடு (1–5 மதிப்பிடவும்)</span></div>
+    
+        <div class="assess-q">
+          <p lang-block="en">1. I can say no to friends when something doesn't feel right for me.</p>
+          <p lang-block="ta">1. எனக்கு எது சரியாக உணரப்படவில்லையோ அதற்கு நண்பர்களிடம் இல்லை என்று சொல்ல முடியும்.</p>
+          <div class="scale" data-q="0">
+            <button onclick="selectScale(0,1,this)">1</button><button onclick="selectScale(0,2,this)">2</button><button onclick="selectScale(0,3,this)">3</button><button onclick="selectScale(0,4,this)">4</button><button onclick="selectScale(0,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">2. I have at least one friendship where I feel fully respected and accepted.</p>
+          <p lang-block="ta">2. நான் முழுமையாக மதிக்கப்பட்டு ஏற்றுக்கொள்ளப்பட்டதாக உணரும் குறைந்தது ஒரு நட்பு எனக்கு உள்ளது.</p>
+          <div class="scale" data-q="1">
+            <button onclick="selectScale(1,1,this)">1</button><button onclick="selectScale(1,2,this)">2</button><button onclick="selectScale(1,3,this)">3</button><button onclick="selectScale(1,4,this)">4</button><button onclick="selectScale(1,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">3. I can disagree with a friend without the friendship falling apart.</p>
+          <p lang-block="ta">3. நட்பு உடைந்துவிடாமல் ஒரு நண்பருடன் உடன்படாமல் இருக்க முடியும்.</p>
+          <div class="scale" data-q="2">
+            <button onclick="selectScale(2,1,this)">1</button><button onclick="selectScale(2,2,this)">2</button><button onclick="selectScale(2,3,this)">3</button><button onclick="selectScale(2,4,this)">4</button><button onclick="selectScale(2,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">4. I notice when a friendship or group makes me feel worse about myself.</p>
+          <p lang-block="ta">4. ஒரு நட்பு அல்லது குழு என்னை பற்றி மோசமாக உணர வைக்கும்போது நான் கவனிக்கிறேன்.</p>
+          <div class="scale" data-q="3">
+            <button onclick="selectScale(3,1,this)">1</button><button onclick="selectScale(3,2,this)">2</button><button onclick="selectScale(3,3,this)">3</button><button onclick="selectScale(3,4,this)">4</button><button onclick="selectScale(3,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">5. I feel comfortable being myself around my close friends.</p>
+          <p lang-block="ta">5. என் நெருங்கிய நண்பர்களுடன் நானாக இருப்பதில் எனக்கு வசதியாக உள்ளது.</p>
+          <div class="scale" data-q="4">
+            <button onclick="selectScale(4,1,this)">1</button><button onclick="selectScale(4,2,this)">2</button><button onclick="selectScale(4,3,this)">3</button><button onclick="selectScale(4,4,this)">4</button><button onclick="selectScale(4,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+    <div class="assess-footer">
+      <button class="btn btn-primary" id="submitBtn" onclick="submitAssessment()">
+        <span lang-block="en" class="lang-active">Submit Self-Assessment</span><span lang-block="ta">சுய மதிப்பீட்டை சமர்ப்பிக்கவும்</span>
+      </button>
+    </div>
+    <div class="result-box" id="resultBox"></div>
+  </div>
+
+  <div class="footer-nav">
+    <a href="stress-management.html">&larr; 6. Stress & Anxiety Management</a>
+    <a href="career-awareness.html">8. Career Awareness & Future Planning &rarr;</a>
+  </div>
+
+  <p class="footer-motto">"God is always with u" — NT Somasundaram Life Skills Program</p>
+  <p class="footer-contact">somasundaramnt.lifecoach@gmail.com &nbsp;|&nbsp; +91 98437 02244</p>
+</div>
+
+<script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzIS5xTAPUvpRL4yYh-NJ0aV1002sJUcSvFvGXaieZE4T4ZfvXJ8Xe5cWNLt5dXFKEn/exec";
+const MODULE_TITLE_EN = "Social Skills & Peer Relationships";
+const MODULE_TITLE_TA = "சமூக திறன்கள் & சக மாணவர் உறவுகள்";
+let currentLang = 'en';
+let scaleAnswers = {};
+
+function setLang(lang){
+  currentLang = lang;
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  document.getElementById('btnTA').classList.toggle('active', lang==='ta');
+  document.querySelectorAll('[lang-block]').forEach(el=>{
+    el.classList.toggle('lang-active', el.getAttribute('lang-block')===lang);
+  });
+}
+
+function selectScale(qIdx, val, btnEl){
+  scaleAnswers[qIdx] = val;
+  const row = btnEl.parentElement;
+  row.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));
+  btnEl.classList.add('selected');
+}
+
+function submitAssessment(){
+  const totalQ = 5;
+  const answered = Object.keys(scaleAnswers).length;
+  if(answered < totalQ){
+    alert(currentLang==='en' ? 'Please rate every statement before submitting.' : 'சமர்ப்பிக்கும் முன் ஒவ்வொரு கூற்றையும் மதிப்பிடவும்.');
+    return;
+  }
+  const total = Object.values(scaleAnswers).reduce((a,b)=>a+b,0);
+  const maxScore = totalQ*5;
+  const pct = Math.round((total/maxScore)*100);
+
+  const student = JSON.parse(localStorage.getItem('lifeskills_student') || '{}');
+  const params = new URLSearchParams({
+    name: student.name || '',
+    grade: student.grade || '',
+    school: student.school || '',
+    phone: student.phone || '',
+    module: "7. " + MODULE_TITLE_EN,
+    reflection: 'Self-assessment score: ' + total + '/' + maxScore,
+    score: pct + '%',
+    lang: currentLang.toUpperCase()
+  });
+  const img = new Image();
+  img.src = GAS_URL + '?' + params.toString();
+
+  const box = document.getElementById('resultBox');
+  box.classList.add('show');
+  let msg;
+  const tipsEN = ["Prepare a short, calm 'no' script in advance for situations you know might come up (e.g., being asked to skip class, cheat, or try something risky).", "A true friend respects a firm 'no' — repeated pressure after a clear no is itself a warning sign.", "Notice how you feel after spending time with someone — energized and respected, or drained and small — as an honest gauge of the friendship's health.", "It's okay to have different friend groups for different interests; not every friendship needs to be your 'everything.'", "If a peer relationship feels controlling or consistently makes you feel bad about yourself, talk to a trusted adult about it."];
+  const tipsTA = ["எழக்கூடும் சூழ்நிலைகளுக்கு முன்கூட்டியே ஒரு சிறு, அமைதியான 'இல்லை' வரியை தயார் செய்யுங்கள்.", "ஒரு உண்மையான நண்பர் உறுதியான 'இல்லை' யை மதிக்கிறார் — தெளிவான இல்லைக்குப் பிறகு மீண்டும் மீண்டும் அழுத்தம் கொடுப்பது எச்சரிக்கை அறிகுறியே.", "யாருடனாவது நேரம் செலவிட்ட பிறகு நீங்கள் எப்படி உணருகிறீர்கள் என்பதை கவனியுங்கள் — ஆற்றல் மற்றும் மரியாதை உணர்வது, அல்லது சோர்வு உணர்வது.", "வெவ்வேறு ஆர்வங்களுக்கு வெவ்வேறு நண்பர் குழுக்கள் இருப்பது சரியே.", "ஒரு சக உறவு கட்டுப்படுத்துவதாகவோ அல்லது தொடர்ந்து உங்களைப் பற்றி மோசமாக உணர வைப்பதாகவோ இருந்தால், நம்பகமான பெரியவரிடம் பேசுங்கள்."];
+  const improveEN = ["If you tend to go along with the group to avoid conflict, practice voicing a small differing opinion in a low-stakes group situation this week.", "If you struggle to say no, write down and rehearse one specific phrase you can use next time you're pressured.", "If a friendship consistently leaves you feeling worse about yourself, discuss the pattern with a parent, teacher, or counselor rather than assuming it will fix itself.", "Invest deliberate time in friendships that feel mutually respectful, rather than spreading energy equally across all relationships."];
+  const improveTA = ["மோதலை தவிர்க்க நீங்கள் குழுவுடன் ஒத்துப்போகும் போக்கு இருந்தால், இந்த வாரம் குறைந்த அபாயமான குழு சூழ்நிலையில் ஒரு சிறு வேறுபட்ட கருத்தை வெளிப்படுத்த பயிற்சி செய்யுங்கள்.", "இல்லை என்று சொல்ல சிரமப்பட்டால், அடுத்த முறை அழுத்தப்படும்போது நீங்கள் பயன்படுத்தக்கூடிய ஒரு குறிப்பிட்ட சொற்றொடரை எழுதி பயிற்சி செய்யுங்கள்.", "ஒரு நட்பு தொடர்ந்து உங்களை மோசமாக உணர வைத்தால், அது தானாகவே சரியாகிவிடும் என்று கருதாமல் இந்த வடிவத்தை பெற்றோர், ஆசிரியர் அல்லது ஆலோசகருடன் விவாதிக்கவும்.", "எல்லா உறவுகளிலும் சமமாக ஆற்றலை பரப்புவதற்குப் பதிலாக, பரஸ்பர மரியாதையாக உணரப்படும் நட்புகளில் வேண்டுமென்றே நேரத்தை முதலீடு செய்யுங்கள்."];
+
+  if(currentLang==='en'){
+    msg = 'Your score: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'Great — this is clearly a strength for you.' : (pct>=50 ? 'Good foundation — here is guidance to strengthen it further:' : 'This is a great area to focus on — here is guidance to help:');
+  } else {
+    msg = 'உங்கள் மதிப்பெண்: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'சிறப்பு — இது உங்களுக்கு தெளிவான வலிமை.' : (pct>=50 ? 'நல்ல அடித்தளம் — இதை மேலும் வலுப்படுத்த வழிகாட்டுதல் இங்கே:' : 'இது கவனம் செலுத்த வேண்டிய ஒரு நல்ல பகுதி — உதவ வழிகாட்டுதல் இங்கே:');
+  }
+
+  let guidanceHtml = '<p style="margin:0 0 8px;font-weight:600;">' + msg + '</p>';
+  if(pct < 80){
+    const tips = currentLang==='en' ? tipsEN : tipsTA;
+    const improve = currentLang==='en' ? improveEN : improveTA;
+    const tipsLabel = currentLang==='en' ? '💡 Key Tips' : '💡 முக்கிய குறிப்புகள்';
+    const improveLabel = currentLang==='en' ? '🌱 Suggestions for Improvement' : '🌱 மேம்பாட்டிற்கான பரிந்துரைகள்';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--clay);">' + tipsLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 12px;padding-left:18px;">' + tips.slice(0,3).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--sage);">' + improveLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 0;padding-left:18px;">' + improve.slice(0,2).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+  }
+  box.innerHTML = guidanceHtml;
+
+  let done = JSON.parse(localStorage.getItem('lifeskills_completed') || '{}');
+  done[6] = true;
+  localStorage.setItem('lifeskills_completed', JSON.stringify(done));
+
+  let scores = JSON.parse(localStorage.getItem('lifeskills_scores') || '{}');
+  scores[6] = {
+    titleEN: MODULE_TITLE_EN,
+    titleTA: MODULE_TITLE_TA,
+    score: total,
+    max: maxScore,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  localStorage.setItem('lifeskills_scores', JSON.stringify(scores));
+
+  document.getElementById('submitBtn').disabled = true;
+}
+
+setLang('en');
+</script>
+</body>
+</html>

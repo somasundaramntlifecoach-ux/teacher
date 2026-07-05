@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5. Goal Setting & Self-Motivation | Life Skills Mastery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF8F0; --panel:#FFFFFF; --ink:#2B2118; --sub:#6B5D4F;
+  --clay:#C1602A; --clay-dark:#9C4A1E; --gold:#D9A441; --sage:#6B8F71;
+  --border:#EADFD0; --shadow:0 4px 20px rgba(43,33,24,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;}
+.tamil,[lang="ta"]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.topbar{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--border);
+  padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--clay),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;}
+.brand-text b{display:block;font-size:14px;}
+.brand-text span{font-size:11.5px;color:var(--sub);}
+.controls{display:flex;gap:8px;align-items:center;}
+.lang-toggle{display:flex;background:var(--cream);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.lang-toggle button{border:none;background:transparent;padding:8px 16px;font-family:inherit;font-weight:600;
+  font-size:13px;color:var(--sub);cursor:pointer;}
+.lang-toggle button.active{background:var(--clay);color:#fff;}
+.back-link{font-size:12.5px;color:var(--sub);text-decoration:none;font-weight:600;}
+.wrap{max-width:760px;margin:0 auto;padding:36px 20px 60px;}
+.eyebrow{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:10px;}
+h1{font-size:clamp(24px,4.5vw,34px);font-weight:800;margin:0 0 6px;line-height:1.2;}
+.sub-tagline{color:var(--sub);font-size:15px;margin-bottom:28px;}
+.nav-pill-row{display:flex;justify-content:space-between;margin-bottom:24px;gap:10px;flex-wrap:wrap;}
+.nav-pill{font-size:12.5px;font-weight:600;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);border-radius:20px;padding:8px 16px;}
+.nav-pill:hover{border-color:var(--clay);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin-bottom:22px;box-shadow:var(--shadow);}
+.section-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--clay);margin:0 0 12px;
+  display:flex;align-items:center;gap:8px;}
+p.body-text{font-size:15px;margin:0 0 12px;}
+p.body-text:last-child{margin-bottom:0;}
+.example-box{background:#FBF3E8;border-left:4px solid var(--gold);border-radius:8px;padding:14px 16px;font-size:14.5px;margin-bottom:10px;}
+.example-box:last-child{margin-bottom:0;}
+ul.tip-list{margin:0;padding-left:20px;}
+ul.tip-list li{font-size:14.5px;margin-bottom:9px;}
+ul.tip-list li:last-child{margin-bottom:0;}
+.improve-card{background:#EEF4EE;border:1px solid #D6E5D8;}
+.improve-card .section-label{color:var(--sage);}
+.assess-q{margin-bottom:16px;}
+.assess-q:last-child{margin-bottom:8px;}
+.assess-q p{font-size:14.5px;font-weight:600;margin:0 0 8px;}
+.scale{display:flex;gap:6px;flex-wrap:wrap;}
+.scale button{flex:1;min-width:56px;border:1px solid var(--border);background:var(--cream);border-radius:8px;
+  padding:9px 4px;font-family:inherit;font-size:12px;font-weight:600;color:var(--sub);cursor:pointer;}
+.scale button.selected{background:var(--sage);color:#fff;border-color:var(--sage);}
+.scale-labels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--sub);margin-top:4px;}
+.assess-footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap;gap:10px;}
+.btn{border:none;border-radius:10px;padding:12px 22px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;}
+.btn-primary{background:var(--clay);color:#fff;}
+.btn-primary:hover{background:var(--clay-dark);}
+.btn-primary[disabled]{background:#D9C3B3;cursor:not-allowed;}
+.result-box{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;background:#EEF4EE;border:1px solid #D6E5D8;font-size:13.5px;}
+.result-box.show{display:block;}
+.footer-nav{display:flex;justify-content:space-between;margin-top:30px;gap:10px;flex-wrap:wrap;}
+.footer-nav a{font-size:13px;font-weight:700;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);padding:10px 18px;border-radius:10px;}
+.footer-nav a:hover{border-color:var(--clay);}
+.footer-motto{text-align:center;font-style:italic;color:var(--sub);font-size:12.5px;margin-top:34px;}
+.footer-contact{text-align:center;font-size:11.5px;color:var(--sub);margin-top:6px;}
+[lang-block]{display:none;}
+[lang-block].lang-active{display:block;}
+span[lang-block].lang-active{display:inline;}
+li[lang-block].lang-active{display:list-item;}
+@media(max-width:600px){.nav-pill-row{flex-direction:column;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-mark">5</div>
+    <div class="brand-text">
+      <b lang-block="en" class="lang-active">Goal Setting & Self-Motivation</b>
+      <b lang-block="ta">இலக்கு நிர்ணயம் & சுய ஊக்கம்</b>
+      <span lang-block="en" class="lang-active">Life Skills Mastery Course</span>
+      <span lang-block="ta">வாழ்க்கை திறன் தேர்ச்சி பாடநெறி</span>
+    </div>
+  </a>
+  <div class="controls">
+    <a class="back-link" href="index.html">&larr; <span lang-block="en" class="lang-active">All Modules</span><span lang-block="ta">அனைத்து பாடங்கள்</span></a>
+    <a class="back-link" href="dashboard.html"><span lang-block="en" class="lang-active">My Progress</span><span lang-block="ta">என் முன்னேற்றம்</span></a>
+    <div class="lang-toggle">
+      <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+      <button id="btnTA" onclick="setLang('ta')">தமிழ்</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="eyebrow" lang-block="en" class="lang-active">Module 5 of 10</div>
+  <div class="eyebrow" lang-block="ta">பாடம் 5 / 10</div>
+  <h1 lang-block="en" class="lang-active">Goal Setting & Self-Motivation</h1>
+  <h1 lang-block="ta">இலக்கு நிர்ணயம் & சுய ஊக்கம்</h1>
+  <p class="sub-tagline" lang-block="en" class="lang-active">SMART goals and growth mindset</p>
+  <p class="sub-tagline" lang-block="ta">SMART இலக்குகள் மற்றும் வளர்ச்சி மனநிலை</p>
+
+  <div class="nav-pill-row">
+    <a class="nav-pill" href="communication-skills.html">&larr; 4. Communication Skills</a>
+    <a class="nav-pill" href="stress-management.html">6. Stress & Anxiety Management &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📖 Detailed Explanation</span><span lang-block="ta">📖 விரிவான விளக்கம்</span></div>
+    <p class="body-text" lang-block="en">A SMART goal is Specific, Measurable, Achievable, Relevant, and Time-bound. Vague goals like 'get better at math' rarely work because there's no clear finish line and no way to know if you're making progress. A SMART version gives you a concrete target and a deadline, which makes it far easier to plan around and stay motivated for.</p><p class="body-text" lang-block="ta">SMART இலக்கு என்பது குறிப்பிட்ட, அளவிடக்கூடிய, அடையக்கூடிய, பொருத்தமான, மற்றும் காலவரையறை கொண்டது. 'கணிதத்தில் சிறப்பாக செய்' போன்ற தெளிவற்ற இலக்குகள் அரிதாகவே வேலை செய்கின்றன, ஏனெனில் தெளிவான முடிவுக் கோடு இல்லை.</p><p class="body-text" lang-block="en">Motivation naturally rises and falls — relying on 'feeling motivated' to get things done is unreliable. Building small daily habits and systems (like a fixed study time each evening) keeps you moving even when motivation is low.</p><p class="body-text" lang-block="ta">ஊக்கம் இயற்கையாகவே உயர்ந்து குறைகிறது — விஷயங்களை முடிக்க 'ஊக்கமாக உணர்வதை' நம்புவது நம்பகமற்றது. சிறிய தினசரி பழக்கங்களை உருவாக்குவது (ஒவ்வொரு மாலையும் ஒரு நிலையான படிப்பு நேரம் போன்றவை) ஊக்கம் குறைவாக இருக்கும்போதும் உங்களை நகர்த்துகிறது.</p><p class="body-text" lang-block="en">A growth mindset — believing 'I can't do this yet' rather than 'I can't do this' — is closely linked to goal achievement. Students with a growth mindset treat setbacks as information about what to adjust, not proof that they should give up.</p><p class="body-text" lang-block="ta">வளர்ச்சி மனநிலை — 'எனக்கு இது இன்னும் முடியாது' என்று நம்புவது — இலக்கு அடைவுடன் நெருக்கமாக இணைக்கப்பட்டுள்ளது. வளர்ச்சி மனநிலை கொண்ட மாணவர்கள் பின்னடைவுகளை கைவிட வேண்டும் என்பதற்கான ஆதாரமாக அல்ல, என்ன சரிசெய்ய வேண்டும் என்பதற்கான தகவலாக நடத்துகிறார்கள்.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">💡 Examples</span><span lang-block="ta">💡 உதாரணங்கள்</span></div>
+    <div class="example-box" lang-block="en">Instead of 'get better at math,' a SMART goal is: 'Score 80% or higher on the next unit test by practicing 30 minutes daily for two weeks.'</div><div class="example-box" lang-block="ta">'கணிதத்தில் சிறப்பாக செய்' என்பதற்கு பதிலாக, SMART இலக்கு: 'இரண்டு வாரங்களுக்கு தினமும் 30 நிமிடம் பயிற்சி செய்து அடுத்த யூனிட் தேர்வில் 80% அல்லது அதற்கு மேல் பெறுதல்.'</div><div class="example-box" lang-block="en">A student who fails a mock test could think 'I'm just bad at this subject' (fixed mindset) or 'I haven't mastered this topic yet — let me see which chapter needs more work' (growth mindset). The second leads to actual improvement.</div><div class="example-box" lang-block="ta">ஒரு மாக் தேர்வில் தோல்வியடையும் மாணவர் 'எனக்கு இந்த பாடத்தில் திறமையில்லை' (நிலையான மனநிலை) அல்லது 'எனக்கு இன்னும் இந்த தலைப்பில் தேர்ச்சி இல்லை' (வளர்ச்சி மனநிலை) என்று நினைக்கலாம்.</div><div class="example-box" lang-block="en">A student wanting to build a reading habit sets a small, sustainable goal — '10 pages before bed' — rather than an unrealistic 'read 2 books a week,' which is more likely to be abandoned.</div><div class="example-box" lang-block="ta">படிக்கும் பழக்கத்தை உருவாக்க விரும்பும் ஒரு மாணவர் 'படுக்கைக்கு முன் 10 பக்கங்கள்' போன்ற ஒரு சிறிய, நிலையான இலக்கை நிர்ணயிக்கிறார்.</div>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">✅ Practical Tips</span><span lang-block="ta">✅ நடைமுறை குறிப்புகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">Break a big goal into weekly and even daily mini-targets so progress is visible.</li><li lang-block="ta">ஒரு பெரிய இலக்கை வாராந்திர மற்றும் தினசரி சிறு இலக்குகளாக பிரிக்கவும்.</li><li lang-block="en">Write your goals down and place them somewhere you'll see daily — this significantly increases follow-through.</li><li lang-block="ta">உங்கள் இலக்குகளை எழுதி தினமும் நீங்கள் பார்க்கும் இடத்தில் வைக்கவும்.</li><li lang-block="en">Attach goals to a specific time and place (e.g., 'study at 6pm at my desk') rather than a vague intention.</li><li lang-block="ta">இலக்குகளை ஒரு தெளிவற்ற எண்ணத்திற்குப் பதிலாக ஒரு குறிப்பிட்ட நேரம் மற்றும் இடத்துடன் இணைக்கவும்.</li><li lang-block="en">Track progress visually — a simple checklist or chart is motivating on its own.</li><li lang-block="ta">முன்னேற்றத்தை காட்சிப்படுத்தி கண்காணிக்கவும் — ஒரு எளிய பட்டியல் அல்லது விளக்கப்படம் தானாகவே ஊக்கமளிக்கும்.</li><li lang-block="en">Celebrate small wins along the way rather than waiting only for the final result.</li><li lang-block="ta">இறுதி முடிவுக்காக மட்டும் காத்திருக்காமல் வழியில் சிறு வெற்றிகளை கொண்டாடுங்கள்.</li></ul>
+  </div>
+
+  <div class="card improve-card">
+    <div class="section-label"><span lang-block="en" class="lang-active">🌱 Suggestions for Improvement</span><span lang-block="ta">🌱 மேம்பாட்டிற்கான பரிந்துரைகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">If your goals often stay vague, rewrite one current goal using the full SMART format this week.</li><li lang-block="ta">உங்கள் இலக்குகள் பெரும்பாலும் தெளிவற்றதாக இருந்தால், இந்த வாரம் ஒரு தற்போதைய இலக்கை முழு SMART வடிவத்தில் மீண்டும் எழுதுங்கள்.</li><li lang-block="en">If you give up quickly after setbacks, practice reframing one recent 'failure' as a growth mindset lesson.</li><li lang-block="ta">பின்னடைவுகளுக்குப் பிறகு நீங்கள் விரைவாக விட்டுவிட்டால், சமீபத்திய 'தோல்வியை' வளர்ச்சி மனநிலை பாடமாக மறுவடிவமைக்க பயிற்சி செய்யுங்கள்.</li><li lang-block="en">If you rely purely on motivation, design one small daily habit that supports your goal regardless of how you feel that day.</li><li lang-block="ta">நீங்கள் முழுவதுமாக ஊக்கத்தை நம்பினால், அன்று எப்படி உணர்கிறீர்கள் என்பதைப் பொருட்படுத்தாமல் உங்கள் இலக்கை ஆதரிக்கும் ஒரு சிறிய தினசரி பழக்கத்தை வடிவமைக்கவும்.</li><li lang-block="en">Review your goals every 2 weeks and adjust — a goal that isn't working needs revision, not abandonment.</li><li lang-block="ta">ஒவ்வொரு 2 வாரங்களுக்கும் உங்கள் இலக்குகளை மதிப்பாய்வு செய்து சரிசெய்யவும்.</li></ul>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📝 Self-Assessment (rate yourself 1–5)</span><span lang-block="ta">📝 சுய மதிப்பீடு (1–5 மதிப்பிடவும்)</span></div>
+    
+        <div class="assess-q">
+          <p lang-block="en">1. I set specific goals rather than vague ones like 'do better.'</p>
+          <p lang-block="ta">1. 'சிறப்பாக செய்' போன்ற தெளிவற்ற இலக்குகளுக்குப் பதிலாக நான் குறிப்பிட்ட இலக்குகளை நிர்ணயிக்கிறேன்.</p>
+          <div class="scale" data-q="0">
+            <button onclick="selectScale(0,1,this)">1</button><button onclick="selectScale(0,2,this)">2</button><button onclick="selectScale(0,3,this)">3</button><button onclick="selectScale(0,4,this)">4</button><button onclick="selectScale(0,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">2. I break big goals into smaller, weekly or daily steps.</p>
+          <p lang-block="ta">2. பெரிய இலக்குகளை சிறிய, வாராந்திர அல்லது தினசரி படிகளாக பிரிக்கிறேன்.</p>
+          <div class="scale" data-q="1">
+            <button onclick="selectScale(1,1,this)">1</button><button onclick="selectScale(1,2,this)">2</button><button onclick="selectScale(1,3,this)">3</button><button onclick="selectScale(1,4,this)">4</button><button onclick="selectScale(1,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">3. When I face a setback, I see it as something to learn from rather than proof I should quit.</p>
+          <p lang-block="ta">3. நான் ஒரு பின்னடைவை எதிர்கொள்ளும்போது, விட்டுவிட வேண்டும் என்பதற்கான ஆதாரமாக அல்ல, கற்றுக்கொள்ள வேண்டியதாக பார்க்கிறேன்.</p>
+          <div class="scale" data-q="2">
+            <button onclick="selectScale(2,1,this)">1</button><button onclick="selectScale(2,2,this)">2</button><button onclick="selectScale(2,3,this)">3</button><button onclick="selectScale(2,4,this)">4</button><button onclick="selectScale(2,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">4. I track my progress toward my goals in some visible way.</p>
+          <p lang-block="ta">4. என் இலக்குகளை நோக்கிய முன்னேற்றத்தை ஏதேனும் காணக்கூடிய வழியில் கண்காணிக்கிறேன்.</p>
+          <div class="scale" data-q="3">
+            <button onclick="selectScale(3,1,this)">1</button><button onclick="selectScale(3,2,this)">2</button><button onclick="selectScale(3,3,this)">3</button><button onclick="selectScale(3,4,this)">4</button><button onclick="selectScale(3,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">5. I keep working toward goals even when I don't feel especially motivated.</p>
+          <p lang-block="ta">5. நான் குறிப்பாக ஊக்கமாக உணராதபோதும் இலக்குகளை நோக்கி தொடர்ந்து வேலை செய்கிறேன்.</p>
+          <div class="scale" data-q="4">
+            <button onclick="selectScale(4,1,this)">1</button><button onclick="selectScale(4,2,this)">2</button><button onclick="selectScale(4,3,this)">3</button><button onclick="selectScale(4,4,this)">4</button><button onclick="selectScale(4,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+    <div class="assess-footer">
+      <button class="btn btn-primary" id="submitBtn" onclick="submitAssessment()">
+        <span lang-block="en" class="lang-active">Submit Self-Assessment</span><span lang-block="ta">சுய மதிப்பீட்டை சமர்ப்பிக்கவும்</span>
+      </button>
+    </div>
+    <div class="result-box" id="resultBox"></div>
+  </div>
+
+  <div class="footer-nav">
+    <a href="communication-skills.html">&larr; 4. Communication Skills</a>
+    <a href="stress-management.html">6. Stress & Anxiety Management &rarr;</a>
+  </div>
+
+  <p class="footer-motto">"God is always with u" — NT Somasundaram Life Skills Program</p>
+  <p class="footer-contact">somasundaramnt.lifecoach@gmail.com &nbsp;|&nbsp; +91 98437 02244</p>
+</div>
+
+<script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzIS5xTAPUvpRL4yYh-NJ0aV1002sJUcSvFvGXaieZE4T4ZfvXJ8Xe5cWNLt5dXFKEn/exec";
+const MODULE_TITLE_EN = "Goal Setting & Self-Motivation";
+const MODULE_TITLE_TA = "இலக்கு நிர்ணயம் & சுய ஊக்கம்";
+let currentLang = 'en';
+let scaleAnswers = {};
+
+function setLang(lang){
+  currentLang = lang;
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  document.getElementById('btnTA').classList.toggle('active', lang==='ta');
+  document.querySelectorAll('[lang-block]').forEach(el=>{
+    el.classList.toggle('lang-active', el.getAttribute('lang-block')===lang);
+  });
+}
+
+function selectScale(qIdx, val, btnEl){
+  scaleAnswers[qIdx] = val;
+  const row = btnEl.parentElement;
+  row.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));
+  btnEl.classList.add('selected');
+}
+
+function submitAssessment(){
+  const totalQ = 5;
+  const answered = Object.keys(scaleAnswers).length;
+  if(answered < totalQ){
+    alert(currentLang==='en' ? 'Please rate every statement before submitting.' : 'சமர்ப்பிக்கும் முன் ஒவ்வொரு கூற்றையும் மதிப்பிடவும்.');
+    return;
+  }
+  const total = Object.values(scaleAnswers).reduce((a,b)=>a+b,0);
+  const maxScore = totalQ*5;
+  const pct = Math.round((total/maxScore)*100);
+
+  const student = JSON.parse(localStorage.getItem('lifeskills_student') || '{}');
+  const params = new URLSearchParams({
+    name: student.name || '',
+    grade: student.grade || '',
+    school: student.school || '',
+    phone: student.phone || '',
+    module: "5. " + MODULE_TITLE_EN,
+    reflection: 'Self-assessment score: ' + total + '/' + maxScore,
+    score: pct + '%',
+    lang: currentLang.toUpperCase()
+  });
+  const img = new Image();
+  img.src = GAS_URL + '?' + params.toString();
+
+  const box = document.getElementById('resultBox');
+  box.classList.add('show');
+  let msg;
+  const tipsEN = ["Break a big goal into weekly and even daily mini-targets so progress is visible.", "Write your goals down and place them somewhere you'll see daily — this significantly increases follow-through.", "Attach goals to a specific time and place (e.g., 'study at 6pm at my desk') rather than a vague intention.", "Track progress visually — a simple checklist or chart is motivating on its own.", "Celebrate small wins along the way rather than waiting only for the final result."];
+  const tipsTA = ["ஒரு பெரிய இலக்கை வாராந்திர மற்றும் தினசரி சிறு இலக்குகளாக பிரிக்கவும்.", "உங்கள் இலக்குகளை எழுதி தினமும் நீங்கள் பார்க்கும் இடத்தில் வைக்கவும்.", "இலக்குகளை ஒரு தெளிவற்ற எண்ணத்திற்குப் பதிலாக ஒரு குறிப்பிட்ட நேரம் மற்றும் இடத்துடன் இணைக்கவும்.", "முன்னேற்றத்தை காட்சிப்படுத்தி கண்காணிக்கவும் — ஒரு எளிய பட்டியல் அல்லது விளக்கப்படம் தானாகவே ஊக்கமளிக்கும்.", "இறுதி முடிவுக்காக மட்டும் காத்திருக்காமல் வழியில் சிறு வெற்றிகளை கொண்டாடுங்கள்."];
+  const improveEN = ["If your goals often stay vague, rewrite one current goal using the full SMART format this week.", "If you give up quickly after setbacks, practice reframing one recent 'failure' as a growth mindset lesson.", "If you rely purely on motivation, design one small daily habit that supports your goal regardless of how you feel that day.", "Review your goals every 2 weeks and adjust — a goal that isn't working needs revision, not abandonment."];
+  const improveTA = ["உங்கள் இலக்குகள் பெரும்பாலும் தெளிவற்றதாக இருந்தால், இந்த வாரம் ஒரு தற்போதைய இலக்கை முழு SMART வடிவத்தில் மீண்டும் எழுதுங்கள்.", "பின்னடைவுகளுக்குப் பிறகு நீங்கள் விரைவாக விட்டுவிட்டால், சமீபத்திய 'தோல்வியை' வளர்ச்சி மனநிலை பாடமாக மறுவடிவமைக்க பயிற்சி செய்யுங்கள்.", "நீங்கள் முழுவதுமாக ஊக்கத்தை நம்பினால், அன்று எப்படி உணர்கிறீர்கள் என்பதைப் பொருட்படுத்தாமல் உங்கள் இலக்கை ஆதரிக்கும் ஒரு சிறிய தினசரி பழக்கத்தை வடிவமைக்கவும்.", "ஒவ்வொரு 2 வாரங்களுக்கும் உங்கள் இலக்குகளை மதிப்பாய்வு செய்து சரிசெய்யவும்."];
+
+  if(currentLang==='en'){
+    msg = 'Your score: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'Great — this is clearly a strength for you.' : (pct>=50 ? 'Good foundation — here is guidance to strengthen it further:' : 'This is a great area to focus on — here is guidance to help:');
+  } else {
+    msg = 'உங்கள் மதிப்பெண்: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'சிறப்பு — இது உங்களுக்கு தெளிவான வலிமை.' : (pct>=50 ? 'நல்ல அடித்தளம் — இதை மேலும் வலுப்படுத்த வழிகாட்டுதல் இங்கே:' : 'இது கவனம் செலுத்த வேண்டிய ஒரு நல்ல பகுதி — உதவ வழிகாட்டுதல் இங்கே:');
+  }
+
+  let guidanceHtml = '<p style="margin:0 0 8px;font-weight:600;">' + msg + '</p>';
+  if(pct < 80){
+    const tips = currentLang==='en' ? tipsEN : tipsTA;
+    const improve = currentLang==='en' ? improveEN : improveTA;
+    const tipsLabel = currentLang==='en' ? '💡 Key Tips' : '💡 முக்கிய குறிப்புகள்';
+    const improveLabel = currentLang==='en' ? '🌱 Suggestions for Improvement' : '🌱 மேம்பாட்டிற்கான பரிந்துரைகள்';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--clay);">' + tipsLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 12px;padding-left:18px;">' + tips.slice(0,3).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--sage);">' + improveLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 0;padding-left:18px;">' + improve.slice(0,2).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+  }
+  box.innerHTML = guidanceHtml;
+
+  let done = JSON.parse(localStorage.getItem('lifeskills_completed') || '{}');
+  done[4] = true;
+  localStorage.setItem('lifeskills_completed', JSON.stringify(done));
+
+  let scores = JSON.parse(localStorage.getItem('lifeskills_scores') || '{}');
+  scores[4] = {
+    titleEN: MODULE_TITLE_EN,
+    titleTA: MODULE_TITLE_TA,
+    score: total,
+    max: maxScore,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  localStorage.setItem('lifeskills_scores', JSON.stringify(scores));
+
+  document.getElementById('submitBtn').disabled = true;
+}
+
+setLang('en');
+</script>
+</body>
+</html>

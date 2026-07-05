@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9. Digital Literacy & Responsible Online Behavior | Life Skills Mastery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF8F0; --panel:#FFFFFF; --ink:#2B2118; --sub:#6B5D4F;
+  --clay:#C1602A; --clay-dark:#9C4A1E; --gold:#D9A441; --sage:#6B8F71;
+  --border:#EADFD0; --shadow:0 4px 20px rgba(43,33,24,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;}
+.tamil,[lang="ta"]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.topbar{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--border);
+  padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--clay),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;}
+.brand-text b{display:block;font-size:14px;}
+.brand-text span{font-size:11.5px;color:var(--sub);}
+.controls{display:flex;gap:8px;align-items:center;}
+.lang-toggle{display:flex;background:var(--cream);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.lang-toggle button{border:none;background:transparent;padding:8px 16px;font-family:inherit;font-weight:600;
+  font-size:13px;color:var(--sub);cursor:pointer;}
+.lang-toggle button.active{background:var(--clay);color:#fff;}
+.back-link{font-size:12.5px;color:var(--sub);text-decoration:none;font-weight:600;}
+.wrap{max-width:760px;margin:0 auto;padding:36px 20px 60px;}
+.eyebrow{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:10px;}
+h1{font-size:clamp(24px,4.5vw,34px);font-weight:800;margin:0 0 6px;line-height:1.2;}
+.sub-tagline{color:var(--sub);font-size:15px;margin-bottom:28px;}
+.nav-pill-row{display:flex;justify-content:space-between;margin-bottom:24px;gap:10px;flex-wrap:wrap;}
+.nav-pill{font-size:12.5px;font-weight:600;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);border-radius:20px;padding:8px 16px;}
+.nav-pill:hover{border-color:var(--clay);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin-bottom:22px;box-shadow:var(--shadow);}
+.section-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--clay);margin:0 0 12px;
+  display:flex;align-items:center;gap:8px;}
+p.body-text{font-size:15px;margin:0 0 12px;}
+p.body-text:last-child{margin-bottom:0;}
+.example-box{background:#FBF3E8;border-left:4px solid var(--gold);border-radius:8px;padding:14px 16px;font-size:14.5px;margin-bottom:10px;}
+.example-box:last-child{margin-bottom:0;}
+ul.tip-list{margin:0;padding-left:20px;}
+ul.tip-list li{font-size:14.5px;margin-bottom:9px;}
+ul.tip-list li:last-child{margin-bottom:0;}
+.improve-card{background:#EEF4EE;border:1px solid #D6E5D8;}
+.improve-card .section-label{color:var(--sage);}
+.assess-q{margin-bottom:16px;}
+.assess-q:last-child{margin-bottom:8px;}
+.assess-q p{font-size:14.5px;font-weight:600;margin:0 0 8px;}
+.scale{display:flex;gap:6px;flex-wrap:wrap;}
+.scale button{flex:1;min-width:56px;border:1px solid var(--border);background:var(--cream);border-radius:8px;
+  padding:9px 4px;font-family:inherit;font-size:12px;font-weight:600;color:var(--sub);cursor:pointer;}
+.scale button.selected{background:var(--sage);color:#fff;border-color:var(--sage);}
+.scale-labels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--sub);margin-top:4px;}
+.assess-footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap;gap:10px;}
+.btn{border:none;border-radius:10px;padding:12px 22px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;}
+.btn-primary{background:var(--clay);color:#fff;}
+.btn-primary:hover{background:var(--clay-dark);}
+.btn-primary[disabled]{background:#D9C3B3;cursor:not-allowed;}
+.result-box{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;background:#EEF4EE;border:1px solid #D6E5D8;font-size:13.5px;}
+.result-box.show{display:block;}
+.footer-nav{display:flex;justify-content:space-between;margin-top:30px;gap:10px;flex-wrap:wrap;}
+.footer-nav a{font-size:13px;font-weight:700;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);padding:10px 18px;border-radius:10px;}
+.footer-nav a:hover{border-color:var(--clay);}
+.footer-motto{text-align:center;font-style:italic;color:var(--sub);font-size:12.5px;margin-top:34px;}
+.footer-contact{text-align:center;font-size:11.5px;color:var(--sub);margin-top:6px;}
+[lang-block]{display:none;}
+[lang-block].lang-active{display:block;}
+span[lang-block].lang-active{display:inline;}
+li[lang-block].lang-active{display:list-item;}
+@media(max-width:600px){.nav-pill-row{flex-direction:column;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-mark">9</div>
+    <div class="brand-text">
+      <b lang-block="en" class="lang-active">Digital Literacy & Responsible Online Behavior</b>
+      <b lang-block="ta">டிஜிட்டல் கல்வியறிவு & பொறுப்பான ஆன்லைன் நடத்தை</b>
+      <span lang-block="en" class="lang-active">Life Skills Mastery Course</span>
+      <span lang-block="ta">வாழ்க்கை திறன் தேர்ச்சி பாடநெறி</span>
+    </div>
+  </a>
+  <div class="controls">
+    <a class="back-link" href="index.html">&larr; <span lang-block="en" class="lang-active">All Modules</span><span lang-block="ta">அனைத்து பாடங்கள்</span></a>
+    <a class="back-link" href="dashboard.html"><span lang-block="en" class="lang-active">My Progress</span><span lang-block="ta">என் முன்னேற்றம்</span></a>
+    <div class="lang-toggle">
+      <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+      <button id="btnTA" onclick="setLang('ta')">தமிழ்</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="eyebrow" lang-block="en" class="lang-active">Module 9 of 10</div>
+  <div class="eyebrow" lang-block="ta">பாடம் 9 / 10</div>
+  <h1 lang-block="en" class="lang-active">Digital Literacy & Responsible Online Behavior</h1>
+  <h1 lang-block="ta">டிஜிட்டல் கல்வியறிவு & பொறுப்பான ஆன்லைன் நடத்தை</h1>
+  <p class="sub-tagline" lang-block="en" class="lang-active">Screen time, digital footprint, and online safety</p>
+  <p class="sub-tagline" lang-block="ta">திரை நேரம், டிஜிட்டல் தடம், ஆன்லைன் பாதுகாப்பு</p>
+
+  <div class="nav-pill-row">
+    <a class="nav-pill" href="career-awareness.html">&larr; 8. Career Awareness & Future Planning</a>
+    <a class="nav-pill" href="self-esteem-confidence.html">10. Building Self-Esteem & Confidence &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📖 Detailed Explanation</span><span lang-block="ta">📖 விரிவான விளக்கம்</span></div>
+    <p class="body-text" lang-block="en">Everything posted online — photos, comments, likes — leaves a lasting digital footprint that can be seen by college admissions officers, future employers, and many others years later, even if you later delete it. Responsible online behavior means treating the internet as a public, permanent space rather than a private one.</p><p class="body-text" lang-block="ta">ஆன்லைனில் பதிவிடப்படும் அனைத்தும் — புகைப்படங்கள், கருத்துகள், விருப்பங்கள் — ஒரு நீடித்த டிஜிட்டல் தடத்தை விட்டுச் செல்கிறது, இது பல ஆண்டுகளுக்குப் பிறகும் கல்லூரி சேர்க்கை அதிகாரிகள், எதிர்கால முதலாளிகளால் பார்க்கப்படலாம், நீங்கள் பின்னர் அதை நீக்கினாலும்.</p><p class="body-text" lang-block="en">Excessive screen time affects sleep, attention span, and mood. Being intentional about screen use — setting limits, having phone-free times, and choosing quality over quantity of content — protects both mental health and academic performance.</p><p class="body-text" lang-block="ta">அதிகப்படியான திரை நேரம் தூக்கம், கவனம் மற்றும் மனநிலையை பாதிக்கிறது. திரை பயன்பாட்டைப் பற்றி வேண்டுமென்றே இருப்பது — வரம்புகளை நிர்ணயித்தல், தொலைபேசி இல்லாத நேரங்களை வைத்திருத்தல் — மனநலம் மற்றும் கல்வி செயல்திறனை பாதுகாக்கிறது.</p><p class="body-text" lang-block="en">Cyberbullying and online conflict spread faster and feel more intense than in-person conflict, partly because of anonymity and distance. Responding calmly, not escalating, saving evidence, and involving a trusted adult are far more effective than fighting back online.</p><p class="body-text" lang-block="ta">இணைய கொடுமை மற்றும் ஆன்லைன் மோதல் நேருக்கு நேர் மோதலை விட வேகமாக பரவுகிறது, ஏனெனில் அநாமதேயம் மற்றும் தூரம். அமைதியாக பதிலளிப்பது, அதிகரிக்காதது, ஆதாரங்களை சேமிப்பது, நம்பகமான பெரியவரை ஈடுபடுத்துவது ஆன்லைனில் திரும்பி சண்டையிடுவதை விட மிகவும் பயனுள்ளது.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">💡 Examples</span><span lang-block="ta">💡 உதாரணங்கள்</span></div>
+    <div class="example-box" lang-block="en">Before posting something angry online, students can use the '24-hour rule' — wait a day, reread the post, and then decide if it's still worth sharing. Most angry posts don't feel worth it the next day.</div><div class="example-box" lang-block="ta">கோபத்தில் ஏதாவது பதிவிடுவதற்கு முன், மாணவர்கள் '24 மணிநேர விதியை' பயன்படுத்தலாம் — ஒரு நாள் காத்திருந்து, பதிவை மீண்டும் படித்து முடிவு செய்யவும்.</div><div class="example-box" lang-block="en">A student receives a mean comment online. Instead of replying with an equally harsh comment (which usually escalates things), they screenshot it as evidence, block the person, and tell a parent or teacher.</div><div class="example-box" lang-block="ta">ஒரு மாணவர் ஆன்லைனில் ஒரு கொடிய கருத்தை பெறுகிறார். சமமான கடுமையான கருத்துடன் பதிலளிப்பதற்குப் பதிலாக, அவர்கள் அதை ஸ்கிரீன்ஷாட் எடுத்து, நபரை தடுத்து, பெற்றோர் அல்லது ஆசிரியரிடம் சொல்கிறார்கள்.</div><div class="example-box" lang-block="en">A student notices they check their phone first thing every morning and last thing before sleep, affecting their rest. They set a rule: phone charges outside the bedroom at night.</div><div class="example-box" lang-block="ta">ஒரு மாணவர் ஒவ்வொரு காலையிலும் முதலில் தங்கள் தொலைபேசியை சரிபார்ப்பதையும், தூங்குவதற்கு முன் கடைசியாக பார்ப்பதையும் கவனிக்கிறார். அவர்கள் ஒரு விதியை நிர்ணயிக்கிறார்கள்: இரவில் தொலைபேசி படுக்கையறைக்கு வெளியே சார்ஜ் ஆகும்.</div>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">✅ Practical Tips</span><span lang-block="ta">✅ நடைமுறை குறிப்புகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">Before posting anything, ask: 'Would I be comfortable if my teacher, parent, or a college admissions officer saw this in five years?'</li><li lang-block="ta">எதையும் பதிவிடுவதற்கு முன், கேளுங்கள்: 'ஐந்து ஆண்டுகளில் என் ஆசிரியர், பெற்றோர் அல்லது கல்லூரி அதிகாரி இதை பார்த்தால் நான் வசதியாக இருப்பேனா?'</li><li lang-block="en">Turn off notifications for non-essential apps to reduce constant distraction and checking.</li><li lang-block="ta">தேவையற்ற பயன்பாடுகளுக்கான அறிவிப்புகளை அணைக்கவும்.</li><li lang-block="en">Never share passwords, personal addresses, or financial information online, even with people you trust online.</li><li lang-block="ta">நம்பும் நபர்களிடமும் கூட ஆன்லைனில் கடவுச்சொற்கள், தனிப்பட்ட முகவரிகள், அல்லது நிதி தகவல்களை பகிர வேண்டாம்.</li><li lang-block="en">If you experience or witness cyberbullying, save evidence (screenshots) before blocking or reporting.</li><li lang-block="ta">இணைய கொடுமையை நீங்கள் அனுபவித்தால் அல்லது கண்டால், தடுப்பதற்கு முன் ஆதாரத்தை (ஸ்கிரீன்ஷாட்கள்) சேமிக்கவும்.</li><li lang-block="en">Set a specific 'phone-free' window each day, ideally the hour before sleep.</li><li lang-block="ta">ஒவ்வொரு நாளும் ஒரு குறிப்பிட்ட 'தொலைபேசி இல்லாத' நேரத்தை நிர்ணயியுங்கள், சிறந்தது தூக்கத்திற்கு முந்தைய மணி நேரம்.</li></ul>
+  </div>
+
+  <div class="card improve-card">
+    <div class="section-label"><span lang-block="en" class="lang-active">🌱 Suggestions for Improvement</span><span lang-block="ta">🌱 மேம்பாட்டிற்கான பரிந்துரைகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">If you find yourself constantly checking your phone, try turning off notifications for the 3 apps you check most, one at a time.</li><li lang-block="ta">நீங்கள் தொடர்ந்து உங்கள் தொலைபேசியை சரிபார்த்தால், நீங்கள் அதிகம் சரிபார்க்கும் 3 பயன்பாடுகளுக்கான அறிவிப்புகளை ஒவ்வொன்றாக அணைக்க முயற்சிக்கவும்.</li><li lang-block="en">If you've posted something in anger recently, review it now with fresh eyes and consider whether the 24-hour rule would have helped.</li><li lang-block="ta">நீங்கள் சமீபத்தில் கோபத்தில் ஏதாவது பதிவிட்டிருந்தால், அதை புதிய கண்களுடன் மதிப்பாய்வு செய்யவும்.</li><li lang-block="en">If you've experienced online negativity and kept it to yourself, tell a trusted adult about it this week rather than handling it alone.</li><li lang-block="ta">நீங்கள் ஆன்லைன் எதிர்மறையை அனுபவித்து அதை உங்களுக்குள் வைத்திருந்தால், இந்த வாரம் நம்பகமான பெரியவரிடம் சொல்லுங்கள்.</li><li lang-block="en">Track your actual daily screen time for one week (most phones show this) and set one specific reduction goal.</li><li lang-block="ta">ஒரு வாரத்திற்கு உங்கள் உண்மையான தினசரி திரை நேரத்தை கண்காணித்து ஒரு குறிப்பிட்ட குறைப்பு இலக்கை நிர்ணயியுங்கள்.</li></ul>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📝 Self-Assessment (rate yourself 1–5)</span><span lang-block="ta">📝 சுய மதிப்பீடு (1–5 மதிப்பிடவும்)</span></div>
+    
+        <div class="assess-q">
+          <p lang-block="en">1. I think before I post anything online, considering how it might look later.</p>
+          <p lang-block="ta">1. ஆன்லைனில் எதையும் பதிவிடுவதற்கு முன் நான் யோசிக்கிறேன், அது பின்னர் எப்படி தெரியும் என்பதை கருதுகிறேன்.</p>
+          <div class="scale" data-q="0">
+            <button onclick="selectScale(0,1,this)">1</button><button onclick="selectScale(0,2,this)">2</button><button onclick="selectScale(0,3,this)">3</button><button onclick="selectScale(0,4,this)">4</button><button onclick="selectScale(0,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">2. I have healthy limits around my screen time, especially before bed.</p>
+          <p lang-block="ta">2. என் திரை நேரத்தைப் பற்றி, குறிப்பாக படுக்கைக்கு முன், எனக்கு ஆரோக்கியமான வரம்புகள் உள்ளன.</p>
+          <div class="scale" data-q="1">
+            <button onclick="selectScale(1,1,this)">1</button><button onclick="selectScale(1,2,this)">2</button><button onclick="selectScale(1,3,this)">3</button><button onclick="selectScale(1,4,this)">4</button><button onclick="selectScale(1,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">3. I know how to respond calmly (not escalate) if I face negativity or bullying online.</p>
+          <p lang-block="ta">3. ஆன்லைனில் எதிர்மறை அல்லது கொடுமையை எதிர்கொண்டால் அமைதியாக பதிலளிப்பது எப்படி என்று எனக்குத் தெரியும்.</p>
+          <div class="scale" data-q="2">
+            <button onclick="selectScale(2,1,this)">1</button><button onclick="selectScale(2,2,this)">2</button><button onclick="selectScale(2,3,this)">3</button><button onclick="selectScale(2,4,this)">4</button><button onclick="selectScale(2,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">4. I would tell a trusted adult if I experienced serious online conflict or bullying.</p>
+          <p lang-block="ta">4. கடுமையான ஆன்லைன் மோதல் அல்லது கொடுமையை அனுபவித்தால் நம்பகமான பெரியவரிடம் சொல்வேன்.</p>
+          <div class="scale" data-q="3">
+            <button onclick="selectScale(3,1,this)">1</button><button onclick="selectScale(3,2,this)">2</button><button onclick="selectScale(3,3,this)">3</button><button onclick="selectScale(3,4,this)">4</button><button onclick="selectScale(3,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">5. I protect my personal information and don't share passwords or private details online.</p>
+          <p lang-block="ta">5. என் தனிப்பட்ட தகவல்களை நான் பாதுகாக்கிறேன், ஆன்லைனில் கடவுச்சொற்கள் அல்லது தனிப்பட்ட விவரங்களை பகிர்வதில்லை.</p>
+          <div class="scale" data-q="4">
+            <button onclick="selectScale(4,1,this)">1</button><button onclick="selectScale(4,2,this)">2</button><button onclick="selectScale(4,3,this)">3</button><button onclick="selectScale(4,4,this)">4</button><button onclick="selectScale(4,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+    <div class="assess-footer">
+      <button class="btn btn-primary" id="submitBtn" onclick="submitAssessment()">
+        <span lang-block="en" class="lang-active">Submit Self-Assessment</span><span lang-block="ta">சுய மதிப்பீட்டை சமர்ப்பிக்கவும்</span>
+      </button>
+    </div>
+    <div class="result-box" id="resultBox"></div>
+  </div>
+
+  <div class="footer-nav">
+    <a href="career-awareness.html">&larr; 8. Career Awareness & Future Planning</a>
+    <a href="self-esteem-confidence.html">10. Building Self-Esteem & Confidence &rarr;</a>
+  </div>
+
+  <p class="footer-motto">"God is always with u" — NT Somasundaram Life Skills Program</p>
+  <p class="footer-contact">somasundaramnt.lifecoach@gmail.com &nbsp;|&nbsp; +91 98437 02244</p>
+</div>
+
+<script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzIS5xTAPUvpRL4yYh-NJ0aV1002sJUcSvFvGXaieZE4T4ZfvXJ8Xe5cWNLt5dXFKEn/exec";
+const MODULE_TITLE_EN = "Digital Literacy & Responsible Online Behavior";
+const MODULE_TITLE_TA = "டிஜிட்டல் கல்வியறிவு & பொறுப்பான ஆன்லைன் நடத்தை";
+let currentLang = 'en';
+let scaleAnswers = {};
+
+function setLang(lang){
+  currentLang = lang;
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  document.getElementById('btnTA').classList.toggle('active', lang==='ta');
+  document.querySelectorAll('[lang-block]').forEach(el=>{
+    el.classList.toggle('lang-active', el.getAttribute('lang-block')===lang);
+  });
+}
+
+function selectScale(qIdx, val, btnEl){
+  scaleAnswers[qIdx] = val;
+  const row = btnEl.parentElement;
+  row.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));
+  btnEl.classList.add('selected');
+}
+
+function submitAssessment(){
+  const totalQ = 5;
+  const answered = Object.keys(scaleAnswers).length;
+  if(answered < totalQ){
+    alert(currentLang==='en' ? 'Please rate every statement before submitting.' : 'சமர்ப்பிக்கும் முன் ஒவ்வொரு கூற்றையும் மதிப்பிடவும்.');
+    return;
+  }
+  const total = Object.values(scaleAnswers).reduce((a,b)=>a+b,0);
+  const maxScore = totalQ*5;
+  const pct = Math.round((total/maxScore)*100);
+
+  const student = JSON.parse(localStorage.getItem('lifeskills_student') || '{}');
+  const params = new URLSearchParams({
+    name: student.name || '',
+    grade: student.grade || '',
+    school: student.school || '',
+    phone: student.phone || '',
+    module: "9. " + MODULE_TITLE_EN,
+    reflection: 'Self-assessment score: ' + total + '/' + maxScore,
+    score: pct + '%',
+    lang: currentLang.toUpperCase()
+  });
+  const img = new Image();
+  img.src = GAS_URL + '?' + params.toString();
+
+  const box = document.getElementById('resultBox');
+  box.classList.add('show');
+  let msg;
+  const tipsEN = ["Before posting anything, ask: 'Would I be comfortable if my teacher, parent, or a college admissions officer saw this in five years?'", "Turn off notifications for non-essential apps to reduce constant distraction and checking.", "Never share passwords, personal addresses, or financial information online, even with people you trust online.", "If you experience or witness cyberbullying, save evidence (screenshots) before blocking or reporting.", "Set a specific 'phone-free' window each day, ideally the hour before sleep."];
+  const tipsTA = ["எதையும் பதிவிடுவதற்கு முன், கேளுங்கள்: 'ஐந்து ஆண்டுகளில் என் ஆசிரியர், பெற்றோர் அல்லது கல்லூரி அதிகாரி இதை பார்த்தால் நான் வசதியாக இருப்பேனா?'", "தேவையற்ற பயன்பாடுகளுக்கான அறிவிப்புகளை அணைக்கவும்.", "நம்பும் நபர்களிடமும் கூட ஆன்லைனில் கடவுச்சொற்கள், தனிப்பட்ட முகவரிகள், அல்லது நிதி தகவல்களை பகிர வேண்டாம்.", "இணைய கொடுமையை நீங்கள் அனுபவித்தால் அல்லது கண்டால், தடுப்பதற்கு முன் ஆதாரத்தை (ஸ்கிரீன்ஷாட்கள்) சேமிக்கவும்.", "ஒவ்வொரு நாளும் ஒரு குறிப்பிட்ட 'தொலைபேசி இல்லாத' நேரத்தை நிர்ணயியுங்கள், சிறந்தது தூக்கத்திற்கு முந்தைய மணி நேரம்."];
+  const improveEN = ["If you find yourself constantly checking your phone, try turning off notifications for the 3 apps you check most, one at a time.", "If you've posted something in anger recently, review it now with fresh eyes and consider whether the 24-hour rule would have helped.", "If you've experienced online negativity and kept it to yourself, tell a trusted adult about it this week rather than handling it alone.", "Track your actual daily screen time for one week (most phones show this) and set one specific reduction goal."];
+  const improveTA = ["நீங்கள் தொடர்ந்து உங்கள் தொலைபேசியை சரிபார்த்தால், நீங்கள் அதிகம் சரிபார்க்கும் 3 பயன்பாடுகளுக்கான அறிவிப்புகளை ஒவ்வொன்றாக அணைக்க முயற்சிக்கவும்.", "நீங்கள் சமீபத்தில் கோபத்தில் ஏதாவது பதிவிட்டிருந்தால், அதை புதிய கண்களுடன் மதிப்பாய்வு செய்யவும்.", "நீங்கள் ஆன்லைன் எதிர்மறையை அனுபவித்து அதை உங்களுக்குள் வைத்திருந்தால், இந்த வாரம் நம்பகமான பெரியவரிடம் சொல்லுங்கள்.", "ஒரு வாரத்திற்கு உங்கள் உண்மையான தினசரி திரை நேரத்தை கண்காணித்து ஒரு குறிப்பிட்ட குறைப்பு இலக்கை நிர்ணயியுங்கள்."];
+
+  if(currentLang==='en'){
+    msg = 'Your score: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'Great — this is clearly a strength for you.' : (pct>=50 ? 'Good foundation — here is guidance to strengthen it further:' : 'This is a great area to focus on — here is guidance to help:');
+  } else {
+    msg = 'உங்கள் மதிப்பெண்: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'சிறப்பு — இது உங்களுக்கு தெளிவான வலிமை.' : (pct>=50 ? 'நல்ல அடித்தளம் — இதை மேலும் வலுப்படுத்த வழிகாட்டுதல் இங்கே:' : 'இது கவனம் செலுத்த வேண்டிய ஒரு நல்ல பகுதி — உதவ வழிகாட்டுதல் இங்கே:');
+  }
+
+  let guidanceHtml = '<p style="margin:0 0 8px;font-weight:600;">' + msg + '</p>';
+  if(pct < 80){
+    const tips = currentLang==='en' ? tipsEN : tipsTA;
+    const improve = currentLang==='en' ? improveEN : improveTA;
+    const tipsLabel = currentLang==='en' ? '💡 Key Tips' : '💡 முக்கிய குறிப்புகள்';
+    const improveLabel = currentLang==='en' ? '🌱 Suggestions for Improvement' : '🌱 மேம்பாட்டிற்கான பரிந்துரைகள்';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--clay);">' + tipsLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 12px;padding-left:18px;">' + tips.slice(0,3).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--sage);">' + improveLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 0;padding-left:18px;">' + improve.slice(0,2).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+  }
+  box.innerHTML = guidanceHtml;
+
+  let done = JSON.parse(localStorage.getItem('lifeskills_completed') || '{}');
+  done[8] = true;
+  localStorage.setItem('lifeskills_completed', JSON.stringify(done));
+
+  let scores = JSON.parse(localStorage.getItem('lifeskills_scores') || '{}');
+  scores[8] = {
+    titleEN: MODULE_TITLE_EN,
+    titleTA: MODULE_TITLE_TA,
+    score: total,
+    max: maxScore,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  localStorage.setItem('lifeskills_scores', JSON.stringify(scores));
+
+  document.getElementById('submitBtn').disabled = true;
+}
+
+setLang('en');
+</script>
+</body>
+</html>

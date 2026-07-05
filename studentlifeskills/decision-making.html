@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2. Decision-Making & Problem-Solving | Life Skills Mastery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF8F0; --panel:#FFFFFF; --ink:#2B2118; --sub:#6B5D4F;
+  --clay:#C1602A; --clay-dark:#9C4A1E; --gold:#D9A441; --sage:#6B8F71;
+  --border:#EADFD0; --shadow:0 4px 20px rgba(43,33,24,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;}
+.tamil,[lang="ta"]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.topbar{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--border);
+  padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--clay),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;}
+.brand-text b{display:block;font-size:14px;}
+.brand-text span{font-size:11.5px;color:var(--sub);}
+.controls{display:flex;gap:8px;align-items:center;}
+.lang-toggle{display:flex;background:var(--cream);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.lang-toggle button{border:none;background:transparent;padding:8px 16px;font-family:inherit;font-weight:600;
+  font-size:13px;color:var(--sub);cursor:pointer;}
+.lang-toggle button.active{background:var(--clay);color:#fff;}
+.back-link{font-size:12.5px;color:var(--sub);text-decoration:none;font-weight:600;}
+.wrap{max-width:760px;margin:0 auto;padding:36px 20px 60px;}
+.eyebrow{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:10px;}
+h1{font-size:clamp(24px,4.5vw,34px);font-weight:800;margin:0 0 6px;line-height:1.2;}
+.sub-tagline{color:var(--sub);font-size:15px;margin-bottom:28px;}
+.nav-pill-row{display:flex;justify-content:space-between;margin-bottom:24px;gap:10px;flex-wrap:wrap;}
+.nav-pill{font-size:12.5px;font-weight:600;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);border-radius:20px;padding:8px 16px;}
+.nav-pill:hover{border-color:var(--clay);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin-bottom:22px;box-shadow:var(--shadow);}
+.section-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--clay);margin:0 0 12px;
+  display:flex;align-items:center;gap:8px;}
+p.body-text{font-size:15px;margin:0 0 12px;}
+p.body-text:last-child{margin-bottom:0;}
+.example-box{background:#FBF3E8;border-left:4px solid var(--gold);border-radius:8px;padding:14px 16px;font-size:14.5px;margin-bottom:10px;}
+.example-box:last-child{margin-bottom:0;}
+ul.tip-list{margin:0;padding-left:20px;}
+ul.tip-list li{font-size:14.5px;margin-bottom:9px;}
+ul.tip-list li:last-child{margin-bottom:0;}
+.improve-card{background:#EEF4EE;border:1px solid #D6E5D8;}
+.improve-card .section-label{color:var(--sage);}
+.assess-q{margin-bottom:16px;}
+.assess-q:last-child{margin-bottom:8px;}
+.assess-q p{font-size:14.5px;font-weight:600;margin:0 0 8px;}
+.scale{display:flex;gap:6px;flex-wrap:wrap;}
+.scale button{flex:1;min-width:56px;border:1px solid var(--border);background:var(--cream);border-radius:8px;
+  padding:9px 4px;font-family:inherit;font-size:12px;font-weight:600;color:var(--sub);cursor:pointer;}
+.scale button.selected{background:var(--sage);color:#fff;border-color:var(--sage);}
+.scale-labels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--sub);margin-top:4px;}
+.assess-footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap;gap:10px;}
+.btn{border:none;border-radius:10px;padding:12px 22px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;}
+.btn-primary{background:var(--clay);color:#fff;}
+.btn-primary:hover{background:var(--clay-dark);}
+.btn-primary[disabled]{background:#D9C3B3;cursor:not-allowed;}
+.result-box{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;background:#EEF4EE;border:1px solid #D6E5D8;font-size:13.5px;}
+.result-box.show{display:block;}
+.footer-nav{display:flex;justify-content:space-between;margin-top:30px;gap:10px;flex-wrap:wrap;}
+.footer-nav a{font-size:13px;font-weight:700;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);padding:10px 18px;border-radius:10px;}
+.footer-nav a:hover{border-color:var(--clay);}
+.footer-motto{text-align:center;font-style:italic;color:var(--sub);font-size:12.5px;margin-top:34px;}
+.footer-contact{text-align:center;font-size:11.5px;color:var(--sub);margin-top:6px;}
+[lang-block]{display:none;}
+[lang-block].lang-active{display:block;}
+span[lang-block].lang-active{display:inline;}
+li[lang-block].lang-active{display:list-item;}
+@media(max-width:600px){.nav-pill-row{flex-direction:column;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-mark">2</div>
+    <div class="brand-text">
+      <b lang-block="en" class="lang-active">Decision-Making & Problem-Solving</b>
+      <b lang-block="ta">முடிவெடுத்தல் & பிரச்சனை தீர்வு</b>
+      <span lang-block="en" class="lang-active">Life Skills Mastery Course</span>
+      <span lang-block="ta">வாழ்க்கை திறன் தேர்ச்சி பாடநெறி</span>
+    </div>
+  </a>
+  <div class="controls">
+    <a class="back-link" href="index.html">&larr; <span lang-block="en" class="lang-active">All Modules</span><span lang-block="ta">அனைத்து பாடங்கள்</span></a>
+    <a class="back-link" href="dashboard.html"><span lang-block="en" class="lang-active">My Progress</span><span lang-block="ta">என் முன்னேற்றம்</span></a>
+    <div class="lang-toggle">
+      <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+      <button id="btnTA" onclick="setLang('ta')">தமிழ்</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="eyebrow" lang-block="en" class="lang-active">Module 2 of 10</div>
+  <div class="eyebrow" lang-block="ta">பாடம் 2 / 10</div>
+  <h1 lang-block="en" class="lang-active">Decision-Making & Problem-Solving</h1>
+  <h1 lang-block="ta">முடிவெடுத்தல் & பிரச்சனை தீர்வு</h1>
+  <p class="sub-tagline" lang-block="en" class="lang-active">A simple framework for smarter choices</p>
+  <p class="sub-tagline" lang-block="ta">சிறந்த தேர்வுகளுக்கான எளிய கட்டமைப்பு</p>
+
+  <div class="nav-pill-row">
+    <a class="nav-pill" href="self-awareness-eq.html">&larr; 1. Self-Awareness & Emotional Intelligence</a>
+    <a class="nav-pill" href="time-management.html">3. Time Management & Productivity &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📖 Detailed Explanation</span><span lang-block="ta">📖 விரிவான விளக்கம்</span></div>
+    <p class="body-text" lang-block="en">Every day, students make dozens of decisions — some small (what to eat), some significant (which friends to spend time with, whether to skip a class). Good decision-making is not about being naturally smart; it's about following a repeatable process instead of reacting impulsively.</p><p class="body-text" lang-block="ta">ஒவ்வொரு நாளும், மாணவர்கள் டஜன் கணக்கான முடிவுகளை எடுக்கிறார்கள் — சில சிறியவை (என்ன சாப்பிடுவது), சில முக்கியமானவை (எந்த நண்பர்களுடன் நேரம் செலவிடுவது, வகுப்பை தவிர்ப்பதா இல்லையா). நல்ல முடிவெடுத்தல் இயற்கையாக புத்திசாலியாக இருப்பதைப் பற்றியது அல்ல; இது தூண்டுதலின் பேரில் எதிர்வினையாற்றுவதற்குப் பதிலாக ஒரு மீண்டும் மீண்டும் பயன்படுத்தக்கூடிய செயல்முறையை பின்பற்றுவதைப் பற்றியது.</p><p class="body-text" lang-block="en">The POCC framework helps: Pause (don't react instantly), Options (list what you could actually do), Consequences (honestly weigh what happens with each option, both short and long-term), and Choose (based on your values, not just the mood of the moment).</p><p class="body-text" lang-block="ta">POCC கட்டமைப்பு உதவுகிறது: நிறுத்து (உடனடியாக எதிர்வினையாற்றாதே), தேர்வுகள் (நீங்கள் உண்மையில் என்ன செய்யலாம் என்பதை பட்டியலிடுங்கள்), விளைவுகள் (குறுகிய மற்றும் நீண்ட காலத்திற்கு ஒவ்வொரு தேர்வுடனும் என்ன நடக்கும் என்பதை நேர்மையாக எடைபோடுங்கள்), மற்றும் தேர்ந்தெடு (உங்கள் மதிப்புகளின் அடிப்படையில்).</p><p class="body-text" lang-block="en">Problem-solving works the same way for bigger challenges: define the real problem clearly, brainstorm multiple solutions rather than settling for the first idea, evaluate the trade-offs, and then act — while staying open to adjusting if it doesn't work as expected.</p><p class="body-text" lang-block="ta">பெரிய சவால்களுக்கும் பிரச்சனை தீர்வு அதே வழியில் வேலை செய்கிறது: உண்மையான பிரச்சனையை தெளிவாக வரையறுக்கவும், முதல் யோசனையில் திருப்தி அடையாமல் பல தீர்வுகளை மூளைச்சலவை செய்யவும், பரிமாற்றங்களை மதிப்பீடு செய்யவும், பின்னர் செயல்படவும்.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">💡 Examples</span><span lang-block="ta">💡 உதாரணங்கள்</span></div>
+    <div class="example-box" lang-block="en">A student is invited to skip class with friends. They pause, list the options (go along or stay), weigh the consequences (a missed test versus short-term peer approval), and choose based on what matters most to them long-term — attending class.</div><div class="example-box" lang-block="ta">நண்பர்களுடன் வகுப்பை தவிர்க்க ஒரு மாணவர் அழைக்கப்படுகிறார். அவர்கள் நிறுத்தி, தேர்வுகளை பட்டியலிட்டு (செல்வது அல்லது தங்குவது), விளைவுகளை எடைபோட்டு, நீண்ட காலத்திற்கு முக்கியமானதை தேர்ந்தெடுக்கிறார்கள் — வகுப்பில் கலந்துகொள்வது.</div><div class="example-box" lang-block="en">A student is struggling with a difficult subject and initially thinks the only solution is to give up on scoring well. By brainstorming multiple options — asking the teacher for help, forming a study group, using online resources — they find a workable path forward instead of one drastic (and wrong) conclusion.</div><div class="example-box" lang-block="ta">ஒரு மாணவர் ஒரு கடினமான பாடத்தில் சிரமப்பட்டு, முதலில் நல்ல மதிப்பெண் பெறுவதை கைவிடுவதே ஒரே தீர்வு என்று நினைக்கிறார். பல தேர்வுகளை மூளைச்சலவை செய்வதன் மூலம் — ஆசிரியரிடம் உதவி கேட்பது, படிப்பு குழு அமைப்பது, ஆன்லைன் வளங்களைப் பயன்படுத்துவது — அவர்கள் ஒரு நடைமுறை பாதையை காண்கிறார்கள்.</div><div class="example-box" lang-block="en">Two friends want to do different activities for the weekend. Instead of insisting on one option, the student lists a few possible compromises (alternate weekends, a combined plan) and picks the one that keeps the friendship strong.</div><div class="example-box" lang-block="ta">இரண்டு நண்பர்கள் வார இறுதியில் வெவ்வேறு செயல்பாடுகளை செய்ய விரும்புகிறார்கள். ஒரே தேர்வில் பிடிவாதமாக இருப்பதற்குப் பதிலாக, மாணவர் சில சாத்தியமான சமரசங்களை பட்டியலிட்டு, நட்பை வலுவாக வைத்திருக்கும் ஒன்றை தேர்ந்தெடுக்கிறார்.</div>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">✅ Practical Tips</span><span lang-block="ta">✅ நடைமுறை குறிப்புகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">Before any tough decision, write down your options on paper — this alone often reveals a option you hadn't considered.</li><li lang-block="ta">எந்தவொரு கடினமான முடிவுக்கும் முன், உங்கள் தேர்வுகளை காகிதத்தில் எழுதுங்கள் — இது நீங்கள் கருதாத ஒரு தேர்வை வெளிப்படுத்தும்.</li><li lang-block="en">Ask yourself 'What would I advise a friend to do in this situation?' — it creates helpful distance from the emotion.</li><li lang-block="ta">'இந்த சூழ்நிலையில் நான் ஒரு நண்பருக்கு என்ன அறிவுரை சொல்வேன்?' என்று கேளுங்கள்.</li><li lang-block="en">Separate short-term consequences from long-term ones; many bad decisions look good only in the short term.</li><li lang-block="ta">குறுகிய கால விளைவுகளை நீண்ட கால விளைவுகளிலிருந்து பிரிக்கவும்; பல மோசமான முடிவுகள் குறுகிய காலத்தில் மட்டுமே நன்றாக தெரியும்.</li><li lang-block="en">Don't aim for a 'perfect' decision — aim for the best decision with the information you currently have.</li><li lang-block="ta">'சரியான' முடிவை நோக்கமாகக் கொள்ளாதீர்கள் — தற்போது உங்களிடம் உள்ள தகவலுடன் சிறந்த முடிவை நோக்கமாகக் கொள்ளுங்கள்.</li><li lang-block="en">If a decision affects others, consider asking for their input before finalizing it.</li><li lang-block="ta">ஒரு முடிவு மற்றவர்களை பாதித்தால், அதை இறுதி செய்வதற்கு முன் அவர்களின் கருத்தை கேட்க கருதுங்கள்.</li></ul>
+  </div>
+
+  <div class="card improve-card">
+    <div class="section-label"><span lang-block="en" class="lang-active">🌱 Suggestions for Improvement</span><span lang-block="ta">🌱 மேம்பாட்டிற்கான பரிந்துரைகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">If you tend to decide impulsively, build in a mandatory pause — even 60 seconds — before responding to any request or temptation.</li><li lang-block="ta">நீங்கள் தூண்டுதலின் பேரில் முடிவெடுக்கும் போக்கு இருந்தால், எந்த கோரிக்கை அல்லது தூண்டுதலுக்கும் பதிலளிப்பதற்கு முன் ஒரு கட்டாய இடைவெளியை (60 வினாடிகள் கூட) உருவாக்குங்கள்.</li><li lang-block="en">If you tend to overthink and freeze, set a decision deadline for yourself (e.g., 'I will decide by tonight') to avoid endless delay.</li><li lang-block="ta">நீங்கள் அதிகமாக யோசித்து முடக்கப்படும் போக்கு இருந்தால், உங்களுக்கென ஒரு முடிவு காலக்கெடுவை நிர்ணயியுங்கள்.</li><li lang-block="en">Practice the POCC framework on small, low-stakes decisions first so it becomes automatic for bigger ones.</li><li lang-block="ta">POCC கட்டமைப்பை முதலில் சிறிய, குறைந்த அபாயமான முடிவுகளில் பயிற்சி செய்யுங்கள்.</li><li lang-block="en">Keep a short journal of decisions you're proud of and what made them good — patterns will emerge you can repeat.</li><li lang-block="ta">நீங்கள் பெருமைப்படும் முடிவுகளின் ஒரு சிறு பதிவேட்டை வைத்திருங்கள்.</li></ul>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📝 Self-Assessment (rate yourself 1–5)</span><span lang-block="ta">📝 சுய மதிப்பீடு (1–5 மதிப்பிடவும்)</span></div>
+    
+        <div class="assess-q">
+          <p lang-block="en">1. I pause and think before making an important decision instead of reacting immediately.</p>
+          <p lang-block="ta">1. முக்கியமான முடிவை எடுக்கும் முன் நான் நிறுத்தி யோசிக்கிறேன்.</p>
+          <div class="scale" data-q="0">
+            <button onclick="selectScale(0,1,this)">1</button><button onclick="selectScale(0,2,this)">2</button><button onclick="selectScale(0,3,this)">3</button><button onclick="selectScale(0,4,this)">4</button><button onclick="selectScale(0,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">2. I usually consider more than one option before choosing a course of action.</p>
+          <p lang-block="ta">2. ஒரு செயல் திட்டத்தை தேர்ந்தெடுப்பதற்கு முன் நான் பொதுவாக ஒன்றுக்கு மேற்பட்ட தேர்வுகளை கருதுகிறேன்.</p>
+          <div class="scale" data-q="1">
+            <button onclick="selectScale(1,1,this)">1</button><button onclick="selectScale(1,2,this)">2</button><button onclick="selectScale(1,3,this)">3</button><button onclick="selectScale(1,4,this)">4</button><button onclick="selectScale(1,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">3. I think about long-term consequences, not just how a choice feels right now.</p>
+          <p lang-block="ta">3. ஒரு தேர்வு இப்போது எப்படி உணரப்படுகிறது என்பதை மட்டும் அல்ல, நீண்ட கால விளைவுகளைப் பற்றியும் நான் சிந்திக்கிறேன்.</p>
+          <div class="scale" data-q="2">
+            <button onclick="selectScale(2,1,this)">1</button><button onclick="selectScale(2,2,this)">2</button><button onclick="selectScale(2,3,this)">3</button><button onclick="selectScale(2,4,this)">4</button><button onclick="selectScale(2,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">4. I can make a decision without getting stuck overthinking for too long.</p>
+          <p lang-block="ta">4. அதிக நேரம் யோசித்து சிக்காமல் ஒரு முடிவை எடுக்க முடியும்.</p>
+          <div class="scale" data-q="3">
+            <button onclick="selectScale(3,1,this)">1</button><button onclick="selectScale(3,2,this)">2</button><button onclick="selectScale(3,3,this)">3</button><button onclick="selectScale(3,4,this)">4</button><button onclick="selectScale(3,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">5. I feel confident in most of the decisions I make.</p>
+          <p lang-block="ta">5. நான் எடுக்கும் பெரும்பாலான முடிவுகளில் நான் நம்பிக்கையுடன் இருக்கிறேன்.</p>
+          <div class="scale" data-q="4">
+            <button onclick="selectScale(4,1,this)">1</button><button onclick="selectScale(4,2,this)">2</button><button onclick="selectScale(4,3,this)">3</button><button onclick="selectScale(4,4,this)">4</button><button onclick="selectScale(4,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+    <div class="assess-footer">
+      <button class="btn btn-primary" id="submitBtn" onclick="submitAssessment()">
+        <span lang-block="en" class="lang-active">Submit Self-Assessment</span><span lang-block="ta">சுய மதிப்பீட்டை சமர்ப்பிக்கவும்</span>
+      </button>
+    </div>
+    <div class="result-box" id="resultBox"></div>
+  </div>
+
+  <div class="footer-nav">
+    <a href="self-awareness-eq.html">&larr; 1. Self-Awareness & Emotional Intelligence</a>
+    <a href="time-management.html">3. Time Management & Productivity &rarr;</a>
+  </div>
+
+  <p class="footer-motto">"God is always with u" — NT Somasundaram Life Skills Program</p>
+  <p class="footer-contact">somasundaramnt.lifecoach@gmail.com &nbsp;|&nbsp; +91 98437 02244</p>
+</div>
+
+<script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzIS5xTAPUvpRL4yYh-NJ0aV1002sJUcSvFvGXaieZE4T4ZfvXJ8Xe5cWNLt5dXFKEn/exec";
+const MODULE_TITLE_EN = "Decision-Making & Problem-Solving";
+const MODULE_TITLE_TA = "முடிவெடுத்தல் & பிரச்சனை தீர்வு";
+let currentLang = 'en';
+let scaleAnswers = {};
+
+function setLang(lang){
+  currentLang = lang;
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  document.getElementById('btnTA').classList.toggle('active', lang==='ta');
+  document.querySelectorAll('[lang-block]').forEach(el=>{
+    el.classList.toggle('lang-active', el.getAttribute('lang-block')===lang);
+  });
+}
+
+function selectScale(qIdx, val, btnEl){
+  scaleAnswers[qIdx] = val;
+  const row = btnEl.parentElement;
+  row.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));
+  btnEl.classList.add('selected');
+}
+
+function submitAssessment(){
+  const totalQ = 5;
+  const answered = Object.keys(scaleAnswers).length;
+  if(answered < totalQ){
+    alert(currentLang==='en' ? 'Please rate every statement before submitting.' : 'சமர்ப்பிக்கும் முன் ஒவ்வொரு கூற்றையும் மதிப்பிடவும்.');
+    return;
+  }
+  const total = Object.values(scaleAnswers).reduce((a,b)=>a+b,0);
+  const maxScore = totalQ*5;
+  const pct = Math.round((total/maxScore)*100);
+
+  const student = JSON.parse(localStorage.getItem('lifeskills_student') || '{}');
+  const params = new URLSearchParams({
+    name: student.name || '',
+    grade: student.grade || '',
+    school: student.school || '',
+    phone: student.phone || '',
+    module: "2. " + MODULE_TITLE_EN,
+    reflection: 'Self-assessment score: ' + total + '/' + maxScore,
+    score: pct + '%',
+    lang: currentLang.toUpperCase()
+  });
+  const img = new Image();
+  img.src = GAS_URL + '?' + params.toString();
+
+  const box = document.getElementById('resultBox');
+  box.classList.add('show');
+  let msg;
+  const tipsEN = ["Before any tough decision, write down your options on paper — this alone often reveals a option you hadn't considered.", "Ask yourself 'What would I advise a friend to do in this situation?' — it creates helpful distance from the emotion.", "Separate short-term consequences from long-term ones; many bad decisions look good only in the short term.", "Don't aim for a 'perfect' decision — aim for the best decision with the information you currently have.", "If a decision affects others, consider asking for their input before finalizing it."];
+  const tipsTA = ["எந்தவொரு கடினமான முடிவுக்கும் முன், உங்கள் தேர்வுகளை காகிதத்தில் எழுதுங்கள் — இது நீங்கள் கருதாத ஒரு தேர்வை வெளிப்படுத்தும்.", "'இந்த சூழ்நிலையில் நான் ஒரு நண்பருக்கு என்ன அறிவுரை சொல்வேன்?' என்று கேளுங்கள்.", "குறுகிய கால விளைவுகளை நீண்ட கால விளைவுகளிலிருந்து பிரிக்கவும்; பல மோசமான முடிவுகள் குறுகிய காலத்தில் மட்டுமே நன்றாக தெரியும்.", "'சரியான' முடிவை நோக்கமாகக் கொள்ளாதீர்கள் — தற்போது உங்களிடம் உள்ள தகவலுடன் சிறந்த முடிவை நோக்கமாகக் கொள்ளுங்கள்.", "ஒரு முடிவு மற்றவர்களை பாதித்தால், அதை இறுதி செய்வதற்கு முன் அவர்களின் கருத்தை கேட்க கருதுங்கள்."];
+  const improveEN = ["If you tend to decide impulsively, build in a mandatory pause — even 60 seconds — before responding to any request or temptation.", "If you tend to overthink and freeze, set a decision deadline for yourself (e.g., 'I will decide by tonight') to avoid endless delay.", "Practice the POCC framework on small, low-stakes decisions first so it becomes automatic for bigger ones.", "Keep a short journal of decisions you're proud of and what made them good — patterns will emerge you can repeat."];
+  const improveTA = ["நீங்கள் தூண்டுதலின் பேரில் முடிவெடுக்கும் போக்கு இருந்தால், எந்த கோரிக்கை அல்லது தூண்டுதலுக்கும் பதிலளிப்பதற்கு முன் ஒரு கட்டாய இடைவெளியை (60 வினாடிகள் கூட) உருவாக்குங்கள்.", "நீங்கள் அதிகமாக யோசித்து முடக்கப்படும் போக்கு இருந்தால், உங்களுக்கென ஒரு முடிவு காலக்கெடுவை நிர்ணயியுங்கள்.", "POCC கட்டமைப்பை முதலில் சிறிய, குறைந்த அபாயமான முடிவுகளில் பயிற்சி செய்யுங்கள்.", "நீங்கள் பெருமைப்படும் முடிவுகளின் ஒரு சிறு பதிவேட்டை வைத்திருங்கள்."];
+
+  if(currentLang==='en'){
+    msg = 'Your score: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'Great — this is clearly a strength for you.' : (pct>=50 ? 'Good foundation — here is guidance to strengthen it further:' : 'This is a great area to focus on — here is guidance to help:');
+  } else {
+    msg = 'உங்கள் மதிப்பெண்: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'சிறப்பு — இது உங்களுக்கு தெளிவான வலிமை.' : (pct>=50 ? 'நல்ல அடித்தளம் — இதை மேலும் வலுப்படுத்த வழிகாட்டுதல் இங்கே:' : 'இது கவனம் செலுத்த வேண்டிய ஒரு நல்ல பகுதி — உதவ வழிகாட்டுதல் இங்கே:');
+  }
+
+  let guidanceHtml = '<p style="margin:0 0 8px;font-weight:600;">' + msg + '</p>';
+  if(pct < 80){
+    const tips = currentLang==='en' ? tipsEN : tipsTA;
+    const improve = currentLang==='en' ? improveEN : improveTA;
+    const tipsLabel = currentLang==='en' ? '💡 Key Tips' : '💡 முக்கிய குறிப்புகள்';
+    const improveLabel = currentLang==='en' ? '🌱 Suggestions for Improvement' : '🌱 மேம்பாட்டிற்கான பரிந்துரைகள்';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--clay);">' + tipsLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 12px;padding-left:18px;">' + tips.slice(0,3).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--sage);">' + improveLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 0;padding-left:18px;">' + improve.slice(0,2).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+  }
+  box.innerHTML = guidanceHtml;
+
+  let done = JSON.parse(localStorage.getItem('lifeskills_completed') || '{}');
+  done[1] = true;
+  localStorage.setItem('lifeskills_completed', JSON.stringify(done));
+
+  let scores = JSON.parse(localStorage.getItem('lifeskills_scores') || '{}');
+  scores[1] = {
+    titleEN: MODULE_TITLE_EN,
+    titleTA: MODULE_TITLE_TA,
+    score: total,
+    max: maxScore,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  localStorage.setItem('lifeskills_scores', JSON.stringify(scores));
+
+  document.getElementById('submitBtn').disabled = true;
+}
+
+setLang('en');
+</script>
+</body>
+</html>

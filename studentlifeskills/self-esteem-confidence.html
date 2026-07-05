@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10. Building Self-Esteem & Confidence | Life Skills Mastery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF8F0; --panel:#FFFFFF; --ink:#2B2118; --sub:#6B5D4F;
+  --clay:#C1602A; --clay-dark:#9C4A1E; --gold:#D9A441; --sage:#6B8F71;
+  --border:#EADFD0; --shadow:0 4px 20px rgba(43,33,24,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;}
+.tamil,[lang="ta"]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.topbar{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--border);
+  padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--clay),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;}
+.brand-text b{display:block;font-size:14px;}
+.brand-text span{font-size:11.5px;color:var(--sub);}
+.controls{display:flex;gap:8px;align-items:center;}
+.lang-toggle{display:flex;background:var(--cream);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.lang-toggle button{border:none;background:transparent;padding:8px 16px;font-family:inherit;font-weight:600;
+  font-size:13px;color:var(--sub);cursor:pointer;}
+.lang-toggle button.active{background:var(--clay);color:#fff;}
+.back-link{font-size:12.5px;color:var(--sub);text-decoration:none;font-weight:600;}
+.wrap{max-width:760px;margin:0 auto;padding:36px 20px 60px;}
+.eyebrow{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:10px;}
+h1{font-size:clamp(24px,4.5vw,34px);font-weight:800;margin:0 0 6px;line-height:1.2;}
+.sub-tagline{color:var(--sub);font-size:15px;margin-bottom:28px;}
+.nav-pill-row{display:flex;justify-content:space-between;margin-bottom:24px;gap:10px;flex-wrap:wrap;}
+.nav-pill{font-size:12.5px;font-weight:600;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);border-radius:20px;padding:8px 16px;}
+.nav-pill:hover{border-color:var(--clay);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin-bottom:22px;box-shadow:var(--shadow);}
+.section-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--clay);margin:0 0 12px;
+  display:flex;align-items:center;gap:8px;}
+p.body-text{font-size:15px;margin:0 0 12px;}
+p.body-text:last-child{margin-bottom:0;}
+.example-box{background:#FBF3E8;border-left:4px solid var(--gold);border-radius:8px;padding:14px 16px;font-size:14.5px;margin-bottom:10px;}
+.example-box:last-child{margin-bottom:0;}
+ul.tip-list{margin:0;padding-left:20px;}
+ul.tip-list li{font-size:14.5px;margin-bottom:9px;}
+ul.tip-list li:last-child{margin-bottom:0;}
+.improve-card{background:#EEF4EE;border:1px solid #D6E5D8;}
+.improve-card .section-label{color:var(--sage);}
+.assess-q{margin-bottom:16px;}
+.assess-q:last-child{margin-bottom:8px;}
+.assess-q p{font-size:14.5px;font-weight:600;margin:0 0 8px;}
+.scale{display:flex;gap:6px;flex-wrap:wrap;}
+.scale button{flex:1;min-width:56px;border:1px solid var(--border);background:var(--cream);border-radius:8px;
+  padding:9px 4px;font-family:inherit;font-size:12px;font-weight:600;color:var(--sub);cursor:pointer;}
+.scale button.selected{background:var(--sage);color:#fff;border-color:var(--sage);}
+.scale-labels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--sub);margin-top:4px;}
+.assess-footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap;gap:10px;}
+.btn{border:none;border-radius:10px;padding:12px 22px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;}
+.btn-primary{background:var(--clay);color:#fff;}
+.btn-primary:hover{background:var(--clay-dark);}
+.btn-primary[disabled]{background:#D9C3B3;cursor:not-allowed;}
+.result-box{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;background:#EEF4EE;border:1px solid #D6E5D8;font-size:13.5px;}
+.result-box.show{display:block;}
+.footer-nav{display:flex;justify-content:space-between;margin-top:30px;gap:10px;flex-wrap:wrap;}
+.footer-nav a{font-size:13px;font-weight:700;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);padding:10px 18px;border-radius:10px;}
+.footer-nav a:hover{border-color:var(--clay);}
+.footer-motto{text-align:center;font-style:italic;color:var(--sub);font-size:12.5px;margin-top:34px;}
+.footer-contact{text-align:center;font-size:11.5px;color:var(--sub);margin-top:6px;}
+[lang-block]{display:none;}
+[lang-block].lang-active{display:block;}
+span[lang-block].lang-active{display:inline;}
+li[lang-block].lang-active{display:list-item;}
+@media(max-width:600px){.nav-pill-row{flex-direction:column;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-mark">10</div>
+    <div class="brand-text">
+      <b lang-block="en" class="lang-active">Building Self-Esteem & Confidence</b>
+      <b lang-block="ta">சுயமரியாதை & நம்பிக்கையை வளர்த்தல்</b>
+      <span lang-block="en" class="lang-active">Life Skills Mastery Course</span>
+      <span lang-block="ta">வாழ்க்கை திறன் தேர்ச்சி பாடநெறி</span>
+    </div>
+  </a>
+  <div class="controls">
+    <a class="back-link" href="index.html">&larr; <span lang-block="en" class="lang-active">All Modules</span><span lang-block="ta">அனைத்து பாடங்கள்</span></a>
+    <a class="back-link" href="dashboard.html"><span lang-block="en" class="lang-active">My Progress</span><span lang-block="ta">என் முன்னேற்றம்</span></a>
+    <div class="lang-toggle">
+      <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+      <button id="btnTA" onclick="setLang('ta')">தமிழ்</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="eyebrow" lang-block="en" class="lang-active">Module 10 of 10</div>
+  <div class="eyebrow" lang-block="ta">பாடம் 10 / 10</div>
+  <h1 lang-block="en" class="lang-active">Building Self-Esteem & Confidence</h1>
+  <h1 lang-block="ta">சுயமரியாதை & நம்பிக்கையை வளர்த்தல்</h1>
+  <p class="sub-tagline" lang-block="en" class="lang-active">Separating self-worth from achievement</p>
+  <p class="sub-tagline" lang-block="ta">சுய மதிப்பை சாதனையிலிருந்து பிரித்தல்</p>
+
+  <div class="nav-pill-row">
+    <a class="nav-pill" href="digital-literacy.html">&larr; 9. Digital Literacy & Responsible Online Behavior</a>
+    <a class="nav-pill" href="index.html">Course Home &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📖 Detailed Explanation</span><span lang-block="ta">📖 விரிவான விளக்கம்</span></div>
+    <p class="body-text" lang-block="en">Self-esteem built entirely on grades, appearance, popularity, or others' approval is fragile — it collapses the moment one of those falters, since none of those things are fully within your control. Real, stable confidence comes from separating your self-worth from any single outcome, and instead grounding it in your effort, values, and character — things you actually control.</p><p class="body-text" lang-block="ta">முழுவதுமாக மதிப்பெண்கள், தோற்றம், பிரபலம் அல்லது மற்றவர்களின் ஒப்புதலின் அடிப்படையில் கட்டப்பட்ட சுயமரியாதை உடையக்கூடியது — அவற்றில் ஒன்று தடுமாறும் தருணத்தில் அது சரிந்துவிடும். உண்மையான, நிலையான நம்பிக்கை உங்கள் சுய மதிப்பை எந்த ஒரு முடிவிலிருந்தும் பிரிப்பதிலிருந்து வருகிறது.</p><p class="body-text" lang-block="en">Self-talk matters enormously. The internal voice most students use with themselves after a mistake ('I'm so stupid,' 'I always mess up') is often far harsher than they would ever use with a friend. Practicing the same compassion toward yourself that you'd offer a friend is a learnable skill, not a fixed trait.</p><p class="body-text" lang-block="ta">சுய-பேச்சு மிகவும் முக்கியம். ஒரு தவறுக்குப் பிறகு பெரும்பாலான மாணவர்கள் தங்களிடம் பயன்படுத்தும் உள் குரல் ('நான் மிகவும் முட்டாள்') அவர்கள் ஒரு நண்பரிடம் பயன்படுத்துவதை விட மிகவும் கடுமையானது. உங்களை நோக்கி அதே கருணையை பயிற்சி செய்வது கற்றுக்கொள்ளக்கூடிய திறன்.</p><p class="body-text" lang-block="en">Confidence grows through action, not just positive thinking — trying things, sometimes failing, and trying again builds real evidence of your capability over time, which is far more durable than simply telling yourself 'I am confident.'</p><p class="body-text" lang-block="ta">நம்பிக்கை நேர்மறை சிந்தனை மூலம் மட்டும் அல்ல, செயல் மூலம் வளர்கிறது — முயற்சி செய்வது, சில நேரங்களில் தோல்வியடைவது, மீண்டும் முயற்சிப்பது காலப்போக்கில் உங்கள் திறனுக்கான உண்மையான ஆதாரத்தை உருவாக்குகிறது.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">💡 Examples</span><span lang-block="ta">💡 உதாரணங்கள்</span></div>
+    <div class="example-box" lang-block="en">A student who didn't make the school sports team practices reframing: 'This result doesn't define my worth — it tells me where to improve, not who I am.' This keeps their confidence steady despite the setback.</div><div class="example-box" lang-block="ta">பள்ளி விளையாட்டு அணியில் இடம் பெறாத ஒரு மாணவர் மறுவடிவமைக்கிறார்: 'இந்த முடிவு என் மதிப்பை வரையறுக்கவில்லை — இது நான் யார் என்பதை அல்ல, எங்கு முன்னேற வேண்டும் என்பதை சொல்கிறது.'</div><div class="example-box" lang-block="en">After making a mistake in front of the class, a student notices their internal voice saying 'everyone thinks I'm an idiot now.' They pause and ask, 'Would I say this to my best friend if they made this mistake?' — then offer themselves the same kindness.</div><div class="example-box" lang-block="ta">வகுப்பு முன் தவறு செய்த பிறகு, ஒரு மாணவர் தங்கள் உள் குரல் 'எல்லோரும் இப்போது என்னை முட்டாள் என்று நினைக்கிறார்கள்' என்று சொல்வதை கவனிக்கிறார். அவர்கள் நிறுத்தி கேட்கிறார்கள், 'என் சிறந்த நண்பர் இந்த தவறை செய்திருந்தால் நான் இதை சொல்வேனா?'</div><div class="example-box" lang-block="en">A shy student wanting more confidence in public speaking doesn't wait to 'feel confident' first — they volunteer for a small, low-stakes speaking opportunity, and their confidence grows from the evidence that they survived and improved.</div><div class="example-box" lang-block="ta">பொது பேச்சில் அதிக நம்பிக்கை வேண்டும் என்று விரும்பும் ஒரு வெட்கப்படும் மாணவர் முதலில் 'நம்பிக்கையாக உணர' காத்திருக்கவில்லை — அவர்கள் ஒரு சிறிய, குறைந்த அபாயமான பேச்சு வாய்ப்பிற்கு தன்னார்வத் தொண்டு செய்கிறார்கள்.</div>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">✅ Practical Tips</span><span lang-block="ta">✅ நடைமுறை குறிப்புகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">Notice your self-talk after a mistake — if it's harsher than what you'd tell a friend, consciously rephrase it.</li><li lang-block="ta">ஒரு தவறுக்குப் பிறகு உங்கள் சுய-பேச்சை கவனியுங்கள் — அது நீங்கள் ஒரு நண்பரிடம் சொல்வதை விட கடுமையானதாக இருந்தால், அதை உணர்வுபூர்வமாக மறுசொல் செய்யுங்கள்.</li><li lang-block="en">Keep a small list of things you're proud of that are NOT related to grades or appearance — effort, kindness, persistence.</li><li lang-block="ta">மதிப்பெண்கள் அல்லது தோற்றத்துடன் தொடர்பில்லாத நீங்கள் பெருமைப்படும் விஷயங்களின் சிறு பட்டியலை வைத்திருங்கள்.</li><li lang-block="en">Remember that everyone compares their behind-the-scenes struggles to others' curated, public highlight reel — it's an unfair comparison.</li><li lang-block="ta">எல்லோரும் தங்கள் திரைக்குப் பின்னால் உள்ள போராட்டங்களை மற்றவர்களின் தேர்ந்தெடுக்கப்பட்ட பொது சிறப்பம்சங்களுடன் ஒப்பிடுகிறார்கள் என்பதை நினைவில் கொள்ளுங்கள் — இது நியாயமற்ற ஒப்பீடு.</li><li lang-block="en">Build confidence through small, repeated actions (trying, sometimes failing, trying again) rather than waiting to feel ready.</li><li lang-block="ta">தயாராக உணரும் வரை காத்திருப்பதற்குப் பதிலாக சிறிய, மீண்டும் மீண்டும் செயல்களின் மூலம் நம்பிக்கையை உருவாக்குங்கள்.</li><li lang-block="en">Surround yourself with people who value you for who you are, not just for your achievements.</li><li lang-block="ta">உங்கள் சாதனைகளுக்காக மட்டும் அல்லாமல் நீங்கள் யார் என்பதற்காக உங்களை மதிக்கும் மக்களுடன் இருங்கள்.</li></ul>
+  </div>
+
+  <div class="card improve-card">
+    <div class="section-label"><span lang-block="en" class="lang-active">🌱 Suggestions for Improvement</span><span lang-block="ta">🌱 மேம்பாட்டிற்கான பரிந்துரைகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">If your self-talk is often harsh, write down exactly what you say to yourself after a mistake for one week, then rewrite each one as you'd say it to a friend.</li><li lang-block="ta">உங்கள் சுய-பேச்சு அடிக்கடி கடுமையானதாக இருந்தால், ஒரு வாரத்திற்கு ஒரு தவறுக்குப் பிறகு நீங்கள் உங்களிடம் என்ன சொல்கிறீர்கள் என்பதை எழுதி, ஒவ்வொன்றையும் ஒரு நண்பரிடம் சொல்வது போல மறுஎழுதுங்கள்.</li><li lang-block="en">If your confidence depends heavily on grades or others' approval, list 3 personal qualities you value in yourself that have nothing to do with either.</li><li lang-block="ta">உங்கள் நம்பிக்கை மதிப்பெண்கள் அல்லது மற்றவர்களின் ஒப்புதலை பெரிதும் சார்ந்திருந்தால், இரண்டிற்கும் தொடர்பில்லாத நீங்கள் மதிக்கும் 3 தனிப்பட்ட குணங்களை பட்டியலிடுங்கள்.</li><li lang-block="en">If fear of failure stops you from trying new things, pick one small, low-stakes challenge this month specifically to build evidence of your capability.</li><li lang-block="ta">தோல்வி பயம் புதிய விஷயங்களை முயற்சிப்பதை தடுத்தால், உங்கள் திறனுக்கான ஆதாரத்தை உருவாக்க இந்த மாதம் ஒரு சிறிய, குறைந்த அபாயமான சவாலை தேர்ந்தெடுங்கள்.</li><li lang-block="en">If you compare yourself constantly to others online, consider reducing time spent on platforms that intensify this pattern.</li><li lang-block="ta">நீங்கள் தொடர்ந்து ஆன்லைனில் மற்றவர்களுடன் உங்களை ஒப்பிட்டால், இந்த வடிவத்தை தீவிரப்படுத்தும் தளங்களில் செலவிடும் நேரத்தை குறைப்பதை கருதுங்கள்.</li></ul>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📝 Self-Assessment (rate yourself 1–5)</span><span lang-block="ta">📝 சுய மதிப்பீடு (1–5 மதிப்பிடவும்)</span></div>
+    
+        <div class="assess-q">
+          <p lang-block="en">1. I don't let one bad grade or result define my overall sense of self-worth.</p>
+          <p lang-block="ta">1. ஒரு மோசமான மதிப்பெண் அல்லது முடிவு என் ஒட்டுமொத்த சுய மதிப்பு உணர்வை வரையறுக்க அனுமதிக்க மாட்டேன்.</p>
+          <div class="scale" data-q="0">
+            <button onclick="selectScale(0,1,this)">1</button><button onclick="selectScale(0,2,this)">2</button><button onclick="selectScale(0,3,this)">3</button><button onclick="selectScale(0,4,this)">4</button><button onclick="selectScale(0,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">2. I would speak to myself with the same kindness I'd offer a friend who made a mistake.</p>
+          <p lang-block="ta">2. தவறு செய்த நண்பரிடம் நான் காட்டும் அதே கருணையுடன் என்னிடமும் பேசுவேன்.</p>
+          <div class="scale" data-q="1">
+            <button onclick="selectScale(1,1,this)">1</button><button onclick="selectScale(1,2,this)">2</button><button onclick="selectScale(1,3,this)">3</button><button onclick="selectScale(1,4,this)">4</button><button onclick="selectScale(1,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">3. My confidence isn't solely dependent on others' approval or opinions of me.</p>
+          <p lang-block="ta">3. என் நம்பிக்கை மற்றவர்களின் ஒப்புதல் அல்லது கருத்துகளை மட்டும் சார்ந்து இல்லை.</p>
+          <div class="scale" data-q="2">
+            <button onclick="selectScale(2,1,this)">1</button><button onclick="selectScale(2,2,this)">2</button><button onclick="selectScale(2,3,this)">3</button><button onclick="selectScale(2,4,this)">4</button><button onclick="selectScale(2,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">4. I keep trying new things even when I might fail or feel awkward at first.</p>
+          <p lang-block="ta">4. நான் தோற்கக்கூடும் அல்லது முதலில் விசித்திரமாக உணரக்கூடும் போதும் புதிய விஷயங்களை முயற்சிப்பதைத் தொடர்கிறேன்.</p>
+          <div class="scale" data-q="3">
+            <button onclick="selectScale(3,1,this)">1</button><button onclick="selectScale(3,2,this)">2</button><button onclick="selectScale(3,3,this)">3</button><button onclick="selectScale(3,4,this)">4</button><button onclick="selectScale(3,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">5. I generally feel comfortable with who I am, flaws included.</p>
+          <p lang-block="ta">5. குறைபாடுகள் உட்பட நான் யார் என்பதைப் பற்றி பொதுவாக எனக்கு வசதியாக உணர்கிறேன்.</p>
+          <div class="scale" data-q="4">
+            <button onclick="selectScale(4,1,this)">1</button><button onclick="selectScale(4,2,this)">2</button><button onclick="selectScale(4,3,this)">3</button><button onclick="selectScale(4,4,this)">4</button><button onclick="selectScale(4,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+    <div class="assess-footer">
+      <button class="btn btn-primary" id="submitBtn" onclick="submitAssessment()">
+        <span lang-block="en" class="lang-active">Submit Self-Assessment</span><span lang-block="ta">சுய மதிப்பீட்டை சமர்ப்பிக்கவும்</span>
+      </button>
+    </div>
+    <div class="result-box" id="resultBox"></div>
+  </div>
+
+  <div class="footer-nav">
+    <a href="digital-literacy.html">&larr; 9. Digital Literacy & Responsible Online Behavior</a>
+    <a href="index.html">Course Home &rarr;</a>
+  </div>
+
+  <p class="footer-motto">"God is always with u" — NT Somasundaram Life Skills Program</p>
+  <p class="footer-contact">somasundaramnt.lifecoach@gmail.com &nbsp;|&nbsp; +91 98437 02244</p>
+</div>
+
+<script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzIS5xTAPUvpRL4yYh-NJ0aV1002sJUcSvFvGXaieZE4T4ZfvXJ8Xe5cWNLt5dXFKEn/exec";
+const MODULE_TITLE_EN = "Building Self-Esteem & Confidence";
+const MODULE_TITLE_TA = "சுயமரியாதை & நம்பிக்கையை வளர்த்தல்";
+let currentLang = 'en';
+let scaleAnswers = {};
+
+function setLang(lang){
+  currentLang = lang;
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  document.getElementById('btnTA').classList.toggle('active', lang==='ta');
+  document.querySelectorAll('[lang-block]').forEach(el=>{
+    el.classList.toggle('lang-active', el.getAttribute('lang-block')===lang);
+  });
+}
+
+function selectScale(qIdx, val, btnEl){
+  scaleAnswers[qIdx] = val;
+  const row = btnEl.parentElement;
+  row.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));
+  btnEl.classList.add('selected');
+}
+
+function submitAssessment(){
+  const totalQ = 5;
+  const answered = Object.keys(scaleAnswers).length;
+  if(answered < totalQ){
+    alert(currentLang==='en' ? 'Please rate every statement before submitting.' : 'சமர்ப்பிக்கும் முன் ஒவ்வொரு கூற்றையும் மதிப்பிடவும்.');
+    return;
+  }
+  const total = Object.values(scaleAnswers).reduce((a,b)=>a+b,0);
+  const maxScore = totalQ*5;
+  const pct = Math.round((total/maxScore)*100);
+
+  const student = JSON.parse(localStorage.getItem('lifeskills_student') || '{}');
+  const params = new URLSearchParams({
+    name: student.name || '',
+    grade: student.grade || '',
+    school: student.school || '',
+    phone: student.phone || '',
+    module: "10. " + MODULE_TITLE_EN,
+    reflection: 'Self-assessment score: ' + total + '/' + maxScore,
+    score: pct + '%',
+    lang: currentLang.toUpperCase()
+  });
+  const img = new Image();
+  img.src = GAS_URL + '?' + params.toString();
+
+  const box = document.getElementById('resultBox');
+  box.classList.add('show');
+  let msg;
+  const tipsEN = ["Notice your self-talk after a mistake — if it's harsher than what you'd tell a friend, consciously rephrase it.", "Keep a small list of things you're proud of that are NOT related to grades or appearance — effort, kindness, persistence.", "Remember that everyone compares their behind-the-scenes struggles to others' curated, public highlight reel — it's an unfair comparison.", "Build confidence through small, repeated actions (trying, sometimes failing, trying again) rather than waiting to feel ready.", "Surround yourself with people who value you for who you are, not just for your achievements."];
+  const tipsTA = ["ஒரு தவறுக்குப் பிறகு உங்கள் சுய-பேச்சை கவனியுங்கள் — அது நீங்கள் ஒரு நண்பரிடம் சொல்வதை விட கடுமையானதாக இருந்தால், அதை உணர்வுபூர்வமாக மறுசொல் செய்யுங்கள்.", "மதிப்பெண்கள் அல்லது தோற்றத்துடன் தொடர்பில்லாத நீங்கள் பெருமைப்படும் விஷயங்களின் சிறு பட்டியலை வைத்திருங்கள்.", "எல்லோரும் தங்கள் திரைக்குப் பின்னால் உள்ள போராட்டங்களை மற்றவர்களின் தேர்ந்தெடுக்கப்பட்ட பொது சிறப்பம்சங்களுடன் ஒப்பிடுகிறார்கள் என்பதை நினைவில் கொள்ளுங்கள் — இது நியாயமற்ற ஒப்பீடு.", "தயாராக உணரும் வரை காத்திருப்பதற்குப் பதிலாக சிறிய, மீண்டும் மீண்டும் செயல்களின் மூலம் நம்பிக்கையை உருவாக்குங்கள்.", "உங்கள் சாதனைகளுக்காக மட்டும் அல்லாமல் நீங்கள் யார் என்பதற்காக உங்களை மதிக்கும் மக்களுடன் இருங்கள்."];
+  const improveEN = ["If your self-talk is often harsh, write down exactly what you say to yourself after a mistake for one week, then rewrite each one as you'd say it to a friend.", "If your confidence depends heavily on grades or others' approval, list 3 personal qualities you value in yourself that have nothing to do with either.", "If fear of failure stops you from trying new things, pick one small, low-stakes challenge this month specifically to build evidence of your capability.", "If you compare yourself constantly to others online, consider reducing time spent on platforms that intensify this pattern."];
+  const improveTA = ["உங்கள் சுய-பேச்சு அடிக்கடி கடுமையானதாக இருந்தால், ஒரு வாரத்திற்கு ஒரு தவறுக்குப் பிறகு நீங்கள் உங்களிடம் என்ன சொல்கிறீர்கள் என்பதை எழுதி, ஒவ்வொன்றையும் ஒரு நண்பரிடம் சொல்வது போல மறுஎழுதுங்கள்.", "உங்கள் நம்பிக்கை மதிப்பெண்கள் அல்லது மற்றவர்களின் ஒப்புதலை பெரிதும் சார்ந்திருந்தால், இரண்டிற்கும் தொடர்பில்லாத நீங்கள் மதிக்கும் 3 தனிப்பட்ட குணங்களை பட்டியலிடுங்கள்.", "தோல்வி பயம் புதிய விஷயங்களை முயற்சிப்பதை தடுத்தால், உங்கள் திறனுக்கான ஆதாரத்தை உருவாக்க இந்த மாதம் ஒரு சிறிய, குறைந்த அபாயமான சவாலை தேர்ந்தெடுங்கள்.", "நீங்கள் தொடர்ந்து ஆன்லைனில் மற்றவர்களுடன் உங்களை ஒப்பிட்டால், இந்த வடிவத்தை தீவிரப்படுத்தும் தளங்களில் செலவிடும் நேரத்தை குறைப்பதை கருதுங்கள்."];
+
+  if(currentLang==='en'){
+    msg = 'Your score: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'Great — this is clearly a strength for you.' : (pct>=50 ? 'Good foundation — here is guidance to strengthen it further:' : 'This is a great area to focus on — here is guidance to help:');
+  } else {
+    msg = 'உங்கள் மதிப்பெண்: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'சிறப்பு — இது உங்களுக்கு தெளிவான வலிமை.' : (pct>=50 ? 'நல்ல அடித்தளம் — இதை மேலும் வலுப்படுத்த வழிகாட்டுதல் இங்கே:' : 'இது கவனம் செலுத்த வேண்டிய ஒரு நல்ல பகுதி — உதவ வழிகாட்டுதல் இங்கே:');
+  }
+
+  let guidanceHtml = '<p style="margin:0 0 8px;font-weight:600;">' + msg + '</p>';
+  if(pct < 80){
+    const tips = currentLang==='en' ? tipsEN : tipsTA;
+    const improve = currentLang==='en' ? improveEN : improveTA;
+    const tipsLabel = currentLang==='en' ? '💡 Key Tips' : '💡 முக்கிய குறிப்புகள்';
+    const improveLabel = currentLang==='en' ? '🌱 Suggestions for Improvement' : '🌱 மேம்பாட்டிற்கான பரிந்துரைகள்';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--clay);">' + tipsLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 12px;padding-left:18px;">' + tips.slice(0,3).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--sage);">' + improveLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 0;padding-left:18px;">' + improve.slice(0,2).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+  }
+  box.innerHTML = guidanceHtml;
+
+  let done = JSON.parse(localStorage.getItem('lifeskills_completed') || '{}');
+  done[9] = true;
+  localStorage.setItem('lifeskills_completed', JSON.stringify(done));
+
+  let scores = JSON.parse(localStorage.getItem('lifeskills_scores') || '{}');
+  scores[9] = {
+    titleEN: MODULE_TITLE_EN,
+    titleTA: MODULE_TITLE_TA,
+    score: total,
+    max: maxScore,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  localStorage.setItem('lifeskills_scores', JSON.stringify(scores));
+
+  document.getElementById('submitBtn').disabled = true;
+}
+
+setLang('en');
+</script>
+</body>
+</html>

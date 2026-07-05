@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4. Communication Skills | Life Skills Mastery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF8F0; --panel:#FFFFFF; --ink:#2B2118; --sub:#6B5D4F;
+  --clay:#C1602A; --clay-dark:#9C4A1E; --gold:#D9A441; --sage:#6B8F71;
+  --border:#EADFD0; --shadow:0 4px 20px rgba(43,33,24,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;}
+.tamil,[lang="ta"]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.topbar{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--border);
+  padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--clay),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;}
+.brand-text b{display:block;font-size:14px;}
+.brand-text span{font-size:11.5px;color:var(--sub);}
+.controls{display:flex;gap:8px;align-items:center;}
+.lang-toggle{display:flex;background:var(--cream);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.lang-toggle button{border:none;background:transparent;padding:8px 16px;font-family:inherit;font-weight:600;
+  font-size:13px;color:var(--sub);cursor:pointer;}
+.lang-toggle button.active{background:var(--clay);color:#fff;}
+.back-link{font-size:12.5px;color:var(--sub);text-decoration:none;font-weight:600;}
+.wrap{max-width:760px;margin:0 auto;padding:36px 20px 60px;}
+.eyebrow{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:10px;}
+h1{font-size:clamp(24px,4.5vw,34px);font-weight:800;margin:0 0 6px;line-height:1.2;}
+.sub-tagline{color:var(--sub);font-size:15px;margin-bottom:28px;}
+.nav-pill-row{display:flex;justify-content:space-between;margin-bottom:24px;gap:10px;flex-wrap:wrap;}
+.nav-pill{font-size:12.5px;font-weight:600;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);border-radius:20px;padding:8px 16px;}
+.nav-pill:hover{border-color:var(--clay);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin-bottom:22px;box-shadow:var(--shadow);}
+.section-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--clay);margin:0 0 12px;
+  display:flex;align-items:center;gap:8px;}
+p.body-text{font-size:15px;margin:0 0 12px;}
+p.body-text:last-child{margin-bottom:0;}
+.example-box{background:#FBF3E8;border-left:4px solid var(--gold);border-radius:8px;padding:14px 16px;font-size:14.5px;margin-bottom:10px;}
+.example-box:last-child{margin-bottom:0;}
+ul.tip-list{margin:0;padding-left:20px;}
+ul.tip-list li{font-size:14.5px;margin-bottom:9px;}
+ul.tip-list li:last-child{margin-bottom:0;}
+.improve-card{background:#EEF4EE;border:1px solid #D6E5D8;}
+.improve-card .section-label{color:var(--sage);}
+.assess-q{margin-bottom:16px;}
+.assess-q:last-child{margin-bottom:8px;}
+.assess-q p{font-size:14.5px;font-weight:600;margin:0 0 8px;}
+.scale{display:flex;gap:6px;flex-wrap:wrap;}
+.scale button{flex:1;min-width:56px;border:1px solid var(--border);background:var(--cream);border-radius:8px;
+  padding:9px 4px;font-family:inherit;font-size:12px;font-weight:600;color:var(--sub);cursor:pointer;}
+.scale button.selected{background:var(--sage);color:#fff;border-color:var(--sage);}
+.scale-labels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--sub);margin-top:4px;}
+.assess-footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap;gap:10px;}
+.btn{border:none;border-radius:10px;padding:12px 22px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;}
+.btn-primary{background:var(--clay);color:#fff;}
+.btn-primary:hover{background:var(--clay-dark);}
+.btn-primary[disabled]{background:#D9C3B3;cursor:not-allowed;}
+.result-box{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;background:#EEF4EE;border:1px solid #D6E5D8;font-size:13.5px;}
+.result-box.show{display:block;}
+.footer-nav{display:flex;justify-content:space-between;margin-top:30px;gap:10px;flex-wrap:wrap;}
+.footer-nav a{font-size:13px;font-weight:700;color:var(--clay);text-decoration:none;background:var(--panel);
+  border:1px solid var(--border);padding:10px 18px;border-radius:10px;}
+.footer-nav a:hover{border-color:var(--clay);}
+.footer-motto{text-align:center;font-style:italic;color:var(--sub);font-size:12.5px;margin-top:34px;}
+.footer-contact{text-align:center;font-size:11.5px;color:var(--sub);margin-top:6px;}
+[lang-block]{display:none;}
+[lang-block].lang-active{display:block;}
+span[lang-block].lang-active{display:inline;}
+li[lang-block].lang-active{display:list-item;}
+@media(max-width:600px){.nav-pill-row{flex-direction:column;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-mark">4</div>
+    <div class="brand-text">
+      <b lang-block="en" class="lang-active">Communication Skills</b>
+      <b lang-block="ta">தொடர்பாடல் திறன்கள்</b>
+      <span lang-block="en" class="lang-active">Life Skills Mastery Course</span>
+      <span lang-block="ta">வாழ்க்கை திறன் தேர்ச்சி பாடநெறி</span>
+    </div>
+  </a>
+  <div class="controls">
+    <a class="back-link" href="index.html">&larr; <span lang-block="en" class="lang-active">All Modules</span><span lang-block="ta">அனைத்து பாடங்கள்</span></a>
+    <a class="back-link" href="dashboard.html"><span lang-block="en" class="lang-active">My Progress</span><span lang-block="ta">என் முன்னேற்றம்</span></a>
+    <div class="lang-toggle">
+      <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+      <button id="btnTA" onclick="setLang('ta')">தமிழ்</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="eyebrow" lang-block="en" class="lang-active">Module 4 of 10</div>
+  <div class="eyebrow" lang-block="ta">பாடம் 4 / 10</div>
+  <h1 lang-block="en" class="lang-active">Communication Skills</h1>
+  <h1 lang-block="ta">தொடர்பாடல் திறன்கள்</h1>
+  <p class="sub-tagline" lang-block="en" class="lang-active">Assertive vs. passive vs. aggressive</p>
+  <p class="sub-tagline" lang-block="ta">உறுதியான vs செயலற்ற vs ஆக்ரோஷமான</p>
+
+  <div class="nav-pill-row">
+    <a class="nav-pill" href="time-management.html">&larr; 3. Time Management & Productivity</a>
+    <a class="nav-pill" href="goal-setting.html">5. Goal Setting & Self-Motivation &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📖 Detailed Explanation</span><span lang-block="ta">📖 விரிவான விளக்கம்</span></div>
+    <p class="body-text" lang-block="en">There are three common communication styles. Passive communication means staying silent to avoid conflict, which usually builds up quiet resentment. Aggressive communication means blaming, attacking, or raising your voice, which damages relationships and rarely gets your real need met. Assertive communication means clearly and calmly stating your need or boundary while still respecting the other person.</p><p class="body-text" lang-block="ta">மூன்று பொதுவான தொடர்பாடல் பாணிகள் உள்ளன. செயலற்ற தொடர்பாடல் என்பது மோதலைத் தவிர்க்க மௌனமாக இருப்பது, இது பொதுவாக அமைதியான வெறுப்பை உருவாக்குகிறது. ஆக்ரோஷமான தொடர்பாடல் என்பது குற்றம் சாட்டுவது, தாக்குவது அல்லது குரலை உயர்த்துவது, இது உறவுகளை சேதப்படுத்துகிறது. உறுதியான தொடர்பாடல் என்பது மற்றவரை மதித்தபடி உங்கள் தேவையை தெளிவாகவும் அமைதியாகவும் கூறுவது.</p><p class="body-text" lang-block="en">Assertive communication typically follows a simple structure: state the observation ('When this happens...'), state your feeling ('I feel...'), and state your need ('I need/would like...'). This keeps the conversation about the specific situation rather than attacking someone's character.</p><p class="body-text" lang-block="ta">உறுதியான தொடர்பாடல் பொதுவாக ஒரு எளிய கட்டமைப்பை பின்பற்றுகிறது: அவதானிப்பை கூறுங்கள் ('இது நடக்கும்போது...'), உங்கள் உணர்வை கூறுங்கள் ('நான் உணர்கிறேன்...'), உங்கள் தேவையை கூறுங்கள் ('எனக்கு தேவை...').</p><p class="body-text" lang-block="en">Listening is equally important as speaking. Active listening — giving full attention, not interrupting, and reflecting back what you heard — builds trust and often resolves half of a disagreement before you even respond.</p><p class="body-text" lang-block="ta">பேசுவது போலவே கேட்பதும் முக்கியம். செயலில் கேட்டல் — முழு கவனத்தை கொடுத்தல், குறுக்கிடாமல் இருத்தல் — நம்பிக்கையை உருவாக்கி பாதி கருத்து வேறுபாட்டை தீர்க்கிறது.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">💡 Examples</span><span lang-block="ta">💡 உதாரணங்கள்</span></div>
+    <div class="example-box" lang-block="en">A friend borrows notes and doesn't return them before an exam. Passive: say nothing and feel resentful. Aggressive: 'You always do this, you're so careless!' Assertive: 'I need my notes back today — I have an exam tomorrow.'</div><div class="example-box" lang-block="ta">ஒரு நண்பர் நோட்ஸ் வாங்கிக் கொண்டு தேர்வுக்கு முன் திருப்பித் தரவில்லை. செயலற்ற: எதுவும் சொல்லாமல் வெறுப்படைதல். ஆக்ரோஷமான: 'நீ எப்போதும் இப்படித்தான்!' உறுதியான: 'எனக்கு இன்று நோட்ஸ் திரும்ப வேண்டும் — நாளை தேர்வு.'</div><div class="example-box" lang-block="en">A student disagrees with a group project decision. Instead of going along silently (passive) or dismissing others' ideas (aggressive), they say: 'I see the point of that approach, but I'm worried it might take too long — can we try mine as well and compare?'</div><div class="example-box" lang-block="ta">ஒரு குழு திட்ட முடிவில் ஒரு மாணவர் உடன்படவில்லை. அமைதியாக ஒப்புக்கொள்வதற்குப் பதிலாக, அவர்கள் சொல்கிறார்கள்: 'அந்த அணுகுமுறையின் புள்ளியை நான் காண்கிறேன், ஆனால் அது அதிக நேரம் எடுக்கும் என்று கவலைப்படுகிறேன் — என்னுடையதையும் முயற்சிக்கலாமா?'</div><div class="example-box" lang-block="en">In a family disagreement, instead of shouting, a student uses: 'When I'm interrupted while explaining something, I feel unheard. Could I finish my point first?'</div><div class="example-box" lang-block="ta">ஒரு குடும்ப கருத்து வேறுபாட்டில், கத்துவதற்குப் பதிலாக, ஒரு மாணவர் பயன்படுத்துகிறார்: 'நான் ஏதாவது விளக்கும்போது குறுக்கிடப்பட்டால், கேட்கப்படாதது போல உணர்கிறேன்.'</div>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">✅ Practical Tips</span><span lang-block="ta">✅ நடைமுறை குறிப்புகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">Use 'I feel...' statements instead of 'You always...' statements, which tend to make people defensive.</li><li lang-block="ta">'நீ எப்போதும்...' கூற்றுகளுக்குப் பதிலாக 'நான் உணர்கிறேன்...' கூற்றுகளைப் பயன்படுத்துங்கள்.</li><li lang-block="en">Practice saying no politely but firmly: 'I can't do that right now, but thank you for asking.'</li><li lang-block="ta">பணிவாக ஆனால் உறுதியாக இல்லை என்று சொல்வதை பயிற்சி செய்யுங்கள்.</li><li lang-block="en">When listening, resist the urge to plan your response while the other person is still talking.</li><li lang-block="ta">கேட்கும்போது, மற்றவர் இன்னும் பேசிக்கொண்டிருக்கும்போது உங்கள் பதிலை திட்டமிடும் தூண்டுதலை எதிர்க்கவும்.</li><li lang-block="en">Match your tone and body language to your words — crossed arms and a raised voice undercut even a well-worded assertive statement.</li><li lang-block="ta">உங்கள் தொனியையும் உடல் மொழியையும் உங்கள் வார்த்தைகளுடன் பொருத்துங்கள்.</li><li lang-block="en">It's okay to ask for time: 'Let me think about that and get back to you' is a valid, assertive response.</li><li lang-block="ta">நேரம் கேட்பது சரியே: 'அதைப் பற்றி யோசித்து பதில் சொல்கிறேன்' என்பது ஒரு செல்லுபடியாகும் பதில்.</li></ul>
+  </div>
+
+  <div class="card improve-card">
+    <div class="section-label"><span lang-block="en" class="lang-active">🌱 Suggestions for Improvement</span><span lang-block="ta">🌱 மேம்பாட்டிற்கான பரிந்துரைகள்</span></div>
+    <ul class='tip-list'><li lang-block="en">If you tend to stay passive, practice a small assertive statement in a low-stakes situation this week (e.g., correcting a small mistake in an order).</li><li lang-block="ta">நீங்கள் செயலற்றவராக இருந்தால், இந்த வாரம் குறைந்த அபாயமான சூழ்நிலையில் ஒரு சிறு உறுதியான கூற்றை பயிற்சி செய்யுங்கள்.</li><li lang-block="en">If you tend toward aggressive communication, practice pausing and rephrasing your first reaction before saying it out loud.</li><li lang-block="ta">நீங்கள் ஆக்ரோஷமான தொடர்பாடலை நோக்கி சாய்ந்தால், சொல்வதற்கு முன் உங்கள் முதல் எதிர்வினையை நிறுத்தி மறுசொல் செய்யுங்கள்.</li><li lang-block="en">If you struggle to listen without interrupting, practice repeating back what someone said before responding.</li><li lang-block="ta">குறுக்கிடாமல் கேட்க சிரமப்பட்டால், பதிலளிப்பதற்கு முன் மற்றவர் சொன்னதை திரும்ப சொல்லுவதை பயிற்சி செய்யுங்கள்.</li><li lang-block="en">Role-play difficult conversations with a trusted friend or family member before having the real one.</li><li lang-block="ta">உண்மையான உரையாடலுக்கு முன் நம்பகமான நண்பர் அல்லது குடும்ப உறுப்பினருடன் கடினமான உரையாடல்களை பயிற்சி செய்யுங்கள்.</li></ul>
+  </div>
+
+  <div class="card">
+    <div class="section-label"><span lang-block="en" class="lang-active">📝 Self-Assessment (rate yourself 1–5)</span><span lang-block="ta">📝 சுய மதிப்பீடு (1–5 மதிப்பிடவும்)</span></div>
+    
+        <div class="assess-q">
+          <p lang-block="en">1. I can say no or disagree without feeling extremely guilty or anxious.</p>
+          <p lang-block="ta">1. மிகவும் குற்ற உணர்ச்சி அல்லது கவலையின்றி நான் இல்லை அல்லது உடன்படவில்லை என்று சொல்ல முடியும்.</p>
+          <div class="scale" data-q="0">
+            <button onclick="selectScale(0,1,this)">1</button><button onclick="selectScale(0,2,this)">2</button><button onclick="selectScale(0,3,this)">3</button><button onclick="selectScale(0,4,this)">4</button><button onclick="selectScale(0,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">2. I express my feelings using 'I feel...' rather than blaming others.</p>
+          <p lang-block="ta">2. மற்றவர்களை குறை சொல்வதற்குப் பதிலாக 'நான் உணர்கிறேன்...' என்று என் உணர்வுகளை வெளிப்படுத்துகிறேன்.</p>
+          <div class="scale" data-q="1">
+            <button onclick="selectScale(1,1,this)">1</button><button onclick="selectScale(1,2,this)">2</button><button onclick="selectScale(1,3,this)">3</button><button onclick="selectScale(1,4,this)">4</button><button onclick="selectScale(1,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">3. I listen fully to others without planning my response while they're talking.</p>
+          <p lang-block="ta">3. மற்றவர்கள் பேசும்போது என் பதிலை திட்டமிடாமல் முழுமையாக கேட்கிறேன்.</p>
+          <div class="scale" data-q="2">
+            <button onclick="selectScale(2,1,this)">1</button><button onclick="selectScale(2,2,this)">2</button><button onclick="selectScale(2,3,this)">3</button><button onclick="selectScale(2,4,this)">4</button><button onclick="selectScale(2,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">4. I stay calm and respectful even during disagreements.</p>
+          <p lang-block="ta">4. கருத்து வேறுபாடுகளின் போதும் நான் அமைதியாகவும் மரியாதையாகவும் இருக்கிறேன்.</p>
+          <div class="scale" data-q="3">
+            <button onclick="selectScale(3,1,this)">1</button><button onclick="selectScale(3,2,this)">2</button><button onclick="selectScale(3,3,this)">3</button><button onclick="selectScale(3,4,this)">4</button><button onclick="selectScale(3,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+        <div class="assess-q">
+          <p lang-block="en">5. People generally understand what I mean when I communicate with them.</p>
+          <p lang-block="ta">5. நான் தொடர்பு கொள்ளும்போது மக்கள் பொதுவாக நான் என்ன சொல்கிறேன் என்பதை புரிந்துகொள்கிறார்கள்.</p>
+          <div class="scale" data-q="4">
+            <button onclick="selectScale(4,1,this)">1</button><button onclick="selectScale(4,2,this)">2</button><button onclick="selectScale(4,3,this)">3</button><button onclick="selectScale(4,4,this)">4</button><button onclick="selectScale(4,5,this)">5</button>
+          </div>
+          <div class="scale-labels">
+            <span lang-block="en">Rarely true</span><span lang-block="ta">அரிதாக உண்மை</span>
+            <span lang-block="en">Always true</span><span lang-block="ta">எப்போதும் உண்மை</span>
+          </div>
+        </div>
+    <div class="assess-footer">
+      <button class="btn btn-primary" id="submitBtn" onclick="submitAssessment()">
+        <span lang-block="en" class="lang-active">Submit Self-Assessment</span><span lang-block="ta">சுய மதிப்பீட்டை சமர்ப்பிக்கவும்</span>
+      </button>
+    </div>
+    <div class="result-box" id="resultBox"></div>
+  </div>
+
+  <div class="footer-nav">
+    <a href="time-management.html">&larr; 3. Time Management & Productivity</a>
+    <a href="goal-setting.html">5. Goal Setting & Self-Motivation &rarr;</a>
+  </div>
+
+  <p class="footer-motto">"God is always with u" — NT Somasundaram Life Skills Program</p>
+  <p class="footer-contact">somasundaramnt.lifecoach@gmail.com &nbsp;|&nbsp; +91 98437 02244</p>
+</div>
+
+<script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzIS5xTAPUvpRL4yYh-NJ0aV1002sJUcSvFvGXaieZE4T4ZfvXJ8Xe5cWNLt5dXFKEn/exec";
+const MODULE_TITLE_EN = "Communication Skills";
+const MODULE_TITLE_TA = "தொடர்பாடல் திறன்கள்";
+let currentLang = 'en';
+let scaleAnswers = {};
+
+function setLang(lang){
+  currentLang = lang;
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  document.getElementById('btnTA').classList.toggle('active', lang==='ta');
+  document.querySelectorAll('[lang-block]').forEach(el=>{
+    el.classList.toggle('lang-active', el.getAttribute('lang-block')===lang);
+  });
+}
+
+function selectScale(qIdx, val, btnEl){
+  scaleAnswers[qIdx] = val;
+  const row = btnEl.parentElement;
+  row.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));
+  btnEl.classList.add('selected');
+}
+
+function submitAssessment(){
+  const totalQ = 5;
+  const answered = Object.keys(scaleAnswers).length;
+  if(answered < totalQ){
+    alert(currentLang==='en' ? 'Please rate every statement before submitting.' : 'சமர்ப்பிக்கும் முன் ஒவ்வொரு கூற்றையும் மதிப்பிடவும்.');
+    return;
+  }
+  const total = Object.values(scaleAnswers).reduce((a,b)=>a+b,0);
+  const maxScore = totalQ*5;
+  const pct = Math.round((total/maxScore)*100);
+
+  const student = JSON.parse(localStorage.getItem('lifeskills_student') || '{}');
+  const params = new URLSearchParams({
+    name: student.name || '',
+    grade: student.grade || '',
+    school: student.school || '',
+    phone: student.phone || '',
+    module: "4. " + MODULE_TITLE_EN,
+    reflection: 'Self-assessment score: ' + total + '/' + maxScore,
+    score: pct + '%',
+    lang: currentLang.toUpperCase()
+  });
+  const img = new Image();
+  img.src = GAS_URL + '?' + params.toString();
+
+  const box = document.getElementById('resultBox');
+  box.classList.add('show');
+  let msg;
+  const tipsEN = ["Use 'I feel...' statements instead of 'You always...' statements, which tend to make people defensive.", "Practice saying no politely but firmly: 'I can't do that right now, but thank you for asking.'", "When listening, resist the urge to plan your response while the other person is still talking.", "Match your tone and body language to your words — crossed arms and a raised voice undercut even a well-worded assertive statement.", "It's okay to ask for time: 'Let me think about that and get back to you' is a valid, assertive response."];
+  const tipsTA = ["'நீ எப்போதும்...' கூற்றுகளுக்குப் பதிலாக 'நான் உணர்கிறேன்...' கூற்றுகளைப் பயன்படுத்துங்கள்.", "பணிவாக ஆனால் உறுதியாக இல்லை என்று சொல்வதை பயிற்சி செய்யுங்கள்.", "கேட்கும்போது, மற்றவர் இன்னும் பேசிக்கொண்டிருக்கும்போது உங்கள் பதிலை திட்டமிடும் தூண்டுதலை எதிர்க்கவும்.", "உங்கள் தொனியையும் உடல் மொழியையும் உங்கள் வார்த்தைகளுடன் பொருத்துங்கள்.", "நேரம் கேட்பது சரியே: 'அதைப் பற்றி யோசித்து பதில் சொல்கிறேன்' என்பது ஒரு செல்லுபடியாகும் பதில்."];
+  const improveEN = ["If you tend to stay passive, practice a small assertive statement in a low-stakes situation this week (e.g., correcting a small mistake in an order).", "If you tend toward aggressive communication, practice pausing and rephrasing your first reaction before saying it out loud.", "If you struggle to listen without interrupting, practice repeating back what someone said before responding.", "Role-play difficult conversations with a trusted friend or family member before having the real one."];
+  const improveTA = ["நீங்கள் செயலற்றவராக இருந்தால், இந்த வாரம் குறைந்த அபாயமான சூழ்நிலையில் ஒரு சிறு உறுதியான கூற்றை பயிற்சி செய்யுங்கள்.", "நீங்கள் ஆக்ரோஷமான தொடர்பாடலை நோக்கி சாய்ந்தால், சொல்வதற்கு முன் உங்கள் முதல் எதிர்வினையை நிறுத்தி மறுசொல் செய்யுங்கள்.", "குறுக்கிடாமல் கேட்க சிரமப்பட்டால், பதிலளிப்பதற்கு முன் மற்றவர் சொன்னதை திரும்ப சொல்லுவதை பயிற்சி செய்யுங்கள்.", "உண்மையான உரையாடலுக்கு முன் நம்பகமான நண்பர் அல்லது குடும்ப உறுப்பினருடன் கடினமான உரையாடல்களை பயிற்சி செய்யுங்கள்."];
+
+  if(currentLang==='en'){
+    msg = 'Your score: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'Great — this is clearly a strength for you.' : (pct>=50 ? 'Good foundation — here is guidance to strengthen it further:' : 'This is a great area to focus on — here is guidance to help:');
+  } else {
+    msg = 'உங்கள் மதிப்பெண்: ' + total + '/' + maxScore + ' (' + pct + '%). ';
+    msg += pct>=80 ? 'சிறப்பு — இது உங்களுக்கு தெளிவான வலிமை.' : (pct>=50 ? 'நல்ல அடித்தளம் — இதை மேலும் வலுப்படுத்த வழிகாட்டுதல் இங்கே:' : 'இது கவனம் செலுத்த வேண்டிய ஒரு நல்ல பகுதி — உதவ வழிகாட்டுதல் இங்கே:');
+  }
+
+  let guidanceHtml = '<p style="margin:0 0 8px;font-weight:600;">' + msg + '</p>';
+  if(pct < 80){
+    const tips = currentLang==='en' ? tipsEN : tipsTA;
+    const improve = currentLang==='en' ? improveEN : improveTA;
+    const tipsLabel = currentLang==='en' ? '💡 Key Tips' : '💡 முக்கிய குறிப்புகள்';
+    const improveLabel = currentLang==='en' ? '🌱 Suggestions for Improvement' : '🌱 மேம்பாட்டிற்கான பரிந்துரைகள்';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--clay);">' + tipsLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 12px;padding-left:18px;">' + tips.slice(0,3).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+    guidanceHtml += '<b style="font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--sage);">' + improveLabel + '</b>';
+    guidanceHtml += '<ul style="margin:6px 0 0;padding-left:18px;">' + improve.slice(0,2).map(t=>'<li style="margin-bottom:5px;">'+t+'</li>').join('') + '</ul>';
+  }
+  box.innerHTML = guidanceHtml;
+
+  let done = JSON.parse(localStorage.getItem('lifeskills_completed') || '{}');
+  done[3] = true;
+  localStorage.setItem('lifeskills_completed', JSON.stringify(done));
+
+  let scores = JSON.parse(localStorage.getItem('lifeskills_scores') || '{}');
+  scores[3] = {
+    titleEN: MODULE_TITLE_EN,
+    titleTA: MODULE_TITLE_TA,
+    score: total,
+    max: maxScore,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  localStorage.setItem('lifeskills_scores', JSON.stringify(scores));
+
+  document.getElementById('submitBtn').disabled = true;
+}
+
+setLang('en');
+</script>
+</body>
+</html>
