@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Positive Discipline Parenting — A Course for Parents | N T Somasundaram</title>
+<meta name="description" content="A 10-module bilingual course for parents on Positive Discipline — raise capable, responsible children with kindness and firmness. By N T Somasundaram, Certified Master Trainer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2B2420;
+  --ink-soft:#6B5F52;
+  --paper:#FBF6EE;
+  --paper-alt:#F3ECDD;
+  --sage:#4C6444;
+  --sage-light:#DCE6D3;
+  --ochre:#C97D2E;
+  --ochre-light:#F3DCB8;
+  --line:#E3D9C4;
+  --white:#FFFFFF;
+  --radius:16px;
+  --shadow: 0 10px 30px rgba(43,36,32,0.10);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.6;}
+[lang-ta]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px;}
+a{color:inherit;}
+
+/* Header */
+.site-header{background:var(--ink);color:var(--paper);padding:14px 0;position:sticky;top:0;z-index:50;border-bottom:3px solid var(--ochre);}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--paper);}
+.brand-badge{width:36px;height:36px;border-radius:50%;background:var(--ochre);color:var(--ink);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;}
+.brand-text{font-weight:700;font-size:14.5px;line-height:1.2;}
+.brand-text small{display:block;font-weight:400;font-size:11px;color:#C9BFA9;}
+.lang-toggle{display:flex;background:rgba(255,255,255,0.1);border-radius:999px;padding:3px;gap:2px;}
+.lang-toggle button{border:none;background:transparent;color:var(--paper);padding:6px 14px;border-radius:999px;font-family:inherit;font-weight:600;font-size:13px;cursor:pointer;}
+.lang-toggle button.active{background:var(--ochre);color:var(--ink);}
+
+/* Hero */
+.hero{padding:56px 0 40px;text-align:center;}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);background:var(--sage-light);padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+h1{font-size:clamp(28px,5vw,44px);margin:0 0 14px;font-weight:900;letter-spacing:-0.01em;}
+.hero .subtitle{font-size:18px;color:var(--ink-soft);max-width:640px;margin:0 auto 28px;font-weight:500;}
+.balance-hero{display:inline-flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:12px 24px;box-shadow:var(--shadow);margin-bottom:32px;}
+.balance-hero .lbl{font-size:13px;font-weight:700;color:var(--ink-soft);}
+.balance-hero .track{width:120px;height:10px;border-radius:999px;background:linear-gradient(90deg,var(--sage-light),var(--ochre-light));position:relative;}
+.balance-hero .dot{position:absolute;top:50%;left:50%;width:16px;height:16px;border-radius:50%;background:var(--ink);transform:translate(-50%,-50%);border:3px solid var(--paper);}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:8px;}
+.btn{display:inline-block;border:none;padding:15px 30px;border-radius:999px;font-family:inherit;font-weight:700;font-size:15.5px;cursor:pointer;text-decoration:none;}
+.btn.primary{background:var(--ochre);color:var(--ink);}
+.btn.whatsapp{background:#25D366;color:#0B3D22;}
+.btn.outline{background:transparent;color:var(--ink);border:2px solid var(--ink);}
+
+/* Pain points */
+.section{padding:44px 0;}
+.section h2{font-size:26px;text-align:center;margin:0 0 8px;font-weight:800;}
+.section .lede{text-align:center;color:var(--ink-soft);max-width:600px;margin:0 auto 30px;font-size:15.5px;}
+.pain-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+@media(min-width:640px){.pain-grid{grid-template-columns:1fr 1fr;}}
+.pain-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);font-size:15px;}
+.pain-card .q{font-size:22px;margin-right:8px;}
+
+/* Modules */
+.module-row{display:flex;align-items:flex-start;gap:16px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px;box-shadow:var(--shadow);}
+.module-row .mnum{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--sage);color:var(--white);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.module-row h4{margin:0 0 3px;font-size:15.5px;}
+.module-row p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+
+/* Format highlights */
+.feature-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+@media(min-width:640px){.feature-grid{grid-template-columns:1fr 1fr 1fr;}}
+.feature{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px;text-align:center;box-shadow:var(--shadow);}
+.feature .icon{font-size:30px;margin-bottom:10px;}
+.feature h4{margin:0 0 6px;font-size:15px;}
+.feature p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+
+/* Trainer */
+.trainer{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:16px;}
+@media(min-width:640px){.trainer{flex-direction:row;align-items:center;}}
+.trainer-badge{width:84px;height:84px;border-radius:50%;background:var(--ochre);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;flex-shrink:0;}
+.trainer h3{margin:0 0 6px;font-size:19px;}
+.trainer p{margin:0 0 10px;font-size:14.5px;color:#D8CDBB;}
+.trainer .partners{font-size:12.5px;color:#B8AC96;}
+
+/* Enquiry form */
+.enquiry-box{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);}
+.enquiry-box input,.enquiry-box select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:9px;font-family:inherit;font-size:14.5px;margin-bottom:12px;background:var(--paper);}
+.enquiry-box label{font-size:13px;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:5px;}
+.field{margin-bottom:14px;}
+#enquirySuccess{display:none;background:var(--sage-light);color:var(--sage);border-radius:10px;padding:14px 18px;font-weight:600;font-size:14px;margin-top:6px;}
+
+/* Live Zoom section */
+.live-zoom{background:var(--ochre-light); border:2px solid var(--ochre); border-radius:var(--radius); padding:36px 30px;}
+.live-badge-wrap{text-align:center;}
+.live-eyebrow{background:var(--ink); color:var(--ochre-light);}
+.live-zoom h2{margin-top:14px;}
+.zoom-days{display:grid; grid-template-columns:1fr; gap:14px; margin-top:26px;}
+@media(min-width:720px){.zoom-days{grid-template-columns:1fr 1fr 1fr;}}
+.zoom-day{background:var(--white); border-radius:14px; padding:20px; box-shadow:var(--shadow);}
+.zoom-day-num{display:inline-block; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ochre); background:var(--ochre-light); padding:4px 10px; border-radius:999px; margin-bottom:10px;}
+.zoom-day h4{margin:0 0 6px; font-size:15.5px;}
+.zoom-day p{margin:0; font-size:13.5px; color:var(--ink-soft);}
+.zoom-cta{
+  margin-top:28px; background:var(--ink); color:var(--paper); border-radius:14px;
+  padding:22px 26px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;
+}
+.zoom-cta p{margin:4px 0 0; font-size:13px; color:#D8CDBB; max-width:420px;}
+
+footer{margin-top:20px;padding:34px 0 50px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:13.5px;text-align:center;}
+footer .motto{font-weight:700;color:var(--ink);font-size:15px;margin-bottom:6px;}
+footer a{color:var(--sage);text-decoration:none;font-weight:600;}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <div class="brand-badge">PD</div>
+      <div class="brand-text">Positive Discipline Parenting
+        <small>N T Somasundaram · God is always with u</small>
+      </div>
+    </a>
+    <div class="lang-toggle">
+      <button data-setlang="en" onclick="setLang('en')" class="active">EN</button>
+      <button data-setlang="ta" onclick="setLang('ta')">தமிழ்</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="eyebrow i18n" data-en="10-Module Bilingual Course for Parents" data-ta="10 மட்யூல் இருமொழி பெற்றோர் பாடநெறி">10-Module Bilingual Course for Parents</span>
+    <h1 class="i18n" data-en="Raise Capable, Responsible Children — Without Yelling or Giving In" data-ta="கத்தாமலும், விட்டுக்கொடுக்காமலும் — திறமையான, பொறுப்புள்ள குழந்தைகளை வளர்க்கவும்">Raise Capable, Responsible Children — Without Yelling or Giving In</h1>
+    <p class="subtitle i18n" data-en="Positive Discipline Parenting is a practical, self-paced course that shows you how to be kind AND firm at the same time — so your children listen, cooperate, and grow into responsible adults." data-ta="பாசிட்டிவ் டிசிப்ளின் பேரண்டிங், அன்பும் உறுதியும் ஒரே நேரத்தில் எப்படி காட்டுவது என்பதை உங்களுக்குக் காட்டும் ஒரு நடைமுறை, சொந்த வேகத்தில் கற்கும் பாடநெறி — உங்கள் குழந்தைகள் கேட்கவும், ஒத்துழைக்கவும், பொறுப்புள்ள பெரியவர்களாக வளரவும்.">Positive Discipline Parenting is a practical, self-paced course that shows you how to be kind AND firm at the same time — so your children listen, cooperate, and grow into responsible adults.</p>
+
+    <div class="balance-hero">
+      <span class="lbl i18n" data-en="KIND" data-ta="அன்பு">KIND</span>
+      <div class="track"><div class="dot"></div></div>
+      <span class="lbl i18n" data-en="FIRM" data-ta="உறுதி">FIRM</span>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn primary" href="#enquiry" id="enrollBtn"><span class="i18n" data-en="Enroll Now" data-ta="இப்போது சேருங்கள்">Enroll Now</span></a>
+      <a class="btn outline" href="#live-zoom"><span class="i18n" data-en="See Live Zoom Training" data-ta="நேரடி ஜூம் பயிற்சியைப் பார்க்கவும்">See Live Zoom Training</span></a>
+      <a class="btn whatsapp" href="https://wa.me/919843702244?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Positive%20Discipline%20Parenting%20course." target="_blank"><span class="i18n" data-en="Ask on WhatsApp" data-ta="வாட்ஸ்அப்பில் கேளுங்கள்">Ask on WhatsApp</span></a>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="section">
+    <h2 class="i18n" data-en="Does This Sound Familiar?" data-ta="இது பரிச்சயமாக இருக்கிறதா?">Does This Sound Familiar?</h2>
+    <p class="lede i18n" data-en="Most parents swing between two extremes — and both leave everyone exhausted." data-ta="பெரும்பாலான பெற்றோர்கள் இரண்டு உச்சங்களுக்கு இடையே அலைகிறார்கள் — இரண்டும் அனைவரையும் சோர்வடையச் செய்கின்றன.">Most parents swing between two extremes — and both leave everyone exhausted.</p>
+    <div class="pain-grid">
+      <div class="pain-card"><span class="q">😤</span><span class="i18n" data-en="You end up yelling, then feeling guilty about it an hour later." data-ta="நீங்கள் கத்தி முடிக்கிறீர்கள், பின் ஒரு மணி நேரம் கழித்து குற்ற உணர்ச்சி அடைகிறீர்கள்.">You end up yelling, then feeling guilty about it an hour later.</span></div>
+      <div class="pain-card"><span class="q">🙄</span><span class="i18n" data-en="Bedtime, homework, and screen time turn into the same battle every single day." data-ta="படுக்கை நேரம், வீட்டுப்பாடம், ஸ்க்ரீன் நேரம் ஒவ்வொரு நாளும் அதே போராட்டமாக மாறுகிறது.">Bedtime, homework, and screen time turn into the same battle every single day.</span></div>
+      <div class="pain-card"><span class="q">😔</span><span class="i18n" data-en="Punishments work for a day, then the same behavior comes right back." data-ta="தண்டனைகள் ஒரு நாள் வேலை செய்கின்றன, பின் அதே நடத்தை மீண்டும் திரும்பி வருகிறது.">Punishments work for a day, then the same behavior comes right back.</span></div>
+      <div class="pain-card"><span class="q">😞</span><span class="i18n" data-en="You worry that being 'too soft' or 'too strict' will hurt your child in the long run." data-ta="'மிகவும் மென்மையாக' அல்லது 'மிகவும் கண்டிப்பாக' இருப்பது உங்கள் குழந்தையை நீண்ட காலத்திற்கு பாதிக்கும் என்று நீங்கள் கவலைப்படுகிறீர்கள்.">You worry that being 'too soft' or 'too strict' will hurt your child in the long run.</span></div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="section">
+    <h2 class="i18n" data-en="What You'll Learn — 10 Practical Modules" data-ta="நீங்கள் கற்கப்போவது — 10 நடைமுறை மட்யூல்கள்">What You'll Learn — 10 Practical Modules</h2>
+    <p class="lede i18n" data-en="Based on Jane Nelsen and Rudolf Dreikurs' Positive Discipline framework, with real-life examples for every module." data-ta="ஜேன் நெல்சன் மற்றும் ருடால்ஃப் ட்ரைகர்ஸின் பாசிட்டிவ் டிசிப்ளின் கட்டமைப்பை அடிப்படையாகக் கொண்டது, ஒவ்வொரு மட்யூலுக்கும் நிஜ வாழ்க்கை உதாரணங்களுடன்.">Based on Jane Nelsen and Rudolf Dreikurs' Positive Discipline framework, with real-life examples for every module.</p>
+
+    <div id="moduleList"></div>
+  </section>
+
+  <!-- FORMAT -->
+  <section class="section">
+    <h2 class="i18n" data-en="How the Course Works" data-ta="பாடநெறி எப்படி வேலை செய்கிறது">How the Course Works</h2>
+    <div class="feature-grid">
+      <div class="feature"><div class="icon">🌐</div><h4 class="i18n" data-en="Bilingual" data-ta="இருமொழி">Bilingual</h4><p class="i18n" data-en="Every module in English and Tamil, toggle anytime." data-ta="ஒவ்வொரு மட்யூலும் ஆங்கிலம் மற்றும் தமிழில், எப்போது வேண்டுமானாலும் மாற்றலாம்.">Every module in English and Tamil, toggle anytime.</p></div>
+      <div class="feature"><div class="icon">🕰️</div><h4 class="i18n" data-en="Self-Paced" data-ta="சொந்த வேகத்தில்">Self-Paced</h4><p class="i18n" data-en="Learn on your own schedule, revisit any module anytime." data-ta="உங்கள் சொந்த அட்டவணையில் கற்கவும், எப்போது வேண்டுமானாலும் எந்த மட்யூலையும் திரும்பிப் பார்க்கவும்.">Learn on your own schedule, revisit any module anytime.</p></div>
+      <div class="feature"><div class="icon">📖</div><h4 class="i18n" data-en="Real-Life Examples" data-ta="நிஜ வாழ்க்கை உதாரணங்கள்">Real-Life Examples</h4><p class="i18n" data-en="Every module includes common mistakes and how to fix them." data-ta="ஒவ்வொரு மட்யூலிலும் பொதுவான தவறுகளும் அவற்றை எப்படி சரிசெய்வது என்பதும் உள்ளன.">Every module includes common mistakes and how to fix them.</p></div>
+      <div class="feature"><div class="icon">✅</div><h4 class="i18n" data-en="Short Quizzes" data-ta="சிறு வினாடி வினாக்கள்">Short Quizzes</h4><p class="i18n" data-en="Check your understanding after each module." data-ta="ஒவ்வொரு மட்யூலுக்குப் பிறகும் உங்கள் புரிதலை சரிபார்க்கவும்.">Check your understanding after each module.</p></div>
+      <div class="feature"><div class="icon">📊</div><h4 class="i18n" data-en="Track Progress" data-ta="முன்னேற்றத்தைக் கண்காணிக்கவும்">Track Progress</h4><p class="i18n" data-en="See how many modules you've completed at a glance." data-ta="நீங்கள் எத்தனை மட்யூல்களை முடித்துவிட்டீர்கள் என்பதை ஒரே பார்வையில் காணலாம்.">See how many modules you've completed at a glance.</p></div>
+      <div class="feature"><div class="icon">💬</div><h4 class="i18n" data-en="WhatsApp Support" data-ta="வாட்ஸ்அப் ஆதரவு">WhatsApp Support</h4><p class="i18n" data-en="Reach out anytime with questions as you learn." data-ta="நீங்கள் கற்கும்போது எந்த கேள்விகளுக்கும் எப்போது வேண்டுமானாலும் தொடர்பு கொள்ளலாம்.">Reach out anytime with questions as you learn.</p></div>
+    </div>
+  </section>
+
+  <!-- LIVE ZOOM TRAINING -->
+  <section class="section live-zoom" id="live-zoom">
+    <div class="live-badge-wrap">
+      <span class="eyebrow live-eyebrow i18n" data-en="NEW · Live Interactive Training" data-ta="புதியது · நேரடி ஊடாடும் பயிற்சி">NEW · Live Interactive Training</span>
+    </div>
+    <h2 class="i18n" data-en="Prefer Live? Join the 3-Day Zoom Bootcamp" data-ta="நேரடியாக விரும்புகிறீர்களா? 3 நாள் ஜூம் பயிற்சியில் சேருங்கள்">Prefer Live? Join the 3-Day Zoom Bootcamp</h2>
+    <p class="lede i18n" data-en="Same Positive Discipline framework, delivered live over 3 days — with real-time Q&amp;A, role-plays, and direct coaching from N T Somasundaram." data-ta="அதே பாசிட்டிவ் டிசிப்ளின் கட்டமைப்பு, 3 நாட்களில் நேரடியாக வழங்கப்படுகிறது — நேரடி கேள்வி பதில், பாத்திரமேற்பு, N T சோமசுந்தரத்தின் நேரடி பயிற்சியுடன்.">Same Positive Discipline framework, delivered live over 3 days — with real-time Q&amp;A, role-plays, and direct coaching from N T Somasundaram.</p>
+
+    <div class="zoom-days">
+      <div class="zoom-day">
+        <div class="zoom-day-num i18n" data-en="Day 1" data-ta="நாள் 1">Day 1</div>
+        <h4 class="i18n" data-en="Foundations &amp; Understanding Behavior" data-ta="அடிப்படைகள் &amp; நடத்தையைப் புரிந்துகொள்ளுதல்">Foundations &amp; Understanding Behavior</h4>
+        <p class="i18n" data-en="Kind and firm parenting, the four mistaken goals, and connecting before correcting." data-ta="அன்பும் உறுதியும் கொண்ட வளர்ப்பு, நான்கு தவறான இலக்குகள், திருத்துவதற்கு முன் இணைதல்.">Kind and firm parenting, the four mistaken goals, and connecting before correcting.</p>
+      </div>
+      <div class="zoom-day">
+        <div class="zoom-day-num i18n" data-en="Day 2" data-ta="நாள் 2">Day 2</div>
+        <h4 class="i18n" data-en="Consequences, Communication &amp; Encouragement" data-ta="விளைவுகள், தொடர்பாடல் &amp; ஊக்கம்">Consequences, Communication &amp; Encouragement</h4>
+        <p class="i18n" data-en="Natural &amp; logical consequences, 'I' messages, and raising confident children." data-ta="இயற்கை &amp; தர்க்க ரீதியான விளைவுகள், 'நான்' செய்திகள், நம்பிக்கை மிக்க குழந்தைகளை வளர்த்தல்.">Natural &amp; logical consequences, 'I' messages, and raising confident children.</p>
+      </div>
+      <div class="zoom-day">
+        <div class="zoom-day-num i18n" data-en="Day 3" data-ta="நாள் 3">Day 3</div>
+        <h4 class="i18n" data-en="Routines, Family Meetings &amp; Emotional Regulation" data-ta="வழக்கங்கள், குடும்பக் கூட்டங்கள் &amp; உணர்ச்சி கட்டுப்பாடு">Routines, Family Meetings &amp; Emotional Regulation</h4>
+        <p class="i18n" data-en="Structure without power struggles, family problem-solving, and raising responsible adults." data-ta="அதிகாரப் போராட்டமின்றி கட்டமைப்பு, குடும்ப பிரச்சனை தீர்வு, பொறுப்புள்ள பெரியவர்களை வளர்த்தல்.">Structure without power struggles, family problem-solving, and raising responsible adults.</p>
+      </div>
+    </div>
+
+    <div class="feature-grid" style="margin-top:24px;">
+      <div class="feature"><div class="icon">🎥</div><h4 class="i18n" data-en="Live on Zoom" data-ta="ஜூமில் நேரடியாக">Live on Zoom</h4><p class="i18n" data-en="Face-to-face sessions, not recordings." data-ta="பதிவுகள் அல்ல, முகம் தெரியும் நேரடி அமர்வுகள்.">Face-to-face sessions, not recordings.</p></div>
+      <div class="feature"><div class="icon">🙋</div><h4 class="i18n" data-en="Live Q&amp;A" data-ta="நேரடி கேள்வி பதில்">Live Q&amp;A</h4><p class="i18n" data-en="Bring your own parenting challenges to discuss." data-ta="உங்கள் சொந்த வளர்ப்பு சவால்களை விவாதிக்க கொண்டு வாருங்கள்.">Bring your own parenting challenges to discuss.</p></div>
+      <div class="feature"><div class="icon">👥</div><h4 class="i18n" data-en="Small Batch" data-ta="சிறிய குழு">Small Batch</h4><p class="i18n" data-en="Limited seats for real interaction with the trainer." data-ta="பயிற்சியாளருடன் உண்மையான தொடர்புக்கு வரையறுக்கப்பட்ட இடங்கள்.">Limited seats for real interaction with the trainer.</p></div>
+      <div class="feature"><div class="icon">🎓</div><h4 class="i18n" data-en="Certificate" data-ta="சான்றிதழ்">Certificate</h4><p class="i18n" data-en="Certificate of participation on completion." data-ta="முடிந்ததும் பங்கேற்பு சான்றிதழ்.">Certificate of participation on completion.</p></div>
+    </div>
+
+    <div class="zoom-cta">
+      <div>
+        <strong class="i18n" data-en="Batches forming — register your interest" data-ta="குழுக்கள் உருவாகி வருகின்றன — உங்கள் ஆர்வத்தை பதிவு செய்யுங்கள்">Batches forming — register your interest</strong>
+        <p class="i18n" data-en="We'll message you on WhatsApp with the next available dates and the program fee." data-ta="அடுத்த கிடைக்கும் தேதிகள் மற்றும் பாடநெறி கட்டணத்துடன் நாங்கள் உங்களுக்கு வாட்ஸ்அப்பில் செய்தி அனுப்புவோம்.">We'll message you on WhatsApp with the next available dates and the program fee.</p>
+      </div>
+      <a class="btn primary" href="#enquiry" onclick="preselectProgram('live_zoom')"><span class="i18n" data-en="Register Interest" data-ta="ஆர்வத்தை பதிவு செய்யுங்கள்">Register Interest</span></a>
+    </div>
+  </section>
+
+  <!-- TRAINER -->
+  <section class="section">
+    <h2 class="i18n" data-en="Who's Teaching This Course" data-ta="இந்த பாடநெறியை யார் கற்பிக்கிறார்கள்">Who's Teaching This Course</h2>
+    <div class="trainer">
+      <div class="trainer-badge">NTS</div>
+      <div>
+        <h3>N T Somasundaram</h3>
+        <p class="i18n" data-en="Certified Master Trainer, Career Consultant, and Life Skills Educator based in Tiruvannamalai, Tamil Nadu. Director &amp; Treasurer, SKV International School." data-ta="திருவண்ணாமலை, தமிழ்நாட்டைச் சேர்ந்த சான்றளிக்கப்பட்ட மாஸ்டர் பயிற்சியாளர், கேரியர் ஆலோசகர், வாழ்க்கை திறன் கல்வியாளர். இயக்குநர் &amp; பொருளாளர், SKV இன்டர்நேஷனல் பள்ளி.">Certified Master Trainer, Career Consultant, and Life Skills Educator based in Tiruvannamalai, Tamil Nadu. Director &amp; Treasurer, SKV International School.</p>
+        <p class="partners i18n" data-en="certified from IATD · Pick My Career · Emocare International · Indian Counseling Service" data-ta="certified from : IATD · Pick My Career · Emocare International · Indian Counseling Service">Training partners: IATD · Pick My Career · Emocare International · Indian Counseling Service</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY FORM -->
+  <section class="section" id="enquiry">
+    <h2 class="i18n" data-en="Reserve Your Spot" data-ta="உங்கள் இடத்தை பதிவு செய்யுங்கள்">Reserve Your Spot</h2>
+    <p class="lede i18n" data-en="Share your details and we'll send you the course link and next steps on WhatsApp." data-ta="உங்கள் விவரங்களைப் பகிரவும், நாங்கள் பாடநெறி இணைப்பையும் அடுத்த படிகளையும் வாட்ஸ்அப்பில் அனுப்புவோம்.">Share your details and we'll send you the course link and next steps on WhatsApp.</p>
+
+    <div class="enquiry-box">
+      <div class="field">
+        <label class="i18n" data-en="I'm interested in" data-ta="எனக்கு ஆர்வம் உள்ளது">I'm interested in</label>
+        <select id="enqProgram">
+          <option value="self_paced" class="i18n" data-en="Self-Paced Online Course" data-ta="சொந்த வேகத்தில் ஆன்லைன் பாடநெறி">Self-Paced Online Course</option>
+          <option value="live_zoom" class="i18n" data-en="Live 3-Day Zoom Training" data-ta="நேரடி 3 நாள் ஜூம் பயிற்சி">Live 3-Day Zoom Training</option>
+          <option value="both" class="i18n" data-en="Both" data-ta="இரண்டும்">Both</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="i18n" data-en="Your Name" data-ta="உங்கள் பெயர்">Your Name</label>
+        <input type="text" id="enqName" placeholder="e.g. Priya Kumar">
+      </div>
+      <div class="field">
+        <label class="i18n" data-en="WhatsApp Number" data-ta="வாட்ஸ்அப் எண்">WhatsApp Number</label>
+        <input type="text" id="enqPhone" placeholder="+91 ...">
+      </div>
+      <div class="field">
+        <label class="i18n" data-en="Place / City" data-ta="இடம் / நகரம்">Place / City</label>
+        <input type="text" id="enqPlace" placeholder="e.g. Tiruvannamalai">
+      </div>
+      <div class="field">
+        <label class="i18n" data-en="Child's Age Group" data-ta="குழந்தையின் வயது குழு">Child's Age Group</label>
+        <select id="enqAge">
+          <option value="0-5">0–5</option>
+          <option value="6-10">6–10</option>
+          <option value="11-15">11–15</option>
+          <option value="16-18">16–18</option>
+          <option value="multiple">Multiple / Mixed</option>
+        </select>
+      </div>
+      <button class="btn primary" style="width:100%;" onclick="submitEnquiry()"><span class="i18n" data-en="Get Course Access" data-ta="பாடநெறி அணுகலைப் பெறுங்கள்">Get Course Access</span></button>
+      <div id="enquirySuccess" class="i18n" data-en="Thank you! We'll message you on WhatsApp shortly." data-ta="நன்றி! நாங்கள் விரைவில் வாட்ஸ்அப்பில் உங்களுக்கு செய்தி அனுப்புவோம்.">Thank you! We'll message you on WhatsApp shortly.</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="motto">"God is always with u" — N T Somasundaram</div>
+    <div>Certified Master Trainer · Career Consultant · Life Skills Educator</div>
+    <div style="margin-top:10px;">
+      📧 somasundaramnt.lifecoach@gmail.com &nbsp;|&nbsp; 📱 +91 98437 02244<br>
+      🌐 <a href="https://sites.google.com/view/somasundaramnt" target="_blank">sites.google.com/view/somasundaramnt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// !!! Same Apps Script deployment as the course quizzes — paste/update if redeployed !!!
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxizm94pZxkRDRPEG33n0INE1A2HxlFkkI-2oFi_i4682kvMR8t2HFj9u9qF9eVqSE-Qg/exec";
+
+// !!! Update this to wherever the actual course index.html is hosted relative to this page !!!
+const COURSE_URL = "index.html";
+document.getElementById('enrollBtn').addEventListener('click', function(ev){
+  // Scrolls to the enquiry form by default (href="#enquiry").
+  // Once you're ready to send people straight into the course instead, change:
+  // href="#enquiry"  ->  href="COURSE_URL_HERE"  in the button above.
+});
+
+const MODULES_LIST_EN = [
+  ["01","What Is Positive Discipline?","Kind AND firm — not permissive, not punitive."],
+  ["02","Understanding Your Child's Behavior","The four mistaken goals: attention, power, revenge, inadequacy."],
+  ["03","Connection Before Correction","Build belonging and significance before teaching the lesson."],
+  ["04","Punishment vs. Consequences","Natural and logical consequences that teach, not just punish."],
+  ["05","Effective Communication","Listening, 'I' messages, and speaking with respect."],
+  ["06","Encouragement, Not Praise","Raising capable, confident children from the inside out."],
+  ["07","Routines, Limits &amp; Follow-Through","Structure without power struggles."],
+  ["08","Family Meetings","Solving problems together, on a regular schedule."],
+  ["09","Managing Your Own Emotions","Time-In, not Time-Out — regulating yourself first."],
+  ["10","Raising Responsible Adults","Mistakes as learning, and life skills for the long run."]
+];
+const MODULES_LIST_TA = [
+  ["01","பாசிட்டிவ் டிசிப்ளின் என்றால் என்ன?","அன்பும் உறுதியும் ஒன்றாக — அதிகப் பரிவும் இல்லை, தண்டனையும் இல்லை."],
+  ["02","உங்கள் குழந்தையின் நடத்தையைப் புரிந்துகொள்ளுதல்","நான்கு தவறான இலக்குகள்: கவனம், அதிகாரம், பழிவாங்கல், தகுதியின்மை."],
+  ["03","திருத்தத்திற்கு முன் நெருக்கம்","பாடம் கற்பிப்பதற்கு முன் சேர்ந்திருத்தலையும் முக்கியத்துவத்தையும் உருவாக்குதல்."],
+  ["04","தண்டனை Vs. விளைவுகள்","தண்டிக்காமல் கற்பிக்கும் இயற்கை மற்றும் தர்க்க ரீதியான விளைவுகள்."],
+  ["05","பயனுள்ள தொடர்பாடல்","கேட்டல், 'நான்' செய்திகள், மரியாதையுடன் பேசுதல்."],
+  ["06","பாராட்டு அல்ல, ஊக்கம்","உள்ளிருந்து திறமையான, நம்பிக்கை மிக்க குழந்தைகளை வளர்த்தல்."],
+  ["07","வழக்கங்கள், வரம்புகள் மற்றும் தொடர்ச்சி","அதிகாரப் போராட்டமின்றி கட்டமைப்பு."],
+  ["08","குடும்பக் கூட்டங்கள்","தொடர்ந்து ஒரு அட்டவணையில் பிரச்சனைகளை ஒன்றாகத் தீர்த்தல்."],
+  ["09","உங்கள் சொந்த உணர்வுகளை நிர்வகித்தல்","டைம்-அவுட் அல்ல, டைம்-இன் — முதலில் உங்களை அமைதிப்படுத்திக் கொள்ளுங்கள்."],
+  ["10","பொறுப்புள்ள பெரியவர்களை வளர்த்தல்","தவறுகள் கற்றலுக்கான வாய்ப்பு, நீண்ட கால வாழ்க்கை திறன்கள்."]
+];
+
+function renderModuleList(){
+  const lang = localStorage.getItem('pd_parents_lang') || 'en';
+  const list = lang === 'ta' ? MODULES_LIST_TA : MODULES_LIST_EN;
+  const container = document.getElementById('moduleList');
+  container.innerHTML = list.map(([num, title, desc]) => `
+    <div class="module-row">
+      <div class="mnum">${num}</div>
+      <div><h4>${title}</h4><p>${desc}</p></div>
+    </div>
+  `).join('');
+}
+
+function setLang(lang){
+  localStorage.setItem('pd_parents_lang', lang);
+  applyLang();
+}
+function applyLang(){
+  const lang = localStorage.getItem('pd_parents_lang') || 'en';
+  document.querySelectorAll('.i18n').forEach(el=>{
+    const txt = el.getAttribute('data-' + lang);
+    if(txt){ el.innerHTML = txt; el.toggleAttribute('lang-ta', lang==='ta'); }
+  });
+  document.querySelectorAll('.lang-toggle button').forEach(b=>{
+    b.classList.toggle('active', b.getAttribute('data-setlang') === lang);
+  });
+  document.documentElement.setAttribute('lang', lang === 'ta' ? 'ta' : 'en');
+  renderModuleList();
+}
+document.addEventListener('DOMContentLoaded', applyLang);
+
+function preselectProgram(value){
+  const sel = document.getElementById('enqProgram');
+  if(sel) sel.value = value;
+}
+
+function submitEnquiry(){
+  const name = document.getElementById('enqName').value.trim();
+  const phone = document.getElementById('enqPhone').value.trim();
+  const place = document.getElementById('enqPlace').value.trim();
+  const age = document.getElementById('enqAge').value;
+  const program = document.getElementById('enqProgram').value;
+
+  if(!name || !phone){
+    alert((localStorage.getItem('pd_parents_lang')||'en')==='ta'
+      ? 'தயவுசெய்து பெயரையும் வாட்ஸ்அப் எண்ணையும் உள்ளிடவும்.'
+      : 'Please enter your name and WhatsApp number.');
+    return;
+  }
+
+  if(APPS_SCRIPT_URL && APPS_SCRIPT_URL.indexOf('PASTE_YOUR') !== 0){
+    const params = `type=enquiry&name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}&place=${encodeURIComponent(place)}&age_group=${encodeURIComponent(age)}&program=${encodeURIComponent(program)}&source=promo_landing&ts=${Date.now()}`;
+    const img = new Image();
+    img.src = `${APPS_SCRIPT_URL}?${params}`;
+  }
+
+  localStorage.setItem('pd_parents_name', name);
+  localStorage.setItem('pd_parents_phone', phone);
+
+  document.getElementById('enquirySuccess').style.display = 'block';
+
+  // Open a pre-filled WhatsApp chat to the trainer as well
+  const lang = localStorage.getItem('pd_parents_lang') || 'en';
+  const programLabel = {
+    self_paced: lang==='ta' ? 'சொந்த வேகத்தில் ஆன்லைன் பாடநெறி' : 'the self-paced online course',
+    live_zoom: lang==='ta' ? 'நேரடி 3 நாள் ஜூம் பயிற்சி' : 'the live 3-day Zoom training',
+    both: lang==='ta' ? 'இரண்டும்' : 'both programs'
+  }[program];
+  const msg = lang === 'ta'
+    ? `வணக்கம், நான் ${name}, ${place} இலிருந்து. ${programLabel} இல் சேர விரும்புகிறேன்.`
+    : `Hi, I'm ${name} from ${place}. I'd like to join ${programLabel}.`;
+  setTimeout(()=>{
+    window.open(`https://wa.me/919843702244?text=${encodeURIComponent(msg)}`, '_blank');
+  }, 600);
+}
+</script>
+</body>
+</html>
