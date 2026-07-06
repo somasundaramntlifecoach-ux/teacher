@@ -163,6 +163,10 @@
     <input type="text" id="learnerName" placeholder="e.g., Priya Kumar">
   </div>
   <div class="learner-field">
+    <label><span class="en">Mobile Number</span><span class="ta">மொபைல் எண்</span></label>
+    <input type="text" id="learnerMobile" placeholder="e.g., 98765 43210">
+  </div>
+  <div class="learner-field">
     <label><span class="en">Your Email (optional)</span><span class="ta">உங்கள் மின்னஞ்சல் (விருப்பம்)</span></label>
     <input type="text" id="learnerEmail" placeholder="you@example.com">
   </div>
@@ -359,31 +363,47 @@ window.addEventListener('scroll', () => {
   document.getElementById('progressFill').style.width = Math.min(100, Math.max(0, scrolled)) + '%';
 });
 
+
+// Registration gate: redirect back to the overview page if not registered yet
+(function(){
+  const name = localStorage.getItem('lsm_name');
+  const mobile = localStorage.getItem('lsm_mobile');
+  const email = localStorage.getItem('lsm_email');
+  if(!name || !mobile || !email){
+    window.location.href = 'module1-life-skills-teachers.html';
+  }
+})();
+
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrZjQ8oDwiKegl3pI1qAG1PVtZ0pFAlb3GbVvK7sPbzjIprs1Q9isXPoisLDjQnfpgng/exec';
 const MODULE_ID = 'Module 8 - Time Management & Goal Setting';
 
 function loadLearnerInfo(){
   const n = document.getElementById('learnerName');
+  const mb = document.getElementById('learnerMobile');
   const em = document.getElementById('learnerEmail');
   if(n) n.value = localStorage.getItem('lsm_name') || '';
+  if(mb) mb.value = localStorage.getItem('lsm_mobile') || '';
   if(em) em.value = localStorage.getItem('lsm_email') || '';
 }
 loadLearnerInfo();
 
 function saveReflections(){
   const nameEl = document.getElementById('learnerName');
+  const mobileEl = document.getElementById('learnerMobile');
   const emailEl = document.getElementById('learnerEmail');
   const name = nameEl ? nameEl.value.trim() : '';
+  const mobile = mobileEl ? mobileEl.value.trim() : '';
   const email = emailEl ? emailEl.value.trim() : '';
   if(!name){ alert('Please enter your name before saving.'); return; }
   localStorage.setItem('lsm_name', name);
+  localStorage.setItem('lsm_mobile', mobile);
   localStorage.setItem('lsm_email', email);
   const responses = {};
   document.querySelectorAll('.reflect textarea[name], .reflect input[name]').forEach(function(el){
     responses[el.name] = el.value;
   });
   const payload = encodeURIComponent(JSON.stringify(responses));
-  const url = APPS_SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&module=' + encodeURIComponent(MODULE_ID) + '&responses=' + payload;
+  const url = APPS_SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&mobile=' + encodeURIComponent(mobile) + '&email=' + encodeURIComponent(email) + '&module=' + encodeURIComponent(MODULE_ID) + '&responses=' + payload;
   const img = new Image();
   img.src = url;
   const status = document.getElementById('saveStatus');
