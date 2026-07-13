@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication Skills for Adults | NT Somasundaram Life Skills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B3A5C; --gold:#C9A24B; --cream:#FAF7F0; --teal:#2C6E7F;
+  --ink:#233142; --soft:#6b7686; --green:#3E8E5A; --red:#C1502E;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Poppins',sans-serif; background:var(--cream); color:var(--ink); line-height:1.65;}
+[lang="ta"]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.ta{display:none;}
+body.show-ta .en{display:none;}
+body.show-ta .ta{display:inline;}
+body.show-ta .ta-block{display:block;}
+.en-block{display:block;}
+body.show-ta .en-block{display:none;}
+
+header.top{background:var(--navy); color:#fff; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+header.top .brand{font-weight:600; font-size:1.05rem;}
+header.top .brand span{color:var(--gold);}
+.lang-toggle{background:var(--gold); color:var(--navy); border:none; padding:8px 16px; border-radius:20px; font-weight:600; cursor:pointer; font-size:0.9rem;}
+.lang-toggle:hover{opacity:0.9;}
+
+.container{max-width:820px; margin:0 auto; padding:28px 20px 60px;}
+.card{background:#fff; border-radius:14px; padding:26px 24px; box-shadow:0 2px 14px rgba(27,58,92,0.08); margin-bottom:20px;}
+h1{color:var(--navy); font-size:1.6rem; margin-bottom:6px;}
+h2{color:var(--navy); font-size:1.2rem; margin:18px 0 10px; border-left:4px solid var(--gold); padding-left:10px;}
+h3{color:var(--teal); font-size:1.05rem; margin:14px 0 6px;}
+p{margin-bottom:10px; color:var(--ink);}
+.subtitle{color:var(--soft); font-size:0.95rem; margin-bottom:16px;}
+.tag{display:inline-block; background:var(--navy); color:#fff; font-size:0.72rem; padding:3px 10px; border-radius:12px; margin-bottom:10px;}
+.progress-wrap{background:#eee; border-radius:10px; height:10px; overflow:hidden; margin:14px 0;}
+.progress-bar{background:var(--gold); height:100%; transition:width .4s;}
+.btn{display:inline-block; background:var(--navy); color:#fff; border:none; padding:11px 22px; border-radius:8px; font-weight:600; cursor:pointer; text-decoration:none; font-size:0.95rem; margin:6px 6px 6px 0;}
+.btn:hover{background:var(--teal);}
+.btn.gold{background:var(--gold); color:var(--navy);}
+.btn.outline{background:transparent; border:2px solid var(--navy); color:var(--navy);}
+.btn.wa{background:#25D366; color:#fff;}
+.nav-row{display:flex; justify-content:space-between; margin-top:24px; flex-wrap:wrap; gap:10px;}
+.quote-box{background:var(--cream); border-left:4px solid var(--teal); padding:14px 18px; border-radius:6px; font-style:italic; color:var(--teal); margin:16px 0;}
+.exercise-box{background:#fff8ea; border:1px dashed var(--gold); border-radius:10px; padding:16px 18px; margin:14px 0;}
+.concept-block{margin-bottom:22px; padding-bottom:18px; border-bottom:1px solid #eee;}
+.concept-block:last-child{border-bottom:none;}
+.example-box{background:#eef5f7; border-left:4px solid var(--teal); border-radius:6px; padding:12px 16px; margin:10px 0;}
+.example-box h3{color:var(--teal); margin:0 0 6px;}
+.metaphor-box{background:#fbeee4; border-left:4px solid var(--red); border-radius:6px; padding:12px 16px; margin:10px 0;}
+.metaphor-box h3{color:var(--red); margin:0 0 6px;}
+.tip-box{background:#fff6d8; border:1px solid var(--gold); border-radius:10px; padding:14px 18px; margin:16px 0;}
+.tip-box h3{color:#8a6d1d; margin:0 0 6px;}
+ul{margin:8px 0 8px 22px;}
+li{margin-bottom:6px;}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:14px 0;}
+.mini-card{background:var(--cream); border-radius:10px; padding:14px; border:1px solid #eee2c8;}
+.mini-card h3{margin-top:0;}
+footer.site{text-align:center; padding:24px; color:var(--soft); font-size:0.85rem;}
+input[type=text], input[type=email], input[type=tel]{width:100%; padding:11px 12px; border:1px solid #ddd; border-radius:8px; margin-bottom:12px; font-family:inherit; font-size:0.95rem;}
+label{font-weight:600; font-size:0.9rem; color:var(--navy); display:block; margin-bottom:4px;}
+.q-block{margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid #eee;}
+.q-options{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
+.q-options label{font-weight:400; color:var(--ink); display:flex; align-items:center; gap:8px; cursor:pointer;}
+@media print{ header.top, .btn, .lang-toggle, .no-print{display:none !important;} body{background:#fff;} .card{box-shadow:none; border:1px solid #ccc;} }
+@media (max-width:600px){ .container{padding:18px 14px 40px;} h1{font-size:1.35rem;} }
+
+.hero{text-align:center; padding:10px 0 6px;}
+.hero h1{font-size:1.9rem;}
+.hero p{color:var(--soft); font-size:1rem; max-width:560px; margin:0 auto 6px;}
+.stat-row{display:flex; justify-content:center; gap:26px; margin:18px 0; flex-wrap:wrap;}
+.stat{text-align:center;}
+.stat b{display:block; font-size:1.4rem; color:var(--navy);}
+.stat span{font-size:0.78rem; color:var(--soft);}
+#gateForm{display:block;}
+#courseGate{display:none;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">NT Somasundaram <span>Life Skills</span> &mdash; <span class="en">Communication Skills for Adults</span><span class="ta">பெரியவர்களுக்கான தொடர்பு திறன்கள்</span></div>
+  <button class="lang-toggle" id="langBtn" onclick="toggleLang()">தமிழ்</button>
+</header>
+
+<div class="container">
+
+  <div class="card hero">
+    <span class="tag"><span class="en">Self-Paced Bilingual Course</span><span class="ta">சுய வேக இருமொழி பாடநெறி</span></span>
+    <h1><span class="en">Communication Skills for Adults</span><span class="ta">பெரியவர்களுக்கான தொடர்பு திறன்கள்</span></h1>
+    <p><span class="en">Practical, everyday communication skills for home, work, and relationships &mdash; taught in both English and Tamil, at your own pace.</span><span class="ta">வீடு, வேலை, உறவுகளுக்கான நடைமுறை, அன்றாட தொடர்பு திறன்கள் &mdash; ஆங்கிலம் மற்றும் தமிழில், உங்கள் சொந்த வேகத்தில் கற்றுக்கொள்ளுங்கள்.</span></p>
+    <div class="stat-row">
+      <div class="stat"><b>10</b><span class="en">Modules</span><span class="ta">பாடங்கள்</span></div>
+      <div class="stat"><b>1</b><span class="en">Style Assessment</span><span class="ta">பாணி மதிப்பீடு</span></div>
+      <div class="stat"><b>EN/TA</b><span class="en">Bilingual</span><span class="ta">இருமொழி</span></div>
+    </div>
+  </div>
+
+  <div class="card" id="gateForm">
+    <h2 style="margin-top:0;"><span class="en">Register to Begin</span><span class="ta">தொடங்க பதிவு செய்யுங்கள்</span></h2>
+    <label><span class="en">Full Name</span><span class="ta">முழு பெயர்</span></label>
+    <input type="text" id="regName" placeholder="Name / பெயர்">
+    <label><span class="en">Email</span><span class="ta">மின்னஞ்சல்</span></label>
+    <input type="email" id="regEmail" placeholder="you@example.com">
+    <label><span class="en">WhatsApp Number</span><span class="ta">வாட்ஸ்அப் எண்</span></label>
+    <input type="tel" id="regPhone" placeholder="10-digit number">
+    <button class="btn gold" onclick="registerUser()"><span class="en">Register & Start Course</span><span class="ta">பதிவு செய்து பாடநெறியைத் தொடங்குங்கள்</span></button>
+  </div>
+
+  <div class="card" id="courseGate">
+    <h2 style="margin-top:0;"><span class="en">Welcome back<span id="welcomeName"></span>!</span><span class="ta">மீண்டும் வரவேற்கிறோம்<span id="welcomeNameTa"></span>!</span></h2>
+    <p><span class="en">Continue your course below.</span><span class="ta">கீழே உங்கள் பாடநெறியை தொடருங்கள்.</span></p>
+    <a class="btn gold" href="assessment.html"><span class="en">Take the Communication Style Assessment &rarr;</span><span class="ta">தொடர்பு பாணி மதிப்பீட்டை எடுங்கள் &rarr;</span></a>
+    <a class="btn outline" href="dashboard.html"><span class="en">Start your Course</span><span class="ta">பாடத்தைத் தொடங்கவும்</span></a>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0;"><span class="en">What You'll Learn</span><span class="ta">நீங்கள் கற்றுக்கொள்வது</span></h2>
+    <div class="grid">
+      <div class="mini-card">
+  <h3>1. <span class="en">Foundations of Communication</span><span class="ta">தகவல் தொடர்பின் அடிப்படைகள்</span></h3>
+  <p style="font-size:0.88rem; color:var(--soft); margin:0;"><span class="en">Understanding what communication really is — and why most problems start here.</span><span class="ta">தகவல் தொடர்பு உண்மையில் என்ன என்பதை புரிந்துகொள்வது — பெரும்பாலான பிரச்சனைகள் இங்கிருந்தே தொடங்குகின்றன.</span></p>
+</div>
+<div class="mini-card">
+  <h3>2. <span class="en">Verbal Communication & Clarity</span><span class="ta">சொல் தொடர்பு மற்றும் தெளிவு</span></h3>
+  <p style="font-size:0.88rem; color:var(--soft); margin:0;"><span class="en">Saying what you mean, simply and clearly, without losing your message in the words.</span><span class="ta">உங்கள் செய்தியை வார்த்தைகளில் இழக்காமல், எளிமையாகவும் தெளிவாகவும் சொல்வது.</span></p>
+</div>
+<div class="mini-card">
+  <h3>3. <span class="en">Non-Verbal Communication & Body Language</span><span class="ta">சொல்லாத தொடர்பு மற்றும் உடல் மொழி</span></h3>
+  <p style="font-size:0.88rem; color:var(--soft); margin:0;"><span class="en">What your posture, face, and tone say before you speak a single word.</span><span class="ta">நீங்கள் ஒரு வார்த்தை பேசுவதற்கு முன்பே உங்கள் நிலை, முகம், தொனி என்ன சொல்கிறது.</span></p>
+</div>
+<div class="mini-card">
+  <h3>4. <span class="en">Active Listening</span><span class="ta">சுறுசுறுப்பான கேட்டல்</span></h3>
+  <p style="font-size:0.88rem; color:var(--soft); margin:0;"><span class="en">Listening to understand, not just to reply.</span><span class="ta">பதில் சொல்வதற்காக அல்ல, புரிந்துகொள்வதற்காக கேட்பது.</span></p>
+</div>
+<div class="mini-card">
+  <h3>5. <span class="en">Assertive Communication</span><span class="ta">உறுதியான தொடர்பு</span></h3>
+  <p style="font-size:0.88rem; color:var(--soft); margin:0;"><span class="en">Saying what you need clearly and respectfully — without being passive or aggressive.</span><span class="ta">பணிவாகவோ அல்லது கடுமையாகவோ இல்லாமல், உங்களுக்கு தேவையானதை தெளிவாகவும் மரியாதையாகவும் சொல்வது.</span></p>
+</div>
+<div class="mini-card">
+  <h3>6. <span class="en">Emotional Intelligence in Communication</span><span class="ta">தொடர்பில் உணர்ச்சி நுண்ணறிவு</span></h3>
+  <p style="font-size:0.88rem; color:var(--soft); margin:0;"><span class="en">Managing your own emotions and reading others' — so feelings don't hijack the conversation.</span><span class="ta">உங்கள் சொந்த உணர்ச்சிகளை நிர்வகித்து, மற்றவர்களை புரிந்துகொள்வது — உணர்வுகள் உரையாடலை கவிழ்க்காதவாறு.</span></p>
+</div>
+<div class="mini-card">
+  <h3>7. <span class="en">Conflict Resolution & Difficult Conversations</span><span class="ta">மோதல் தீர்வு மற்றும் கடினமான உரையாடல்கள்</span></h3>
+  <p style="font-size:0.88rem; color:var(--soft); margin:0;"><span class="en">Turning disagreement into dialogue instead of damage.</span><span class="ta">கருத்து வேறுபாட்டை சேதத்திற்குப் பதிலாக உரையாடலாக மாற்றுவது.</span></p>
+</div>
+<div class="mini-card">
+  <h3>8. <span class="en">Public Speaking & Presentation Skills</span><span class="ta">பொது பேச்சு மற்றும் விளக்கக்காட்சி திறன்கள்</span></h3>
+  <p style="font-size:0.88rem; color:var(--soft); margin:0;"><span class="en">Speaking to a group with confidence, structure, and presence.</span><span class="ta">நம்பிக்கை, அமைப்பு, இருப்புடன் ஒரு குழுவிடம் பேசுவது.</span></p>
+</div>
+<div class="mini-card">
+  <h3>9. <span class="en">Professional & Digital Communication</span><span class="ta">தொழில்முறை மற்றும் டிஜிட்டல் தொடர்பு</span></h3>
+  <p style="font-size:0.88rem; color:var(--soft); margin:0;"><span class="en">Emails, messages, and meetings — communicating well when there's no body language to help.</span><span class="ta">மின்னஞ்சல்கள், செய்திகள், கூட்டங்கள் — உடல் மொழி உதவாத போது நன்றாக தொடர்பு கொள்வது.</span></p>
+</div>
+<div class="mini-card">
+  <h3>10. <span class="en">Building Lasting Communication Habits</span><span class="ta">நீடித்த தொடர்பு பழக்கங்களை உருவாக்குதல்</span></h3>
+  <p style="font-size:0.88rem; color:var(--soft); margin:0;"><span class="en">Turning what you've learned into a daily practice, not just knowledge.</span><span class="ta">நீங்கள் கற்றுக்கொண்டதை வெறும் அறிவாக அல்லாமல் ஒரு தினசரி பயிற்சியாக மாற்றுவது.</span></p>
+</div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0;"><span class="en">Have Questions?</span><span class="ta">கேள்விகள் உள்ளதா?</span></h2>
+    <p><span class="en">Reach out directly for guidance on this course or 1:1 coaching.</span><span class="ta">இந்த பாடநெறி அல்லது தனிநபர் பயிற்சிக்கான வழிகாட்டுதலுக்கு நேரடியாக தொடர்பு கொள்ளுங்கள்.</span></p>
+    <a class="btn wa" href="https://wa.me/919843702244?text=Hi%2C%20I%27m%20interested%20in%20the%20Communication%20Skills%20course." target="_blank"><span class="en">Chat on WhatsApp</span><span class="ta">வாட்ஸ்அப்பில் பேசுங்கள்</span></a>
+  </div>
+
+</div>
+
+<footer class="site">
+  <p class="en">&copy; NT Somasundaram Life Skills Program &mdash; "God is always with u"</p>
+  <p class="ta">&copy; என்.டி. சோமசுந்தரம் லைஃப் ஸ்கில்ஸ் திட்டம் &mdash; "God is always with u"</p>
+  <p>WhatsApp: +91 98437 02244 | somasundaramnt.lifecoach@gmail.com</p>
+</footer>
+
+<script>
+
+function initLangToggle(){
+  var saved = localStorage.getItem('cs_lang') || 'en';
+  if(saved === 'ta'){ document.body.classList.add('show-ta'); }
+  var btn = document.getElementById('langBtn');
+  if(btn){ btn.textContent = saved === 'ta' ? 'English' : 'தமிழ்'; }
+}
+function toggleLang(){
+  var isTa = document.body.classList.toggle('show-ta');
+  localStorage.setItem('cs_lang', isTa ? 'ta' : 'en');
+  var btn = document.getElementById('langBtn');
+  if(btn){ btn.textContent = isTa ? 'English' : 'தமிழ்'; }
+}
+document.addEventListener('DOMContentLoaded', initLangToggle);
+
+
+function logToSheet(params){
+  try{
+    var url = "https://script.google.com/macros/s/AKfycbwJD9aBRZP9uTsXV9slV2OjrysFi2fWtUHtAfNR-z52auy0NTy-38rx1MZfkXhw-TB5mQ/exec";
+    if(url.indexOf("AKfycb...") !== -1) return; // not yet configured
+    var qs = Object.keys(params).map(function(k){return encodeURIComponent(k)+"="+encodeURIComponent(params[k]);}).join("&");
+    var img = new Image();
+    img.src = url + "?action=registration&" + qs + "&_t=" + Date.now();
+  }catch(e){ console.warn("Sheet log skipped", e); }
+}
+
+function registerUser(){
+  var name = document.getElementById('regName').value.trim();
+  var email = document.getElementById('regEmail').value.trim();
+  var phone = document.getElementById('regPhone').value.trim();
+  if(!name || !phone){
+    alert('Please enter your name and WhatsApp number. / உங்கள் பெயரையும் வாட்ஸ்அப் எண்ணையும் உள்ளிடவும்.');
+    return;
+  }
+  localStorage.setItem('cs_name', name);
+  localStorage.setItem('cs_email', email);
+  localStorage.setItem('cs_phone', phone);
+  logToSheet({name:name, email:email, phone:phone});
+  showGate();
+}
+function showGate(){
+  var name = localStorage.getItem('cs_name');
+  if(name){
+    document.getElementById('gateForm').style.display = 'none';
+    document.getElementById('courseGate').style.display = 'block';
+    document.getElementById('welcomeName').textContent = ', ' + name;
+    document.getElementById('welcomeNameTa').textContent = ', ' + name;
+  }
+}
+document.addEventListener('DOMContentLoaded', showGate);
+</script>
+</body>
+</html>

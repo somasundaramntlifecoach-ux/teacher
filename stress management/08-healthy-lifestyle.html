@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthy Lifestyle Foundations | Stress Management for Parents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Stress Management for Parents — Shared Design System
+   Palette: calm sage / deep slate teal / dusty rose accent
+   ============================================================ */
+
+:root {
+  --bg: #EEF2ED;           /* pale eucalyptus */
+  --bg-card: #FFFFFF;
+  --ink: #26383D;          /* deep slate teal - primary text */
+  --ink-soft: #55666B;     /* muted body text */
+  --sage: #7E9C86;         /* primary green */
+  --sage-deep: #56755E;    /* darker green for hover/emphasis */
+  --rose: #C97B84;         /* dusty rose accent */
+  --rose-deep: #A85A66;
+  --sand: #F2EDE0;         /* warm neutral panel */
+  --line: #D8E0D6;
+  --shadow: 0 8px 24px rgba(38, 56, 61, 0.08);
+  --radius: 18px;
+  --font-en: 'Poppins', sans-serif;
+  --font-ta: 'Noto Sans Tamil', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-en);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.lang-ta, .ta-text { font-family: var(--font-ta); }
+
+[lang-block="ta"] { display: none; }
+body.lang-ta [lang-block="en"] { display: none; }
+body.lang-ta [lang-block="ta"] { display: block; }
+body.lang-ta span[lang-block="ta"] { display: inline; }
+body.lang-ta li[lang-block="ta"] { display: list-item; }
+
+img, svg { max-width: 100%; }
+
+a { color: inherit; }
+
+/* ---------- Top bar / language toggle ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(238, 242, 237, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--sage-deep);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rose); display:inline-block; }
+
+.lang-toggle {
+  display: flex;
+  border: 1.5px solid var(--sage);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-toggle button {
+  border: none;
+  background: transparent;
+  padding: 7px 16px;
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sage-deep);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.lang-toggle button.active {
+  background: var(--sage);
+  color: #fff;
+}
+
+.no-print { }
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  .topbar { position: static; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 56px 28px 40px;
+  text-align: center;
+}
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.subtitle {
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* breathing circle signature element */
+.breathe-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 10px;
+}
+.breathe-circle {
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #A9C4AF, var(--sage) 70%, var(--sage-deep));
+  box-shadow: 0 0 0 0 rgba(126,156,134,0.4);
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(126,156,134,0.35); }
+  50% { transform: scale(1.15); box-shadow: 0 0 0 18px rgba(126,156,134,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .breathe-circle { animation: none; }
+}
+
+/* ---------- Containers / sections ---------- */
+.container { max-width: 880px; margin: 0 auto; padding: 0 28px 60px; }
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  margin-bottom: 28px;
+}
+.panel-sand {
+  background: var(--sand);
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--rose);
+}
+.panel-sage {
+  background: #EAF1EA;
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--sage);
+}
+
+h2 { font-size: 1.5rem; color: var(--sage-deep); margin: 0 0 14px; }
+h3 { font-size: 1.15rem; color: var(--ink); margin: 24px 0 10px; }
+p { color: var(--ink-soft); margin: 0 0 14px; }
+ul, ol { color: var(--ink-soft); padding-left: 22px; }
+li { margin-bottom: 8px; }
+strong { color: var(--ink); }
+
+.example-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--rose);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.tip-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--sage-deep);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+/* ---------- Module path / stepping stones (home page) ---------- */
+.path {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 30px 0;
+}
+.stone {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: transform .2s ease;
+}
+.stone:hover { transform: translateX(4px); }
+.stone .num {
+  flex: none;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+}
+.stone .txt strong { display: block; color: var(--ink); font-size: 1.02rem; }
+.stone .txt span { color: var(--ink-soft); font-size: 0.88rem; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary { background: var(--sage-deep); color: #fff; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(86,117,94,.35); }
+.btn-whatsapp { background: #25D366; color: #fff; }
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37,211,102,.35); }
+.btn-outline { background: transparent; border: 1.5px solid var(--sage-deep); color: var(--sage-deep); }
+.btn-print { background: var(--sand); color: var(--ink); }
+
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 26px 0; }
+
+/* ---------- Nav prev/next ---------- */
+.module-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+}
+.module-nav a {
+  flex: 1;
+  text-decoration: none;
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  color: var(--sage-deep);
+  font-weight: 600;
+  text-align: center;
+}
+.module-nav a:hover { background: var(--sand); }
+
+/* ---------- Reflection box ---------- */
+.reflection {
+  background: linear-gradient(135deg, #F6EFE3, #ECE3D3);
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 26px 0;
+}
+.reflection textarea {
+  width: 100%;
+  min-height: 90px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  padding: 12px;
+  font-family: var(--font-en);
+  font-size: 0.95rem;
+  margin-top: 10px;
+  resize: vertical;
+}
+body.lang-ta .reflection textarea { font-family: var(--font-ta); }
+
+footer {
+  text-align: center;
+  padding: 34px 20px 50px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+footer .motto { color: var(--rose-deep); font-weight: 600; margin-top: 6px; }
+
+.progress-badge {
+  display: inline-block;
+  background: var(--sand);
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+</style>
+</head>
+<body>
+<div class="topbar no-print">
+  <a href="course-home.html" class="brand"><span class="dot"></span>
+    <span lang-block="en">Stress Management for Parents</span>
+    <span lang-block="ta" style="display:none">பெற்றோருக்கான மன அழுத்த மேலாண்மை</span>
+  </a>
+  <div class="lang-toggle">
+    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+    <button id="btn-ta" onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+
+<div class="hero">
+  <span class="progress-badge">
+    <span lang-block="en">Module 8 of 10</span>
+    <span lang-block="ta" style="display:none">பகுதி 8 / 10</span>
+  </span>
+  <div class="eyebrow" lang-block="en">Stress Management for Parents</div>
+  <div class="eyebrow" lang-block="ta" style="display:none">பெற்றோருக்கான மன அழுத்த மேலாண்மை</div>
+  <h1 lang-block="en">Healthy Lifestyle Foundations</h1>
+  <h1 lang-block="ta" style="display:none">ஆரோக்கியமான வாழ்க்கை முறை அடித்தளங்கள்</h1>
+  <p class="subtitle" lang-block="en">The body and mind are not separate when it comes to managing stress</p>
+  <p class="subtitle" lang-block="ta" style="display:none">மன அழுத்தத்தை நிர்வகிக்கும் போது உடலும் மனமும் தனித்தனியானவை அல்ல</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    
+        <h3 lang-block="en">Sleep hygiene</h3>
+        <h3 lang-block="ta" style="display:none">தூக்க சுகாதாரம்</h3>
+        <p lang-block="en">Sleep is often the first thing sacrificed by stressed parents, yet poor sleep directly worsens stress the next day, creating a difficult cycle. Simple sleep hygiene practices help: a consistent sleep and wake time, dimming screens an hour before bed, and keeping the bedroom cool and dark. Even small improvements in sleep quality meaningfully lower next-day stress reactivity.</p>
+        <p lang-block="ta" style="display:none">அழுத்தமான பெற்றோர்களால் தியாகம் செய்யப்படும் முதல் விஷயம் தூக்கம் தான், ஆனால் மோசமான தூக்கம் அடுத்த நாள் அழுத்தத்தை நேரடியாக மோசமாக்கி, ஒரு கடினமான சுழற்சியை உருவாக்குகிறது. எளிய தூக்க சுகாதார நடைமுறைகள் உதவும்: நிலையான தூக்க மற்றும் எழுந்திருக்கும் நேரம், தூங்குவதற்கு ஒரு மணி நேரம் முன் திரைகளை மங்கலாக்குதல், படுக்கையறையை குளிர்ச்சியாகவும் இருட்டாகவும் வைத்திருத்தல். தூக்க தரத்தில் சிறிய முன்னேற்றங்கள் கூட அடுத்த நாள் அழுத்த எதிர்வினையை குறிப்பிடத்தக்க அளவு குறைக்கும்.</p>
+        
+        <h3 lang-block="en">Nutrition and stress</h3>
+        <h3 lang-block="ta" style="display:none">ஊட்டச்சத்து மற்றும் மன அழுத்தம்</h3>
+        <p lang-block="en">Skipping meals or relying heavily on caffeine and sugar during stressful periods can cause blood sugar swings that mimic or worsen anxiety symptoms. You don't need a strict diet — simply aim for regular meals, adequate water through the day, and noticing if caffeine intake spikes specifically during your most stressful hours.</p>
+        <p lang-block="ta" style="display:none">அழுத்தமான காலகட்டங்களில் உணவை தவிர்ப்பது அல்லது காஃபின் மற்றும் சர்க்கரையை அதிகமாக நம்பியிருப்பது, பதற்றம் அறிகுறிகளை பிரதிபலிக்கும் அல்லது மோசமாக்கும் இரத்த சர்க்கரை மாற்றங்களை ஏற்படுத்தலாம். கண்டிப்பான உணவு முறை தேவையில்லை — வழக்கமான உணவுகள், நாள் முழுவதும் போதுமான தண்ணீர், மற்றும் உங்கள் அதிக அழுத்த நேரங்களில் காஃபின் உட்கொள்ளல் குறிப்பாக அதிகரிக்கிறதா என்பதை கவனித்தலே போதுமானது.</p>
+        
+        <h3 lang-block="en">Movement in small doses</h3>
+        <h3 lang-block="ta" style="display:none">சிறிய அளவுகளில் உடல் இயக்கம்</h3>
+        <p lang-block="en">You don't need an hour at the gym to benefit from physical activity. A 10-minute brisk walk releases the same stress-relieving endorphins as a longer workout, and can be done while dropping off a child, waiting for a school bus, or during a work break. Movement is one of the fastest ways to discharge the physical stress response.</p>
+        <p lang-block="ta" style="display:none">உடல் செயல்பாட்டிலிருந்து பயனடைய ஒரு மணிநேரம் ஜிம்முக்கு தேவையில்லை. 10 நிமிட வேகமான நடைப்பயிற்சி நீண்ட உடற்பயிற்சியை போலவே அழுத்தத்தை போக்கும் எண்டோர்பின்களை வெளியிடுகிறது, மேலும் குழந்தையை இறக்கிவிடும் போது, பள்ளி பேருந்திற்காக காத்திருக்கும் போது, அல்லது வேலை இடைவேளையின் போது செய்யலாம். உடல் இயக்கம் உடல் அழுத்த பதிலை வெளியேற்றுவதற்கான வேகமான வழிகளில் ஒன்றாகும்.</p>
+        
+
+    <div class="panel-sand">
+      <span class="example-tag" lang-block="en">Real-life example</span>
+      <span class="example-tag" lang-block="ta" style="display:none">உண்மை வாழ்க்கை உதாரணம்</span>
+      <p lang-block="en">Ganesh, who worked long hours, believed he had 'no time' for exercise. He started parking his car 10 minutes further from his office and walking the rest of the way, both morning and evening. Within three weeks, he noticed he was falling asleep faster at night and felt less reactive to his children's evening noise and demands — a small, sustainable change rather than an all-or-nothing fitness plan.</p>
+      <p lang-block="ta" style="display:none">நீண்ட நேரம் வேலை செய்த கணேஷ், தனக்கு உடற்பயிற்சிக்கு 'நேரமில்லை' என்று நம்பினார். அவர் தன் காரை அலுவலகத்தில் இருந்து 10 நிமிடம் தூரத்தில் நிறுத்தி, மீதமுள்ள தூரத்தை காலையிலும் மாலையிலும் நடக்கத் தொடங்கினார். மூன்று வாரங்களில், இரவில் விரைவாக தூங்கிவிடுவதையும், மாலை நேர சத்தத்திற்கும் குழந்தைகளின் கோரிக்கைகளுக்கும் குறைவான எதிர்வினையாற்றுவதையும் கவனித்தார் — முழுமையான உடற்பயிற்சி திட்டத்திற்கு பதிலாக ஒரு சிறிய, நிலையான மாற்றம்.</p>
+    </div>
+
+    <div class="panel-sage">
+      <span class="tip-tag" lang-block="en">Tips & suggestions for improvement</span>
+      <span class="tip-tag" lang-block="ta" style="display:none">குறிப்புகள் & மேம்பாட்டு பரிந்துரைகள்</span>
+      <ul lang-block="en">
+        <li>Set a fixed 'lights off' time and stick to it for one week, even if it feels difficult at first.</li><li>Add one glass of water and one proper meal on days you feel most rushed — these are easy to skip first.</li><li>Look for 10-minute windows in your existing routine to add a brisk walk, rather than finding a new hour.</li>
+      </ul>
+      <ul lang-block="ta" style="display:none">
+        <li>ஒரு நிலையான 'விளக்கு அணைக்கும்' நேரத்தை நிர்ணயித்து, முதலில் கடினமாக தோன்றினாலும் ஒரு வாரம் அதை பின்பற்றுங்கள்.</li><li>நீங்கள் அதிக அவசரமாக உணரும் நாட்களில் ஒரு கிளாஸ் தண்ணீரையும் ஒரு முறையான உணவையும் சேர்க்கவும் — இவை தான் முதலில் தவிர்க்கப்படுபவை.</li><li>புதிய மணிநேரத்தை தேடுவதற்கு பதிலாக, உங்கள் தற்போதைய வழக்கத்தில் வேகமான நடைப்பயிற்சியை சேர்க்க 10 நிமிட இடைவெளிகளை தேடுங்கள்.</li>
+      </ul>
+    </div>
+
+    <div class="reflection">
+      <strong lang-block="en">Reflection for this module</strong>
+      <strong lang-block="ta" style="display:none">இந்த பகுதிக்கான சிந்தனை</strong>
+      <p lang-block="en" style="margin-top:6px">Pick one: sleep, food, or movement. What is one small, realistic change you can make this week?</p>
+      <p lang-block="ta" style="display:none; margin-top:6px">ஒன்றை தேர்ந்தெடுக்கவும்: தூக்கம், உணவு, அல்லது உடல் இயக்கம். இந்த வாரம் நீங்கள் செய்யக்கூடிய ஒரு சிறிய, யதார்த்தமான மாற்றம் என்ன?</p>
+      <textarea placeholder="Write your thoughts here (not saved automatically — copy to your notes if needed)"></textarea>
+    </div>
+  </div>
+
+  <div class="btn-row no-print">
+    <a class="btn btn-whatsapp" href="https://wa.me/919843702244?text=Hi,%20I'm%20interested%20in%20the%20Stress%20Management%20for%20Parents%20course." target="_blank" rel="noopener">
+      <span lang-block="en">Ask a question on WhatsApp</span>
+      <span lang-block="ta" style="display:none">வாட்ஸ்அப்பில் கேள்வி கேளுங்கள்</span>
+    </a>
+    <button class="btn btn-print" onclick="window.print()">
+      <span lang-block="en">Save / Print this page</span>
+      <span lang-block="ta" style="display:none">இந்த பக்கத்தை சேமிக்க / அச்சிட</span>
+    </button>
+  </div>
+
+  <div class="module-nav no-print"><a href="07-support-network.html">
+            <span lang-block="en">&larr; Building a Support Network</span>
+            <span lang-block="ta" style="display:none">&larr; ஆதரவு வலையமைப்பை உருவாக்குதல்</span>
+        </a><a href="09-family-communication.html">
+            <span lang-block="en">Communication to Reduce Family Conflict &rarr;</span>
+            <span lang-block="ta" style="display:none">குடும்ப மோதலை குறைக்கும் தொடர்பாடல் &rarr;</span>
+        </a></div>
+</div>
+
+<footer>
+  <div lang-block="en">N T Somasundaram &middot; Life Skills Program</div>
+  <div lang-block="ta" style="display:none">என். டி. சோமசுந்தரம் &middot; வாழ்க்கை திறன் திட்டம்</div>
+  <div class="motto">God is always with u</div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('lang-ta', lang === 'ta');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-ta').classList.toggle('active', lang === 'ta');
+  document.querySelectorAll('[lang-block="en"]').forEach(function(el) {
+    el.style.display = (lang === 'en') ? '' : 'none';
+  });
+  document.querySelectorAll('[lang-block="ta"]').forEach(function(el) {
+    el.style.display = (lang === 'ta') ? '' : 'none';
+  });
+  localStorage.setItem('preferredLang', lang);
+}
+(function() {
+  var saved = localStorage.getItem('preferredLang');
+  if (saved === 'ta') setLang('ta');
+})();
+
+    function logModuleView() {
+      try {
+        var img = new Image();
+        var endpoint = "https://script.google.com/macros/s/AKfycbwO9yMIu2zvhjJmOK6P2UtxBLwztihY8ZLEWUwTv3vN4CTVmm2pVbB3HBgpErGteB3ycQ/exec"; // Code.gs deployment URL
+        var params = new URLSearchParams({
+          module: "8",
+          title: "Healthy Lifestyle Foundations",
+          lang: document.body.classList.contains('lang-ta') ? 'ta' : 'en',
+          ts: new Date().toISOString()
+        });
+        img.src = endpoint + "?" + params.toString();
+      } catch (e) { /* fail silently, never block the page */ }
+    }
+    window.addEventListener('load', logModuleView);
+    
+</script>
+</body>
+</html>

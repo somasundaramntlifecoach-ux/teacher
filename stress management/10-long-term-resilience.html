@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building Long-Term Resilience | Stress Management for Parents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Stress Management for Parents — Shared Design System
+   Palette: calm sage / deep slate teal / dusty rose accent
+   ============================================================ */
+
+:root {
+  --bg: #EEF2ED;           /* pale eucalyptus */
+  --bg-card: #FFFFFF;
+  --ink: #26383D;          /* deep slate teal - primary text */
+  --ink-soft: #55666B;     /* muted body text */
+  --sage: #7E9C86;         /* primary green */
+  --sage-deep: #56755E;    /* darker green for hover/emphasis */
+  --rose: #C97B84;         /* dusty rose accent */
+  --rose-deep: #A85A66;
+  --sand: #F2EDE0;         /* warm neutral panel */
+  --line: #D8E0D6;
+  --shadow: 0 8px 24px rgba(38, 56, 61, 0.08);
+  --radius: 18px;
+  --font-en: 'Poppins', sans-serif;
+  --font-ta: 'Noto Sans Tamil', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-en);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.lang-ta, .ta-text { font-family: var(--font-ta); }
+
+[lang-block="ta"] { display: none; }
+body.lang-ta [lang-block="en"] { display: none; }
+body.lang-ta [lang-block="ta"] { display: block; }
+body.lang-ta span[lang-block="ta"] { display: inline; }
+body.lang-ta li[lang-block="ta"] { display: list-item; }
+
+img, svg { max-width: 100%; }
+
+a { color: inherit; }
+
+/* ---------- Top bar / language toggle ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(238, 242, 237, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--sage-deep);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rose); display:inline-block; }
+
+.lang-toggle {
+  display: flex;
+  border: 1.5px solid var(--sage);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-toggle button {
+  border: none;
+  background: transparent;
+  padding: 7px 16px;
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sage-deep);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.lang-toggle button.active {
+  background: var(--sage);
+  color: #fff;
+}
+
+.no-print { }
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  .topbar { position: static; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 56px 28px 40px;
+  text-align: center;
+}
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.subtitle {
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* breathing circle signature element */
+.breathe-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 10px;
+}
+.breathe-circle {
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #A9C4AF, var(--sage) 70%, var(--sage-deep));
+  box-shadow: 0 0 0 0 rgba(126,156,134,0.4);
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(126,156,134,0.35); }
+  50% { transform: scale(1.15); box-shadow: 0 0 0 18px rgba(126,156,134,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .breathe-circle { animation: none; }
+}
+
+/* ---------- Containers / sections ---------- */
+.container { max-width: 880px; margin: 0 auto; padding: 0 28px 60px; }
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  margin-bottom: 28px;
+}
+.panel-sand {
+  background: var(--sand);
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--rose);
+}
+.panel-sage {
+  background: #EAF1EA;
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--sage);
+}
+
+h2 { font-size: 1.5rem; color: var(--sage-deep); margin: 0 0 14px; }
+h3 { font-size: 1.15rem; color: var(--ink); margin: 24px 0 10px; }
+p { color: var(--ink-soft); margin: 0 0 14px; }
+ul, ol { color: var(--ink-soft); padding-left: 22px; }
+li { margin-bottom: 8px; }
+strong { color: var(--ink); }
+
+.example-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--rose);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.tip-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--sage-deep);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+/* ---------- Module path / stepping stones (home page) ---------- */
+.path {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 30px 0;
+}
+.stone {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: transform .2s ease;
+}
+.stone:hover { transform: translateX(4px); }
+.stone .num {
+  flex: none;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+}
+.stone .txt strong { display: block; color: var(--ink); font-size: 1.02rem; }
+.stone .txt span { color: var(--ink-soft); font-size: 0.88rem; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary { background: var(--sage-deep); color: #fff; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(86,117,94,.35); }
+.btn-whatsapp { background: #25D366; color: #fff; }
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37,211,102,.35); }
+.btn-outline { background: transparent; border: 1.5px solid var(--sage-deep); color: var(--sage-deep); }
+.btn-print { background: var(--sand); color: var(--ink); }
+
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 26px 0; }
+
+/* ---------- Nav prev/next ---------- */
+.module-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+}
+.module-nav a {
+  flex: 1;
+  text-decoration: none;
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  color: var(--sage-deep);
+  font-weight: 600;
+  text-align: center;
+}
+.module-nav a:hover { background: var(--sand); }
+
+/* ---------- Reflection box ---------- */
+.reflection {
+  background: linear-gradient(135deg, #F6EFE3, #ECE3D3);
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 26px 0;
+}
+.reflection textarea {
+  width: 100%;
+  min-height: 90px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  padding: 12px;
+  font-family: var(--font-en);
+  font-size: 0.95rem;
+  margin-top: 10px;
+  resize: vertical;
+}
+body.lang-ta .reflection textarea { font-family: var(--font-ta); }
+
+footer {
+  text-align: center;
+  padding: 34px 20px 50px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+footer .motto { color: var(--rose-deep); font-weight: 600; margin-top: 6px; }
+
+.progress-badge {
+  display: inline-block;
+  background: var(--sand);
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+</style>
+</head>
+<body>
+<div class="topbar no-print">
+  <a href="course-home.html" class="brand"><span class="dot"></span>
+    <span lang-block="en">Stress Management for Parents</span>
+    <span lang-block="ta" style="display:none">பெற்றோருக்கான மன அழுத்த மேலாண்மை</span>
+  </a>
+  <div class="lang-toggle">
+    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+    <button id="btn-ta" onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+
+<div class="hero">
+  <span class="progress-badge">
+    <span lang-block="en">Module 10 of 10</span>
+    <span lang-block="ta" style="display:none">பகுதி 10 / 10</span>
+  </span>
+  <div class="eyebrow" lang-block="en">Stress Management for Parents</div>
+  <div class="eyebrow" lang-block="ta" style="display:none">பெற்றோருக்கான மன அழுத்த மேலாண்மை</div>
+  <h1 lang-block="en">Building Long-Term Resilience</h1>
+  <h1 lang-block="ta" style="display:none">நீண்டகால மீள் திறனை உருவாக்குதல்</h1>
+  <p class="subtitle" lang-block="en">Turning what you've learned into a lasting personal practice</p>
+  <p class="subtitle" lang-block="ta" style="display:none">நீங்கள் கற்றுக்கொண்டதை நீடித்த தனிப்பட்ட பயிற்சியாக மாற்றுதல்</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    
+        <h3 lang-block="en">Creating your personal stress-prevention plan</h3>
+        <h3 lang-block="ta" style="display:none">உங்கள் தனிப்பட்ட மன அழுத்த தடுப்பு திட்டத்தை உருவாக்குதல்</h3>
+        <p lang-block="en">Look back across this course: which technique from each module actually worked for you? Resilience isn't built from using every tool at once — it comes from choosing 2-3 practices that fit your life and returning to them consistently. Write your personal plan as simply as possible: your top warning sign, your go-to calming technique, and one person you'll reach out to when things get hard.</p>
+        <p lang-block="ta" style="display:none">இந்த பாடநெறியை திரும்பிப் பாருங்கள்: ஒவ்வொரு பகுதியிலிருந்தும் எந்த நுட்பம் உங்களுக்கு உண்மையில் பலனளித்தது? மீள் திறன் ஒரே நேரத்தில் எல்லா கருவிகளையும் பயன்படுத்துவதிலிருந்து உருவாகவில்லை — உங்கள் வாழ்க்கைக்கு பொருந்தும் 2-3 நடைமுறைகளை தேர்ந்தெடுத்து, தொடர்ந்து அவற்றுக்கு திரும்புவதிலிருந்து வருகிறது. உங்கள் தனிப்பட்ட திட்டத்தை முடிந்தவரை எளிமையாக எழுதுங்கள்: உங்கள் முதன்மை எச்சரிக்கை அறிகுறி, உங்கள் விருப்பமான அமைதிப்படுத்தும் நுட்பம், மற்றும் விஷயங்கள் கடினமாகும்போது நீங்கள் தொடர்பு கொள்ளும் ஒரு நபர்.</p>
+        
+        <h3 lang-block="en">Gratitude as a daily practice</h3>
+        <h3 lang-block="ta" style="display:none">தினசரி பயிற்சியாக நன்றியுணர்வு</h3>
+        <p lang-block="en">Regularly noticing what is going well — even briefly, three things before bed — trains attention away from constant threat-scanning and toward balance. This isn't about ignoring real problems; it's about ensuring your mind isn't only cataloguing what's wrong, which is what chronic stress tends to do by default.</p>
+        <p lang-block="ta" style="display:none">எது நன்றாக நடக்கிறது என்பதை தொடர்ந்து கவனிப்பது — சுருக்கமாக கூட, தூங்குவதற்கு முன் மூன்று விஷயங்கள் — கவனத்தை தொடர்ச்சியான அச்சுறுத்தல்-தேடலிலிருந்து சமநிலைக்கு பயிற்சி அளிக்கிறது. இது உண்மையான பிரச்சினைகளை புறக்கணிப்பது பற்றியது அல்ல; இது உங்கள் மனம் தவறானதை மட்டும் பட்டியலிடவில்லை என்பதை உறுதி செய்வது, இது நீண்டகால மன அழுத்தம் இயல்பாகவே செய்யும் போக்கு.</p>
+        
+        <h3 lang-block="en">Self-compassion over self-criticism</h3>
+        <h3 lang-block="ta" style="display:none">சுய விமர்சனத்தை விட சுய இரக்கம்</h3>
+        <p lang-block="en">Resilient parents are not stress-free parents — they are parents who treat themselves with the same kindness they extend to their children when things go wrong. When you have a hard day, try speaking to yourself the way you'd speak to a close friend in the same situation. This single shift, practiced consistently, is one of the strongest predictors of long-term emotional wellbeing.</p>
+        <p lang-block="ta" style="display:none">மீள் திறன் கொண்ட பெற்றோர்கள் மன அழுத்தமில்லாத பெற்றோர்கள் அல்ல — விஷயங்கள் தவறாக நடக்கும்போது தங்கள் குழந்தைகளுக்கு அளிக்கும் அதே கருணையை தங்களுக்கும் அளிக்கும் பெற்றோர்கள். உங்களுக்கு ஒரு கடினமான நாள் இருக்கும்போது, அதே சூழ்நிலையில் ஒரு நெருங்கிய நண்பரிடம் நீங்கள் பேசும் விதத்தில் உங்களிடமே பேச முயற்சிக்கவும். தொடர்ந்து பயிற்சி செய்யப்படும் இந்த ஒற்றை மாற்றம், நீண்டகால உணர்ச்சி நல்வாழ்வின் வலிமையான முன்னறிவிப்புகளில் ஒன்றாகும்.</p>
+        
+
+    <div class="panel-sand">
+      <span class="example-tag" lang-block="en">Real-life example</span>
+      <span class="example-tag" lang-block="ta" style="display:none">உண்மை வாழ்க்கை உதாரணம்</span>
+      <p lang-block="en">At the end of the course, Vijay reviewed his notes and realized that of everything he'd tried, only two things had really stuck: the 4-7-8 breathing technique before difficult conversations, and calling his brother once a week just to talk. He let go of trying to implement everything at once, and instead built these two small habits into his week — a modest but sustainable shift that he maintained long after the course ended, unlike the more ambitious plans he had abandoned within days in the past.</p>
+      <p lang-block="ta" style="display:none">பாடநெறியின் முடிவில், விஜய் தன் குறிப்புகளை மறுபரிசீலனை செய்து, அவர் முயற்சித்த அனைத்திலும், இரண்டு விஷயங்கள் மட்டுமே உண்மையில் நிலைத்திருந்தன என்பதை உணர்ந்தார்: கடினமான உரையாடல்களுக்கு முன் 4-7-8 சுவாச நுட்பம், மற்றும் வாரத்திற்கு ஒரு முறை தன் சகோதரனை பேசுவதற்காக மட்டும் அழைப்பது. எல்லாவற்றையும் ஒரே நேரத்தில் செயல்படுத்த முயற்சிப்பதை விட்டுவிட்டு, இந்த இரண்டு சிறிய பழக்கங்களையும் தன் வாரத்தில் உருவாக்கினார் — கடந்த காலத்தில் சில நாட்களில் கைவிட்ட மிகவும் லட்சியமான திட்டங்களை போலல்லாமல், பாடநெறி முடிந்த பின்னரும் அவர் பராமரித்த ஒரு சிறிய ஆனால் நிலையான மாற்றம்.</p>
+    </div>
+
+    <div class="panel-sage">
+      <span class="tip-tag" lang-block="en">Tips & suggestions for improvement</span>
+      <span class="tip-tag" lang-block="ta" style="display:none">குறிப்புகள் & மேம்பாட்டு பரிந்துரைகள்</span>
+      <ul lang-block="en">
+        <li>Choose only 2-3 techniques from this whole course to focus on for the next month — not all ten.</li><li>End each day by naming three things that went well, however small.</li><li>Keep this course's link saved and revisit any single module whenever you feel your stress rising again.</li>
+      </ul>
+      <ul lang-block="ta" style="display:none">
+        <li>அடுத்த மாதத்திற்கு கவனம் செலுத்த இந்த முழு பாடநெறியிலிருந்தும் 2-3 நுட்பங்களை மட்டும் தேர்ந்தெடுக்கவும் — பத்தும் அல்ல.</li><li>ஒவ்வொரு நாளும் நன்றாக நடந்த மூன்று விஷயங்களை பெயரிட்டு முடிக்கவும், அவை எவ்வளவு சிறியதாக இருந்தாலும்.</li><li>இந்த பாடநெறியின் இணைப்பை சேமித்து வையுங்கள், உங்கள் அழுத்தம் மீண்டும் அதிகரிப்பதாக உணரும்போது எந்த ஒரு பகுதியையும் மீண்டும் பார்வையிடுங்கள்.</li>
+      </ul>
+    </div>
+
+    <div class="reflection">
+      <strong lang-block="en">Reflection for this module</strong>
+      <strong lang-block="ta" style="display:none">இந்த பகுதிக்கான சிந்தனை</strong>
+      <p lang-block="en" style="margin-top:6px">Write your personal stress-prevention plan: one warning sign, one calming technique, one support person.</p>
+      <p lang-block="ta" style="display:none; margin-top:6px">உங்கள் தனிப்பட்ட மன அழுத்த தடுப்பு திட்டத்தை எழுதுங்கள்: ஒரு எச்சரிக்கை அறிகுறி, ஒரு அமைதிப்படுத்தும் நுட்பம், ஒரு ஆதரவு நபர்.</p>
+      <textarea placeholder="Write your thoughts here (not saved automatically — copy to your notes if needed)"></textarea>
+    </div>
+  </div>
+
+  <div class="btn-row no-print">
+    <a class="btn btn-whatsapp" href="https://wa.me/919843702244?text=Hi,%20I'm%20interested%20in%20the%20Stress%20Management%20for%20Parents%20course." target="_blank" rel="noopener">
+      <span lang-block="en">Ask a question on WhatsApp</span>
+      <span lang-block="ta" style="display:none">வாட்ஸ்அப்பில் கேள்வி கேளுங்கள்</span>
+    </a>
+    <button class="btn btn-print" onclick="window.print()">
+      <span lang-block="en">Save / Print this page</span>
+      <span lang-block="ta" style="display:none">இந்த பக்கத்தை சேமிக்க / அச்சிட</span>
+    </button>
+  </div>
+
+  <div class="module-nav no-print"><a href="09-family-communication.html">
+            <span lang-block="en">&larr; Communication to Reduce Family Conflict</span>
+            <span lang-block="ta" style="display:none">&larr; குடும்ப மோதலை குறைக்கும் தொடர்பாடல்</span>
+        </a><a href="course-home.html"><span lang-block="en">Finish &rarr; Course Home</span><span lang-block="ta" style="display:none">முடி &rarr; பாடநெறி முகப்பு</span></a></div>
+</div>
+
+<footer>
+  <div lang-block="en">N T Somasundaram &middot; Life Skills Program</div>
+  <div lang-block="ta" style="display:none">என். டி. சோமசுந்தரம் &middot; வாழ்க்கை திறன் திட்டம்</div>
+  <div class="motto">God is always with u</div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('lang-ta', lang === 'ta');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-ta').classList.toggle('active', lang === 'ta');
+  document.querySelectorAll('[lang-block="en"]').forEach(function(el) {
+    el.style.display = (lang === 'en') ? '' : 'none';
+  });
+  document.querySelectorAll('[lang-block="ta"]').forEach(function(el) {
+    el.style.display = (lang === 'ta') ? '' : 'none';
+  });
+  localStorage.setItem('preferredLang', lang);
+}
+(function() {
+  var saved = localStorage.getItem('preferredLang');
+  if (saved === 'ta') setLang('ta');
+})();
+
+    function logModuleView() {
+      try {
+        var img = new Image();
+        var endpoint = "https://script.google.com/macros/s/AKfycbwO9yMIu2zvhjJmOK6P2UtxBLwztihY8ZLEWUwTv3vN4CTVmm2pVbB3HBgpErGteB3ycQ/exec"; // Code.gs deployment URL
+        var params = new URLSearchParams({
+          module: "10",
+          title: "Building Long-Term Resilience",
+          lang: document.body.classList.contains('lang-ta') ? 'ta' : 'en',
+          ts: new Date().toISOString()
+        });
+        img.src = endpoint + "?" + params.toString();
+      } catch (e) { /* fail silently, never block the page */ }
+    }
+    window.addEventListener('load', logModuleView);
+    
+</script>
+</body>
+</html>

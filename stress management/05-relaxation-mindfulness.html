@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relaxation & Mindfulness Practices | Stress Management for Parents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Stress Management for Parents — Shared Design System
+   Palette: calm sage / deep slate teal / dusty rose accent
+   ============================================================ */
+
+:root {
+  --bg: #EEF2ED;           /* pale eucalyptus */
+  --bg-card: #FFFFFF;
+  --ink: #26383D;          /* deep slate teal - primary text */
+  --ink-soft: #55666B;     /* muted body text */
+  --sage: #7E9C86;         /* primary green */
+  --sage-deep: #56755E;    /* darker green for hover/emphasis */
+  --rose: #C97B84;         /* dusty rose accent */
+  --rose-deep: #A85A66;
+  --sand: #F2EDE0;         /* warm neutral panel */
+  --line: #D8E0D6;
+  --shadow: 0 8px 24px rgba(38, 56, 61, 0.08);
+  --radius: 18px;
+  --font-en: 'Poppins', sans-serif;
+  --font-ta: 'Noto Sans Tamil', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-en);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.lang-ta, .ta-text { font-family: var(--font-ta); }
+
+[lang-block="ta"] { display: none; }
+body.lang-ta [lang-block="en"] { display: none; }
+body.lang-ta [lang-block="ta"] { display: block; }
+body.lang-ta span[lang-block="ta"] { display: inline; }
+body.lang-ta li[lang-block="ta"] { display: list-item; }
+
+img, svg { max-width: 100%; }
+
+a { color: inherit; }
+
+/* ---------- Top bar / language toggle ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(238, 242, 237, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--sage-deep);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rose); display:inline-block; }
+
+.lang-toggle {
+  display: flex;
+  border: 1.5px solid var(--sage);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-toggle button {
+  border: none;
+  background: transparent;
+  padding: 7px 16px;
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sage-deep);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.lang-toggle button.active {
+  background: var(--sage);
+  color: #fff;
+}
+
+.no-print { }
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  .topbar { position: static; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 56px 28px 40px;
+  text-align: center;
+}
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.subtitle {
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* breathing circle signature element */
+.breathe-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 10px;
+}
+.breathe-circle {
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #A9C4AF, var(--sage) 70%, var(--sage-deep));
+  box-shadow: 0 0 0 0 rgba(126,156,134,0.4);
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(126,156,134,0.35); }
+  50% { transform: scale(1.15); box-shadow: 0 0 0 18px rgba(126,156,134,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .breathe-circle { animation: none; }
+}
+
+/* ---------- Containers / sections ---------- */
+.container { max-width: 880px; margin: 0 auto; padding: 0 28px 60px; }
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  margin-bottom: 28px;
+}
+.panel-sand {
+  background: var(--sand);
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--rose);
+}
+.panel-sage {
+  background: #EAF1EA;
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--sage);
+}
+
+h2 { font-size: 1.5rem; color: var(--sage-deep); margin: 0 0 14px; }
+h3 { font-size: 1.15rem; color: var(--ink); margin: 24px 0 10px; }
+p { color: var(--ink-soft); margin: 0 0 14px; }
+ul, ol { color: var(--ink-soft); padding-left: 22px; }
+li { margin-bottom: 8px; }
+strong { color: var(--ink); }
+
+.example-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--rose);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.tip-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--sage-deep);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+/* ---------- Module path / stepping stones (home page) ---------- */
+.path {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 30px 0;
+}
+.stone {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: transform .2s ease;
+}
+.stone:hover { transform: translateX(4px); }
+.stone .num {
+  flex: none;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+}
+.stone .txt strong { display: block; color: var(--ink); font-size: 1.02rem; }
+.stone .txt span { color: var(--ink-soft); font-size: 0.88rem; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary { background: var(--sage-deep); color: #fff; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(86,117,94,.35); }
+.btn-whatsapp { background: #25D366; color: #fff; }
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37,211,102,.35); }
+.btn-outline { background: transparent; border: 1.5px solid var(--sage-deep); color: var(--sage-deep); }
+.btn-print { background: var(--sand); color: var(--ink); }
+
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 26px 0; }
+
+/* ---------- Nav prev/next ---------- */
+.module-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+}
+.module-nav a {
+  flex: 1;
+  text-decoration: none;
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  color: var(--sage-deep);
+  font-weight: 600;
+  text-align: center;
+}
+.module-nav a:hover { background: var(--sand); }
+
+/* ---------- Reflection box ---------- */
+.reflection {
+  background: linear-gradient(135deg, #F6EFE3, #ECE3D3);
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 26px 0;
+}
+.reflection textarea {
+  width: 100%;
+  min-height: 90px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  padding: 12px;
+  font-family: var(--font-en);
+  font-size: 0.95rem;
+  margin-top: 10px;
+  resize: vertical;
+}
+body.lang-ta .reflection textarea { font-family: var(--font-ta); }
+
+footer {
+  text-align: center;
+  padding: 34px 20px 50px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+footer .motto { color: var(--rose-deep); font-weight: 600; margin-top: 6px; }
+
+.progress-badge {
+  display: inline-block;
+  background: var(--sand);
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+</style>
+</head>
+<body>
+<div class="topbar no-print">
+  <a href="course-home.html" class="brand"><span class="dot"></span>
+    <span lang-block="en">Stress Management for Parents</span>
+    <span lang-block="ta" style="display:none">பெற்றோருக்கான மன அழுத்த மேலாண்மை</span>
+  </a>
+  <div class="lang-toggle">
+    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+    <button id="btn-ta" onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+
+<div class="hero">
+  <span class="progress-badge">
+    <span lang-block="en">Module 5 of 10</span>
+    <span lang-block="ta" style="display:none">பகுதி 5 / 10</span>
+  </span>
+  <div class="eyebrow" lang-block="en">Stress Management for Parents</div>
+  <div class="eyebrow" lang-block="ta" style="display:none">பெற்றோருக்கான மன அழுத்த மேலாண்மை</div>
+  <h1 lang-block="en">Relaxation & Mindfulness Practices</h1>
+  <h1 lang-block="ta" style="display:none">ஓய்வு மற்றும் நினைவாற்றல் பயிற்சிகள்</h1>
+  <p class="subtitle" lang-block="en">Simple, practical techniques you can use between school runs and meetings</p>
+  <p class="subtitle" lang-block="ta" style="display:none">பள்ளிக்கு அழைத்துச் செல்வதற்கும் கூட்டங்களுக்கும் இடையே பயன்படுத்தக்கூடிய எளிய நுட்பங்கள்</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    
+        <h3 lang-block="en">The 4-7-8 breathing technique</h3>
+        <h3 lang-block="ta" style="display:none">4-7-8 சுவாச நுட்பம்</h3>
+        <p lang-block="en">This technique directly calms the nervous system. Sit comfortably. Breathe in quietly through your nose for 4 seconds. Hold your breath for 7 seconds. Exhale slowly and completely through your mouth for 8 seconds, making a soft whoosh sound. Repeat for four cycles. This can be done in a parked car, a bathroom, or even standing in a school pickup line — it needs no equipment and takes under two minutes.</p>
+        <p lang-block="ta" style="display:none">இந்த நுட்பம் நேரடியாக நரம்பு மண்டலத்தை அமைதிப்படுத்துகிறது. வசதியாக அமருங்கள். மூக்கின் வழியாக 4 வினாடிகள் அமைதியாக மூச்சை இழுக்கவும். 7 வினாடிகள் மூச்சை பிடித்து வையுங்கள். வாய் வழியாக 8 வினாடிகள் மெதுவாக, முழுமையாக மூச்சை வெளியேற்றுங்கள், மென்மையான சத்தத்துடன். நான்கு சுழற்சிகள் செய்யுங்கள். இதை நிறுத்தப்பட்ட காரில், குளியலறையில், அல்லது பள்ளி பிக்-அப் வரிசையில் நிற்கும் போது கூட செய்யலாம் — இதற்கு உபகரணங்கள் தேவையில்லை, இரண்டு நிமிடத்திற்கும் குறைவான நேரம் எடுக்கும்.</p>
+        
+        <h3 lang-block="en">Five-minute mindfulness</h3>
+        <h3 lang-block="ta" style="display:none">ஐந்து நிமிட நினைவாற்றல்</h3>
+        <p lang-block="en">Mindfulness simply means paying full attention to the present moment without judgment. A simple version: sit quietly and name 5 things you can see, 4 things you can hear, 3 things you can physically feel (like your feet on the floor), 2 things you can smell, and 1 thing you can taste. This '5-4-3-2-1' grounding exercise pulls your mind out of anxious future-thinking and into the present, where most of us feel calmer.</p>
+        <p lang-block="ta" style="display:none">நினைவாற்றல் என்பது தீர்ப்பு இல்லாமல் தற்போதைய தருணத்தில் முழு கவனத்தை செலுத்துவதாகும். ஒரு எளிய பதிப்பு: அமைதியாக அமர்ந்து, நீங்கள் பார்க்கக்கூடிய 5 விஷயங்களையும், கேட்கக்கூடிய 4 விஷயங்களையும், உடல் ரீதியாக உணரக்கூடிய 3 விஷயங்களையும் (தரையில் உங்கள் கால்கள் போல), நுகரக்கூடிய 2 விஷயங்களையும், சுவைக்கக்கூடிய 1 விஷயத்தையும் பெயரிடுங்கள். இந்த '5-4-3-2-1' தரையிறங்கும் பயிற்சி உங்கள் மனதை கவலையான எதிர்கால சிந்தனையிலிருந்து வெளியே எடுத்து தற்போதைக்கு கொண்டு வருகிறது, அங்கு நம்மில் பெரும்பாலோர் அமைதியாக உணர்கிறோம்.</p>
+        
+        <h3 lang-block="en">Progressive muscle relaxation</h3>
+        <h3 lang-block="ta" style="display:none">படிப்படியான தசை தளர்வு</h3>
+        <p lang-block="en">Starting from your feet and moving upward, tense each muscle group for 5 seconds, then release and notice the difference. Feet, calves, thighs, stomach, hands, arms, shoulders, and finally your face. This technique is especially useful before sleep, as it physically signals to your body that it is safe to relax, which can also help with the sleep difficulties that often come with chronic stress.</p>
+        <p lang-block="ta" style="display:none">உங்கள் கால்களில் இருந்து தொடங்கி மேலே நோக்கி, ஒவ்வொரு தசைக் குழுவையும் 5 வினாடிகள் இறுக்கி, பின்னர் விடுவித்து வித்தியாசத்தை கவனியுங்கள். கால்கள், கன்றுகள், தொடைகள், வயிறு, கைகள், கைகள், தோள்கள், இறுதியாக உங்கள் முகம். இந்த நுட்பம் தூக்கத்திற்கு முன் குறிப்பாக பயனுள்ளதாக இருக்கும், ஏனெனில் இது தளர்வாக இருப்பது பாதுகாப்பானது என்று உங்கள் உடலுக்கு உடல் ரீதியாக சமிக்ஞை செய்கிறது, இது நீண்டகால அழுத்தத்துடன் அடிக்கடி வரும் தூக்க சிக்கல்களுக்கும் உதவும்.</p>
+        
+
+    <div class="panel-sand">
+      <span class="example-tag" lang-block="en">Real-life example</span>
+      <span class="example-tag" lang-block="ta" style="display:none">உண்மை வாழ்க்கை உதாரணம்</span>
+      <p lang-block="en">Priya used to feel her chest tighten every day right before her son's online class started, worrying about technical glitches and his focus. She began doing the 4-7-8 breathing technique for four cycles right before opening the laptop. Within a week, she noticed the anticipatory tightness had eased — the technique didn't remove the challenges of online class, but it stopped her body from bracing for stress before anything had even happened.</p>
+      <p lang-block="ta" style="display:none">பிரியாவுக்கு தன் மகனின் ஆன்லைன் வகுப்பு தொடங்குவதற்கு சற்று முன் தினமும் மார்பு இறுக்கமாக உணரும், தொழில்நுட்ப கோளாறுகள் மற்றும் அவனது கவனம் பற்றிய கவலையால். லேப்டாப்பை திறப்பதற்கு முன் நான்கு சுழற்சிகள் 4-7-8 சுவாச நுட்பத்தை செய்யத் தொடங்கினார். ஒரு வாரத்திற்குள், முன்னெதிர்பார்ப்பு இறுக்கம் தணிந்திருப்பதை கவனித்தார் — இந்த நுட்பம் ஆன்லைன் வகுப்பின் சவால்களை நீக்கவில்லை, ஆனால் எதுவும் நடப்பதற்கு முன்பே அழுத்தத்திற்காக அவரது உடல் தயாராவதை நிறுத்தியது.</p>
+    </div>
+
+    <div class="panel-sage">
+      <span class="tip-tag" lang-block="en">Tips & suggestions for improvement</span>
+      <span class="tip-tag" lang-block="ta" style="display:none">குறிப்புகள் & மேம்பாட்டு பரிந்துரைகள்</span>
+      <ul lang-block="en">
+        <li>Practice 4-7-8 breathing at a calm time first, so it becomes familiar before you need it in a stressful moment.</li><li>Attach a mindfulness pause to something you already do daily — like waiting for tea to boil.</li><li>Progressive muscle relaxation works well as a wind-down routine 15 minutes before bed.</li>
+      </ul>
+      <ul lang-block="ta" style="display:none">
+        <li>முதலில் அமைதியான நேரத்தில் 4-7-8 சுவாசத்தை பயிற்சி செய்யுங்கள், அழுத்தமான தருணத்தில் தேவைப்படும் முன் இது பரிச்சயமாகிவிடும்.</li><li>நீங்கள் ஏற்கனவே தினமும் செய்யும் ஒன்றுடன் ஒரு நினைவாற்றல் இடைவெளியை இணைக்கவும் — தேநீர் கொதிக்க காத்திருப்பது போல.</li><li>படிப்படியான தசை தளர்வு தூங்குவதற்கு 15 நிமிடம் முன் ஒரு அமைதிப்படுத்தும் வழக்கமாக நன்றாக செயல்படுகிறது.</li>
+      </ul>
+    </div>
+
+    <div class="reflection">
+      <strong lang-block="en">Reflection for this module</strong>
+      <strong lang-block="ta" style="display:none">இந்த பகுதிக்கான சிந்தனை</strong>
+      <p lang-block="en" style="margin-top:6px">Try the 4-7-8 breathing technique three times this week. Note how your body felt before and after.</p>
+      <p lang-block="ta" style="display:none; margin-top:6px">இந்த வாரம் 4-7-8 சுவாச நுட்பத்தை மூன்று முறை முயற்சிக்கவும். முன்பும் பின்பும் உங்கள் உடல் எப்படி உணர்ந்தது என்பதை குறிப்பிடுங்கள்.</p>
+      <textarea placeholder="Write your thoughts here (not saved automatically — copy to your notes if needed)"></textarea>
+    </div>
+  </div>
+
+  <div class="btn-row no-print">
+    <a class="btn btn-whatsapp" href="https://wa.me/919843702244?text=Hi,%20I'm%20interested%20in%20the%20Stress%20Management%20for%20Parents%20course." target="_blank" rel="noopener">
+      <span lang-block="en">Ask a question on WhatsApp</span>
+      <span lang-block="ta" style="display:none">வாட்ஸ்அப்பில் கேள்வி கேளுங்கள்</span>
+    </a>
+    <button class="btn btn-print" onclick="window.print()">
+      <span lang-block="en">Save / Print this page</span>
+      <span lang-block="ta" style="display:none">இந்த பக்கத்தை சேமிக்க / அச்சிட</span>
+    </button>
+  </div>
+
+  <div class="module-nav no-print"><a href="04-cognitive-reframing.html">
+            <span lang-block="en">&larr; Cognitive Reframing Techniques</span>
+            <span lang-block="ta" style="display:none">&larr; சிந்தனை மறு வடிவமைப்பு நுட்பங்கள்</span>
+        </a><a href="06-time-management.html">
+            <span lang-block="en">Time Management & Prioritization &rarr;</span>
+            <span lang-block="ta" style="display:none">நேர மேலாண்மை மற்றும் முன்னுரிமை &rarr;</span>
+        </a></div>
+</div>
+
+<footer>
+  <div lang-block="en">N T Somasundaram &middot; Life Skills Program</div>
+  <div lang-block="ta" style="display:none">என். டி. சோமசுந்தரம் &middot; வாழ்க்கை திறன் திட்டம்</div>
+  <div class="motto">God is always with u</div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('lang-ta', lang === 'ta');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-ta').classList.toggle('active', lang === 'ta');
+  document.querySelectorAll('[lang-block="en"]').forEach(function(el) {
+    el.style.display = (lang === 'en') ? '' : 'none';
+  });
+  document.querySelectorAll('[lang-block="ta"]').forEach(function(el) {
+    el.style.display = (lang === 'ta') ? '' : 'none';
+  });
+  localStorage.setItem('preferredLang', lang);
+}
+(function() {
+  var saved = localStorage.getItem('preferredLang');
+  if (saved === 'ta') setLang('ta');
+})();
+
+    function logModuleView() {
+      try {
+        var img = new Image();
+        var endpoint = "https://script.google.com/macros/s/AKfycbwO9yMIu2zvhjJmOK6P2UtxBLwztihY8ZLEWUwTv3vN4CTVmm2pVbB3HBgpErGteB3ycQ/exec"; // Code.gs deployment URL
+        var params = new URLSearchParams({
+          module: "5",
+          title: "Relaxation & Mindfulness Practices",
+          lang: document.body.classList.contains('lang-ta') ? 'ta' : 'en',
+          ts: new Date().toISOString()
+        });
+        img.src = endpoint + "?" + params.toString();
+      } catch (e) { /* fail silently, never block the page */ }
+    }
+    window.addEventListener('load', logModuleView);
+    
+</script>
+</body>
+</html>

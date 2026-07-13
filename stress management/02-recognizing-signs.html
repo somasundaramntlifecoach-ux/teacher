@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recognizing the Signs | Stress Management for Parents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Stress Management for Parents — Shared Design System
+   Palette: calm sage / deep slate teal / dusty rose accent
+   ============================================================ */
+
+:root {
+  --bg: #EEF2ED;           /* pale eucalyptus */
+  --bg-card: #FFFFFF;
+  --ink: #26383D;          /* deep slate teal - primary text */
+  --ink-soft: #55666B;     /* muted body text */
+  --sage: #7E9C86;         /* primary green */
+  --sage-deep: #56755E;    /* darker green for hover/emphasis */
+  --rose: #C97B84;         /* dusty rose accent */
+  --rose-deep: #A85A66;
+  --sand: #F2EDE0;         /* warm neutral panel */
+  --line: #D8E0D6;
+  --shadow: 0 8px 24px rgba(38, 56, 61, 0.08);
+  --radius: 18px;
+  --font-en: 'Poppins', sans-serif;
+  --font-ta: 'Noto Sans Tamil', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-en);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.lang-ta, .ta-text { font-family: var(--font-ta); }
+
+[lang-block="ta"] { display: none; }
+body.lang-ta [lang-block="en"] { display: none; }
+body.lang-ta [lang-block="ta"] { display: block; }
+body.lang-ta span[lang-block="ta"] { display: inline; }
+body.lang-ta li[lang-block="ta"] { display: list-item; }
+
+img, svg { max-width: 100%; }
+
+a { color: inherit; }
+
+/* ---------- Top bar / language toggle ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(238, 242, 237, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--sage-deep);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rose); display:inline-block; }
+
+.lang-toggle {
+  display: flex;
+  border: 1.5px solid var(--sage);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-toggle button {
+  border: none;
+  background: transparent;
+  padding: 7px 16px;
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sage-deep);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.lang-toggle button.active {
+  background: var(--sage);
+  color: #fff;
+}
+
+.no-print { }
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  .topbar { position: static; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 56px 28px 40px;
+  text-align: center;
+}
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.subtitle {
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* breathing circle signature element */
+.breathe-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 10px;
+}
+.breathe-circle {
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #A9C4AF, var(--sage) 70%, var(--sage-deep));
+  box-shadow: 0 0 0 0 rgba(126,156,134,0.4);
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(126,156,134,0.35); }
+  50% { transform: scale(1.15); box-shadow: 0 0 0 18px rgba(126,156,134,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .breathe-circle { animation: none; }
+}
+
+/* ---------- Containers / sections ---------- */
+.container { max-width: 880px; margin: 0 auto; padding: 0 28px 60px; }
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  margin-bottom: 28px;
+}
+.panel-sand {
+  background: var(--sand);
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--rose);
+}
+.panel-sage {
+  background: #EAF1EA;
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--sage);
+}
+
+h2 { font-size: 1.5rem; color: var(--sage-deep); margin: 0 0 14px; }
+h3 { font-size: 1.15rem; color: var(--ink); margin: 24px 0 10px; }
+p { color: var(--ink-soft); margin: 0 0 14px; }
+ul, ol { color: var(--ink-soft); padding-left: 22px; }
+li { margin-bottom: 8px; }
+strong { color: var(--ink); }
+
+.example-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--rose);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.tip-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--sage-deep);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+/* ---------- Module path / stepping stones (home page) ---------- */
+.path {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 30px 0;
+}
+.stone {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: transform .2s ease;
+}
+.stone:hover { transform: translateX(4px); }
+.stone .num {
+  flex: none;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+}
+.stone .txt strong { display: block; color: var(--ink); font-size: 1.02rem; }
+.stone .txt span { color: var(--ink-soft); font-size: 0.88rem; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary { background: var(--sage-deep); color: #fff; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(86,117,94,.35); }
+.btn-whatsapp { background: #25D366; color: #fff; }
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37,211,102,.35); }
+.btn-outline { background: transparent; border: 1.5px solid var(--sage-deep); color: var(--sage-deep); }
+.btn-print { background: var(--sand); color: var(--ink); }
+
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 26px 0; }
+
+/* ---------- Nav prev/next ---------- */
+.module-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+}
+.module-nav a {
+  flex: 1;
+  text-decoration: none;
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  color: var(--sage-deep);
+  font-weight: 600;
+  text-align: center;
+}
+.module-nav a:hover { background: var(--sand); }
+
+/* ---------- Reflection box ---------- */
+.reflection {
+  background: linear-gradient(135deg, #F6EFE3, #ECE3D3);
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 26px 0;
+}
+.reflection textarea {
+  width: 100%;
+  min-height: 90px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  padding: 12px;
+  font-family: var(--font-en);
+  font-size: 0.95rem;
+  margin-top: 10px;
+  resize: vertical;
+}
+body.lang-ta .reflection textarea { font-family: var(--font-ta); }
+
+footer {
+  text-align: center;
+  padding: 34px 20px 50px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+footer .motto { color: var(--rose-deep); font-weight: 600; margin-top: 6px; }
+
+.progress-badge {
+  display: inline-block;
+  background: var(--sand);
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+</style>
+</head>
+<body>
+<div class="topbar no-print">
+  <a href="course-home.html" class="brand"><span class="dot"></span>
+    <span lang-block="en">Stress Management for Parents</span>
+    <span lang-block="ta" style="display:none">பெற்றோருக்கான மன அழுத்த மேலாண்மை</span>
+  </a>
+  <div class="lang-toggle">
+    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+    <button id="btn-ta" onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+
+<div class="hero">
+  <span class="progress-badge">
+    <span lang-block="en">Module 2 of 10</span>
+    <span lang-block="ta" style="display:none">பகுதி 2 / 10</span>
+  </span>
+  <div class="eyebrow" lang-block="en">Stress Management for Parents</div>
+  <div class="eyebrow" lang-block="ta" style="display:none">பெற்றோருக்கான மன அழுத்த மேலாண்மை</div>
+  <h1 lang-block="en">Recognizing the Signs</h1>
+  <h1 lang-block="ta" style="display:none">அறிகுறிகளை அடையாளம் காணுதல்</h1>
+  <p class="subtitle" lang-block="en">Learning to notice stress in your body, emotions, and behavior before it builds up</p>
+  <p class="subtitle" lang-block="ta" style="display:none">மன அழுத்தம் அதிகரிக்கும் முன், உடல், உணர்வு, நடத்தையில் அதை கவனிக்க கற்றுக்கொள்வது</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    
+        <h3 lang-block="en">Physical signs</h3>
+        <h3 lang-block="ta" style="display:none">உடல் அறிகுறிகள்</h3>
+        <p lang-block="en">Stress often shows up in the body long before we consciously notice it: tension in the shoulders and neck, headaches, disturbed sleep, changes in appetite, fatigue that doesn't go away with rest, or a racing heartbeat during ordinary moments. These are your body's early warning signals, not something to ignore or push through.</p>
+        <p lang-block="ta" style="display:none">நாம் உணர்வுபூர்வமாக கவனிக்கும் முன்பே, மன அழுத்தம் பெரும்பாலும் உடலில் தோன்றும்: தோள்பட்டை மற்றும் கழுத்தில் இறுக்கம், தலைவலி, தூக்கக் கோளாறு, பசியில் மாற்றம், ஓய்வெடுத்தும் போகாத சோர்வு, அல்லது சாதாரண தருணங்களில் இதயத் துடிப்பு வேகமாக இருப்பது. இவை உங்கள் உடலின் ஆரம்பகால எச்சரிக்கை சமிக்ஞைகள், புறக்கணிக்கக்கூடியவை அல்ல.</p>
+        
+        <h3 lang-block="en">Emotional and behavioral signs</h3>
+        <h3 lang-block="ta" style="display:none">உணர்ச்சி மற்றும் நடத்தை அறிகுறிகள்</h3>
+        <p lang-block="en">Emotionally, stress can show up as irritability, feeling overwhelmed, a short temper with your children, anxiety about small things, or a sense of numbness. Behaviorally, watch for withdrawing from family or friends, skipping meals, scrolling the phone for hours to 'escape,' or snapping at your spouse or children over minor issues. These are signals asking for attention, not character flaws.</p>
+        <p lang-block="ta" style="display:none">உணர்ச்சி ரீதியாக, மன அழுத்தம் எரிச்சல், மிகைப்படுத்தப்பட்ட உணர்வு, குழந்தைகளிடம் விரைவான கோபம், சிறிய விஷயங்களில் பதட்டம், அல்லது உணர்வின்மை போல தோன்றலாம். நடத்தை ரீதியாக, குடும்பம் அல்லது நண்பர்களிடமிருந்து விலகுதல், உணவை தவிர்த்தல், 'தப்பிக்க' மணிநேரக்கணக்கில் ஃபோனை பார்த்துக்கொண்டிருத்தல், அல்லது சிறிய விஷயங்களுக்கு துணைவர் அல்லது குழந்தைகளிடம் கோபப்படுதல் ஆகியவற்றை கவனியுங்கள். இவை கவனத்தை கோரும் சமிக்ஞைகள், குணக்குறைபாடுகள் அல்ல.</p>
+        
+        <h3 lang-block="en">Why early recognition matters</h3>
+        <h3 lang-block="ta" style="display:none">ஆரம்பகால அடையாளம் ஏன் முக்கியம்</h3>
+        <p lang-block="en">The earlier you notice these signs, the smaller the intervention needed. Catching stress at the 'irritable' stage might only need a short walk or a good night's sleep. Left unnoticed for months, the same stress can lead to burnout, health problems, or strained family relationships that take much longer to repair.</p>
+        <p lang-block="ta" style="display:none">இந்த அறிகுறிகளை நீங்கள் எவ்வளவு விரைவாக கவனிக்கிறீர்களோ, அவ்வளவு சிறிய தலையீடு போதுமானது. 'எரிச்சல்' நிலையில் மன அழுத்தத்தை பிடிப்பது ஒரு சிறிய நடைப்பயிற்சி அல்லது ஒரு நல்ல தூக்கத்தை மட்டுமே தேவைப்படுத்தலாம். மாதக்கணக்கில் கவனிக்கப்படாமல் விடப்பட்டால், அதே அழுத்தம் மனச்சோர்வு, உடல்நல பிரச்சினைகள், அல்லது சரிசெய்ய அதிக நேரம் எடுக்கும் குடும்ப உறவு பாதிப்புகளுக்கு வழிவகுக்கும்.</p>
+        
+
+    <div class="panel-sand">
+      <span class="example-tag" lang-block="en">Real-life example</span>
+      <span class="example-tag" lang-block="ta" style="display:none">உண்மை வாழ்க்கை உதாரணம்</span>
+      <p lang-block="en">Rajesh, a father of a 15-year-old, realized he had been getting frequent headaches and snapping at small mistakes for over a month. Instead of dismissing it as 'just a busy season,' he wrote down his symptoms and recognized a pattern connected to an upcoming project deadline at work. Naming the pattern helped him ask his manager for one flexible day, which eased the pressure before it turned into a bigger health issue.</p>
+      <p lang-block="ta" style="display:none">15 வயது மகனின் தந்தையான ராஜேஷ், ஒரு மாதத்திற்கும் மேலாக அடிக்கடி தலைவலி மற்றும் சிறிய தவறுகளுக்கு கோபப்படுவதை உணர்ந்தார். இதை 'வேலை பிஸியான காலம்' என்று தள்ளிவிடாமல், தன் அறிகுறிகளை எழுதி, வரவிருக்கும் வேலை காலக்கெடுவுடன் தொடர்புடைய ஒரு முறையை கண்டறிந்தார். இந்த முறையை பெயரிட்டது அவரது மேலாளரிடம் ஒரு நெகிழ்வான நாளை கேட்க உதவியது, இது பெரிய உடல்நல பிரச்சினையாக மாறும் முன் அழுத்தத்தை தணித்தது.</p>
+    </div>
+
+    <div class="panel-sage">
+      <span class="tip-tag" lang-block="en">Tips & suggestions for improvement</span>
+      <span class="tip-tag" lang-block="ta" style="display:none">குறிப்புகள் & மேம்பாட்டு பரிந்துரைகள்</span>
+      <ul lang-block="en">
+        <li>Do a quick body scan each evening: shoulders, jaw, stomach — where are you holding tension?</li><li>If you notice the same physical symptom for more than 2 weeks, treat it as a signal, not a coincidence.</li><li>Share what you notice with your spouse or a trusted friend — saying it out loud makes it easier to act on.</li>
+      </ul>
+      <ul lang-block="ta" style="display:none">
+        <li>ஒவ்வொரு மாலையும் ஒரு விரைவான உடல் பரிசோதனை செய்யுங்கள்: தோள்கள், தாடை, வயிறு — எங்கே இறுக்கத்தை வைத்திருக்கிறீர்கள்?</li><li>2 வாரங்களுக்கும் மேலாக அதே உடல் அறிகுறியை கவனித்தால், அதை தற்செயலாக அல்ல, சமிக்ஞையாக கருதுங்கள்.</li><li>நீங்கள் கவனிப்பதை துணைவர் அல்லது நம்பகமான நண்பரிடம் பகிருங்கள் — சத்தமாக சொல்வது செயல்பட எளிதாக்கும்.</li>
+      </ul>
+    </div>
+
+    <div class="reflection">
+      <strong lang-block="en">Reflection for this module</strong>
+      <strong lang-block="ta" style="display:none">இந்த பகுதிக்கான சிந்தனை</strong>
+      <p lang-block="en" style="margin-top:6px">List three physical or emotional signs that tell you your stress is rising. When did you last notice them?</p>
+      <p lang-block="ta" style="display:none; margin-top:6px">உங்கள் மன அழுத்தம் அதிகரிப்பதை காட்டும் மூன்று உடல் அல்லது உணர்ச்சி அறிகுறிகளை பட்டியலிடுங்கள். கடைசியாக எப்போது அவற்றை கவனித்தீர்கள்?</p>
+      <textarea placeholder="Write your thoughts here (not saved automatically — copy to your notes if needed)"></textarea>
+    </div>
+  </div>
+
+  <div class="btn-row no-print">
+    <a class="btn btn-whatsapp" href="https://wa.me/919843702244?text=Hi,%20I'm%20interested%20in%20the%20Stress%20Management%20for%20Parents%20course." target="_blank" rel="noopener">
+      <span lang-block="en">Ask a question on WhatsApp</span>
+      <span lang-block="ta" style="display:none">வாட்ஸ்அப்பில் கேள்வி கேளுங்கள்</span>
+    </a>
+    <button class="btn btn-print" onclick="window.print()">
+      <span lang-block="en">Save / Print this page</span>
+      <span lang-block="ta" style="display:none">இந்த பக்கத்தை சேமிக்க / அச்சிட</span>
+    </button>
+  </div>
+
+  <div class="module-nav no-print"><a href="01-understanding-stress.html">
+            <span lang-block="en">&larr; Understanding Stress</span>
+            <span lang-block="ta" style="display:none">&larr; மன அழுத்தத்தை புரிந்துகொள்வது</span>
+        </a><a href="03-effects-on-children.html">
+            <span lang-block="en">How Parental Stress Affects Children &rarr;</span>
+            <span lang-block="ta" style="display:none">பெற்றோர் மன அழுத்தம் குழந்தைகளை எவ்வாறு பாதிக்கிறது &rarr;</span>
+        </a></div>
+</div>
+
+<footer>
+  <div lang-block="en">N T Somasundaram &middot; Life Skills Program</div>
+  <div lang-block="ta" style="display:none">என். டி. சோமசுந்தரம் &middot; வாழ்க்கை திறன் திட்டம்</div>
+  <div class="motto">God is always with u</div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('lang-ta', lang === 'ta');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-ta').classList.toggle('active', lang === 'ta');
+  document.querySelectorAll('[lang-block="en"]').forEach(function(el) {
+    el.style.display = (lang === 'en') ? '' : 'none';
+  });
+  document.querySelectorAll('[lang-block="ta"]').forEach(function(el) {
+    el.style.display = (lang === 'ta') ? '' : 'none';
+  });
+  localStorage.setItem('preferredLang', lang);
+}
+(function() {
+  var saved = localStorage.getItem('preferredLang');
+  if (saved === 'ta') setLang('ta');
+})();
+
+    function logModuleView() {
+      try {
+        var img = new Image();
+        var endpoint = "https://script.google.com/macros/s/AKfycbwO9yMIu2zvhjJmOK6P2UtxBLwztihY8ZLEWUwTv3vN4CTVmm2pVbB3HBgpErGteB3ycQ/exec"; // Code.gs deployment URL
+        var params = new URLSearchParams({
+          module: "2",
+          title: "Recognizing the Signs",
+          lang: document.body.classList.contains('lang-ta') ? 'ta' : 'en',
+          ts: new Date().toISOString()
+        });
+        img.src = endpoint + "?" + params.toString();
+      } catch (e) { /* fail silently, never block the page */ }
+    }
+    window.addEventListener('load', logModuleView);
+    
+</script>
+</body>
+</html>

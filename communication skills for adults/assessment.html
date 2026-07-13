@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication Style Assessment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B3A5C; --gold:#C9A24B; --cream:#FAF7F0; --teal:#2C6E7F;
+  --ink:#233142; --soft:#6b7686; --green:#3E8E5A; --red:#C1502E;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Poppins',sans-serif; background:var(--cream); color:var(--ink); line-height:1.65;}
+[lang="ta"]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.ta{display:none;}
+body.show-ta .en{display:none;}
+body.show-ta .ta{display:inline;}
+body.show-ta .ta-block{display:block;}
+.en-block{display:block;}
+body.show-ta .en-block{display:none;}
+
+header.top{background:var(--navy); color:#fff; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+header.top .brand{font-weight:600; font-size:1.05rem;}
+header.top .brand span{color:var(--gold);}
+.lang-toggle{background:var(--gold); color:var(--navy); border:none; padding:8px 16px; border-radius:20px; font-weight:600; cursor:pointer; font-size:0.9rem;}
+.lang-toggle:hover{opacity:0.9;}
+
+.container{max-width:820px; margin:0 auto; padding:28px 20px 60px;}
+.card{background:#fff; border-radius:14px; padding:26px 24px; box-shadow:0 2px 14px rgba(27,58,92,0.08); margin-bottom:20px;}
+h1{color:var(--navy); font-size:1.6rem; margin-bottom:6px;}
+h2{color:var(--navy); font-size:1.2rem; margin:18px 0 10px; border-left:4px solid var(--gold); padding-left:10px;}
+h3{color:var(--teal); font-size:1.05rem; margin:14px 0 6px;}
+p{margin-bottom:10px; color:var(--ink);}
+.subtitle{color:var(--soft); font-size:0.95rem; margin-bottom:16px;}
+.tag{display:inline-block; background:var(--navy); color:#fff; font-size:0.72rem; padding:3px 10px; border-radius:12px; margin-bottom:10px;}
+.progress-wrap{background:#eee; border-radius:10px; height:10px; overflow:hidden; margin:14px 0;}
+.progress-bar{background:var(--gold); height:100%; transition:width .4s;}
+.btn{display:inline-block; background:var(--navy); color:#fff; border:none; padding:11px 22px; border-radius:8px; font-weight:600; cursor:pointer; text-decoration:none; font-size:0.95rem; margin:6px 6px 6px 0;}
+.btn:hover{background:var(--teal);}
+.btn.gold{background:var(--gold); color:var(--navy);}
+.btn.outline{background:transparent; border:2px solid var(--navy); color:var(--navy);}
+.btn.wa{background:#25D366; color:#fff;}
+.nav-row{display:flex; justify-content:space-between; margin-top:24px; flex-wrap:wrap; gap:10px;}
+.quote-box{background:var(--cream); border-left:4px solid var(--teal); padding:14px 18px; border-radius:6px; font-style:italic; color:var(--teal); margin:16px 0;}
+.exercise-box{background:#fff8ea; border:1px dashed var(--gold); border-radius:10px; padding:16px 18px; margin:14px 0;}
+.concept-block{margin-bottom:22px; padding-bottom:18px; border-bottom:1px solid #eee;}
+.concept-block:last-child{border-bottom:none;}
+.example-box{background:#eef5f7; border-left:4px solid var(--teal); border-radius:6px; padding:12px 16px; margin:10px 0;}
+.example-box h3{color:var(--teal); margin:0 0 6px;}
+.metaphor-box{background:#fbeee4; border-left:4px solid var(--red); border-radius:6px; padding:12px 16px; margin:10px 0;}
+.metaphor-box h3{color:var(--red); margin:0 0 6px;}
+.tip-box{background:#fff6d8; border:1px solid var(--gold); border-radius:10px; padding:14px 18px; margin:16px 0;}
+.tip-box h3{color:#8a6d1d; margin:0 0 6px;}
+ul{margin:8px 0 8px 22px;}
+li{margin-bottom:6px;}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:14px 0;}
+.mini-card{background:var(--cream); border-radius:10px; padding:14px; border:1px solid #eee2c8;}
+.mini-card h3{margin-top:0;}
+footer.site{text-align:center; padding:24px; color:var(--soft); font-size:0.85rem;}
+input[type=text], input[type=email], input[type=tel]{width:100%; padding:11px 12px; border:1px solid #ddd; border-radius:8px; margin-bottom:12px; font-family:inherit; font-size:0.95rem;}
+label{font-weight:600; font-size:0.9rem; color:var(--navy); display:block; margin-bottom:4px;}
+.q-block{margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid #eee;}
+.q-options{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
+.q-options label{font-weight:400; color:var(--ink); display:flex; align-items:center; gap:8px; cursor:pointer;}
+@media print{ header.top, .btn, .lang-toggle, .no-print{display:none !important;} body{background:#fff;} .card{box-shadow:none; border:1px solid #ccc;} }
+@media (max-width:600px){ .container{padding:18px 14px 40px;} h1{font-size:1.35rem;} }
+
+.bar-row{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+.bar-label{width:170px; font-size:0.85rem; font-weight:600; color:var(--navy);}
+.bar-track{flex:1; background:#eee; border-radius:8px; height:22px; overflow:hidden;}
+.bar-fill{height:100%; border-radius:8px; transition:width .6s ease;}
+.bar-val{width:40px; text-align:right; font-size:0.85rem; color:var(--soft);}
+#resultSection{display:none;}
+
+/* ---- Report-specific styling ---- */
+.report-page{background:#fff; border-radius:14px; box-shadow:0 2px 14px rgba(27,58,92,0.08); padding:34px 30px; margin-bottom:22px; position:relative;}
+.report-page + .report-page{margin-top:0;}
+.report-header{display:flex; justify-content:space-between; align-items:flex-start; border-bottom:3px solid var(--navy); padding-bottom:14px; margin-bottom:18px;}
+.report-header .brandmark{font-weight:700; color:var(--navy); font-size:1rem;}
+.report-header .brandmark span{color:var(--gold);}
+.report-header .page-no{font-size:0.78rem; color:var(--soft);}
+.report-cover h1{font-size:1.7rem; margin-bottom:4px;}
+.report-meta{display:flex; gap:24px; flex-wrap:wrap; margin:16px 0; font-size:0.88rem; color:var(--soft);}
+.report-meta b{color:var(--navy);}
+.dominant-banner{background:linear-gradient(135deg,var(--navy),var(--teal)); color:#fff; border-radius:12px; padding:20px 22px; margin:18px 0; text-align:center;}
+.dominant-banner .label{font-size:0.8rem; opacity:0.85; text-transform:uppercase; letter-spacing:1px;}
+.dominant-banner .style-name{font-size:1.6rem; font-weight:700; color:var(--gold); margin:4px 0;}
+.style-detail-card{border:1px solid #eee2c8; border-radius:10px; padding:16px 18px; margin-bottom:14px;}
+.style-detail-card.dominant{border:2px solid var(--gold); background:#fffdf5;}
+.style-detail-card h3{margin-top:0; display:flex; justify-content:space-between; align-items:center;}
+.strength-watch{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px;}
+.strength-watch div{font-size:0.85rem;}
+.strength-watch .strengths{color:var(--green);}
+.strength-watch .watch{color:var(--red);}
+.tips-list{margin:10px 0 10px 20px;}
+.tips-list li{margin-bottom:8px; font-size:0.92rem;}
+.action-plan-row{display:flex; gap:12px; margin-bottom:12px; align-items:flex-start;}
+.action-plan-num{background:var(--navy); color:#fff; border-radius:50%; width:26px; height:26px; min-width:26px; display:flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:700;}
+.recommend-module{display:flex; justify-content:space-between; align-items:center; background:var(--cream); border-radius:8px; padding:10px 14px; margin-bottom:8px; font-size:0.9rem;}
+.signature-line{margin-top:26px; padding-top:14px; border-top:1px dashed #ccc; font-size:0.82rem; color:var(--soft); text-align:center;}
+@media print{
+  .report-page{box-shadow:none; border:1px solid #ddd; page-break-after:always;}
+  .report-page:last-of-type{page-break-after:auto;}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">NT Somasundaram <span>Life Skills</span> &mdash; <span class="en">Communication Skills for Adults</span><span class="ta">பெரியவர்களுக்கான தொடர்பு திறன்கள்</span></div>
+  <button class="lang-toggle" id="langBtn" onclick="toggleLang()">தமிழ்</button>
+</header>
+
+<div class="container">
+  <div class="card">
+    <span class="tag"><span class="en">Start Here</span><span class="ta">இங்கே தொடங்குங்கள்</span></span>
+    <h1><span class="en">Communication Style Assessment</span><span class="ta">தொடர்பு பாணி மதிப்பீடு</span></h1>
+    <p class="subtitle"><span class="en">Answer honestly — there are no right or wrong answers. This takes about 6-8 minutes and generates a personalized 3-page report with tips and a suggested learning path.</span><span class="ta">நேர்மையாக பதிலளியுங்கள் — சரி அல்லது தவறு பதில்கள் இல்லை. இதற்கு சுமார் 6-8 நிமிடங்கள் ஆகும், குறிப்புகள் மற்றும் பரிந்துரைக்கப்பட்ட கற்றல் பாதையுடன் தனிப்பயனாக்கப்பட்ட 3-பக்க அறிக்கையை உருவாக்கும்.</span></p>
+  </div>
+
+  <div class="card" id="regCard">
+    <label><span class="en">Your Name</span><span class="ta">உங்கள் பெயர்</span></label>
+    <input type="text" id="userName" placeholder="Name / பெயர்">
+    <label><span class="en">WhatsApp Number</span><span class="ta">வாட்ஸ்அப் எண்</span></label>
+    <input type="tel" id="userPhone" placeholder="10-digit number">
+  </div>
+
+  <form class="card" id="assessForm">
+    <div class="q-block">
+  <p><strong>1.</strong> <span class="en">I often stay quiet even when I disagree, to avoid conflict.</span><span class="ta">மோதலை தவிர்க்க, நான் உடன்படாதபோதும் பெரும்பாலும் அமைதியாக இருப்பேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q1" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q1" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q1" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q1" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q1" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>2.</strong> <span class="en">I find it hard to say no when someone asks me for a favor.</span><span class="ta">யாராவது எனக்கு உதவி கேட்கும்போது 'இல்லை' சொல்வது எனக்கு கடினம்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q2" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q2" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q2" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q2" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q2" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>3.</strong> <span class="en">I apologize even when I haven't done anything wrong.</span><span class="ta">நான் தவறு செய்யாதபோதும் மன்னிப்பு கேட்பேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q3" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q3" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q3" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q3" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q3" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>4.</strong> <span class="en">I let others make decisions for me rather than express my own preference.</span><span class="ta">என் விருப்பத்தை தெரிவிப்பதை விட மற்றவர்கள் என்னுடைய முடிவுகளை எடுக்க அனுமதிப்பேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q4" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q4" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q4" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q4" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q4" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>5.</strong> <span class="en">I avoid bringing up problems, hoping they will resolve on their own.</span><span class="ta">பிரச்சனைகள் தாமாகவே தீரும் என்று நம்பி அவற்றை எழுப்புவதை தவிர்ப்பேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q5" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q5" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q5" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q5" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q5" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>6.</strong> <span class="en">I feel my needs are less important than other people's needs.</span><span class="ta">மற்றவர்களின் தேவைகளை விட என் தேவைகள் குறைவாக முக்கியம் என்று நான் உணர்கிறேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q6" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q6" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q6" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q6" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q6" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>7.</strong> <span class="en">I tend to raise my voice or interrupt when I feel strongly about something.</span><span class="ta">ஒரு விஷயத்தில் எனக்கு வலுவான உணர்வு இருக்கும்போது, நான் குரலை உயர்த்துவேன் அல்லது இடைமறிப்பேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q7" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q7" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q7" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q7" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q7" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>8.</strong> <span class="en">I find myself criticizing or blaming others when things go wrong.</span><span class="ta">விஷயங்கள் தவறாக நடக்கும்போது மற்றவர்களை குறை சொல்வதோ குற்றம் சாட்டுவதோ நடக்கும்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q8" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q8" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q8" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q8" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q8" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>9.</strong> <span class="en">I prefer to win an argument rather than reach a compromise.</span><span class="ta">சமரசத்தை அடைவதை விட ஒரு விவாதத்தில் வெற்றி பெறுவதையே நான் விரும்புகிறேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q9" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q9" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q9" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q9" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q9" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>10.</strong> <span class="en">People have told me I can come across as intimidating or harsh.</span><span class="ta">நான் அச்சுறுத்தும் அல்லது கடுமையானவனாக தோன்றுவதாக மக்கள் என்னிடம் சொல்லியிருக்கிறார்கள்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q10" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q10" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q10" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q10" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q10" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>11.</strong> <span class="en">I sometimes use sarcasm or put-downs to make my point.</span><span class="ta">என் கருத்தை சொல்ல சில நேரங்களில் நக்கல் அல்லது இகழ்ச்சியை பயன்படுத்துவேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q11" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q11" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q11" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q11" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q11" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>12.</strong> <span class="en">I make decisions for the group without asking for others' input.</span><span class="ta">மற்றவர்களின் கருத்தை கேட்காமல் குழுவிற்கான முடிவுகளை நான் எடுப்பேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q12" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q12" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q12" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q12" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q12" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>13.</strong> <span class="en">When I'm upset, I go quiet or give the silent treatment instead of saying what's wrong.</span><span class="ta">நான் வருத்தமாக இருக்கும்போது, என்ன தவறு என்று சொல்வதற்குப் பதிலாக அமைதியாகிவிடுவேன் அல்லது பேசாமல் இருப்பேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q13" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q13" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q13" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q13" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q13" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>14.</strong> <span class="en">I agree to something out loud but complain about it to others afterward.</span><span class="ta">நான் உரக்க ஒப்புக்கொள்வேன், ஆனால் பின்னர் அதைப் பற்றி மற்றவர்களிடம் புகார் செய்வேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q14" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q14" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q14" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q14" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q14" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>15.</strong> <span class="en">I use sarcasm to express frustration instead of stating it directly.</span><span class="ta">எரிச்சலை நேரடியாக சொல்வதற்குப் பதிலாக நக்கலை பயன்படுத்துவேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q15" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q15" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q15" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q15" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q15" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>16.</strong> <span class="en">I sometimes procrastinate or 'forget' tasks I quietly resent doing.</span><span class="ta">நான் அமைதியாக விரும்பாத பணிகளை சில நேரங்களில் தாமதப்படுத்துவேன் அல்லது 'மறந்துவிடுவேன்'.</span></p>
+  <div class="q-options"><label><input type="radio" name="q16" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q16" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q16" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q16" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q16" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>17.</strong> <span class="en">I hint at what's bothering me rather than saying it clearly.</span><span class="ta">என்னை தொந்தரவு செய்வதை தெளிவாக சொல்வதற்குப் பதிலாக குறிப்பாக சொல்வேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q17" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q17" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q17" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q17" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q17" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>18.</strong> <span class="en">I say 'I'm fine' when I'm actually upset, expecting the other person to notice.</span><span class="ta">நான் உண்மையில் வருத்தமாக இருக்கும்போது 'நான் நலமாக இருக்கிறேன்' என்று சொல்லி, மறுநபர் அதை கவனிப்பார் என எதிர்பார்ப்பேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q18" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q18" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q18" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q18" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q18" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>19.</strong> <span class="en">I can say no to a request without feeling excessive guilt.</span><span class="ta">அதிக குற்றவுணர்வு இல்லாமல் ஒரு கோரிக்கைக்கு 'இல்லை' சொல்ல முடியும்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q19" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q19" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q19" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q19" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q19" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>20.</strong> <span class="en">I express my opinion clearly, even when it differs from others.</span><span class="ta">மற்றவர்களிடமிருந்து வேறுபட்டாலும் என் கருத்தை தெளிவாக தெரிவிப்பேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q20" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q20" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q20" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q20" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q20" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>21.</strong> <span class="en">I can share how I feel using calm, direct language.</span><span class="ta">அமைதியான, நேரடியான மொழியில் என் உணர்வுகளை பகிர்ந்துகொள்ள முடியும்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q21" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q21" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q21" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q21" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q21" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>22.</strong> <span class="en">I listen to others' views even while holding my own position.</span><span class="ta">என் சொந்த நிலைப்பாட்டை வைத்திருக்கும்போதும் மற்றவர்களின் கருத்துக்களை கேட்பேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q22" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q22" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q22" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q22" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q22" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>23.</strong> <span class="en">I address problems directly with the person involved, rather than avoiding it.</span><span class="ta">தவிர்ப்பதற்குப் பதிலாக, சம்பந்தப்பட்ட நபருடன் நேரடியாக பிரச்சனைகளை பேசுவேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q23" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q23" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q23" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q23" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q23" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+<div class="q-block">
+  <p><strong>24.</strong> <span class="en">I feel my needs and other people's needs are equally important.</span><span class="ta">என் தேவைகளும் மற்றவர்களின் தேவைகளும் சமமாக முக்கியம் என்று நான் உணர்கிறேன்.</span></p>
+  <div class="q-options"><label><input type="radio" name="q24" value="1" required> <span class="en">Strongly Disagree</span><span class="ta">முற்றிலும் மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q24" value="2" required> <span class="en">Disagree</span><span class="ta">மறுக்கிறேன்</span></label>
+<label><input type="radio" name="q24" value="3" required> <span class="en">Neutral</span><span class="ta">நடுநிலை</span></label>
+<label><input type="radio" name="q24" value="4" required> <span class="en">Agree</span><span class="ta">ஒப்புக்கொள்கிறேன்</span></label>
+<label><input type="radio" name="q24" value="5" required> <span class="en">Strongly Agree</span><span class="ta">முற்றிலும் ஒப்புக்கொள்கிறேன்</span></label>
+</div>
+</div>
+    <button type="submit" class="btn gold"><span class="en">Generate My Report</span><span class="ta">என் அறிக்கையை உருவாக்கவும்</span></button>
+  </form>
+
+  <div id="resultSection">
+
+    <!-- ============ PAGE 1: COVER + SUMMARY ============ -->
+    <div class="report-page">
+      <div class="report-header">
+        <div class="brandmark">NT Somasundaram <span>Life Skills</span></div>
+        <div class="page-no"><span class="en">Page 1 of 3 — Summary</span><span class="ta">பக்கம் 1/3 — சுருக்கம்</span></div>
+      </div>
+      <div class="report-cover">
+        <span class="tag"><span class="en">Personal Report</span><span class="ta">தனிப்பட்ட அறிக்கை</span></span>
+        <h1><span class="en">Communication Style Assessment Report</span><span class="ta">தொடர்பு பாணி மதிப்பீட்டு அறிக்கை</span></h1>
+        <div class="report-meta">
+          <div><b><span class="en">Name:</span><span class="ta">பெயர்:</span></b> <span id="metaName"></span></div>
+          <div><b><span class="en">Date:</span><span class="ta">தேதி:</span></b> <span id="metaDate"></span></div>
+          <div><b><span class="en">Prepared by:</span><span class="ta">தயாரித்தவர்:</span></b> NT Somasundaram Life Skills Program</div>
+        </div>
+
+        <div class="dominant-banner">
+          <div class="label"><span class="en">Your Dominant Communication Style</span><span class="ta">உங்கள் முதன்மை தொடர்பு பாணி</span></div>
+          <div class="style-name" id="dominantNameBanner"></div>
+          <div id="dominantOneLiner" style="font-size:0.92rem;"></div>
+        </div>
+
+        <h2><span class="en">Score Overview</span><span class="ta">மதிப்பெண் மேலோட்டம்</span></h2>
+        <div id="chartArea"></div>
+
+        <div class="quote-box" id="summaryText" style="margin-top:16px;"></div>
+      </div>
+    </div>
+
+    <!-- ============ PAGE 2: DETAILED BREAKDOWN ============ -->
+    <div class="report-page">
+      <div class="report-header">
+        <div class="brandmark">NT Somasundaram <span>Life Skills</span></div>
+        <div class="page-no"><span class="en">Page 2 of 3 — Detailed Breakdown</span><span class="ta">பக்கம் 2/3 — விரிவான பகுப்பாய்வு</span></div>
+      </div>
+      <h2 style="margin-top:0;"><span class="en">Your Style Breakdown</span><span class="ta">உங்கள் பாணி பகுப்பாய்வு</span></h2>
+      <p class="subtitle"><span class="en">Everyone uses a blend of all four styles depending on the situation. Below is how each one showed up in your answers, with strengths and areas to watch for each.</span><span class="ta">ஒவ்வொருவரும் சூழ்நிலையைப் பொறுத்து நான்கு பாணிகளின் கலவையையும் பயன்படுத்துகிறார்கள். ஒவ்வொன்றும் உங்கள் பதில்களில் எப்படி தோன்றியது, ஒவ்வொன்றுக்குமான பலங்கள் மற்றும் கவனிக்க வேண்டியவை கீழே உள்ளன.</span></p>
+      <div id="styleDetailCards"></div>
+    </div>
+
+    <!-- ============ PAGE 3: GUIDANCE & ACTION PLAN ============ -->
+    <div class="report-page">
+      <div class="report-header">
+        <div class="brandmark">NT Somasundaram <span>Life Skills</span></div>
+        <div class="page-no"><span class="en">Page 3 of 3 — Guidance &amp; Action Plan</span><span class="ta">பக்கம் 3/3 — வழிகாட்டுதல் &amp; செயல் திட்டம்</span></div>
+      </div>
+      <h2 style="margin-top:0;"><span class="en">Personalized Tips for You</span><span class="ta">உங்களுக்கான தனிப்பயன் குறிப்புகள்</span></h2>
+      <ul class="tips-list" id="tipsList"></ul>
+
+      <h2><span class="en">Suggested Learning Path</span><span class="ta">பரிந்துரைக்கப்பட்ட கற்றல் பாதை</span></h2>
+      <p class="subtitle"><span class="en">Based on your results, start with these modules first for the fastest improvement.</span><span class="ta">உங்கள் முடிவுகளின் அடிப்படையில், வேகமான முன்னேற்றத்திற்கு முதலில் இந்த பாடங்களுடன் தொடங்குங்கள்.</span></p>
+      <div id="moduleRecommendations"></div>
+
+      <h2><span class="en">Your 30-Day Action Plan</span><span class="ta">உங்கள் 30-நாள் செயல் திட்டம்</span></h2>
+      <div id="actionPlan"></div>
+
+      <div class="signature-line">
+        <span class="en">This report is a starting point for self-awareness, not a fixed label. With practice, your communication style can and will grow.</span>
+        <span class="ta">இந்த அறிக்கை சுயவிழிப்புணர்வுக்கான ஒரு தொடக்க புள்ளி, ஒரு நிலையான லேபிள் அல்ல. பயிற்சியுடன், உங்கள் தொடர்பு பாணி வளரும்.</span>
+      </div>
+
+      <div class="nav-row no-print">
+        <a class="btn gold" href="module1.html"><span class="en">Start Module 1 &rarr;</span><span class="ta">பாடம் 1-ஐ தொடங்குங்கள் &rarr;</span></a>
+        <button class="btn outline" onclick="window.print()"><span class="en">Print / Save as PDF</span><span class="ta">அச்சிடு / PDF ஆக சேமி</span></button>
+        <a class="btn wa" id="waBtn" href="#" target="_blank"><span class="en">Discuss on WhatsApp</span><span class="ta">வாட்ஸ்அப்பில் பேசுங்கள்</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <p class="en">&copy; NT Somasundaram Life Skills Program &mdash; "God is always with u"</p>
+  <p class="ta">&copy; என்.டி. சோமசுந்தரம் லைஃப் ஸ்கில்ஸ் திட்டம் &mdash; "God is always with u"</p>
+  <p>WhatsApp: +91 98437 02244 | somasundaramnt.lifecoach@gmail.com</p>
+</footer>
+
+<script>
+
+function initLangToggle(){
+  var saved = localStorage.getItem('cs_lang') || 'en';
+  if(saved === 'ta'){ document.body.classList.add('show-ta'); }
+  var btn = document.getElementById('langBtn');
+  if(btn){ btn.textContent = saved === 'ta' ? 'English' : 'தமிழ்'; }
+}
+function toggleLang(){
+  var isTa = document.body.classList.toggle('show-ta');
+  localStorage.setItem('cs_lang', isTa ? 'ta' : 'en');
+  var btn = document.getElementById('langBtn');
+  if(btn){ btn.textContent = isTa ? 'English' : 'தமிழ்'; }
+}
+document.addEventListener('DOMContentLoaded', initLangToggle);
+
+
+function logToSheet(params){
+  try{
+    var url = "https://script.google.com/macros/s/AKfycbwJD9aBRZP9uTsXV9slV2OjrysFi2fWtUHtAfNR-z52auy0NTy-38rx1MZfkXhw-TB5mQ/exec";
+    if(url.indexOf("AKfycb...") !== -1) return; // not yet configured
+    var qs = Object.keys(params).map(function(k){return encodeURIComponent(k)+"="+encodeURIComponent(params[k]);}).join("&");
+    var img = new Image();
+    img.src = url + "?action=assessment&" + qs + "&_t=" + Date.now();
+  }catch(e){ console.warn("Sheet log skipped", e); }
+}
+
+var STYLE_SEQUENCE = ["P","P","P","P","P","P","A","A","A","A","A","A","PA","PA","PA","PA","PA","PA","AS","AS","AS","AS","AS","AS"];
+var STYLE_INFO = {"AS": {"name_en": "Assertive", "name_ta": "உறுதியான", "oneliner_en": "You express your needs clearly while respecting others — the healthiest communication style.", "oneliner_ta": "மற்றவர்களை மதிக்கும்போதே உங்கள் தேவைகளை தெளிவாக தெரிவிக்கிறீர்கள் — ஆரோக்கியமான தொடர்பு பாணி.", "desc_en": "You tend to express your needs and opinions clearly and respectfully, while also respecting others. This is the healthiest communication style — the goal now is to strengthen it further and use it consistently, even under pressure.", "desc_ta": "நீங்கள் உங்கள் தேவைகளையும் கருத்துக்களையும் தெளிவாகவும் மரியாதையாகவும் தெரிவிக்கிறீர்கள், அதேநேரம் மற்றவர்களையும் மதிக்கிறீர்கள். இது ஆரோக்கியமான தொடர்பு பாணி — இப்போது இலக்கு இதை மேலும் வலுப்படுத்தி, அழுத்தத்தின் கீழும் தொடர்ந்து பயன்படுத்துவதே.", "strength_en": "You build trust quickly because people know where they stand with you.", "strength_ta": "மக்கள் உங்களுடன் தங்கள் நிலைப்பாடு என்ன என்பதை அறிவதால் நீங்கள் விரைவாக நம்பிக்கையை உருவாக்குகிறீர்கள்.", "watch_en": "Under high stress or fatigue, assertiveness can slip into aggression — watch your tone in tense moments.", "watch_ta": "அதிக மன அழுத்தம் அல்லது சோர்வின்போது, உறுதியான தன்மை ஆக்கிரமிப்பாக மாறலாம் — பதற்றமான தருணங்களில் உங்கள் தொனியை கவனியுங்கள்."}, "P": {"name_en": "Passive", "name_ta": "பணிவான", "oneliner_en": "You tend to prioritize peace over expressing your own needs.", "oneliner_ta": "உங்கள் சொந்த தேவைகளை தெரிவிப்பதை விட அமைதிக்கு முன்னுரிமை கொடுக்கிறீர்கள்.", "desc_en": "You tend to avoid expressing your own needs to keep the peace, which can build quiet resentment over time and leave others unaware of what you actually want. Learning to speak up in small, low-risk moments first will build the confidence to do it in bigger ones.", "desc_ta": "அமைதியை பேணுவதற்காக உங்கள் தேவைகளை தெரிவிக்காமல் இருக்கிறீர்கள், இது காலப்போக்கில் அமைதியான வெறுப்பை உருவாக்கி, நீங்கள் உண்மையில் என்ன விரும்புகிறீர்கள் என்பதை மற்றவர்கள் அறியாமல் விட்டுவிடும். சிறிய, குறைந்த ஆபத்துள்ள தருணங்களில் முதலில் பேச கற்றுக்கொள்வது பெரிய தருணங்களில் அதை செய்ய நம்பிக்கையை உருவாக்கும்.", "strength_en": "You are easy to get along with and skilled at keeping harmony in groups.", "strength_ta": "உங்களுடன் பழக எளிது, குழுக்களில் நல்லிணக்கத்தை பேணுவதில் திறமையானவர்.", "watch_en": "Resentment that builds silently can eventually surface as sudden anger or withdrawal from the relationship.", "watch_ta": "அமைதியாக உருவாகும் வெறுப்பு இறுதியில் திடீர் கோபமாகவோ உறவிலிருந்து விலகுவதாகவோ வெளிப்படலாம்."}, "A": {"name_en": "Aggressive", "name_ta": "ஆக்கிரமிப்பான", "oneliner_en": "You express your needs strongly, sometimes at the expense of others' comfort.", "oneliner_ta": "உங்கள் தேவைகளை வலுவாக தெரிவிக்கிறீர்கள், சில நேரங்களில் மற்றவர்களின் வசதியை பாதிக்கும் விதத்தில்.", "desc_en": "You tend to express your needs strongly and directly, which shows confidence, but this sometimes comes at the expense of others' comfort or input. Slowing down and inviting others' views before deciding will keep your natural directness while protecting your relationships.", "desc_ta": "உங்கள் தேவைகளை வலுவாகவும் நேரடியாகவும் தெரிவிக்கிறீர்கள், இது நம்பிக்கையை காட்டுகிறது, ஆனால் இது சில நேரங்களில் மற்றவர்களின் வசதி அல்லது கருத்தை பாதிக்கும். முடிவெடுப்பதற்கு முன் மெதுவாக்கி மற்றவர்களின் கருத்துக்களை அழைப்பது உங்கள் இயல்பான நேரடித்தன்மையை வைத்திருக்கும்போதே உங்கள் உறவுகளை பாதுகாக்கும்.", "strength_en": "You are decisive and unafraid to say what needs to be said, even in hard moments.", "strength_ta": "நீங்கள் உறுதியானவர், கடினமான தருணங்களிலும் சொல்ல வேண்டியதை சொல்ல அஞ்சாதவர்.", "watch_en": "Others may agree with you out of fear rather than genuine agreement, which erodes trust over time.", "watch_ta": "மற்றவர்கள் உண்மையான ஒப்புதலுக்குப் பதிலாக பயத்தால் உங்களுடன் உடன்படலாம், இது காலப்போக்கில் நம்பிக்கையை அரிக்கும்."}, "PA": {"name_en": "Passive-Aggressive", "name_ta": "மறைமுக-ஆக்கிரமிப்பான", "oneliner_en": "You tend to express frustration indirectly rather than stating it openly.", "oneliner_ta": "எரிச்சலை வெளிப்படையாக சொல்வதற்குப் பதிலாக மறைமுகமாக தெரிவிக்கிறீர்கள்.", "desc_en": "You tend to express frustration indirectly — through silence, sarcasm, or hints — rather than stating it openly. This often leaves both sides confused and the real issue unresolved. Practicing saying the direct sentence, even when uncomfortable, is the fastest way to build trust.", "desc_ta": "எரிச்சலை நேரடியாக சொல்வதற்குப் பதிலாக மௌனம், நக்கல், அல்லது குறிப்புகள் மூலம் மறைமுகமாக தெரிவிக்கிறீர்கள். இது பெரும்பாலும் இரு தரப்பையும் குழப்பமாக்கி உண்மையான பிரச்சனையை தீர்க்காமல் விடும். அசௌகரியமாக இருந்தாலும் நேரடியான வாக்கியத்தை சொல்லும் பயிற்சி நம்பிக்கையை உருவாக்கும் வேகமான வழி.", "strength_en": "You are conflict-averse in a way that avoids unnecessary drama and keeps interactions polite on the surface.", "strength_ta": "தேவையற்ற பிரச்சனையை தவிர்த்து, தொடர்புகளை மேலோட்டமாக மரியாதையாக வைத்திருக்கும் விதத்தில் மோதலை தவிர்ப்பவர்.", "watch_en": "Unspoken frustration tends to leak out sideways — through delays, sarcasm, or distance — which can confuse the other person about what's actually wrong.", "watch_ta": "சொல்லப்படாத எரிச்சல் பெரும்பாலும் பக்கவாட்டாக கசியும் — தாமதங்கள், நக்கல், அல்லது தூரம் மூலம் — இது உண்மையில் என்ன தவறு என்பது குறித்து மறுநபரை குழப்பலாம்."}};
+var TIPS_BY_STYLE = {"AS": [{"en": "Keep practicing 'I' statements even in easy conversations, so they become automatic under pressure.", "ta": "எளிய உரையாடல்களிலும் 'நான்' கூற்றுகளை தொடர்ந்து பயிற்சி செய்யுங்கள், இதனால் அழுத்தத்தின் கீழும் அவை தானாக வரும்."}, {"en": "Before an important conversation, ask yourself: am I being direct, or am I softening the message so much it loses clarity?", "ta": "ஒரு முக்கியமான உரையாடலுக்கு முன், கேளுங்கள்: நான் நேரடியாக இருக்கிறேனா, அல்லது செய்தியை தெளிவை இழக்கும் அளவுக்கு மென்மையாக்குகிறேனா?"}, {"en": "Mentor someone in your life who tends to be passive or aggressive — teaching a skill deepens it.", "ta": "உங்கள் வாழ்க்கையில் பணிவாகவோ ஆக்கிரமிப்பாகவோ இருக்கும் ஒருவருக்கு வழிகாட்டுங்கள் — ஒரு திறனை கற்பிப்பது அதை ஆழப்படுத்தும்."}, {"en": "Continue checking in on how your assertiveness is received — confidence should never tip into dismissing others' input.", "ta": "உங்கள் உறுதியான தன்மை எப்படி பெறப்படுகிறது என்பதை தொடர்ந்து சரிபார்க்கவும் — நம்பிக்கை மற்றவர்களின் கருத்தை புறக்கணிப்பதாக ஒருபோதும் மாறக்கூடாது."}], "P": [{"en": "Start small: practice saying no to low-stakes requests this week, like declining an extra task at work.", "ta": "சிறியதாக தொடங்குங்கள்: இந்த வாரம் குறைந்த ஆபத்துள்ள கோரிக்கைகளுக்கு 'இல்லை' சொல்ல பயிற்சி செய்யுங்கள், வேலையில் கூடுதல் பணியை மறுப்பது போல்."}, {"en": "Before agreeing to something, pause for three seconds and silently ask 'do I actually want to do this?'", "ta": "ஒன்றுக்கு ஒப்புக்கொள்வதற்கு முன், மூன்று வினாடிகள் நிறுத்தி அமைதியாக கேளுங்கள் 'நான் உண்மையில் இதை செய்ய விரும்புகிறேனா?'"}, {"en": "Use a simple starter phrase like 'I see it a little differently' to ease into sharing disagreement.", "ta": "கருத்து வேறுபாட்டை பகிர எளிதாக்க 'நான் அதை கொஞ்சம் வித்தியாசமாக பார்க்கிறேன்' போன்ற எளிய தொடக்க சொற்றொடரை பயன்படுத்துங்கள்."}, {"en": "Notice when you apologize for things that aren't your fault, and try replacing 'sorry' with 'thank you for waiting' or similar.", "ta": "உங்கள் தவறு இல்லாத விஷயங்களுக்கு நீங்கள் மன்னிப்பு கேட்கும்போது கவனியுங்கள், 'சாரி' என்பதற்குப் பதிலாக 'காத்திருந்ததற்கு நன்றி' போன்றவற்றை பயன்படுத்த முயற்சிக்கவும்."}, {"en": "Remember: a respectful 'no' is not selfish — it protects your time and energy so you can show up better for what truly matters.", "ta": "நினைவில் கொள்ளுங்கள்: மரியாதையான 'இல்லை' சுயநலம் அல்ல — இது உங்கள் நேரத்தையும் ஆற்றலையும் பாதுகாத்து, உண்மையில் முக்கியமானதற்கு நீங்கள் சிறப்பாக இருக்க உதவும்."}], "A": [{"en": "Before responding in a heated moment, take one slow breath and count to three — this alone prevents most regretted words.", "ta": "பதற்றமான தருணத்தில் பதிலளிப்பதற்கு முன், ஒரு மெதுவான மூச்சு எடுத்து மூன்று வரை எண்ணுங்கள் — இது மட்டும் பெரும்பாலான வருத்தமளிக்கும் வார்த்தைகளை தடுக்கும்."}, {"en": "Practice asking one genuine question before stating your opinion in a disagreement.", "ta": "ஒரு கருத்து வேறுபாட்டில் உங்கள் கருத்தை சொல்வதற்கு முன் ஒரு உண்மையான கேள்வியை கேட்க பயிற்சி செய்யுங்கள்."}, {"en": "Replace 'you' statements with 'I' statements this week — notice how differently people respond.", "ta": "இந்த வாரம் 'நீங்கள்' கூற்றுகளை 'நான்' கூற்றுகளாக மாற்றுங்கள் — மக்கள் எவ்வளவு வித்தியாசமாக பதிலளிக்கிறார்கள் என்று கவனியுங்கள்."}, {"en": "Ask someone you trust: 'Do I come across as harsh sometimes?' and listen without defending yourself.", "ta": "நீங்கள் நம்பும் ஒருவரிடம் கேளுங்கள்: 'நான் சில நேரங்களில் கடுமையாக தோன்றுகிறேனா?' மற்றும் உங்களை தற்காத்துக்கொள்ளாமல் கேளுங்கள்."}, {"en": "Winning an argument and preserving the relationship are sometimes in conflict — practice choosing the relationship.", "ta": "ஒரு வாதத்தில் வெற்றி பெறுவதும் உறவை பாதுகாப்பதும் சில நேரங்களில் முரண்படும் — உறவை தேர்ந்தெடுக்க பயிற்சி செய்யுங்கள்."}], "PA": [{"en": "Next time you feel frustrated, write down the direct sentence you're avoiding saying, even if you don't say it right away.", "ta": "அடுத்த முறை நீங்கள் எரிச்சலாக உணரும்போது, நீங்கள் சொல்ல தவிர்க்கும் நேரடியான வாக்கியத்தை எழுதுங்கள், உடனே அதை சொல்லாவிட்டாலும் கூட."}, {"en": "Notice if you're using sarcasm instead of a direct statement, and try rephrasing it plainly at least once this week.", "ta": "நேரடியான கூற்றுக்குப் பதிலாக நக்கலை பயன்படுத்துகிறீர்களா என்று கவனியுங்கள், இந்த வாரம் குறைந்தது ஒருமுறையாவது அதை தெளிவாக மறுசொல்ல முயற்சிக்கவும்."}, {"en": "If you notice yourself 'forgetting' a task you resent, ask directly for it to be reassigned or discuss why it feels unfair.", "ta": "நீங்கள் விரும்பாத ஒரு பணியை 'மறந்துவிடுவதை' கவனித்தால், அதை மறு ஒதுக்கீடு செய்யக் கேளுங்கள் அல்லது அது ஏன் நியாயமற்றதாக உணரப்படுகிறது என்று விவாதிக்கவும்."}, {"en": "When you catch yourself saying 'I'm fine' while upset, try instead: 'I'm not totally fine, can we talk about it later?'", "ta": "வருத்தமாக இருக்கும்போது 'நான் நலம்' என்று சொல்வதை கவனித்தால், அதற்குப் பதிலாக முயற்சிக்கவும்: 'நான் முழுவதுமா நலமா இல்ல, பின்னாடி பேசலாமா?'"}, {"en": "Direct communication feels riskier at first, but it resolves issues faster and builds far deeper trust than hints ever can.", "ta": "நேரடி தொடர்பு ஆரம்பத்தில் அதிக ஆபத்தானதாக உணரப்படும், ஆனால் அது குறிப்புகளை விட வேகமாக பிரச்சனைகளை தீர்த்து மிக ஆழமான நம்பிக்கையை உருவாக்கும்."}]};
+var MODULE_RECS = {"AS": [6, 7, 8], "P": [5, 6, 4], "A": [4, 6, 5], "PA": [5, 7, 2]};
+var WA_NUMBER = "919843702244";
+
+document.getElementById('assessForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var scores = {P:0, A:0, PA:0, AS:0};
+  var counts = {P:0, A:0, PA:0, AS:0};
+  var answered = true;
+  STYLE_SEQUENCE.forEach(function(style, idx){
+    var val = document.querySelector('input[name="q'+(idx+1)+'"]:checked');
+    if(!val){ answered = false; return; }
+    scores[style] += parseInt(val.value, 10);
+    counts[style] += 1;
+  });
+  if(!answered){ alert('Please answer every question. / தயவுசெய்து அனைத்து கேள்விகளுக்கும் பதிலளிக்கவும்.'); return; }
+
+  var pct = {};
+  Object.keys(scores).forEach(function(s){
+    pct[s] = Math.round((scores[s] / (counts[s]*5)) * 100);
+  });
+
+  var colors = {AS:'#3E8E5A', P:'#2C6E7F', A:'#C1502E', PA:'#C9A24B'};
+  var order = ['AS','P','A','PA'];
+  var dominant = order.reduce(function(a,b){ return pct[a] >= pct[b] ? a : b; });
+
+  // ---- Page 1: chart + meta ----
+  var chartHtml = '';
+  order.forEach(function(s){
+    chartHtml += '<div class="bar-row"><div class="bar-label">'+STYLE_INFO[s].name_en+' / '+STYLE_INFO[s].name_ta+'</div>'+
+      '<div class="bar-track"><div class="bar-fill" style="width:'+pct[s]+'%; background:'+colors[s]+';"></div></div>'+
+      '<div class="bar-val">'+pct[s]+'%</div></div>';
+  });
+  document.getElementById('chartArea').innerHTML = chartHtml;
+
+  var name = document.getElementById('userName').value || 'Participant';
+  var phone = document.getElementById('userPhone').value || '';
+  document.getElementById('metaName').textContent = name;
+  document.getElementById('metaDate').textContent = new Date().toLocaleDateString('en-IN', {year:'numeric', month:'long', day:'numeric'});
+  document.getElementById('dominantNameBanner').innerHTML = STYLE_INFO[dominant].name_en + ' / ' + STYLE_INFO[dominant].name_ta;
+  document.getElementById('dominantOneLiner').innerHTML =
+    '<span class="en">'+STYLE_INFO[dominant].oneliner_en+'</span><span class="ta">'+STYLE_INFO[dominant].oneliner_ta+'</span>';
+  document.getElementById('summaryText').innerHTML =
+    '<span class="en">'+STYLE_INFO[dominant].desc_en+'</span><span class="ta">'+STYLE_INFO[dominant].desc_ta+'</span>';
+
+  // ---- Page 2: detailed breakdown cards ----
+  var cardsHtml = '';
+  order.forEach(function(s){
+    var isDom = (s === dominant) ? ' dominant' : '';
+    cardsHtml += '<div class="style-detail-card'+isDom+'">'+
+      '<h3><span><span class="en">'+STYLE_INFO[s].name_en+'</span><span class="ta">'+STYLE_INFO[s].name_ta+'</span></span><span style="color:'+colors[s]+';">'+pct[s]+'%</span></h3>'+
+      '<p><span class="en">'+STYLE_INFO[s].desc_en+'</span><span class="ta">'+STYLE_INFO[s].desc_ta+'</span></p>'+
+      '<div class="strength-watch">'+
+        '<div class="strengths"><b><span class="en">Strength</span><span class="ta">பலம்</span></b><br><span class="en">'+STYLE_INFO[s].strength_en+'</span><span class="ta">'+STYLE_INFO[s].strength_ta+'</span></div>'+
+        '<div class="watch"><b><span class="en">Watch For</span><span class="ta">கவனிக்க வேண்டியது</span></b><br><span class="en">'+STYLE_INFO[s].watch_en+'</span><span class="ta">'+STYLE_INFO[s].watch_ta+'</span></div>'+
+      '</div></div>';
+  });
+  document.getElementById('styleDetailCards').innerHTML = cardsHtml;
+
+  // ---- Page 3: tips ----
+  var tips = TIPS_BY_STYLE[dominant] || [];
+  var tipsHtml = '';
+  tips.forEach(function(t){
+    tipsHtml += '<li><span class="en">'+t.en+'</span><span class="ta">'+t.ta+'</span></li>';
+  });
+  document.getElementById('tipsList').innerHTML = tipsHtml;
+
+  // ---- Page 3: module recommendations ----
+  var recs = MODULE_RECS[dominant] || [1,2,3];
+  var recHtml = '';
+  var moduleNames = {
+    1:['Foundations of Communication','தகவல் தொடர்பின் அடிப்படைகள்'],
+    2:['Verbal Communication & Clarity','சொல் தொடர்பு மற்றும் தெளிவு'],
+    3:['Non-Verbal Communication & Body Language','சொல்லாத தொடர்பு மற்றும் உடல் மொழி'],
+    4:['Active Listening','சுறுசுறுப்பான கேட்டல்'],
+    5:['Assertive Communication','உறுதியான தொடர்பு'],
+    6:['Emotional Intelligence in Communication','தொடர்பில் உணர்ச்சி நுண்ணறிவு'],
+    7:['Conflict Resolution & Difficult Conversations','மோதல் தீர்வு மற்றும் கடினமான உரையாடல்கள்'],
+    8:['Public Speaking & Presentation Skills','பொது பேச்சு மற்றும் விளக்கக்காட்சி திறன்கள்'],
+    9:['Professional & Digital Communication','தொழில்முறை மற்றும் டிஜிட்டல் தொடர்பு'],
+    10:['Building Lasting Communication Habits','நீடித்த தொடர்பு பழக்கங்களை உருவாக்குதல்']
+  };
+  recs.forEach(function(mid, i){
+    recHtml += '<div class="recommend-module"><span><b>'+(i+1)+'.</b> <span class="en">Module '+mid+': '+moduleNames[mid][0]+'</span><span class="ta">பாடம் '+mid+': '+moduleNames[mid][1]+'</span></span>'+
+      '<a class="btn outline no-print" style="padding:5px 12px; font-size:0.8rem;" href="module'+mid+'.html"><span class="en">Open</span><span class="ta">திற</span></a></div>';
+  });
+  document.getElementById('moduleRecommendations').innerHTML = recHtml;
+
+  // ---- Page 3: 30-day action plan ----
+  var plan = [
+    {en:'Week 1: Complete Modules '+recs[0]+' and '+recs[1]+'. Practice the exercises daily.', ta:'வாரம் 1: பாடம் '+recs[0]+' மற்றும் '+recs[1]+' முடிக்கவும். பயிற்சிகளை தினமும் செய்யவும்.'},
+    {en:'Week 2: Complete the remaining recommended modules. Try one new technique per day.', ta:'வாரம் 2: மீதமுள்ள பரிந்துரைக்கப்பட்ட பாடங்களை முடிக்கவும். ஒரு நாளைக்கு ஒரு புதிய நுட்பத்தை முயற்சிக்கவும்.'},
+    {en:'Week 3: Ask one trusted person for honest feedback on your communication.', ta:'வாரம் 3: உங்கள் தொடர்பு குறித்து நம்பகமான ஒருவரிடம் நேர்மையான பின்னூட்டத்தை கேளுங்கள்.'},
+    {en:'Week 4: Complete the remaining modules and retake this assessment to track your progress.', ta:'வாரம் 4: மீதமுள்ள பாடங்களை முடிக்கவும், உங்கள் முன்னேற்றத்தை கண்காணிக்க இந்த மதிப்பீட்டை மீண்டும் எடுக்கவும்.'}
+  ];
+  var planHtml = '';
+  plan.forEach(function(step, i){
+    planHtml += '<div class="action-plan-row"><div class="action-plan-num">'+(i+1)+'</div><div><span class="en">'+step.en+'</span><span class="ta">'+step.ta+'</span></div></div>';
+  });
+  document.getElementById('actionPlan').innerHTML = planHtml;
+
+  document.getElementById('assessForm').style.display = 'none';
+  document.getElementById('regCard').style.display = 'none';
+  document.getElementById('resultSection').style.display = 'block';
+  document.getElementById('resultSection').scrollIntoView({behavior:'smooth'});
+
+  localStorage.setItem('cs_name', name);
+  localStorage.setItem('cs_phone', phone);
+  localStorage.setItem('cs_assessment_result', JSON.stringify({pct:pct, dominant:dominant}));
+
+  var waMsg = encodeURIComponent("Hi, I just completed the Communication Style Assessment. My dominant style: " + STYLE_INFO[dominant].name_en + ". I'd like to discuss the course.");
+  document.getElementById('waBtn').href = "https://wa.me/" + WA_NUMBER + "?text=" + waMsg;
+
+  logToSheet({name:name, phone:phone, dominant:dominant, AS:pct.AS, P:pct.P, A:pct.A, PA:pct.PA});
+});
+</script>
+</body>
+</html>

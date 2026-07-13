@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 3: Non-Verbal Communication & Body Language | Communication Skills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B3A5C; --gold:#C9A24B; --cream:#FAF7F0; --teal:#2C6E7F;
+  --ink:#233142; --soft:#6b7686; --green:#3E8E5A; --red:#C1502E;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Poppins',sans-serif; background:var(--cream); color:var(--ink); line-height:1.65;}
+[lang="ta"]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.ta{display:none;}
+body.show-ta .en{display:none;}
+body.show-ta .ta{display:inline;}
+body.show-ta .ta-block{display:block;}
+.en-block{display:block;}
+body.show-ta .en-block{display:none;}
+
+header.top{background:var(--navy); color:#fff; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+header.top .brand{font-weight:600; font-size:1.05rem;}
+header.top .brand span{color:var(--gold);}
+.lang-toggle{background:var(--gold); color:var(--navy); border:none; padding:8px 16px; border-radius:20px; font-weight:600; cursor:pointer; font-size:0.9rem;}
+.lang-toggle:hover{opacity:0.9;}
+
+.container{max-width:820px; margin:0 auto; padding:28px 20px 60px;}
+.card{background:#fff; border-radius:14px; padding:26px 24px; box-shadow:0 2px 14px rgba(27,58,92,0.08); margin-bottom:20px;}
+h1{color:var(--navy); font-size:1.6rem; margin-bottom:6px;}
+h2{color:var(--navy); font-size:1.2rem; margin:18px 0 10px; border-left:4px solid var(--gold); padding-left:10px;}
+h3{color:var(--teal); font-size:1.05rem; margin:14px 0 6px;}
+p{margin-bottom:10px; color:var(--ink);}
+.subtitle{color:var(--soft); font-size:0.95rem; margin-bottom:16px;}
+.tag{display:inline-block; background:var(--navy); color:#fff; font-size:0.72rem; padding:3px 10px; border-radius:12px; margin-bottom:10px;}
+.progress-wrap{background:#eee; border-radius:10px; height:10px; overflow:hidden; margin:14px 0;}
+.progress-bar{background:var(--gold); height:100%; transition:width .4s;}
+.btn{display:inline-block; background:var(--navy); color:#fff; border:none; padding:11px 22px; border-radius:8px; font-weight:600; cursor:pointer; text-decoration:none; font-size:0.95rem; margin:6px 6px 6px 0;}
+.btn:hover{background:var(--teal);}
+.btn.gold{background:var(--gold); color:var(--navy);}
+.btn.outline{background:transparent; border:2px solid var(--navy); color:var(--navy);}
+.btn.wa{background:#25D366; color:#fff;}
+.nav-row{display:flex; justify-content:space-between; margin-top:24px; flex-wrap:wrap; gap:10px;}
+.quote-box{background:var(--cream); border-left:4px solid var(--teal); padding:14px 18px; border-radius:6px; font-style:italic; color:var(--teal); margin:16px 0;}
+.exercise-box{background:#fff8ea; border:1px dashed var(--gold); border-radius:10px; padding:16px 18px; margin:14px 0;}
+.concept-block{margin-bottom:22px; padding-bottom:18px; border-bottom:1px solid #eee;}
+.concept-block:last-child{border-bottom:none;}
+.example-box{background:#eef5f7; border-left:4px solid var(--teal); border-radius:6px; padding:12px 16px; margin:10px 0;}
+.example-box h3{color:var(--teal); margin:0 0 6px;}
+.metaphor-box{background:#fbeee4; border-left:4px solid var(--red); border-radius:6px; padding:12px 16px; margin:10px 0;}
+.metaphor-box h3{color:var(--red); margin:0 0 6px;}
+.tip-box{background:#fff6d8; border:1px solid var(--gold); border-radius:10px; padding:14px 18px; margin:16px 0;}
+.tip-box h3{color:#8a6d1d; margin:0 0 6px;}
+ul{margin:8px 0 8px 22px;}
+li{margin-bottom:6px;}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:14px 0;}
+.mini-card{background:var(--cream); border-radius:10px; padding:14px; border:1px solid #eee2c8;}
+.mini-card h3{margin-top:0;}
+footer.site{text-align:center; padding:24px; color:var(--soft); font-size:0.85rem;}
+input[type=text], input[type=email], input[type=tel]{width:100%; padding:11px 12px; border:1px solid #ddd; border-radius:8px; margin-bottom:12px; font-family:inherit; font-size:0.95rem;}
+label{font-weight:600; font-size:0.9rem; color:var(--navy); display:block; margin-bottom:4px;}
+.q-block{margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid #eee;}
+.q-options{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
+.q-options label{font-weight:400; color:var(--ink); display:flex; align-items:center; gap:8px; cursor:pointer;}
+@media print{ header.top, .btn, .lang-toggle, .no-print{display:none !important;} body{background:#fff;} .card{box-shadow:none; border:1px solid #ccc;} }
+@media (max-width:600px){ .container{padding:18px 14px 40px;} h1{font-size:1.35rem;} }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">NT Somasundaram <span>Life Skills</span> &mdash; <span class="en">Communication Skills for Adults</span><span class="ta">பெரியவர்களுக்கான தொடர்பு திறன்கள்</span></div>
+  <button class="lang-toggle" id="langBtn" onclick="toggleLang()">தமிழ்</button>
+</header>
+
+<div class="container">
+  <div class="card">
+    <span class="tag">Module 3 of 10</span>
+    <h1><span class="en">Non-Verbal Communication & Body Language</span><span class="ta">சொல்லாத தொடர்பு மற்றும் உடல் மொழி</span></h1>
+    <p class="subtitle"><span class="en">What your posture, face, and tone say before you speak a single word.</span><span class="ta">நீங்கள் ஒரு வார்த்தை பேசுவதற்கு முன்பே உங்கள் நிலை, முகம், தொனி என்ன சொல்கிறது.</span></p>
+    <div class="progress-wrap"><div class="progress-bar" style="width:30%"></div></div>
+  </div>
+
+  <div class="card">
+    <p><span class="en">People react to how you say something long before they process what you said. Posture, eye contact, facial expression, and tone can support your words — or completely contradict them.</span><span class="ta">நீங்கள் என்ன சொன்னீர்கள் என்பதை மக்கள் புரிந்துகொள்வதற்கு முன்பே, நீங்கள் அதை எப்படி சொன்னீர்கள் என்பதற்கு அவர்கள் எதிர்வினையாற்றுகிறார்கள். நிலை, கண் தொடர்பு, முக பாவனை, தொனி — இவை உங்கள் வார்த்தைகளை ஆதரிக்கலாம் அல்லது முற்றிலும் முரண்படலாம்.</span></p>
+
+    <div class="concept-block">
+<h2><span class="en">Key Concept: Open vs Closed Posture</span><span class="ta">முக்கிய கருத்து: திறந்த vs மூடிய நிலை</span></h2>
+<p><span class="en">Crossed arms, a body turned away, or a downward gaze all signal defensiveness, disinterest, or discomfort — even when the words being spoken are perfectly friendly. Open posture (uncrossed arms, facing the speaker, relaxed shoulders) signals availability and warmth before a single word is exchanged.</span><span class="ta">மடிந்த கைகள், திரும்பிய உடல், அல்லது கீழ்நோக்கிய பார்வை — வார்த்தைகள் முற்றிலும் நட்பாக இருந்தாலும் இவை பாதுகாப்புணர்வு, ஆர்வமின்மை, அல்லது அசௌகரியத்தை உணர்த்தும். திறந்த நிலை (மடிக்கப்படாத கைகள், பேசுபவரை நோக்கி, தளர்வான தோள்கள்) ஒரு வார்த்தை கூட பரிமாறப்படுவதற்கு முன்பே கிடைக்கும் தன்மையையும் அரவணைப்பையும் உணர்த்தும்.</span></p>
+<div class="example-box">
+  <h3>📌 <span class="en">Example</span><span class="ta">உதாரணம்</span></h3>
+  <p><span class="en">A father says “I'm listening, tell me what happened at school,” but stands with arms crossed, phone in hand, eyes on the screen. His son senses the mismatch instantly and shortens his answer to “nothing much” — the body language overrode the words.</span><span class="ta">ஒரு தந்தை “நான் கேட்கிறேன், பள்ளியில் என்ன நடந்தது சொல்” என்று சொல்கிறார், ஆனால் மடிந்த கைகளுடன், கையில் தொலைபேசியுடன், திரையை பார்த்தபடி நிற்கிறார். அவரது மகன் அந்த முரணை உடனடியாக உணர்ந்து, தன் பதிலை “எதுவும் இல்லை” என்று சுருக்குகிறான் — உடல் மொழி வார்த்தைகளை மீறியது.</span></p>
+</div>
+<div class="metaphor-box">
+  <h3>💡 <span class="en">Think of it like this</span><span class="ta">இதை இப்படி நினைத்துப் பாருங்கள்</span></h3>
+  <p><span class="en">Closed posture is like keeping a door half-shut while inviting someone in — the words say 'welcome' but the body says 'wait outside.'</span><span class="ta">மூடிய நிலை என்பது ஒருவரை உள்ளே வர அழைக்கும்போது கதவை பாதி மூடி வைத்திருப்பது போன்றது — வார்த்தைகள் 'வாருங்கள்' என்று சொன்னாலும் உடல் 'வெளியே காத்திருங்கள்' என்று சொல்கிறது.</span></p>
+</div>
+</div>
+
+<div class="concept-block">
+<h2><span class="en">Key Concept: Eye Contact</span><span class="ta">முக்கிய கருத்து: கண் தொடர்பு</span></h2>
+<p><span class="en">Steady, natural eye contact builds trust and signals genuine attention. Too little can feel evasive or disinterested; too much, held too intensely, can feel confrontational. The comfortable middle ground is looking at the person for most of the conversation while allowing natural breaks.</span><span class="ta">நிலையான, இயல்பான கண் தொடர்பு நம்பிக்கையை உருவாக்கி உண்மையான கவனத்தை உணர்த்தும். மிகக் குறைவாக இருந்தால் தவிர்ப்பதாகவோ ஆர்வமின்மையாகவோ தோன்றும்; மிக அதிகமாக, தீவிரமாக வைத்திருந்தால், மோதலாக தோன்றும். வசதியான நடுநிலை உரையாடலின் பெரும்பகுதி நபரை பார்த்து, இயல்பான இடைவெளிகளை அனுமதிப்பதே.</span></p>
+<div class="example-box">
+  <h3>📌 <span class="en">Example</span><span class="ta">உதாரணம்</span></h3>
+  <p><span class="en">During a job interview, a candidate who glances at the interviewer, then briefly away while thinking, then back again, appears thoughtful and confident. A candidate who stares unblinking the entire time can unintentionally make the interviewer uneasy.</span><span class="ta">ஒரு வேலை நேர்காணலில், நேர்காணல் செய்பவரை பார்த்து, சிந்திக்கும்போது சிறிது நேரம் விலகி, மீண்டும் திரும்பிப் பார்க்கும் ஒரு விண்ணப்பதாரர் சிந்தனையுடையவராகவும் நம்பிக்கையுடையவராகவும் தோன்றுவார். முழுவதும் இமைக்காமல் வெறித்துப் பார்க்கும் ஒரு விண்ணப்பதாரர் அறியாமலேயே நேர்காணல் செய்பவரை அசௌகரியப்படுத்தலாம்.</span></p>
+</div>
+<div class="metaphor-box">
+  <h3>💡 <span class="en">Think of it like this</span><span class="ta">இதை இப்படி நினைத்துப் பாருங்கள்</span></h3>
+  <p><span class="en">Eye contact is like a handshake for the eyes — firm enough to show confidence, brief enough not to overpower.</span><span class="ta">கண் தொடர்பு கண்களுக்கான கைகுலுக்கல் போன்றது — நம்பிக்கையை காட்ட போதுமான உறுதி, மிகைப்படுத்தாத அளவு சுருக்கம்.</span></p>
+</div>
+</div>
+
+<div class="concept-block">
+<h2><span class="en">Key Concept: Tone of Voice</span><span class="ta">முக்கிய கருத்து: குரல் தொனி</span></h2>
+<p><span class="en">The exact same sentence, spoken sharply versus gently, can be received as an accusation or as genuine concern. Tone carries emotional temperature — often more than the words themselves, especially in tense moments.</span><span class="ta">ஒரே வாக்கியம், கடுமையாகவோ மென்மையாகவோ பேசப்படும்போது, குற்றச்சாட்டாகவோ உண்மையான அக்கறையாகவோ பெறப்படலாம். தொனி உணர்ச்சி வெப்பநிலையை சுமக்கிறது — பெரும்பாலும் வார்த்தைகளை விட அதிகமாக, குறிப்பாக பதற்றமான தருணங்களில்.</span></p>
+<div class="example-box">
+  <h3>📌 <span class="en">Example</span><span class="ta">உதாரணம்</span></h3>
+  <p><span class="en">“Where were you?” asked with a sharp, clipped tone sounds like an interrogation. The exact same words asked slowly, with a slight lift at the end, sound like genuine worry for someone's safety.</span><span class="ta">“எங்கே இருந்தாய்?” என்பது கூர்மையான, குறுகிய தொனியில் கேட்கப்படும்போது விசாரணை போல் ஒலிக்கிறது. அதே வார்த்தைகள் மெதுவாக, முடிவில் சிறிது உயர்வுடன் கேட்கப்படும்போது, ஒருவரின் பாதுகாப்பு குறித்த உண்மையான கவலை போல் ஒலிக்கிறது.</span></p>
+</div>
+<div class="metaphor-box">
+  <h3>💡 <span class="en">Think of it like this</span><span class="ta">இதை இப்படி நினைத்துப் பாருங்கள்</span></h3>
+  <p><span class="en">Words are the ingredients; tone is the heat you cook them at. The same ingredients can become a warm meal or a burnt one, depending entirely on the flame.</span><span class="ta">வார்த்தைகள் பொருட்கள்; தொனி அதை சமைக்கும் வெப்பம். ஒரே பொருட்கள் தீயைப் பொறுத்து ஒரு சூடான உணவாகவோ கருகிய உணவாகவோ மாறலாம்.</span></p>
+</div>
+</div>
+
+<div class="concept-block">
+<h2><span class="en">Key Concept: Mirroring & Rapport</span><span class="ta">முக்கிய கருத்து: பிரதிபலிப்பும் நல்லுறவும்</span></h2>
+<p><span class="en">People naturally feel more at ease with those who subtly match their pace, energy, and volume. This isn't about mimicking someone obviously — it's a gentle, natural attunement that signals “I'm with you” and builds comfort in a conversation.</span><span class="ta">தங்கள் வேகம், ஆற்றல், ஒலியளவை நுட்பமாக பொருத்தும் நபர்களுடன் மக்கள் இயல்பாகவே அதிக வசதியாக உணர்கிறார்கள். இது ஒருவரை வெளிப்படையாக பின்பற்றுவது அல்ல — இது “நான் உன்னுடன் இருக்கிறேன்” என்பதை உணர்த்தும் ஒரு மென்மையான, இயல்பான ஒத்திசைவு.</span></p>
+<div class="example-box">
+  <h3>📌 <span class="en">Example</span><span class="ta">உதாரணம்</span></h3>
+  <p><span class="en">When a grieving friend speaks slowly and quietly, matching that same slow, soft energy — rather than responding briskly and cheerfully — helps them feel understood rather than rushed.</span><span class="ta">ஒரு துக்கத்தில் இருக்கும் நண்பர் மெதுவாகவும் அமைதியாகவும் பேசும்போது, உற்சாகமாகவும் விரைவாகவும் பதிலளிப்பதற்குப் பதிலாக அதே மெதுவான, மென்மையான ஆற்றலை பொருத்துவது, அவர்கள் அவசரப்படுத்தப்படுவதற்குப் பதிலாக புரிந்துகொள்ளப்படுவதாக உணர உதவும்.</span></p>
+</div>
+<div class="metaphor-box">
+  <h3>💡 <span class="en">Think of it like this</span><span class="ta">இதை இப்படி நினைத்துப் பாருங்கள்</span></h3>
+  <p><span class="en">Rapport is like two musicians falling into the same rhythm without either one calling it out loud — the conversation simply starts to flow together.</span><span class="ta">நல்லுறவு என்பது இரண்டு இசைக்கலைஞர்கள் யாரும் உரக்க சொல்லாமலேயே ஒரே தாளத்தில் விழுவது போன்றது — உரையாடல் தானாகவே ஒன்றாக ஓட ஆரம்பிக்கிறது.</span></p>
+</div>
+</div>
+
+
+    <div class="tip-box">
+      <h3>⭐ <span class="en">Pro Tip</span><span class="ta">சிறப்பு குறிப்பு</span></h3>
+      <p><span class="en">Once a week, watch five minutes of any conversation with the sound off — yours or someone else's on video — and notice what the body is saying on its own.</span><span class="ta">வாரத்திற்கு ஒருமுறை, ஒலியை நிறுத்திவைத்து ஏதேனும் ஒரு உரையாடலின் ஐந்து நிமிடங்களை — உங்களுடையது அல்லது வீடியோவில் யாரேனும் ஒருவருடையது — பாருங்கள், உடல் தானாக என்ன சொல்கிறது என கவனியுங்கள்.</span></p>
+    </div>
+
+    <div class="exercise-box">
+      <h3><span class="en">✏️ Practice Exercise</span><span class="ta">✏️ பயிற்சி</span></h3>
+      <p><span class="en">In your next three conversations today, consciously notice your own posture and eye contact. Adjust once if you catch yourself closed off or distracted.</span><span class="ta">இன்று உங்கள் அடுத்த மூன்று உரையாடல்களில், உங்கள் சொந்த நிலையையும் கண் தொடர்பையும் உணர்வுபூர்வமாக கவனியுங்கள். மூடிய நிலையிலோ கவனச்சிதறலிலோ இருப்பதை உணர்ந்தால் ஒருமுறை சரிசெய்யுங்கள்.</span></p>
+    </div>
+
+    <h2><span class="en">Reflect</span><span class="ta">சிந்தியுங்கள்</span></h2>
+    <p><span class="en">Recall a time someone's tone changed how you received good news or bad news. What did their body language add or take away?</span><span class="ta">ஒருவரின் தொனி நல்ல அல்லது கெட்ட செய்தியை நீங்கள் பெறும் விதத்தை மாற்றிய ஒரு தருணத்தை நினைவுகூருங்கள். அவரது உடல் மொழி என்ன சேர்த்தது அல்லது குறைத்தது?</span></p>
+
+    <div class="quote-box">
+      <p><span class="en">“The most important thing in communication is to hear what isn't being said with words.” — Peter Drucker</span><span class="ta">“தொடர்பில் மிக முக்கியமான விஷயம், வார்த்தைகளால் சொல்லப்படாததை கேட்பதே.” — பீட்டர் ட்ரக்கர்</span></p>
+    </div>
+  </div>
+
+  <div class="card no-print">
+    <button class="btn gold" id="completeBtn" onclick="markComplete()"><span class="en">Mark Module Complete</span><span class="ta">பாடத்தை முடித்ததாக குறிக்கவும்</span></button>
+    <span id="completeMsg" style="display:none; color:var(--green); font-weight:600; margin-left:8px;">✓ <span class="en">Saved</span><span class="ta">சேமிக்கப்பட்டது</span></span>
+    <div class="nav-row">
+      <a class="btn outline" href="module2.html"><span class="en">&larr; Previous</span><span class="ta">&larr; முந்தையது</span></a>
+      <a class="btn" href="module4.html"><span class="en">Next Module &rarr;</span><span class="ta">அடுத்த பாடம் &rarr;</span></a>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <p class="en">&copy; NT Somasundaram Life Skills Program &mdash; "God is always with u"</p>
+  <p class="ta">&copy; என்.டி. சோமசுந்தரம் லைஃப் ஸ்கில்ஸ் திட்டம் &mdash; "God is always with u"</p>
+  <p>WhatsApp: +91 98437 02244 | somasundaramnt.lifecoach@gmail.com</p>
+</footer>
+
+<script>
+
+function initLangToggle(){
+  var saved = localStorage.getItem('cs_lang') || 'en';
+  if(saved === 'ta'){ document.body.classList.add('show-ta'); }
+  var btn = document.getElementById('langBtn');
+  if(btn){ btn.textContent = saved === 'ta' ? 'English' : 'தமிழ்'; }
+}
+function toggleLang(){
+  var isTa = document.body.classList.toggle('show-ta');
+  localStorage.setItem('cs_lang', isTa ? 'ta' : 'en');
+  var btn = document.getElementById('langBtn');
+  if(btn){ btn.textContent = isTa ? 'English' : 'தமிழ்'; }
+}
+document.addEventListener('DOMContentLoaded', initLangToggle);
+
+
+function logToSheet(params){
+  try{
+    var url = "https://script.google.com/macros/s/AKfycbwJD9aBRZP9uTsXV9slV2OjrysFi2fWtUHtAfNR-z52auy0NTy-38rx1MZfkXhw-TB5mQ/exec";
+    if(url.indexOf("AKfycb...") !== -1) return; // not yet configured
+    var qs = Object.keys(params).map(function(k){return encodeURIComponent(k)+"="+encodeURIComponent(params[k]);}).join("&");
+    var img = new Image();
+    img.src = url + "?action=module_complete&" + qs + "&_t=" + Date.now();
+  }catch(e){ console.warn("Sheet log skipped", e); }
+}
+
+var MODULE_ID = 3;
+function markComplete(){
+  var done = JSON.parse(localStorage.getItem('cs_progress') || '{}');
+  done[MODULE_ID] = true;
+  localStorage.setItem('cs_progress', JSON.stringify(done));
+  document.getElementById('completeMsg').style.display = 'inline';
+  var name = localStorage.getItem('cs_name') || '';
+  var email = localStorage.getItem('cs_email') || '';
+  logToSheet({module: MODULE_ID, name: name, email: email});
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var done = JSON.parse(localStorage.getItem('cs_progress') || '{}');
+  if(done[MODULE_ID]){ document.getElementById('completeMsg').style.display = 'inline'; }
+});
+</script>
+</body>
+</html>

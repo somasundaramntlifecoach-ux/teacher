@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stress Management for Parents | Course Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Stress Management for Parents — Shared Design System
+   Palette: calm sage / deep slate teal / dusty rose accent
+   ============================================================ */
+
+:root {
+  --bg: #EEF2ED;           /* pale eucalyptus */
+  --bg-card: #FFFFFF;
+  --ink: #26383D;          /* deep slate teal - primary text */
+  --ink-soft: #55666B;     /* muted body text */
+  --sage: #7E9C86;         /* primary green */
+  --sage-deep: #56755E;    /* darker green for hover/emphasis */
+  --rose: #C97B84;         /* dusty rose accent */
+  --rose-deep: #A85A66;
+  --sand: #F2EDE0;         /* warm neutral panel */
+  --line: #D8E0D6;
+  --shadow: 0 8px 24px rgba(38, 56, 61, 0.08);
+  --radius: 18px;
+  --font-en: 'Poppins', sans-serif;
+  --font-ta: 'Noto Sans Tamil', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-en);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.lang-ta, .ta-text { font-family: var(--font-ta); }
+
+[lang-block="ta"] { display: none; }
+body.lang-ta [lang-block="en"] { display: none; }
+body.lang-ta [lang-block="ta"] { display: block; }
+body.lang-ta span[lang-block="ta"] { display: inline; }
+body.lang-ta li[lang-block="ta"] { display: list-item; }
+
+img, svg { max-width: 100%; }
+
+a { color: inherit; }
+
+/* ---------- Top bar / language toggle ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(238, 242, 237, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--sage-deep);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rose); display:inline-block; }
+
+.lang-toggle {
+  display: flex;
+  border: 1.5px solid var(--sage);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-toggle button {
+  border: none;
+  background: transparent;
+  padding: 7px 16px;
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sage-deep);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.lang-toggle button.active {
+  background: var(--sage);
+  color: #fff;
+}
+
+.no-print { }
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  .topbar { position: static; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 56px 28px 40px;
+  text-align: center;
+}
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.subtitle {
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* breathing circle signature element */
+.breathe-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 10px;
+}
+.breathe-circle {
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #A9C4AF, var(--sage) 70%, var(--sage-deep));
+  box-shadow: 0 0 0 0 rgba(126,156,134,0.4);
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(126,156,134,0.35); }
+  50% { transform: scale(1.15); box-shadow: 0 0 0 18px rgba(126,156,134,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .breathe-circle { animation: none; }
+}
+
+/* ---------- Containers / sections ---------- */
+.container { max-width: 880px; margin: 0 auto; padding: 0 28px 60px; }
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  margin-bottom: 28px;
+}
+.panel-sand {
+  background: var(--sand);
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--rose);
+}
+.panel-sage {
+  background: #EAF1EA;
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--sage);
+}
+
+h2 { font-size: 1.5rem; color: var(--sage-deep); margin: 0 0 14px; }
+h3 { font-size: 1.15rem; color: var(--ink); margin: 24px 0 10px; }
+p { color: var(--ink-soft); margin: 0 0 14px; }
+ul, ol { color: var(--ink-soft); padding-left: 22px; }
+li { margin-bottom: 8px; }
+strong { color: var(--ink); }
+
+.example-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--rose);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.tip-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--sage-deep);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+/* ---------- Module path / stepping stones (home page) ---------- */
+.path {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 30px 0;
+}
+.stone {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: transform .2s ease;
+}
+.stone:hover { transform: translateX(4px); }
+.stone .num {
+  flex: none;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+}
+.stone .txt strong { display: block; color: var(--ink); font-size: 1.02rem; }
+.stone .txt span { color: var(--ink-soft); font-size: 0.88rem; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary { background: var(--sage-deep); color: #fff; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(86,117,94,.35); }
+.btn-whatsapp { background: #25D366; color: #fff; }
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37,211,102,.35); }
+.btn-outline { background: transparent; border: 1.5px solid var(--sage-deep); color: var(--sage-deep); }
+.btn-print { background: var(--sand); color: var(--ink); }
+
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 26px 0; }
+
+/* ---------- Nav prev/next ---------- */
+.module-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+}
+.module-nav a {
+  flex: 1;
+  text-decoration: none;
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  color: var(--sage-deep);
+  font-weight: 600;
+  text-align: center;
+}
+.module-nav a:hover { background: var(--sand); }
+
+/* ---------- Reflection box ---------- */
+.reflection {
+  background: linear-gradient(135deg, #F6EFE3, #ECE3D3);
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  margin: 26px 0;
+}
+.reflection textarea {
+  width: 100%;
+  min-height: 90px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  padding: 12px;
+  font-family: var(--font-en);
+  font-size: 0.95rem;
+  margin-top: 10px;
+  resize: vertical;
+}
+body.lang-ta .reflection textarea { font-family: var(--font-ta); }
+
+footer {
+  text-align: center;
+  padding: 34px 20px 50px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+footer .motto { color: var(--rose-deep); font-weight: 600; margin-top: 6px; }
+
+.progress-badge {
+  display: inline-block;
+  background: var(--sand);
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.hero-extra { margin-top: 8px; }
+.stat-row { display:flex; gap: 22px; justify-content:center; flex-wrap:wrap; margin: 22px 0 6px; }
+.stat { text-align:center; }
+.stat .n { font-size: 1.6rem; font-weight:700; color: var(--sage-deep); }
+.stat .l { font-size: 0.78rem; color: var(--ink-soft); text-transform:uppercase; letter-spacing: .05em; }
+.intro-card p { margin-bottom: 14px; }
+</style>
+</head>
+<body>
+<div class="topbar no-print">
+  <a href="course-home.html" class="brand"><span class="dot"></span>
+    <span lang-block="en">Stress Management for Parents</span>
+    <span lang-block="ta" style="display:none">பெற்றோருக்கான மன அழுத்த மேலாண்மை</span>
+  </a>
+  <div class="lang-toggle">
+    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+    <button id="btn-ta" onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow" lang-block="en">A Self-Paced Course for Parents</div>
+  <div class="eyebrow" lang-block="ta" style="display:none">பெற்றோருக்கான சுய-வேக பாடநெறி</div>
+  <h1 lang-block="en">Stress Management for Parents</h1>
+  <h1 lang-block="ta" style="display:none">பெற்றோருக்கான மன அழுத்த மேலாண்மை</h1>
+  <div class="breathe-wrap"><div class="breathe-circle"></div></div>
+  <p class="subtitle" lang-block="en">Ten bilingual modules to help you understand your stress, protect your calm, and build a steadier home — with real-life examples and practical steps at every stage.</p>
+  <p class="subtitle" lang-block="ta" style="display:none">உங்கள் மன அழுத்தத்தை புரிந்துகொள்ளவும், உங்கள் அமைதியை பாதுகாக்கவும், நிலையான வீட்டை உருவாக்கவும் உதவும் பத்து இருமொழி பகுதிகள் — ஒவ்வொரு கட்டத்திலும் உண்மை வாழ்க்கை உதாரணங்கள் மற்றும் நடைமுறை படிகளுடன்.</p>
+
+  <div class="stat-row">
+    <div class="stat"><div class="n">10</div><div class="l" lang-block="en">Modules</div><div class="l" lang-block="ta" style="display:none">பகுதிகள்</div></div>
+    <div class="stat"><div class="n">EN / TA</div><div class="l" lang-block="en">Bilingual</div><div class="l" lang-block="ta" style="display:none">இருமொழி</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l" lang-block="en">Self-paced</div><div class="l" lang-block="ta" style="display:none">சுய-வேகம்</div></div>
+  </div>
+
+  <div class="btn-row no-print">
+    <a class="btn btn-primary" href="#path">
+      <span lang-block="en">Start Module 1</span>
+      <span lang-block="ta" style="display:none">பகுதி 1 தொடங்கவும்</span>
+    </a>
+    <a class="btn btn-outline" href="promo.html">
+      <span lang-block="en">Course Details & Enrollment</span>
+      <span lang-block="ta" style="display:none">பாடநெறி விவரங்கள் & சேர்க்கை</span>
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel-sand" style="margin-top:0">
+    <span class="tip-tag" lang-block="en" style="background:var(--rose)">Free Stress Assessment</span>
+    <span class="tip-tag" lang-block="ta" style="display:none; background:var(--rose)">இலவச மன அழுத்த மதிப்பீடு</span>
+    <p lang-block="en" style="margin: 10px 0 0">Not sure where you stand? Take a few minutes to check your current stress level before you begin Module 1 — it's a helpful starting point for this course.</p>
+    <p lang-block="ta" style="display:none; margin: 10px 0 0">நீங்கள் எங்கு நிற்கிறீர்கள் என்று உறுதியாக தெரியவில்லையா? பகுதி 1 தொடங்கும் முன், உங்கள் தற்போதைய மன அழுத்த அளவை சரிபார்க்க சில நிமிடங்கள் எடுத்துக் கொள்ளுங்கள் — இது இந்த பாடநெறிக்கு ஒரு பயனுள்ள தொடக்க புள்ளி.</p>
+    <div class="btn-row" style="justify-content:flex-start; margin: 16px 0 0">
+      <a class="btn btn-primary" href="https://sites.google.com/view/somasundaramnt/assessment/landing-stress" target="_blank" rel="noopener">
+        <span lang-block="en">Take the Stress Assessment</span>
+        <span lang-block="ta" style="display:none">மன அழுத்த மதிப்பீட்டை மேற்கொள்ளவும்</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="card intro-card">
+    <h2 lang-block="en">Why this course</h2>
+    <h2 lang-block="ta" style="display:none">இந்த பாடநெறி ஏன்</h2>
+    <p lang-block="en">Parenting is one of the most rewarding — and most stress-inducing — roles anyone takes on. This course walks step by step through understanding stress, recognizing it early, protecting your children from its ripple effects, and building calm, practical habits that fit around school runs, work, and everyday family life. Every module pairs a clear explanation with a real-life example and hands-on tips you can use the same day.</p>
+    <p lang-block="ta" style="display:none">பெற்றோர் பொறுப்பு என்பது எவரும் ஏற்கும் மிகவும் திருப்திகரமான — மற்றும் மிகவும் மன அழுத்தத்தை ஏற்படுத்தும் — பாத்திரங்களில் ஒன்று. இந்த பாடநெறி மன அழுத்தத்தை புரிந்துகொள்வது, அதை ஆரம்பத்திலேயே அடையாளம் காண்பது, அதன் தாக்கத்திலிருந்து உங்கள் குழந்தைகளை பாதுகாப்பது, பள்ளி, வேலை, அன்றாட குடும்ப வாழ்க்கைக்கு ஏற்ற அமைதியான, நடைமுறை பழக்கங்களை உருவாக்குவது ஆகியவற்றை படிப்படியாக கடத்துகிறது. ஒவ்வொரு பகுதியும் தெளிவான விளக்கத்தை உண்மை வாழ்க்கை உதாரணத்துடனும், அன்றே பயன்படுத்தக்கூடிய நடைமுறை குறிப்புகளுடனும் இணைக்கிறது.</p>
+  </div>
+
+  <h2 id="path" lang-block="en">Your path through the course</h2>
+  <h2 lang-block="ta" style="display:none">பாடநெறி வழியாக உங்கள் பாதை</h2>
+  <div class="path">
+    
+    <a class="stone" href="01-understanding-stress.html">
+      <div class="num">1</div>
+      <div class="txt">
+        <strong lang-block="en">Understanding Stress</strong>
+        <strong lang-block="ta" style="display:none">மன அழுத்தத்தை புரிந்துகொள்வது</strong>
+        <span lang-block="en">What stress really is, and why every parent feels it differently</span>
+        <span lang-block="ta" style="display:none">மன அழுத்தம் என்றால் என்ன, ஒவ்வொரு பெற்றோரும் அதை ஏன் வெவ்வேறு விதமாக உணர்கிறார்கள்</span>
+      </div>
+    </a>
+    
+    <a class="stone" href="02-recognizing-signs.html">
+      <div class="num">2</div>
+      <div class="txt">
+        <strong lang-block="en">Recognizing the Signs</strong>
+        <strong lang-block="ta" style="display:none">அறிகுறிகளை அடையாளம் காணுதல்</strong>
+        <span lang-block="en">Learning to notice stress in your body, emotions, and behavior before it builds up</span>
+        <span lang-block="ta" style="display:none">மன அழுத்தம் அதிகரிக்கும் முன், உடல், உணர்வு, நடத்தையில் அதை கவனிக்க கற்றுக்கொள்வது</span>
+      </div>
+    </a>
+    
+    <a class="stone" href="03-effects-on-children.html">
+      <div class="num">3</div>
+      <div class="txt">
+        <strong lang-block="en">How Parental Stress Affects Children</strong>
+        <strong lang-block="ta" style="display:none">பெற்றோர் மன அழுத்தம் குழந்தைகளை எவ்வாறு பாதிக்கிறது</strong>
+        <span lang-block="en">Children absorb the emotional climate of the home more than they absorb our words</span>
+        <span lang-block="ta" style="display:none">நம் வார்த்தைகளை விட, குடும்பத்தின் உணர்ச்சி சூழலை குழந்தைகள் அதிகமாக உள்வாங்குகிறார்கள்</span>
+      </div>
+    </a>
+    
+    <a class="stone" href="04-cognitive-reframing.html">
+      <div class="num">4</div>
+      <div class="txt">
+        <strong lang-block="en">Cognitive Reframing Techniques</strong>
+        <strong lang-block="ta" style="display:none">சிந்தனை மறு வடிவமைப்பு நுட்பங்கள்</strong>
+        <span lang-block="en">Changing the thought, not just the situation</span>
+        <span lang-block="ta" style="display:none">சூழ்நிலையை மட்டுமல்ல, சிந்தனையை மாற்றுவது</span>
+      </div>
+    </a>
+    
+    <a class="stone" href="05-relaxation-mindfulness.html">
+      <div class="num">5</div>
+      <div class="txt">
+        <strong lang-block="en">Relaxation & Mindfulness Practices</strong>
+        <strong lang-block="ta" style="display:none">ஓய்வு மற்றும் நினைவாற்றல் பயிற்சிகள்</strong>
+        <span lang-block="en">Simple, practical techniques you can use between school runs and meetings</span>
+        <span lang-block="ta" style="display:none">பள்ளிக்கு அழைத்துச் செல்வதற்கும் கூட்டங்களுக்கும் இடையே பயன்படுத்தக்கூடிய எளிய நுட்பங்கள்</span>
+      </div>
+    </a>
+    
+    <a class="stone" href="06-time-management.html">
+      <div class="num">6</div>
+      <div class="txt">
+        <strong lang-block="en">Time Management & Prioritization</strong>
+        <strong lang-block="ta" style="display:none">நேர மேலாண்மை மற்றும் முன்னுரிமை</strong>
+        <span lang-block="en">Reducing stress by reducing the mismatch between your time and your responsibilities</span>
+        <span lang-block="ta" style="display:none">உங்கள் நேரத்திற்கும் பொறுப்புகளுக்கும் இடையிலான பொருத்தமின்மையை குறைப்பதன் மூலம் அழுத்தத்தை குறைத்தல்</span>
+      </div>
+    </a>
+    
+    <a class="stone" href="07-support-network.html">
+      <div class="num">7</div>
+      <div class="txt">
+        <strong lang-block="en">Building a Support Network</strong>
+        <strong lang-block="ta" style="display:none">ஆதரவு வலையமைப்பை உருவாக்குதல்</strong>
+        <span lang-block="en">No parent is meant to carry everything alone</span>
+        <span lang-block="ta" style="display:none">எந்த பெற்றோரும் எல்லாவற்றையும் தனியாக சுமக்க வேண்டியதில்லை</span>
+      </div>
+    </a>
+    
+    <a class="stone" href="08-healthy-lifestyle.html">
+      <div class="num">8</div>
+      <div class="txt">
+        <strong lang-block="en">Healthy Lifestyle Foundations</strong>
+        <strong lang-block="ta" style="display:none">ஆரோக்கியமான வாழ்க்கை முறை அடித்தளங்கள்</strong>
+        <span lang-block="en">The body and mind are not separate when it comes to managing stress</span>
+        <span lang-block="ta" style="display:none">மன அழுத்தத்தை நிர்வகிக்கும் போது உடலும் மனமும் தனித்தனியானவை அல்ல</span>
+      </div>
+    </a>
+    
+    <a class="stone" href="09-family-communication.html">
+      <div class="num">9</div>
+      <div class="txt">
+        <strong lang-block="en">Communication to Reduce Family Conflict</strong>
+        <strong lang-block="ta" style="display:none">குடும்ப மோதலை குறைக்கும் தொடர்பாடல்</strong>
+        <span lang-block="en">How you speak under stress shapes how your family responds to it</span>
+        <span lang-block="ta" style="display:none">அழுத்தத்தில் நீங்கள் பேசும் விதம், உங்கள் குடும்பம் அதற்கு எப்படி பதிலளிக்கிறது என்பதை வடிவமைக்கிறது</span>
+      </div>
+    </a>
+    
+    <a class="stone" href="10-long-term-resilience.html">
+      <div class="num">10</div>
+      <div class="txt">
+        <strong lang-block="en">Building Long-Term Resilience</strong>
+        <strong lang-block="ta" style="display:none">நீண்டகால மீள் திறனை உருவாக்குதல்</strong>
+        <span lang-block="en">Turning what you've learned into a lasting personal practice</span>
+        <span lang-block="ta" style="display:none">நீங்கள் கற்றுக்கொண்டதை நீடித்த தனிப்பட்ட பயிற்சியாக மாற்றுதல்</span>
+      </div>
+    </a>
+    
+  </div>
+
+  <div class="panel-sage" style="margin-top:30px">
+    <p lang-block="en" style="margin-bottom:0"><strong>Have a question before you begin?</strong> Message us directly on WhatsApp — we're happy to help you get started.</p>
+    <p lang-block="ta" style="display:none; margin-bottom:0"><strong>தொடங்குவதற்கு முன் ஒரு கேள்வியா?</strong> நேரடியாக வாட்ஸ்அப்பில் எங்களுக்கு செய்தி அனுப்புங்கள் — நீங்கள் தொடங்க உதவ மகிழ்ச்சியடைவோம்.</p>
+    <div class="btn-row" style="justify-content:flex-start; margin-bottom:0;">
+      <a class="btn btn-whatsapp" href="https://wa.me/919843702244?text=Hi,%20I'm%20interested%20in%20the%20Stress%20Management%20for%20Parents%20course." target="_blank" rel="noopener">
+        <span lang-block="en">Chat on WhatsApp</span>
+        <span lang-block="ta" style="display:none">வாட்ஸ்அப்பில் பேசுங்கள்</span>
+      </a>
+    </div>
+  </div>  <div class="card" style="background: linear-gradient(135deg, #EAF1EA, #DCE9DE); margin-top: 10px;">
+    <span class="tip-tag" lang-block="en">Go Further</span>
+    <span class="tip-tag" lang-block="ta" style="display:none">மேலும் தொடரவும்</span>
+    <h2 style="margin-top:14px" lang-block="en">Join the Full Parenting Program</h2>
+    <h2 style="margin-top:14px; display:none" lang-block="ta">முழு பெற்றோர் திட்டத்தில் சேரவும்</h2>
+    <p lang-block="en">This course is one part of a larger journey. Our complete Parenting Program brings these stress-management skills together with live Zoom sessions, personal guidance, and a supportive community of parents working through the same challenges as you.</p>
+    <p lang-block="ta" style="display:none">இந்த பாடநெறி ஒரு பெரிய பயணத்தின் ஒரு பகுதி மட்டுமே. எங்கள் முழுமையான பெற்றோர் திட்டம், இந்த மன அழுத்த மேலாண்மை திறன்களை நேரடி Zoom அமர்வுகள், தனிப்பட்ட வழிகாட்டுதல், மற்றும் உங்களைப் போலவே அதே சவால்களை எதிர்கொள்ளும் பெற்றோர்களின் ஆதரவு சமூகத்துடன் இணைக்கிறது.</p>
+    <div class="btn-row" style="justify-content:flex-start; margin: 18px 0 0">
+      <a class="btn btn-primary" href="promo.html">
+        <span lang-block="en">Explore the Parenting Program</span>
+        <span lang-block="ta" style="display:none">பெற்றோர் திட்டத்தை பார்வையிடவும்</span>
+      </a>
+      <a class="btn btn-whatsapp" href="https://wa.me/919843702244?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Parenting%20Program." target="_blank" rel="noopener">
+        <span lang-block="en">Ask on WhatsApp</span>
+        <span lang-block="ta" style="display:none">வாட்ஸ்அப்பில் கேளுங்கள்</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div lang-block="en">N T Somasundaram &middot; Life Skills Program</div>
+  <div lang-block="ta" style="display:none">என். டி. சோமசுந்தரம் &middot; வாழ்க்கை திறன் திட்டம்</div>
+  <div class="motto">God is always with u</div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('lang-ta', lang === 'ta');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-ta').classList.toggle('active', lang === 'ta');
+  document.querySelectorAll('[lang-block="en"]').forEach(function(el) {
+    el.style.display = (lang === 'en') ? '' : 'none';
+  });
+  document.querySelectorAll('[lang-block="ta"]').forEach(function(el) {
+    el.style.display = (lang === 'ta') ? '' : 'none';
+  });
+  localStorage.setItem('preferredLang', lang);
+}
+(function() {
+  var saved = localStorage.getItem('preferredLang');
+  if (saved === 'ta') setLang('ta');
+})();
+</script>
+</body>
+</html>

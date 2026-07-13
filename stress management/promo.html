@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stress Management for Parents | Enroll Now</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #EEF2ED; --bg-card: #FFFFFF; --ink: #26383D; --ink-soft: #55666B;
+  --sage: #7E9C86; --sage-deep: #56755E; --rose: #C97B84; --rose-deep: #A85A66;
+  --sand: #F2EDE0; --line: #D8E0D6; --shadow: 0 8px 24px rgba(38,56,61,0.08); --radius: 18px;
+  --font-en: 'Poppins', sans-serif; --font-ta: 'Noto Sans Tamil', sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family: var(--font-en); background: var(--bg); color: var(--ink); line-height:1.7; }
+[lang-block="ta"] { display: none; }
+body.lang-ta [lang-block="en"] { display: none; }
+body.lang-ta [lang-block="ta"] { display: block; }
+body.lang-ta span[lang-block="ta"] { display: inline; }
+body.lang-ta li[lang-block="ta"] { display: list-item; }
+a { color:inherit; }
+.topbar { position: sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:14px 28px; background: rgba(238,242,237,0.92); backdrop-filter: blur(6px); border-bottom:1px solid var(--line); }
+.brand { font-weight:600; font-size:1.05rem; color: var(--sage-deep); text-decoration:none; display:flex; align-items:center; gap:8px; }
+.brand .dot { width:9px; height:9px; border-radius:50%; background: var(--rose); display:inline-block; }
+.lang-toggle { display:flex; border:1.5px solid var(--sage); border-radius:999px; overflow:hidden; }
+.lang-toggle button { border:none; background:transparent; padding:7px 16px; font-family: var(--font-en); font-size:.85rem; font-weight:600; color: var(--sage-deep); cursor:pointer; }
+.lang-toggle button.active { background: var(--sage); color:#fff; }
+
+.hero { max-width: 880px; margin:0 auto; padding: 56px 28px 30px; text-align:center; }
+.eyebrow { font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color: var(--rose-deep); font-weight:700; margin-bottom:14px; }
+h1 { font-size: clamp(1.9rem, 4.2vw, 2.8rem); font-weight:700; margin:0 0 16px; }
+.tagline { font-size:1.15rem; color: var(--ink-soft); max-width:640px; margin:0 auto 24px; }
+.breathe-wrap { display:flex; justify-content:center; margin: 10px 0 26px; }
+.breathe-circle { width:80px; height:80px; border-radius:50%; background: radial-gradient(circle at 35% 30%, #A9C4AF, var(--sage) 70%, var(--sage-deep)); animation: breathe 6s ease-in-out infinite; }
+@keyframes breathe { 0%,100%{transform:scale(.85);} 50%{transform:scale(1.15);} }
+@media (prefers-reduced-motion: reduce) { .breathe-circle { animation:none; } }
+
+.container { max-width: 880px; margin:0 auto; padding: 0 28px 60px; }
+.card { background: var(--bg-card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 34px; margin-bottom: 28px; }
+h2 { font-size:1.5rem; color: var(--sage-deep); margin:0 0 16px; }
+h3 { font-size:1.1rem; margin: 18px 0 8px; }
+p { color: var(--ink-soft); margin:0 0 14px; }
+ul { color: var(--ink-soft); padding-left: 22px; }
+li { margin-bottom:8px; }
+
+.pain-grid, .include-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; margin-top:8px; }
+.pain-item, .include-item { background: var(--sand); border-radius:14px; padding:18px 20px; }
+.pain-item strong, .include-item strong { display:block; color: var(--ink); margin-bottom:6px; }
+
+.trainer-row { display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap; }
+.trainer-badge { flex:none; width:64px; height:64px; border-radius:50%; background: var(--sage); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.4rem; }
+
+.testimonial { background: linear-gradient(135deg,#F6EFE3,#ECE3D3); border-radius:14px; padding:20px 24px; margin-bottom:14px; font-style: italic; color: var(--ink); }
+.testimonial .who { font-style:normal; font-weight:600; color: var(--sage-deep); margin-top:8px; font-size:.9rem; }
+
+.batch-box { display:flex; gap:20px; flex-wrap:wrap; }
+.batch-item { flex:1; min-width:200px; background: var(--sand); border-radius:14px; padding:20px; text-align:center; }
+.batch-item .label { font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color: var(--ink-soft); }
+.batch-item .val { font-size:1.3rem; font-weight:700; color: var(--sage-deep); margin-top:4px; }
+.note-tbc { font-size:.82rem; color: var(--rose-deep); margin-top:10px; }
+
+.btn { display:inline-flex; align-items:center; gap:8px; padding:13px 26px; border-radius:999px; font-weight:600; font-size:.95rem; text-decoration:none; cursor:pointer; border:none; }
+.btn-primary { background: var(--sage-deep); color:#fff; }
+.btn-whatsapp { background:#25D366; color:#fff; }
+.btn-row { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin: 26px 0; }
+
+form.enquiry { display:grid; gap:14px; }
+form.enquiry label { font-size:.85rem; font-weight:600; color: var(--ink); display:block; margin-bottom:6px; }
+form.enquiry input, form.enquiry select, form.enquiry textarea {
+  width:100%; padding:11px 14px; border-radius:10px; border:1.5px solid var(--line);
+  font-family: var(--font-en); font-size:.95rem; background:#fcfdfc;
+}
+body.lang-ta form.enquiry input, body.lang-ta form.enquiry textarea { font-family: var(--font-ta); }
+form.enquiry button { justify-self:start; }
+.form-status { font-size:.88rem; margin-top:8px; }
+.form-status.success { color: var(--sage-deep); }
+.form-status.error { color: var(--rose-deep); }
+
+footer { text-align:center; padding:34px 20px 50px; color: var(--ink-soft); font-size:.85rem; }
+footer .motto { color: var(--rose-deep); font-weight:600; margin-top:6px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="course-home.html" class="brand"><span class="dot"></span>
+    <span lang-block="en">Stress Management for Parents</span>
+    <span lang-block="ta" style="display:none">பெற்றோருக்கான மன அழுத்த மேலாண்மை</span>
+  </a>
+  <div class="lang-toggle">
+    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+    <button id="btn-ta" onclick="setLang('ta')">தமிழ்</button>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow" lang-block="en">Enrollment Now Open</div>
+  <div class="eyebrow" lang-block="ta" style="display:none">சேர்க்கை தற்போது திறந்துள்ளது</div>
+  <h1 lang-block="en">Calm Parents, Confident Families</h1>
+  <h1 lang-block="ta" style="display:none">அமைதியான பெற்றோர், நம்பிக்கையுள்ள குடும்பங்கள்</h1>
+  <div class="breathe-wrap"><div class="breathe-circle"></div></div>
+  <p class="tagline" lang-block="en">A bilingual, self-paced course to help you manage stress, protect your calm, and build a steadier home for your children — with an optional live Zoom session to go deeper.</p>
+  <p class="tagline" lang-block="ta" style="display:none">உங்கள் மன அழுத்தத்தை நிர்வகிக்கவும், உங்கள் அமைதியை பாதுகாக்கவும், உங்கள் குழந்தைகளுக்கு நிலையான வீட்டை உருவாக்கவும் உதவும் இருமொழி, சுய-வேக பாடநெறி — ஆழமாக செல்ல விருப்ப நேரடி Zoom அமர்வுடன்.</p>
+  <div class="btn-row">
+    <a class="btn btn-whatsapp" href="https://wa.me/919843702244?text=Hi%2C%20I%27d%20like%20to%20enroll%20in%20the%20Stress%20Management%20for%20Parents%20course." target="_blank" rel="noopener">
+      <span lang-block="en">Enroll via WhatsApp</span>
+      <span lang-block="ta" style="display:none">வாட்ஸ்அப் வழியாக சேரவும்</span>
+    </a>
+    <a class="btn btn-primary" href="#enquiry">
+      <span lang-block="en">Send an Enquiry</span>
+      <span lang-block="ta" style="display:none">விசாரணை அனுப்பவும்</span>
+    </a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Why this matters -->
+  <div class="card">
+    <h2 lang-block="en">Why parents need this course</h2>
+    <h2 lang-block="ta" style="display:none">பெற்றோருக்கு இந்த பாடநெறி ஏன் தேவை</h2>
+    <div class="pain-grid">
+      <div class="pain-item">
+        <strong lang-block="en">Constant burnout</strong>
+        <strong lang-block="ta" style="display:none">தொடர்ச்சியான சோர்வு</strong>
+        <span lang-block="en">Juggling work, home, and children leaves little room to breathe.</span>
+        <span lang-block="ta" style="display:none">வேலை, வீடு, குழந்தைகளை சமநிலைப்படுத்துவது மூச்சு விட இடமளிக்கவில்லை.</span>
+      </div>
+      <div class="pain-item">
+        <strong lang-block="en">Guilt after outbursts</strong>
+        <strong lang-block="ta" style="display:none">வெடித்த பின் குற்ற உணர்ச்சி</strong>
+        <span lang-block="en">Snapping at your children, then feeling guilty for hours.</span>
+        <span lang-block="ta" style="display:none">குழந்தைகளிடம் கோபப்பட்டு, பின் மணிநேரம் குற்ற உணர்ச்சியுடன் இருப்பது.</span>
+      </div>
+      <div class="pain-item">
+        <strong lang-block="en">Conflict at home</strong>
+        <strong lang-block="ta" style="display:none">வீட்டில் மோதல்</strong>
+        <span lang-block="en">Stress spilling into arguments with your spouse or children.</span>
+        <span lang-block="ta" style="display:none">அழுத்தம் துணைவர் அல்லது குழந்தைகளுடன் வாக்குவாதங்களாக மாறுவது.</span>
+      </div>
+      <div class="pain-item">
+        <strong lang-block="en">No time for yourself</strong>
+        <strong lang-block="ta" style="display:none">தனக்கென நேரமில்லை</strong>
+        <span lang-block="en">Every minute accounted for by someone else's needs.</span>
+        <span lang-block="ta" style="display:none">ஒவ்வொரு நிமிடமும் மற்றவரின் தேவைகளுக்காக செலவிடப்படுவது.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- What's included -->
+  <div class="card">
+    <h2 lang-block="en">What's included</h2>
+    <h2 lang-block="ta" style="display:none">என்ன அடங்கும்</h2>
+    <div class="include-grid">
+      <div class="include-item">
+        <strong lang-block="en">10 bilingual modules</strong>
+        <strong lang-block="ta" style="display:none">10 இருமொழி பகுதிகள்</strong>
+        <span lang-block="en">Self-paced, with real-life examples and practical tips in each.</span>
+        <span lang-block="ta" style="display:none">சுய-வேகம், ஒவ்வொன்றிலும் உண்மை உதாரணங்கள் மற்றும் நடைமுறை குறிப்புகளுடன்.</span>
+      </div>
+      <div class="include-item">
+        <strong lang-block="en">Optional live Zoom session</strong>
+        <strong lang-block="ta" style="display:none">விருப்ப நேரடி Zoom அமர்வு</strong>
+        <span lang-block="en">A guided group session to discuss and practice together.</span>
+        <span lang-block="ta" style="display:none">ஒன்றாக விவாதிக்கவும் பயிற்சி செய்யவும் வழிகாட்டப்பட்ட குழு அமர்வு.</span>
+      </div>
+      <div class="include-item">
+        <strong lang-block="en">Printable reflection sheets</strong>
+        <strong lang-block="ta" style="display:none">அச்சிடக்கூடிய சிந்தனை தாள்கள்</strong>
+        <span lang-block="en">Each module ends with a short reflection you can print or save.</span>
+        <span lang-block="ta" style="display:none">ஒவ்வொரு பகுதியும் அச்சிடக்கூடிய அல்லது சேமிக்கக்கூடிய சிறு சிந்தனையுடன் முடிகிறது.</span>
+      </div>
+      <div class="include-item">
+        <strong lang-block="en">WhatsApp support</strong>
+        <strong lang-block="ta" style="display:none">வாட்ஸ்அப் ஆதரவு</strong>
+        <span lang-block="en">Direct access to ask questions as you go through the course.</span>
+        <span lang-block="ta" style="display:none">பாடநெறி முழுவதும் கேள்விகள் கேட்க நேரடி அணுகல்.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About trainer -->
+  <div class="card">
+    <h2 lang-block="en">About your trainer</h2>
+    <h2 lang-block="ta" style="display:none">உங்கள் பயிற்சியாளர் பற்றி</h2>
+    <div class="trainer-row">
+      <div class="trainer-badge">NT</div>
+      <div>
+        <p lang-block="en"><strong>N T Somasundaram</strong> is a Certified Master Trainer, Career Consultant, and Life Skills Educator, and Director & Treasurer of SKV International School. Through the NT Somasundaram Life Skills Program, he has worked with hundreds of parents, teachers, and students on practical, everyday approaches to emotional wellbeing — delivered in both English and Tamil,  Certified Master Trainer from IATD, Pick My Career, Emocare International, and the Indian Counseling Service.</p>
+        <p lang-block="ta" style="display:none"><strong>என். டி. சோமசுந்தரம்</strong> ஒரு சான்றளிக்கப்பட்ட மாஸ்டர் பயிற்சியாளர், தொழில் ஆலோசகர், மற்றும் வாழ்க்கை திறன் கல்வியாளர், மேலும் SKV International School இன் இயக்குநர் & பொருளாளர். NT Somasundaram Life Skills Program மூலம், அவர் நூற்றுக்கணக்கான பெற்றோர்கள், ஆசிரியர்கள், மாணவர்களுடன் உணர்ச்சி நல்வாழ்விற்கான நடைமுறை, அன்றாட அணுகுமுறைகளில் பணியாற்றியுள்ளார் — IATD, Pick My Career, Emocare International, Indian Counseling Service உடன் இணைந்து, ஆங்கிலம் மற்றும் தமிழ் இரண்டிலும்.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials (placeholders) -->
+  <div class="card">
+    <h2 lang-block="en">What parents say</h2>
+    <h2 lang-block="ta" style="display:none">பெற்றோர்கள் என்ன சொல்கிறார்கள்</h2>
+    <div class="testimonial">
+      <p lang-block="en" style="margin-bottom:0">"The breathing technique alone was worth joining — I use it every single evening now."</p>
+      <p lang-block="ta" style="display:none; margin-bottom:0">"சுவாச நுட்பம் மட்டும் சேர்வதற்கு மதிப்புமிக்கதாக இருந்தது — இப்போது நான் ஒவ்வொரு மாலையும் பயன்படுத்துகிறேன்."</p>
+         </div>
+    <div class="testimonial">
+      <p lang-block="en" style="margin-bottom:0">"I finally understood why my own stress was affecting my son's behavior. This course changed how our evenings feel."</p>
+      <p lang-block="ta" style="display:none; margin-bottom:0">"என் சொந்த மன அழுத்தம் என் மகனின் நடத்தையை ஏன் பாதிக்கிறது என்பதை இறுதியாக புரிந்துகொண்டேன். இந்த பாடநெறி எங்கள் மாலைகள் எப்படி உணரப்படுகின்றன என்பதை மாற்றியது."</p>
+   
+  </div>
+
+  <!-- Batch dates & pricing -->
+  <div class="card">
+    <h2 lang-block="en">Batch dates &amp; pricing</h2>
+    <h2 lang-block="ta" style="display:none">தொகுதி தேதிகள் & கட்டணம்</h2>
+    <div class="batch-box">
+      <div class="batch-item">
+        <div class="label" lang-block="en">Next batch starts</div>
+        <div class="label" lang-block="ta" style="display:none">அடுத்த தொகுதி தொடங்கும்</div>
+             </div>
+      <div class="batch-item">
+        <div class="label" lang-block="en">Live Zoom session</div>
+        <div class="label" lang-block="ta" style="display:none">நேரடி Zoom அமர்வு</div>
+             </div>
+      <div class="batch-item">
+        <div class="label" lang-block="en">Course fee</div>
+        <div class="label" lang-block="ta" style="display:none">பாடநெறி கட்டணம்</div>
+              </div>
+    </div>
+    
+  <!-- Enquiry form -->
+  <div class="card" id="enquiry">
+    <h2 lang-block="en">Send an enquiry</h2>
+    <h2 lang-block="ta" style="display:none">விசாரணை அனுப்பவும்</h2>
+    <p lang-block="en">Fill this in and we'll get back to you on WhatsApp or by phone.</p>
+    <p lang-block="ta" style="display:none">இதை பூர்த்தி செய்யவும், நாங்கள் வாட்ஸ்அப் அல்லது தொலைபேசி மூலம் தொடர்பு கொள்வோம்.</p>
+    <form class="enquiry" id="enquiryForm">
+      <div>
+        <label lang-block="en">Your name</label>
+        <label lang-block="ta" style="display:none">உங்கள் பெயர்</label>
+        <input type="text" id="parentName" required>
+      </div>
+      <div>
+        <label lang-block="en">WhatsApp / Phone number</label>
+        <label lang-block="ta" style="display:none">வாட்ஸ்அப் / தொலைபேசி எண்</label>
+        <input type="tel" id="parentPhone" required>
+      </div>
+      <div>
+        <label lang-block="en">Preferred language</label>
+        <label lang-block="ta" style="display:none">விருப்பமான மொழி</label>
+        <select id="preferredLangSelect">
+          <option value="English">English</option>
+          <option value="Tamil">Tamil</option>
+        </select>
+      </div>
+      <div>
+        <label lang-block="en">Message (optional)</label>
+        <label lang-block="ta" style="display:none">செய்தி (விருப்பம்)</label>
+        <textarea id="parentMessage" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        <span lang-block="en">Submit Enquiry</span>
+        <span lang-block="ta" style="display:none">விசாரணையை சமர்ப்பிக்கவும்</span>
+      </button>
+      <div id="formStatus" class="form-status"></div>
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  <div lang-block="en">N T Somasundaram &middot; Life Skills Program</div>
+  <div lang-block="ta" style="display:none">என். டி. சோமசுந்தரம் &middot; வாழ்க்கை திறன் திட்டம்</div>
+  <div class="motto">God is always with u</div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('lang-ta', lang === 'ta');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-ta').classList.toggle('active', lang === 'ta');
+  document.querySelectorAll('[lang-block="en"]').forEach(function(el){ el.style.display = (lang==='en')?'':'none'; });
+  document.querySelectorAll('[lang-block="ta"]').forEach(function(el){ el.style.display = (lang==='ta')?'':'none'; });
+  localStorage.setItem('preferredLang', lang);
+}
+(function(){ var s = localStorage.getItem('preferredLang'); if (s==='ta') setLang('ta'); })();
+
+// Enquiry form -> logs to Google Sheet via Apps Script Web App (image-pixel GET pattern)
+var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwO9yMIu2zvhjJmOK6P2UtxBLwztihY8ZLEWUwTv3vN4CTVmm2pVbB3HBgpErGteB3ycQ/exec"; // set after deploying Code.gs
+
+document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var name = document.getElementById('parentName').value.trim();
+  var phone = document.getElementById('parentPhone').value.trim();
+  var lang = document.getElementById('preferredLangSelect').value;
+  var message = document.getElementById('parentMessage').value.trim();
+  var statusEl = document.getElementById('formStatus');
+
+  if (!name || !phone) {
+    statusEl.textContent = document.body.classList.contains('lang-ta')
+      ? "பெயர் மற்றும் தொலைபேசி எண் தேவை."
+      : "Name and phone number are required.";
+    statusEl.className = "form-status error";
+    return;
+  }
+
+  try {
+    var img = new Image();
+    var params = new URLSearchParams({
+      form: "stress-management-enquiry",
+      name: name,
+      phone: phone,
+      preferredLanguage: lang,
+      message: message,
+      ts: new Date().toISOString()
+    });
+    img.src = APPS_SCRIPT_URL + "?" + params.toString();
+  } catch (err) { /* fail silently, do not block the user */ }
+
+  statusEl.textContent = document.body.classList.contains('lang-ta')
+    ? "நன்றி! நாங்கள் விரைவில் தொடர்பு கொள்வோம்."
+    : "Thank you! We'll be in touch shortly.";
+  statusEl.className = "form-status success";
+  document.getElementById('enquiryForm').reset();
+});
+</script>
+</body>
+</html>

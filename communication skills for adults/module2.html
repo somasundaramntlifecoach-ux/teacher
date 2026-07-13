@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 2: Verbal Communication & Clarity | Communication Skills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B3A5C; --gold:#C9A24B; --cream:#FAF7F0; --teal:#2C6E7F;
+  --ink:#233142; --soft:#6b7686; --green:#3E8E5A; --red:#C1502E;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Poppins',sans-serif; background:var(--cream); color:var(--ink); line-height:1.65;}
+[lang="ta"]{font-family:'Noto Sans Tamil','Poppins',sans-serif;}
+.ta{display:none;}
+body.show-ta .en{display:none;}
+body.show-ta .ta{display:inline;}
+body.show-ta .ta-block{display:block;}
+.en-block{display:block;}
+body.show-ta .en-block{display:none;}
+
+header.top{background:var(--navy); color:#fff; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+header.top .brand{font-weight:600; font-size:1.05rem;}
+header.top .brand span{color:var(--gold);}
+.lang-toggle{background:var(--gold); color:var(--navy); border:none; padding:8px 16px; border-radius:20px; font-weight:600; cursor:pointer; font-size:0.9rem;}
+.lang-toggle:hover{opacity:0.9;}
+
+.container{max-width:820px; margin:0 auto; padding:28px 20px 60px;}
+.card{background:#fff; border-radius:14px; padding:26px 24px; box-shadow:0 2px 14px rgba(27,58,92,0.08); margin-bottom:20px;}
+h1{color:var(--navy); font-size:1.6rem; margin-bottom:6px;}
+h2{color:var(--navy); font-size:1.2rem; margin:18px 0 10px; border-left:4px solid var(--gold); padding-left:10px;}
+h3{color:var(--teal); font-size:1.05rem; margin:14px 0 6px;}
+p{margin-bottom:10px; color:var(--ink);}
+.subtitle{color:var(--soft); font-size:0.95rem; margin-bottom:16px;}
+.tag{display:inline-block; background:var(--navy); color:#fff; font-size:0.72rem; padding:3px 10px; border-radius:12px; margin-bottom:10px;}
+.progress-wrap{background:#eee; border-radius:10px; height:10px; overflow:hidden; margin:14px 0;}
+.progress-bar{background:var(--gold); height:100%; transition:width .4s;}
+.btn{display:inline-block; background:var(--navy); color:#fff; border:none; padding:11px 22px; border-radius:8px; font-weight:600; cursor:pointer; text-decoration:none; font-size:0.95rem; margin:6px 6px 6px 0;}
+.btn:hover{background:var(--teal);}
+.btn.gold{background:var(--gold); color:var(--navy);}
+.btn.outline{background:transparent; border:2px solid var(--navy); color:var(--navy);}
+.btn.wa{background:#25D366; color:#fff;}
+.nav-row{display:flex; justify-content:space-between; margin-top:24px; flex-wrap:wrap; gap:10px;}
+.quote-box{background:var(--cream); border-left:4px solid var(--teal); padding:14px 18px; border-radius:6px; font-style:italic; color:var(--teal); margin:16px 0;}
+.exercise-box{background:#fff8ea; border:1px dashed var(--gold); border-radius:10px; padding:16px 18px; margin:14px 0;}
+.concept-block{margin-bottom:22px; padding-bottom:18px; border-bottom:1px solid #eee;}
+.concept-block:last-child{border-bottom:none;}
+.example-box{background:#eef5f7; border-left:4px solid var(--teal); border-radius:6px; padding:12px 16px; margin:10px 0;}
+.example-box h3{color:var(--teal); margin:0 0 6px;}
+.metaphor-box{background:#fbeee4; border-left:4px solid var(--red); border-radius:6px; padding:12px 16px; margin:10px 0;}
+.metaphor-box h3{color:var(--red); margin:0 0 6px;}
+.tip-box{background:#fff6d8; border:1px solid var(--gold); border-radius:10px; padding:14px 18px; margin:16px 0;}
+.tip-box h3{color:#8a6d1d; margin:0 0 6px;}
+ul{margin:8px 0 8px 22px;}
+li{margin-bottom:6px;}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:14px 0;}
+.mini-card{background:var(--cream); border-radius:10px; padding:14px; border:1px solid #eee2c8;}
+.mini-card h3{margin-top:0;}
+footer.site{text-align:center; padding:24px; color:var(--soft); font-size:0.85rem;}
+input[type=text], input[type=email], input[type=tel]{width:100%; padding:11px 12px; border:1px solid #ddd; border-radius:8px; margin-bottom:12px; font-family:inherit; font-size:0.95rem;}
+label{font-weight:600; font-size:0.9rem; color:var(--navy); display:block; margin-bottom:4px;}
+.q-block{margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid #eee;}
+.q-options{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
+.q-options label{font-weight:400; color:var(--ink); display:flex; align-items:center; gap:8px; cursor:pointer;}
+@media print{ header.top, .btn, .lang-toggle, .no-print{display:none !important;} body{background:#fff;} .card{box-shadow:none; border:1px solid #ccc;} }
+@media (max-width:600px){ .container{padding:18px 14px 40px;} h1{font-size:1.35rem;} }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">NT Somasundaram <span>Life Skills</span> &mdash; <span class="en">Communication Skills for Adults</span><span class="ta">பெரியவர்களுக்கான தொடர்பு திறன்கள்</span></div>
+  <button class="lang-toggle" id="langBtn" onclick="toggleLang()">தமிழ்</button>
+</header>
+
+<div class="container">
+  <div class="card">
+    <span class="tag">Module 2 of 10</span>
+    <h1><span class="en">Verbal Communication & Clarity</span><span class="ta">சொல் தொடர்பு மற்றும் தெளிவு</span></h1>
+    <p class="subtitle"><span class="en">Saying what you mean, simply and clearly, without losing your message in the words.</span><span class="ta">உங்கள் செய்தியை வார்த்தைகளில் இழக்காமல், எளிமையாகவும் தெளிவாகவும் சொல்வது.</span></p>
+    <div class="progress-wrap"><div class="progress-bar" style="width:20%"></div></div>
+  </div>
+
+  <div class="card">
+    <p><span class="en">Clear speech is a skill, not a talent. Adults often over-explain, use vague language, or bury the main point under details. Clarity means the listener understands your message the first time, without needing to ask 'what do you mean?'</span><span class="ta">தெளிவான பேச்சு ஒரு திறமை, ஒரு இயல்பான வரமல்ல. பெரியவர்கள் பெரும்பாலும் அளவுக்கு அதிகமாக விளக்குகிறார்கள், தெளிவற்ற வார்த்தைகளைப் பயன்படுத்துகிறார்கள், அல்லது முக்கிய கருத்தை விவரங்களுக்குள் புதைத்துவிடுகிறார்கள். தெளிவு என்பது, கேட்பவர் 'என்ன சொல்கிறீர்கள்?' என கேட்காமலேயே முதல் முறையிலேயே புரிந்துகொள்வதாகும்.</span></p>
+
+    <div class="concept-block">
+<h2><span class="en">Key Concept: Lead with the Point</span><span class="ta">முக்கிய கருத்து: கருத்துடன் தொடங்குங்கள்</span></h2>
+<p><span class="en">State your main message in the very first sentence, then use the rest of the conversation to explain or support it. This is sometimes called the 'newspaper headline' approach — the headline carries the whole story; everything after is detail for those who want more.</span><span class="ta">உங்கள் முக்கிய செய்தியை முதல் வாக்கியத்திலேயே சொல்லுங்கள், மீதமுள்ள உரையாடலை அதை விளக்கவோ ஆதரிக்கவோ பயன்படுத்துங்கள். இதை சில நேரங்களில் 'செய்தித்தாள் தலைப்பு' அணுகுமுறை என்று அழைக்கிறார்கள் — தலைப்பே முழு கதையையும் சுமக்கிறது; பின்னர் வருவது மேலும் தெரிந்துகொள்ள விரும்புவோருக்கான விவரமே.</span></p>
+<div class="example-box">
+  <h3>📌 <span class="en">Example</span><span class="ta">உதாரணம்</span></h3>
+  <p><span class="en">Instead of narrating five minutes of background before mentioning that a client meeting has been moved, simply open with: “The client meeting moved to 4 PM.” Then add context if the listener wants it. Compare that to burying this fact at the end of a long story — busy listeners often miss it entirely.</span><span class="ta">ஒரு வாடிக்கையாளர் கூட்டம் மாற்றப்பட்டதை சொல்வதற்கு முன் ஐந்து நிமிட பின்னணியை சொல்வதற்குப் பதிலாக, “வாடிக்கையாளர் கூட்டம் மாலை 4 மணிக்கு மாற்றப்பட்டது” என்று தொடங்குங்கள். கேட்பவர் விரும்பினால் பின்னணியை பின்னர் சேர்க்கவும். இதை ஒரு நீண்ட கதையின் முடிவில் இந்த உண்மையை புதைப்பதுடன் ஒப்பிடுங்கள் — பரபரப்பான கேட்பவர்கள் பெரும்பாலும் அதை முற்றிலும் தவறவிடுகிறார்கள்.</span></p>
+</div>
+<div class="metaphor-box">
+  <h3>💡 <span class="en">Think of it like this</span><span class="ta">இதை இப்படி நினைத்துப் பாருங்கள்</span></h3>
+  <p><span class="en">Think of your main point as the destination pin on a map. Give that first, then describe the route — not the other way around.</span><span class="ta">உங்கள் முக்கிய கருத்தை ஒரு வரைபடத்தில் இலக்கு பின் போல் நினைத்துப் பாருங்கள். அதை முதலில் கொடுங்கள், பின்னர் பாதையை விவரியுங்கள் — நேர்மாறாக அல்ல.</span></p>
+</div>
+</div>
+
+<div class="concept-block">
+<h2><span class="en">Key Concept: Concrete over Vague</span><span class="ta">முக்கிய கருத்து: தெளிவு, குழப்பமில்லாமல்</span></h2>
+<p><span class="en">Words like “soon”, “some”, and “maybe” feel polite, but they force the listener to guess your real meaning — and different people will guess differently. Replacing them with specific numbers, times, and names removes that guesswork entirely.</span><span class="ta">“விரைவில்”, “கொஞ்சம்”, “ஒருவேளை” போன்ற வார்த்தைகள் மரியாதையாக தோன்றினாலும், கேட்பவரை உங்கள் உண்மையான பொருளை யூகிக்க வைக்கின்றன — வெவ்வேறு நபர்கள் வெவ்வேறு விதமாக யூகிப்பார்கள். அவற்றை குறிப்பிட்ட எண்கள், நேரங்கள், பெயர்களுடன் மாற்றுவது இந்த யூகத்தை முற்றிலும் நீக்கிவிடும்.</span></p>
+<div class="example-box">
+  <h3>📌 <span class="en">Example</span><span class="ta">உதாரணம்</span></h3>
+  <p><span class="en">Saying “I'll finish this soon” to a client could mean two hours to you and two days to them. Saying “I'll send it by 5 PM today” removes all ambiguity and builds trust because you can be held to it.</span><span class="ta">ஒரு வாடிக்கையாளரிடம் “நான் இதை விரைவில் முடிப்பேன்” என்று சொல்வது உங்களுக்கு இரண்டு மணி நேரமாகவும் அவர்களுக்கு இரண்டு நாட்களாகவும் இருக்கலாம். “இன்று மாலை 5 மணிக்குள் அனுப்புவேன்” என்று சொல்வது அனைத்து குழப்பத்தையும் நீக்கி நம்பிக்கையை உருவாக்கும், ஏனெனில் அதை நிறைவேற்ற நீங்கள் பொறுப்பாக இருக்க முடியும்.</span></p>
+</div>
+<div class="metaphor-box">
+  <h3>💡 <span class="en">Think of it like this</span><span class="ta">இதை இப்படி நினைத்துப் பாருங்கள்</span></h3>
+  <p><span class="en">Vague words are like a blurry photograph — the general shape is there, but no one can make out the details. Concrete words bring the picture into sharp focus.</span><span class="ta">தெளிவற்ற வார்த்தைகள் ஒரு மங்கலான புகைப்படம் போன்றவை — பொதுவான வடிவம் இருக்கும், ஆனால் யாராலும் விவரங்களை பார்க்க முடியாது. தெளிவான வார்த்தைகள் படத்தை கூர்மையாக்குகின்றன.</span></p>
+</div>
+</div>
+
+<div class="concept-block">
+<h2><span class="en">Key Concept: One Idea at a Time</span><span class="ta">முக்கிய கருத்து: ஒரு நேரத்தில் ஒரு கருத்து</span></h2>
+<p><span class="en">When several points are stacked into one long sentence, the listener's mind has to hold all of them at once, and usually loses some. Pausing between separate ideas — even briefly — gives each one room to be absorbed before the next arrives.</span><span class="ta">பல கருத்துக்கள் ஒரே நீண்ட வாக்கியத்தில் அடுக்கப்படும்போது, கேட்பவரின் மனம் அவை அனைத்தையும் ஒரே நேரத்தில் வைத்திருக்க வேண்டும், பொதுவாக சிலவற்றை இழக்கும். தனித்தனி கருத்துக்களுக்கு இடையே — சிறிது நேரமாவது — இடைவெளி எடுப்பது ஒவ்வொன்றும் அடுத்தது வருவதற்கு முன் உள்வாங்கப்பட இடம் தரும்.</span></p>
+<div class="example-box">
+  <h3>📌 <span class="en">Example</span><span class="ta">உதாரணம்</span></h3>
+  <p><span class="en">“Can you pick up milk, and also don't forget the school form is due tomorrow, and by the way did you call the plumber?” packs three unrelated requests into one breath. Separating them into three short sentences, with a pause between, dramatically increases the chance all three get remembered.</span><span class="ta">“பால் வாங்கிட்டு வா, அதோட நாளைக்கு பள்ளி படிவம் கொடுக்கணும் மறக்காதே, சரி பிளம்பரை கூப்பிட்டியா?” என்பது மூன்று தொடர்பில்லாத கோரிக்கைகளை ஒரே மூச்சில் அடுக்குகிறது. அவற்றை மூன்று சிறிய வாக்கியங்களாக, இடையே இடைவெளியுடன் பிரிப்பது மூன்றும் நினைவில் இருக்கும் வாய்ப்பை கணிசமாக அதிகரிக்கும்.</span></p>
+</div>
+<div class="metaphor-box">
+  <h3>💡 <span class="en">Think of it like this</span><span class="ta">இதை இப்படி நினைத்துப் பாருங்கள்</span></h3>
+  <p><span class="en">Feeding someone three ideas at once is like handing them three balls to juggle mid-sentence — something always drops. Handing ideas one at a time is like passing them one ball, letting them catch it, then throwing the next.</span><span class="ta">ஒரே நேரத்தில் மூன்று கருத்துக்களை ஒருவருக்கு கொடுப்பது, வாக்கியத்தின் நடுவே மூன்று பந்துகளை ஜக்கிள் செய்ய கொடுப்பது போன்றது — ஏதோ ஒன்று எப்போதும் விழும். ஒரு நேரத்தில் ஒரு கருத்தை கொடுப்பது, ஒரு பந்தை கொடுத்து அவர்கள் அதை பிடிக்க விட்டு பின் அடுத்ததை வீசுவது போன்றது.</span></p>
+</div>
+</div>
+
+<div class="concept-block">
+<h2><span class="en">Key Concept: Match Your Audience</span><span class="ta">முக்கிய கருத்து: கேட்பவருக்கு ஏற்ப மாற்றுங்கள்</span></h2>
+<p><span class="en">The same underlying idea needs completely different words depending on who is listening. Explaining a medical diagnosis to a doctor colleague, a worried parent, and a young child all require the same truth delivered in three different vocabularies and paces.</span><span class="ta">ஒரே அடிப்படை கருத்துக்கு கேட்பவரைப் பொறுத்து முற்றிலும் வேறுபட்ட வார்த்தைகள் தேவை. ஒரு மருத்துவ நோயறிதலை ஒரு மருத்துவ சக பணியாளருக்கும், கவலைப்படும் பெற்றோருக்கும், ஒரு சிறு குழந்தைக்கும் விளக்குவது ஒரே உண்மையை மூன்று வெவ்வேறு சொல்லகராதிகளிலும் வேகங்களிலும் தேவைப்படும்.</span></p>
+<div class="example-box">
+  <h3>📌 <span class="en">Example</span><span class="ta">உதாரணம்</span></h3>
+  <p><span class="en">A doctor tells a colleague “It's a mild viral infection, self-limiting.” To the worried parent, the same idea becomes: “It's a common infection that should clear up on its own in a few days — nothing serious.” To a 6-year-old: “There's a tiny bug in your body, and your body already knows how to fight it.”</span><span class="ta">ஒரு மருத்துவர் ஒரு சக பணியாளரிடம் “இது ஒரு லேசான வைரஸ் தொற்று, தானாக குணமாகும்” என்று சொல்கிறார். கவலைப்படும் பெற்றோருக்கு, அதே கருத்து: “இது ஒரு பொதுவான தொற்று, சில நாட்களில் தானாக குணமாகிவிடும் — கவலைக்குரியது இல்லை” ஆகிறது. 6 வயது குழந்தைக்கு: “உன் உடம்பில் ஒரு சிறு கிருமி இருக்கு, உன் உடம்புக்கு அதை எப்படி தோற்கடிக்கணும்னு ஏற்கனவே தெரியும்.”</span></p>
+</div>
+<div class="metaphor-box">
+  <h3>💡 <span class="en">Think of it like this</span><span class="ta">இதை இப்படி நினைத்துப் பாருங்கள்</span></h3>
+  <p><span class="en">The same water can be served in a steel tumbler, a baby's bottle, or a wine glass. The water doesn't change — but the container must match who's drinking.</span><span class="ta">ஒரே தண்ணீரை ஒரு ஸ்டீல் டம்ளரிலோ, குழந்தையின் பாட்டிலிலோ, ஒரு கண்ணாடி கோப்பையிலோ பரிமாறலாம். தண்ணீர் மாறாது — ஆனால் குடிப்பவருக்கு ஏற்ப பாத்திரம் பொருந்த வேண்டும்.</span></p>
+</div>
+</div>
+
+
+    <div class="tip-box">
+      <h3>⭐ <span class="en">Pro Tip</span><span class="ta">சிறப்பு குறிப்பு</span></h3>
+      <p><span class="en">Draft any important message twice: once the way it naturally comes out, and once cut down to half the words. The second version is usually clearer.</span><span class="ta">எந்த முக்கியமான செய்தியையும் இரண்டு முறை வரைவு செய்யுங்கள்: ஒருமுறை இயல்பாக வருவது போல், மற்றொரு முறை பாதி வார்த்தைகளாக குறைத்து. இரண்டாவது பதிப்பு பொதுவாக தெளிவாக இருக்கும்.</span></p>
+    </div>
+
+    <div class="exercise-box">
+      <h3><span class="en">✏️ Practice Exercise</span><span class="ta">✏️ பயிற்சி</span></h3>
+      <p><span class="en">Take a message you need to send today (email, WhatsApp, or in person). Rewrite it so the main point is in the very first line. Cut every unnecessary word.</span><span class="ta">இன்று நீங்கள் அனுப்ப வேண்டிய ஒரு செய்தியை (மின்னஞ்சல், வாட்ஸ்அப், அல்லது நேரடியாக) எடுத்துக்கொள்ளுங்கள். முக்கிய கருத்து முதல் வரியில் வருமாறு அதை மீண்டும் எழுதுங்கள். தேவையற்ற வார்த்தைகளை நீக்குங்கள்.</span></p>
+    </div>
+
+    <h2><span class="en">Reflect</span><span class="ta">சிந்தியுங்கள்</span></h2>
+    <p><span class="en">Do you tend to over-explain when you're nervous, or under-explain when you assume others already understand? Which pattern shows up most for you?</span><span class="ta">நீங்கள் பதற்றமாக இருக்கும்போது அதிகமாக விளக்குகிறீர்களா, அல்லது மறுநபர் ஏற்கனவே புரிந்துகொண்டிருப்பார் என நினைத்து குறைவாக விளக்குகிறீர்களா? எந்த பழக்கம் உங்களில் அதிகம் தெரிகிறது?</span></p>
+
+    <div class="quote-box">
+      <p><span class="en">“The most important thing in communication is hearing what isn't said — but say plainly what needs to be said.” — Peter Drucker</span><span class="ta">“தொடர்பில் மிக முக்கியமான விஷயம் சொல்லப்படாததை கேட்பது — ஆனால் சொல்ல வேண்டியதை தெளிவாக சொல்லுங்கள்.” — பீட்டர் ட்ரக்கர்</span></p>
+    </div>
+  </div>
+
+  <div class="card no-print">
+    <button class="btn gold" id="completeBtn" onclick="markComplete()"><span class="en">Mark Module Complete</span><span class="ta">பாடத்தை முடித்ததாக குறிக்கவும்</span></button>
+    <span id="completeMsg" style="display:none; color:var(--green); font-weight:600; margin-left:8px;">✓ <span class="en">Saved</span><span class="ta">சேமிக்கப்பட்டது</span></span>
+    <div class="nav-row">
+      <a class="btn outline" href="module1.html"><span class="en">&larr; Previous</span><span class="ta">&larr; முந்தையது</span></a>
+      <a class="btn" href="module3.html"><span class="en">Next Module &rarr;</span><span class="ta">அடுத்த பாடம் &rarr;</span></a>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <p class="en">&copy; NT Somasundaram Life Skills Program &mdash; "God is always with u"</p>
+  <p class="ta">&copy; என்.டி. சோமசுந்தரம் லைஃப் ஸ்கில்ஸ் திட்டம் &mdash; "God is always with u"</p>
+  <p>WhatsApp: +91 98437 02244 | somasundaramnt.lifecoach@gmail.com</p>
+</footer>
+
+<script>
+
+function initLangToggle(){
+  var saved = localStorage.getItem('cs_lang') || 'en';
+  if(saved === 'ta'){ document.body.classList.add('show-ta'); }
+  var btn = document.getElementById('langBtn');
+  if(btn){ btn.textContent = saved === 'ta' ? 'English' : 'தமிழ்'; }
+}
+function toggleLang(){
+  var isTa = document.body.classList.toggle('show-ta');
+  localStorage.setItem('cs_lang', isTa ? 'ta' : 'en');
+  var btn = document.getElementById('langBtn');
+  if(btn){ btn.textContent = isTa ? 'English' : 'தமிழ்'; }
+}
+document.addEventListener('DOMContentLoaded', initLangToggle);
+
+
+function logToSheet(params){
+  try{
+    var url = "https://script.google.com/macros/s/AKfycbwJD9aBRZP9uTsXV9slV2OjrysFi2fWtUHtAfNR-z52auy0NTy-38rx1MZfkXhw-TB5mQ/exec";
+    if(url.indexOf("AKfycb...") !== -1) return; // not yet configured
+    var qs = Object.keys(params).map(function(k){return encodeURIComponent(k)+"="+encodeURIComponent(params[k]);}).join("&");
+    var img = new Image();
+    img.src = url + "?action=module_complete&" + qs + "&_t=" + Date.now();
+  }catch(e){ console.warn("Sheet log skipped", e); }
+}
+
+var MODULE_ID = 2;
+function markComplete(){
+  var done = JSON.parse(localStorage.getItem('cs_progress') || '{}');
+  done[MODULE_ID] = true;
+  localStorage.setItem('cs_progress', JSON.stringify(done));
+  document.getElementById('completeMsg').style.display = 'inline';
+  var name = localStorage.getItem('cs_name') || '';
+  var email = localStorage.getItem('cs_email') || '';
+  logToSheet({module: MODULE_ID, name: name, email: email});
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var done = JSON.parse(localStorage.getItem('cs_progress') || '{}');
+  if(done[MODULE_ID]){ document.getElementById('completeMsg').style.display = 'inline'; }
+});
+</script>
+</body>
+</html>
