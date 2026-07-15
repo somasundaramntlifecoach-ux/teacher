@@ -223,6 +223,7 @@
     padding:20px;
   }
   .gate-box{
+    position:relative;
     background:var(--white);border-radius:20px;padding:40px 34px;
     max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.3);
   }
@@ -245,9 +246,10 @@
 
 <div class="gate-overlay" id="gateOverlay">
   <div class="gate-box">
+    <button type="button" onclick="closeGate()" aria-label="Close" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:20px;line-height:1;cursor:pointer;color:var(--ink-soft);">&times;</button>
     <div class="eyebrow"><span class="en">Registration Required</span><span class="ta">பதிவு தேவை</span></div>
     <h2><span class="en">Unlock This Course</span><span class="ta">இந்த படிப்பை திற</span></h2>
-    <p class="gate-lede"><span class="en">Enter your details once to access all 10 modules. This helps us keep track of your progress and send you your completion certificate.</span><span class="ta">அனைத்து 10 தொகுதிகளையும் அணுக உங்கள் விவரங்களை ஒரு முறை உள்ளிடவும். இது உங்கள் முன்னேற்றத்தை கண்காணிக்கவும் உங்கள் பூர்த்தி சான்றிதழை அனுப்பவும் உதவுகிறது.</span></p>
+    <p class="gate-lede"><span class="en">Module 1 is free to preview. Enter your details once to unlock Modules 2–10. This helps us keep track of your progress and send you your completion certificate.</span><span class="ta">தொகுதி 1 இலவசமாக பார்வையிடலாம். தொகுதி 2–10ஐ திறக்க உங்கள் விவரங்களை ஒரு முறை உள்ளிடவும். இது உங்கள் முன்னேற்றத்தை கண்காணிக்கவும் உங்கள் பூர்த்தி சான்றிதழை அனுப்பவும் உதவுகிறது.</span></p>
     <div class="gate-field">
       <label><span class="en">Full Name</span><span class="ta">முழு பெயர்</span></label>
       <input type="text" id="gateName" placeholder="e.g., Priya Kumar">
@@ -378,6 +380,10 @@
     <div class="section-head">
       <div class="eyebrow"><span class="en">The Full Course</span><span class="ta">முழு படிப்பும்</span></div>
       <h2 class="display"><span class="en">Where Module 1 leads</span><span class="ta">தொகுதி 1 எங்கே வழிநடத்துகிறது</span></h2>
+      <p><span class="en">Module 1 above is free to explore. Modules 2–10 unlock with a quick registration.</span><span class="ta">மேலே உள்ள தொகுதி 1 இலவசமாக பார்வையிடலாம். தொகுதி 2–10 விரைவான பதிவுடன் திறக்கும்.</span></p>
+      <button type="button" class="btn btn-primary" onclick="openGate()" style="margin-top:14px;">
+        <span class="en">Unlock Modules 2–10 →</span><span class="ta">தொகுதி 2–10ஐ திற →</span>
+      </button>
     </div>
     <div class="timeline">
       <a class="t-item current" href="module1-content.html">
@@ -405,7 +411,7 @@
     <h2 class="display"><span class="en">Begin with Module 1, today</span><span class="ta">இன்றே தொகுதி 1 உடன் தொடங்குங்கள்</span></h2>
     <p><span class="en">Complete your 15-domain self-assessment and receive your personal foundation report before Module 2 opens.</span><span class="ta">தொகுதி 2 திறக்கும் முன் உங்கள் 15-துறை சுய மதிப்பீட்டை முடித்து உங்கள் தனிப்பட்ட அடித்தள அறிக்கையைப் பெறுங்கள்.</span></p>
     <div class="hero-cta" style="justify-content:center;">
-      <a class="btn btn-primary" href="https://sites.google.com/view/somasundaramnt" target="_blank" rel="noopener"><span class="en">Take the Self-Assessment</span><span class="ta">சுய மதிப்பீட்டை எடுங்கள்</span></a>
+      <a class="btn btn-primary" href="landing.html" target="_blank" rel="noopener"><span class="en">Take the Self-Assessment</span><span class="ta">சுய மதிப்பீட்டை எடுங்கள்</span></a>
       <a class="btn btn-ghost" href="https://wa.me/919843702244?text=Hi%2C%20I%27d%20like%20to%20enroll%20in%20Module%201%20of%20the%20Life%20Skills%20course" target="_blank" rel="noopener"><span class="en">Enroll via WhatsApp</span><span class="ta">WhatsApp வழியாக சேருங்கள்</span></a>
     </div>
   </div>
@@ -426,18 +432,30 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrZjQ8oDwiKegl
 
 const COURSE_PASSCODE = 'LIFESKILLS2026';
 
+// Module 1 (this page + module1-content.html) is a free preview and is never
+// gated. The form below is only shown when the visitor chooses to unlock
+// Modules 2-10, or is redirected here from a locked module.
 function checkGate(){
-  const name = localStorage.getItem('lsm_name');
-  const mobile = localStorage.getItem('lsm_mobile');
-  const email = localStorage.getItem('lsm_email');
-  const verified = localStorage.getItem('lsm_verified');
-  if(name && mobile && email && verified === 'true'){
-    document.body.classList.remove('gate-locked');
-  } else {
-    document.body.classList.add('gate-locked');
-  }
+  document.body.classList.remove('gate-locked');
 }
 checkGate();
+
+function openGate(){
+  document.body.classList.add('gate-locked');
+}
+function closeGate(){
+  document.body.classList.remove('gate-locked');
+}
+
+// If we were redirected here from a locked module (module2-content.html, etc.)
+// because the visitor isn't verified yet, open the form for them automatically.
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const verified = localStorage.getItem('lsm_verified');
+  if(params.get('locked') === '1' && verified !== 'true'){
+    openGate();
+  }
+})();
 
 function submitGate(){
   const nameEl = document.getElementById('gateName');

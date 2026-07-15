@@ -404,7 +404,7 @@
     <div class="assess-card">
       <h3><span class="en">Take the 15-Domain Self-Assessment</span><span class="ta">15-துறை சுய மதிப்பீட்டை எடுங்கள்</span></h3>
       <p><span class="en">Takes about 20 minutes. You'll receive a dimension-wise report to carry through the rest of this course.</span><span class="ta">சுமார் 20 நிமிடங்கள் ஆகும். இந்த படிப்பு முழுவதும் நீங்கள் எடுத்துச் செல்லும் ஒரு துறை வாரியான அறிக்கையை பெறுவீர்கள்.</span></p>
-      <a class="btn btn-primary" href="landing.html" target="_blank" rel="noopener"><span class="en">Start Self-Assessment →</span><span class="ta">சுய மதிப்பீட்டை தொடங்குங்கள் →</span></a>
+      <a class="btn btn-primary" href="https://somasundaramntlifecoach-ux.github.io/teacher/" target="_blank" rel="noopener"><span class="en">Start Self-Assessment →</span><span class="ta">சுய மதிப்பீட்டை தொடங்குங்கள் →</span></a>
     </div>
 
     <div class="reflect">
@@ -469,15 +469,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-// Registration gate: redirect back to the overview page if not registered yet
-(function(){
-  const name = localStorage.getItem('lsm_name');
-  const mobile = localStorage.getItem('lsm_mobile');
-  const email = localStorage.getItem('lsm_email');
-  if(!name || !mobile || !email){
-    window.location.href = 'module1-life-skills-teachers.html';
-  }
-})();
+// Module 1 is a free preview: no registration/passcode gate required to view it.
 
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrZjQ8oDwiKegl3pI1qAG1PVtZ0pFAlb3GbVvK7sPbzjIprs1Q9isXPoisLDjQnfpgng/exec';
 const MODULE_ID = 'Module 1 - Foundations';

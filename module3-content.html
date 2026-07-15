@@ -337,7 +337,7 @@
     <div class="assess-card">
       <h3><span class="en">Check Your Stress Management Score</span><span class="ta">உங்கள் மன அழுத்த மேலாண்மை மதிப்பெண்ணை சரிபார்க்கவும்</span></h3>
       <p><span class="en">Your 15-domain self-assessment includes a dedicated Stress Management dimension — revisit it to see exactly where to focus this week.</span><span class="ta">உங்கள் 15-துறை சுய மதிப்பீட்டில் ஒரு தனி மன அழுத்த மேலாண்மை பரிமாணம் உள்ளது — இந்த வாரம் எங்கு கவனம் செலுத்த வேண்டும் என்பதை சரியாக பார்க்க அதை மீண்டும் பாருங்கள்.</span></p>
-      <a class="btn btn-primary" href="landing.html" target="_blank" rel="noopener"><span class="en">Go to Self-Assessment →</span><span class="ta">சுய மதிப்பீட்டிற்கு செல்லுங்கள் →</span></a>
+      <a class="btn btn-primary" href="https://somasundaramntlifecoach-ux.github.io/teacher/" target="_blank" rel="noopener"><span class="en">Go to Self-Assessment →</span><span class="ta">சுய மதிப்பீட்டிற்கு செல்லுங்கள் →</span></a>
     </div>
 
     <div class="reflect">
@@ -401,13 +401,14 @@ window.addEventListener('scroll', () => {
 });
 
 
-// Registration gate: redirect back to the overview page if not registered yet
+// Registration gate: redirect back to the overview page if not registered/verified yet
 (function(){
   const name = localStorage.getItem('lsm_name');
   const mobile = localStorage.getItem('lsm_mobile');
   const email = localStorage.getItem('lsm_email');
-  if(!name || !mobile || !email){
-    window.location.href = 'module1-life-skills-teachers.html';
+  const verified = localStorage.getItem('lsm_verified');
+  if(!name || !mobile || !email || verified !== 'true'){
+    window.location.href = 'module1-life-skills-teachers.html?locked=1';
   }
 })();
 

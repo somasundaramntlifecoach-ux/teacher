@@ -411,13 +411,14 @@ window.addEventListener('scroll', () => {
 });
 
 
-// Registration gate: redirect back to the overview page if not registered yet
+// Registration gate: redirect back to the overview page if not registered/verified yet
 (function(){
   const name = localStorage.getItem('lsm_name');
   const mobile = localStorage.getItem('lsm_mobile');
   const email = localStorage.getItem('lsm_email');
-  if(!name || !mobile || !email){
-    window.location.href = 'module1-life-skills-teachers.html';
+  const verified = localStorage.getItem('lsm_verified');
+  if(!name || !mobile || !email || verified !== 'true'){
+    window.location.href = 'module1-life-skills-teachers.html?locked=1';
   }
 })();
 
